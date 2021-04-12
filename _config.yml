@@ -13,7 +13,7 @@ lang:               en
 baseurl:            "/OAK-docs"
 
 # Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
-permalink:          /:title/
+# permalink:          /:title/
 
 # Site base hostname & protocol, e.g. http://example.com
 url:                ""
@@ -90,7 +90,7 @@ disqus:
     shortname:      # 1234
 
 # Google analytics code, get your code here https://www.google.com/analytics/
-google_analytics:
+google_analytics:   G-4BZGDFDJGP
 
 # Number of posts displayed on blog page
 paginate:           10
