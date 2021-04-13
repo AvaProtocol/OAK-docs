@@ -13,7 +13,7 @@ lang:               en
 baseurl:            "/OAK-docs"
 
 # Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
-permalink:          /:title/
+# permalink:          /:title/
 
 # Site base hostname & protocol, e.g. http://example.com
 url:                ""
@@ -60,19 +60,19 @@ authors:
 
 # Social icons displayed in footer
 social:
-    email:
-    website:
-    facebook:       https://www.facebook.com/
+    email:          chris@oak.tech
+    website:        https://oak.tech
+    facebook:       
     flickr:
     dribbble:
     github:
     googleplus:
-    instagram:      https://www.instagram.com/
+    instagram:      
     linkedin:
     pinterest:
-    twitter:        https://twitter.com/
-    vimeo:          https://vimeo.com/
-    youtube:
+    twitter:        https://twitter.com/OAKSubstrate
+    vimeo:          
+    youtube:        https://www.youtube.com/channel/UCSEu57BfQQpAfgDixfBnaNg
 
 # Share button
 share:
@@ -83,14 +83,14 @@ share:
 
 # Default footer image settings
 footer:
-    copyright:      Made by <a href="https://unbound.studio/">Unbound Studio</a> in Cleveland.
+    copyright:      © 2021 OAK Foundation. All rights reserved.
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
-disqus:
-    shortname:      # 1234
+# disqus:
+#     shortname:      # 1234
 
 # Google analytics code, get your code here https://www.google.com/analytics/
-google_analytics:
+google_analytics:   G-4BZGDFDJGP
 
 # Number of posts displayed on blog page
 paginate:           10

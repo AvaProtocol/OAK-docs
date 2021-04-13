@@ -1,6 +1,6 @@
 # Docs is a premium documentation Jekyll theme
 
-Desk was developed by [Unbound Studio](https://unbound.studio).
+Desk was developed by [OAK Foundation](https://oak.tech).
 
 ## Installation
 
