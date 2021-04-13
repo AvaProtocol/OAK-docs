@@ -1,16 +1,26 @@
 # Boxes include navigation
 
+- title: How OAK Blockchain Works
+  desc: Get familiar with the key concepts behind OAK, learn about the core stack, and what it can do for your project
+  icon: bolt
+  doc: installation
+
 - title: Getting Started
-  desc: Get started fast with installation and theme setup instructions
+  desc: Follow step-by-step instructions to set up your environment. Then follow the smart contract guides to deploy your first smart contract
   icon: cog
   doc: installation
 
-- title: Theme Features
-  desc: Lean about all the theme options, features and how to use them
+- title: The OAK Stack
+  desc: Learn how to implement the core modules of OAK platform in your applications
   icon: settings
   doc: hero
 
-- title: Customization
-  desc: Get help or tailor the theme to your specific requirements
+- title: API References
+  desc: Read our documentation for OAK APIs and SDKs
   icon: code
+  doc: customize
+
+- title: Resources
+  desc: Dive into helpful resources such as white papers, glossary, community and more
+  icon: database
   doc: customize
