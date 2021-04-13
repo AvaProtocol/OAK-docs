@@ -3,8 +3,8 @@ layout: page
 width: expand
 hero:
     title: OAK Developer Portal
-    subtitle: OAK is building an operating system for smart contracts in Polkadot ecosystem that provides both consumers and developers with unparalleled blockchain experience including scalability, efficiency and feasibility.
-    image: knowledge.svg
+    subtitle: OAK is building an operating system for smart contracts in Polkadot ecosystem that provides both consumers and developers with unparalleled experience including scalability, efficiency and feasibility.
+    image: build.png
     search: true
 ---
 
