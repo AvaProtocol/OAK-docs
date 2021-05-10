@@ -4,14 +4,11 @@
   url: /
 
 - title: Docs
-  url: /docs/installation/
+  url: /docs/requirement/
 
 - title: Blog
-  url: /blog/
-
-- title: Changelog
-  url: /changelog-timeline/
+  url: https://medium.com/oak-blockchain
 
 - title: Contact
-  url: /contact/
+  url: /docs/contact-us/
   button: success

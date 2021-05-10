@@ -5,32 +5,23 @@ left:
     url: /
 
   - title: Docs
-    url: /docs/installation/
+    url: /docs/requirement/
 
   - title: Blog
-    url: /blog/
-
-  - title: Changelogs
-    dropdown:
-
-      - title: Timeline Style
-        url: /changelog-timeline/
-
-      - title: Post Style
-        url: /changelog-posts/
+    url: https://medium.com/oak-blockchain
 
 
 # Navbar right menu navigation links
 
 right:
 
-  - title: Changelog
-    url: /changelog-timeline/
+  - title: Github
+    url: https://github.com/OAK-Foundation/OAK-docs
     button: primary-outline
 
   - title: Contact
-    url: /contact/
-    button: success
+    url: /docs/contact-us/
+    button: default
 
   # - title: Changelog
   #   url: /contact/

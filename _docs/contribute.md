@@ -1,8 +1,8 @@
 ---
-title: Theme installation
+title: Ways to Contribute
 subtitle: This document covers the setup and options of theme feature described in the doc title
-author: chris
-tags: [setup]
+author: leah
+tags: [engage]
 ---
 
 Install the dependencies with [Bundler](http://bundler.io/):

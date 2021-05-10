@@ -1,36 +1,24 @@
-- title: Getting Started
+- title: Run a Validator
   docs:
-  - installation
-  - setup
-  - navigation
-  - footer
-  - posts
-  - docs
-  - comments
-  - analytics
+  - requirement
+  - node-setup
+  - testnet-specs
 
-- title: Theme Features
+- title: Architecture
   docs:
-  - hero
-  - boxes
-  - featured
-  - videos
-  - faq
-  - team
-  - cta
-  - changelog
-  - contact
-  - media
-  - toc
-  - alerts
+  - structure
+  - features
+  - token-economics
 
-- title: Customization
+- title: Develop
   docs:
-  - translation
-  - customize
-  - development
-  - sources
+  - dev-guideline
+  - quadratic-funding
+  - governance
+  - identity
 
-- title: Help
+- title: Engage
   docs:
-  - support
+  - learning
+  - contribute
+  - contact-us

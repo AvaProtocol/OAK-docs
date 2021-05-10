@@ -1,8 +1,8 @@
 ---
-title: Theme installation
+title: Quadratic Funding Pallet
 subtitle: This document covers the setup and options of theme feature described in the doc title
-author: chris
-tags: [setup]
+author: xingyou
+tags: [develop]
 ---
 
 Install the dependencies with [Bundler](http://bundler.io/):
