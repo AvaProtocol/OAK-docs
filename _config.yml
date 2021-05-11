@@ -27,9 +27,9 @@ navbar:
   
 # Default author settings
 author:
-    name:           Pete Seth
-    title:          Lead Developer  
-    avatar:         avatar-tom.png
+    name:           Chris Li
+    title:          Founder
+    avatar:         avatar-chris.png
 
 # Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
 authors:
@@ -58,7 +58,7 @@ social:
     instagram:      
     linkedin:
     pinterest:
-    twitter:        https://twitter.com/OAKSubstrate
+    twitter:        https://twitter.com/oak_network
     vimeo:          
     youtube:        https://www.youtube.com/channel/UCSEu57BfQQpAfgDixfBnaNg
 
@@ -84,7 +84,7 @@ google_analytics:   G-4BZGDFDJGP
 paginate:           10
 
 # Blog path
-paginate_path:      "/blog/:num/"
+# paginate_path:      "/blog/:num/"
 
 # Path to post content assets directory i.e post images, pdfs etc
 uploads:            /uploads/
