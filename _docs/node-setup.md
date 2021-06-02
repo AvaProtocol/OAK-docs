@@ -1,6 +1,6 @@
 ---
 title: Node Setup
-subtitle: This document covers the setup of OAK node in both local and testnet work
+subtitle: This document covers the setup of OAK node in both local and testnet network
 author: xingyou
 tags: [develop]
 ---
