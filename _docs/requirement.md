@@ -1,19 +1,14 @@
 ---
 title: Requirements
-subtitle: This document covers the setup and options of theme feature described in the doc title
+subtitle: This document covers the requirement of OAK node in both local and testnet network
 author: xingyou
 tags: [validator]
 ---
 
-Install the dependencies with [Bundler](http://bundler.io/):
-
-```bash
-bundle install
-```
-
-Run the following to generate your site:
-```bash
-bundle exec jekyll serve
-```
-
-You can find more on [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
+Minimum System Requirements
+- Debian/Ubuntu (Recommended)
+- Docker (Optional)
+- 20GB storage
+- 4GB RAM
+- x86 architecture
+- Static IP address
