@@ -19,8 +19,6 @@ Version naming notation:
 
 Testnet generation my not be backwards compatible with old networks. A periodic blockchain wipe is suggested for compatibility and to keep testnet resources available for other users.
 
-**Testnet generation life cycle is estimated to be between two weeks and two months**
-
 ### Testnet Migration Guidelines
 
 Testnet upgrade types fall into one of two categories:
@@ -61,9 +59,9 @@ Version
 
 - Session - authority session keys management
 
-- Babe - block producing consensus engine
+- BABE - block producing consensus engine
 
-- Grandpa - block finalizing consensus engine
+- GRANDPA - block finalizing consensus engine
 
 - Indices - account indexing engine
 
@@ -77,7 +75,7 @@ Version
 
 ### Governance modules
 
-- Democracy - public voting
+- Democracy - The public referenda chamber is a on-chain governance. Public referenda can be proposed and voted on by any token holder in the system as long as they provide a bond. 
 
 - Council - The council is an elected body of on-chain accounts that are intended to represent the passive stakeholders of Polkadot and/or Kusama.
 
