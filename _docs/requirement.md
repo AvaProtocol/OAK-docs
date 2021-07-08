@@ -1,7 +1,7 @@
 ---
 title: Requirements
 subtitle: This document covers the requirement of OAK node in both local and testnet network
-author: xingyou
+author: charles
 tags: [validator]
 ---
 

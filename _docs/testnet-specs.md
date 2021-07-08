@@ -1,7 +1,7 @@
 ---
 title: Testnet Specifications
 subtitle: This document covers the specifications of testnet
-author: xingyou
+author: charles
 tags: [validator]
 ---
 
