@@ -10,7 +10,7 @@ description:        Documentation for OAK Blockchain
 lang:               en
 
 # Site subpath, e.g. /blog
-baseurl:            "/OAK-docs"
+baseurl:            ""
 
 # Permalink URLs structure, for permalink style options see: https://jekyllrb.com/docs/permalinks/
 permalink:          /:title/
