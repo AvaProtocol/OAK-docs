@@ -1,7 +1,7 @@
 ---
 title: Pallet Development
 subtitle: This document covers the setup and options of theme feature described in the doc title
-author: chris
+author: charles
 tags: [develop]
 ---
 

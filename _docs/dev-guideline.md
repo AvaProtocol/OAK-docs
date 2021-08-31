@@ -5,15 +5,6 @@ author: chris
 tags: [develop]
 ---
 
-Install the dependencies with [Bundler](http://bundler.io/):
+We welcome all development effort to help build the OAK Network. As a developer, the best way to interact is to create an issue in any of OAK Network's [Github repo](https://github.com/OAK-Foundation/).
 
-```bash
-bundle install
-```
-
-Run the following to generate your site:
-```bash
-bundle exec jekyll serve
-```
-
-You can find more on [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
+At OAK Network, every developer needs to follow a certain procedures in developing and testing code. This page is constantly updated to reflect our latest standards about development.
