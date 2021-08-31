@@ -1,8 +1,8 @@
 ---
-title: Set up Identity
+title: Benchmarking
 subtitle: This document covers the setup and options of theme feature described in the doc title
 author: chris
 tags: [develop]
 ---
 
-For better collaboration, we strongly suggest each developer to set up an identity on OAK Network. Here is how.
+This page explains the benchmarking process after pallet development.

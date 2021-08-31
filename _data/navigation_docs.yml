@@ -1,21 +1,27 @@
-- title: Run a Validator
+- title: OAK Testnet Guide
   docs:
+  - testnet-specs
+  - token-faucet
   - requirement
   - node-setup
-  - testnet-specs
 
-- title: Architecture
+- title: Basics
   docs:
-  - structure
+  - overview
   - features
   - token-economics
+  - consensus
+  - validator-nominator
+  - staking
+  - governance
+  - launch-phases
 
 - title: Develop
   docs:
   - dev-guideline
-  - quadratic-funding
-  - governance
   - identity
+  - pallet-development
+  - benchmarking
 
 - title: Engage
   docs:

@@ -1,5 +1,5 @@
 ---
-title: Testnet Specifications
+title: Network Specifications
 subtitle: This document covers the specifications of testnet
 author: charles
 tags: [validator]
