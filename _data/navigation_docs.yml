@@ -3,7 +3,7 @@
   - testnet-specs
   - token-faucet
   - requirement
-  - node-setup
+  - validator-setup
 
 - title: Basics
   docs:
@@ -22,6 +22,7 @@
   - identity
   - pallet-development
   - benchmarking
+  - bug-bounty
 
 - title: Engage
   docs:

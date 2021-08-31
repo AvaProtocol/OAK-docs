@@ -5,15 +5,14 @@ author: leah
 tags: [engage]
 ---
 
-Install the dependencies with [Bundler](http://bundler.io/):
+Please contact us through below methods. Our decentralized team can usually respond within 8 hours.
 
-```bash
-bundle install
-```
+1. Email: <contact@oak.tech>
+1. Twitter: [@oak_network](https://twitter.com/oak_network)
+1. Discord:[OAK Network](https://discord.gg/7W9UDvsbwh)
+1. LinkedIn: <https://www.linkedin.com/company/oak-network>
+1. Github: <https://github.com/OAK-Foundation/>
 
-Run the following to generate your site:
-```bash
-bundle exec jekyll serve
-```
+For update suggestions of this documentation site, please create an issue in [github.com/OAK-Foundation/OAK-docs](https://github.com/OAK-Foundation/OAK-docs/issues).
 
-You can find more on [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
+Thank you!
