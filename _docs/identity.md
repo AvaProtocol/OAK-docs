@@ -1,6 +1,6 @@
 ---
 title: Set up Identity
-subtitle: This document covers the step of setting up on-chain identity for your account
+subtitle: This document covers the steps of setting up on-chain identity for your account
 author: charles
 tags: [develop]
 ---
