@@ -32,7 +32,7 @@ The output will have a hex-encoded "result" field. The result is the concatenati
 ## Become a validator
 
 ### Open this link and click 'Validator'
-https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.testnet.oak.tech#/staking/actions
+<https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.testnet.oak.tech#/staking/actions>
 
 ### Setup validator
 
