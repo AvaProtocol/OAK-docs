@@ -37,7 +37,7 @@ The output will have a hex-encoded "result" field. The result is the concatenati
 ### Setup validator
 
 #### Setup validator 1/2
-![setup_validator_1](../assets/img/validator-setup/setup_validator_1.png)
+![setup_validator_1](../../assets/img/validator-setup/setup_validator_1.png)
 
 There are some fields.
 
@@ -56,7 +56,7 @@ After filling the form, click 'next' to the form of 'setup validator 2/2'
 
 #### Setup validator 2/2
 
-![setup_validator_2](../assets/img/validator-setup/setup_validator_2.png)
+![setup_validator_2](../../assets/img/validator-setup/setup_validator_2.png)
 
 There are some fields.
 
@@ -71,10 +71,10 @@ For example, 20.
 The validator can block any new nominations. By default it is set to allow all nominations.
 
 After commit, you can see your accont in the stashes list.
-![stashes](../assets/img/validator-setup/stashes.png)
+![stashes](../../assets/img/validator-setup/stashes.png)
 
 And you can the account in the waitting list.
-![waitting](../assets/img/validator-setup/waitting.png)
+![waitting](../../assets/img/validator-setup/waitting.png)
 
 After an era, your account is in the validators list.
 
@@ -82,6 +82,6 @@ In OAK Testnet, an era is 1 hour currently.
 
 The number of validators is limited, the top 6 will become validators currently.
 
-![era](../assets/img/validator-setup/era.png)
+![era](../../assets/img/validator-setup/era.png)
 
-![validators](../assets/img/validator-setup/validators.png)
+![validators](../../assets/img/validator-setup/validators.png)

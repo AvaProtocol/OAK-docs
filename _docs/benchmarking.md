@@ -37,19 +37,19 @@ repo: <https://github.com/OAK-Foundation/quadratic-funding-pallet>
 
 	Below we show some example code. Our quadratic funding pallet has a schedule_round function. We will write a benchmarking.rs file for it. The format of the file goes like this:
 
-	![benchmarks](../assets/img/benchmarking/benchmarks.png)
+	![benchmarks](../../assets/img/benchmarking/benchmarks.png)
 
 	The benchmarking.rs starts with a benchmarks! macro, and the majority of logic is in the function body. The last block, verifying final state is optional.
 
 	Take the [benchmarking.rs file of quadratic-funding](https://github.com/OAK-Foundation/quadratic-funding-pallet/blob/add_weights/pallets/quadratic-funding/src/benchmarking.rs) as an example:
 
-	![schedule_round](../assets/img/benchmarking/schedule_round.png)
+	![schedule_round](../../assets/img/benchmarking/schedule_round.png)
 
 	You can see that inside the first bracket resides the code to set the initialization state.
 
 	For example, in this loop we create a number of projects to simulate the data in real scenario.
 
-	![project_indexs](../assets/img/benchmarking/project_indexs.png)
+	![project_indexs](../../assets/img/benchmarking/project_indexs.png)
 
 	In the end of above code snippet, _(RawOrigin::Root, 100u32.into(), 200u32.into(), 10u32.into(), project_indexes) is a benchmarks! macro, which will run the actual dev code schedule_round().
 
@@ -59,17 +59,17 @@ repo: <https://github.com/OAK-Foundation/quadratic-funding-pallet>
 
 	3.1 Add frame-benchmarking crate and runtime-benchmarks feature in cargo.toml of pallet.
 
-	![dependencies](../assets/img/benchmarking/dependencies.png)
+	![dependencies](../../assets/img/benchmarking/dependencies.png)
 
 	3.2 Configure pallet benchmarking in runtime
 	
 	3.2.1. Include runtime-benchmarking features in cargo.toml
 
-	![runtime-benchmarks](../assets/img/benchmarking/runtime-benchmarks.png)
+	![runtime-benchmarks](../../assets/img/benchmarking/runtime-benchmarks.png)
 
 	3.2.2. Configure pallet benchmarking in runtime.rs
 
-	![add_benchmark](../assets/img/benchmarking/add_benchmark.png)
+	![add_benchmark](../../assets/img/benchmarking/add_benchmark.png)
 
 1. __Run the CLI to generate a weights.rs file__
    
@@ -101,7 +101,7 @@ repo: <https://github.com/OAK-Foundation/quadratic-funding-pallet>
 
 	5.2 Add a weight tag to a pallet function
 
-	![tag](../assets/img/benchmarking/tag.png)
+	![tag](../../assets/img/benchmarking/tag.png)
 
 	The WeightInfo::schedule_round parameter needs an input as the max value for the “s” variable of schedule_round in benchmarking.rs file, setting upper limit of the weight of that function.
 
