@@ -1,6 +1,6 @@
 ---
 title: Validator Setup
-subtitle: This document covers the setup of OAK node in both local and testnet network
+subtitle: This document covers the setup of OAK validator in testnet network
 author: charles
 tags: [develop]
 ---
