@@ -6,23 +6,16 @@ tags: [validator]
 ---
 
 ## Versioning
-
 - spec-name: oak-testnet
-
 - impl-name: oak-testnet-node
 
-Version naming notation:
-
+Version naming notation:  
 - Authoring version: Equals testnet generation spec. Testnet generation will not change authoring interface.
-
 - Spec/Impl Versions: High number = testnet generation; low number = testnet runtime upgrades. Example: 10 for Testnet v1 genesis, 21 for Testnet v2 Patch 1.
 
 ### Testnet Migration Guidelines
-
 Testnet upgrade types fall into one of two categories:
-
 - Major upgrade
-
 - Minor runtime patch
 
 Runtime patches have a minor impact and end users should not notice any changes. These patches are non breakable features and minor network maintenance patches.
@@ -30,7 +23,6 @@ Runtime patches have a minor impact and end users should not notice any changes.
 Major upgrades occur when the testnet is completely rebuilt including major upgrades and changes from the previous version. These upgrades increase the version number. These upgrades can include breaking changes or entire blockchain wipes to optimize user resources.
 
 ### Core modules
-
 - System - core substrate functionality
 
 - Timestamp - timestamp runtime oracle
