@@ -27,8 +27,7 @@ For more information about how transaction fees are related to “weights”, pl
 
 This article takes our Open Grant project, quadratic-funding-pallet as an example to explain the process of weight determination.
 
-repo: [https://github.com/OAK-Foundation/quadratic-funding-pallet](https://github.com/OAK-Foundation/quadratic-funding-pallet)
-
+repo: <https://github.com/OAK-Foundation/quadratic-funding-pallet>
 
 1. Complete pallet dev code
 
@@ -114,15 +113,19 @@ repo: [https://github.com/OAK-Foundation/quadratic-funding-pallet](https://githu
 
 ### Reference
 What Is Runtime Benchmarking?
-[https://substrate.dev/docs/en/knowledgebase/runtime/benchmarking](https://substrate.dev/docs/en/knowledgebase/runtime/benchmarking)
+
+<https://substrate.dev/docs/en/knowledgebase/runtime/benchmarking>
 
 Transaction fees and weights
-[https://substrate.dev/docs/en/knowledgebase/runtime/fees](https://substrate.dev/docs/en/knowledgebase/runtime/fees)
+
+<https://substrate.dev/docs/en/knowledgebase/runtime/fees>
 
 [Chinese] How to calculate transaction weight in Substrate
-[https://zhuanlan.zhihu.com/p/109696123](https://zhuanlan.zhihu.com/p/109696123)
 
-[Chinese]Transaction cost design of Substrate blockchain application
-[https://zhuanlan.zhihu.com/p/108194544](https://zhuanlan.zhihu.com/p/108194544)
+<https://zhuanlan.zhihu.com/p/109696123>
 
-To learn more about OAK Network, please visit our website [https://oak.tech](https://oak.tech), check out [our Github](https://github.com/OAK-Foundation), and follow our news on [Medium](https://medium.com/oak-blockchain) and [Twitter](https://twitter.com/oak_network).
+[Chinese] Transaction cost design of Substrate blockchain application
+
+<https://zhuanlan.zhihu.com/p/108194544>
+
+To learn more about OAK Network, please visit our website <https://oak.tech>, check out [our Github](https://github.com/OAK-Foundation), and follow our news on [Medium](https://medium.com/oak-blockchain) and [Twitter](https://twitter.com/oak_network).
