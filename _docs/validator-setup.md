@@ -5,82 +5,83 @@ author: charles
 tags: [develop]
 ---
 
-## Run a local single development node
+## Run a validator node
 
-### Setup Rust environment
+Then run the following command to run a validator node
 
+### Run a validator node
 ```bash
-# setup Rust nightly toolchain
-rustup default nightly-2021-03-01
-# setup wasm toolchain
-rustup target add wasm32-unknown-unknown --toolchain nightly-2021-03-01
+docker run -d -p 9933:9933 --name <container_name> oaknetwork/oak_testnet:latest --name <node_name> --validator --rpc-cors all --rpc-methods=unsafe --rpc-external
 ```
 
-### Clone the OAK blockchain (branch oak-testnet).
+### Get the rotateKeys of the node
+Use cURL command from command line to send a request to the node just started up.
 
-```bash
-git clone -b oak-testnet https://github.com/OAK-Foundation/OAK-blockchain.git
+```
+curl -H "Content-Type: application/json" -d '{"id":1, "jsonrpc":"2.0", "method": "author_rotateKeys", "params":[]}' http://localhost:9933
 ```
 
-### Build
-
-```bash
-cargo build --release
+The response should look like this.
+```
+{"jsonrpc":"2.0","result":"0xd63605b333d1a706bddfa0c79e930fbcb3db786d59181289b19d698e4c8f7b5ca2b5e55a59fa94bf0a147a4aa697c9ff90ed075923bf17d7c80ca1daccb2c31e10cb1cc74a53f5ce5fb048ac12e2d0c8d74eed658ba85dc6788e67077b5e871ad8dbf6d47a1233dd40d3b17ce6c130c274a3f83779105416c8e3e1c929f62618","id":1}
 ```
 
-### Run
+The output will have a hex-encoded "result" field. The result is the concatenation of the four public keys. Save this result for a later step.
 
-```bash
-./target/release/oak-testnet --dev --tmp
-```
 
-Note: --dev is equivalent to --chain dev
+## Become a validator
 
-In development environment, there are default settings:
-1. Alice (Default Well-Known Account on substrate chain) is root key.
-2. Alice, Bob, Alice//stash, Bob//stash are the pre-funded accounts. 1.1529 Million OAK Will be set in these accounts.
-3. Alice is the initial PoA authorities.
+### Open this link and click 'Validator'
+https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.testnet.oak.tech#/staking/actions
 
-#### Options:
-```
--h, --help
-  Prints help information
+### Setup validator
 
---dev
-  Specify the development chain
+#### Setup validator 1/2
+![setup_validator_1](../assets/img/validator-setup/setup_validator_1.png)
 
---tmp
-    Run a temporary node.
+There are some fields.
 
-    A temporary directory will be created to store the configuration and will be deleted at the end of the
-    process.
+##### Stash account, controller account
+Think of the stash as your cold wallet and the controller as your hot wallet. Funding operations are controlled by the stash, any other non-funding actions by the controller itself.
 
--d, --base-path <PATH>
-    Specify custom base path
 
---rpc-external
-    Listen to all RPC interfaces.
+##### Value bonded
+The amount placed at-stake should not be your full available available amount to allow for transaction fees.
+Once bonded, it will need to be unlocked/withdrawn and will be locked for at least the bonding duration.
 
---ws-external
-    Listen to all Websocket interfaces.
+##### Payment destination
+Rewards (once paid) can be deposited to either the stash or controller, with different effects.
 
-    Default is local. Note: not all RPC methods are safe to be exposed publicly. Use an RPC proxy server to
-    filter out dangerous methods. More details: <https://github.com/paritytech/substrate/wiki/Public-RPC>. Use
-    `--unsafe-ws-external` to suppress the warning if you understand the risks.
+After filling the form, click 'next' to the form of 'setup validator 2/2'
 
---unsafe-rpc-external
-    Listen to all RPC interfaces.
+#### Setup validator 2/2
 
-    Same as `--rpc-external`.
+![setup_validator_2](../assets/img/validator-setup/setup_validator_2.png)
 
---unsafe-ws-external
-    Listen to all Websocket interfaces.
-```
+There are some fields.
 
-## Join OAK Testnet
+##### Keys from rotateKeys
+Fill the string generated form [Run a validator node](https://github.com/OAK-Foundation/OAK-blockchain/blob/add_validator_setup_doc/docs/validator-setup.md#run-a-validator-node)
 
-Then run the following command to start a full node and join OAK Testnet
+##### Reward commission percentage
+The commission is deducted from all rewards before the remainder is split with nominators.
+For example, 20.
 
-```bash
-docker run -d --name <container_name> oaknetwork/oak_testnet:latest --name <node_name>
-```
+##### Allows new nominations
+The validator can block any new nominations. By default it is set to allow all nominations.
+
+After commit, you can see your accont in the stashes list.
+![stashes](../assets/img/validator-setup/stashes.png)
+
+And you can the account in the waitting list.
+![waitting](../assets/img/validator-setup/waitting.png)
+
+After an era, your account is in the validators list.
+
+In OAK Testnet, an era is 1 hour currently.
+
+The number of validators is limited, the top 6 will become validators currently.
+
+![era](../assets/img/validator-setup/era.png)
+
+![validators](../assets/img/validator-setup/validators.png)
