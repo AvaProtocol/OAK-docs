@@ -6,9 +6,7 @@ tags: [develop]
 ---
 
 ## Pallet Development
-
 OAK blockchain is a blockchain developed based on substrate.
-
 ### Substrate
 
 Substrate is a modular framework that enables you to create purpose-built blockchains by composing custom or pre-built components.
@@ -16,13 +14,11 @@ Substrate is a modular framework that enables you to create purpose-built blockc
 Home page: https://substrate.dev/
 
 Github: https://github.com/paritytech/substrate
-
 ### Pallet
 
 Pallet is functional module in substate. 
 
 Substrate runtime engineers can define custom logic for their blockchain by writing their own pallets and encapsulating their blockchains desired functionality
-
 ### Substrate Node Template
 
 We can study to develop a substrate based blockchain with Substrate Node Template.
@@ -37,9 +33,7 @@ git clone -b latest --depth 1 https://github.com/substrate-developer-hub/substra
 The Substrate Node Template provides a minimal working runtime which you can use to quickly get started building your own custom blockchain. 
 
 The Substrate Developer Hub Node Template, which is used as the starting point for this tutorial, has a FRAME-based runtime. FRAME is a library of code that allows you to build a Substrate runtime by composing modules called "pallets". 
-
-
-### Substrate Pallet File Structure
+### Directory Files
 
 Open the Node Template in your favorite code editor. A pallet file structure likes this: 
 
@@ -69,8 +63,6 @@ substrate-node-template
 +-- ...
 
 ```
-
-
 ### Substrate Pallet logic Structure
 
 Open the file pallets/template/src/lib.rs.
@@ -122,8 +114,7 @@ impl<T: Config> Hooks<BlockNumberFor<T>> for Pallet<T> { ... }
 #[pallet::call]
 impl<T:Config> Pallet<T> { ... }
 ```
-
-# Pallet development
+### Development Guideline
 
 We can define some storage structure in Runtime Storage section, and write core pallet logic function in Extrinsics section.
 
@@ -143,4 +134,4 @@ We write codes to cancel a round.
 
 ![request](../assets/img/pallet-development/code.jpg)
 
-If you want to learn more about the development of blockchain, please go to [substrate.dev](https://substrate.dev/) to learn more.
+For more information about the development of Substrate blockchain, please refer to [substrate.dev](https://substrate.dev/).
