@@ -132,6 +132,6 @@ We write codes to cancel a round.
 1. Save round back to storage.
 1. Dispatch a event to inform user.
 
-![request](../assets/img/pallet-development/code.jpg)
+![request](../../assets/img/pallet-development/code.jpg)
 
 For more information about the development of Substrate blockchain, please refer to [substrate.dev](https://substrate.dev/).
