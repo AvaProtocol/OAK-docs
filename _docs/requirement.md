@@ -18,7 +18,6 @@ tags: [validator]
 - 7 x 24 hours stable running environment
 - 7 x 24 hours stable network environment
 
-Networking stable
 ## Token Requirements
 - There is no minimum funding requirement to become a candidate
 - Become a validator
