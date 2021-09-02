@@ -63,7 +63,8 @@ substrate-node-template
 +-- ...
 
 ```
-### Substrate Pallet logic Structure
+
+### Substrate Pallet's code structure
 
 Open the file pallets/template/src/lib.rs.
 
@@ -132,6 +133,6 @@ We write codes to cancel a round.
 1. Save round back to storage.
 1. Dispatch a event to inform user.
 
-![request](../../assets/img/pallet-development/code.jpg)
+![code](../../assets/img/pallet-development/code.jpg)
 
 For more information about the development of Substrate blockchain, please refer to [substrate.dev](https://substrate.dev/).
