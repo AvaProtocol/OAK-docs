@@ -9,11 +9,11 @@
   docs:
   - overview
   - features
-  - token-economics
-  - consensus
-  - validator-nominator
+  # - token-economics
+  # - consensus
+  # - validator-nominator
   - staking
-  - governance
+  # - governance
   - launch-phases
 
 - title: Develop

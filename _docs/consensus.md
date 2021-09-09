@@ -5,4 +5,3 @@ author: chris
 tags: [develop]
 ---
 
-OAK Network adopts the Nominated Proof of Stake consensus invented by Polkadot.
