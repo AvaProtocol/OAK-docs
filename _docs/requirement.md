@@ -8,27 +8,27 @@ tags: [validator]
 ## Minimum System Requirements
 - Debian/Ubuntu (Recommended)
 - Docker (Optional)
-- 20GB storage
+- 250GB storage
 - 4GB RAM
-- x86 architecture
 - Static IP address
 
 ## Operating Requirements
+Validators in a Proof of Stake network are responsible for keeping the network in consensus and verifying state transitions. As the number of validators is limited, validators in the set have the responsibility to be online and faithfully execute their tasks.
 
-- 7 x 24 hours stable running environment
-- 7 x 24 hours stable network environment
+This primarily means that validators:
+
+- Must be high availability.
+- Must have infrastructure that protects the validator's signing keys so that an attacker cannot take control and commit slashable behavior.
+
+>⚠️ Warning: It is highly recommended that you have significant system administration experience before attempting to run your own validator. You must be able to handle technical issues and anomalies with your node which you must be able to tackle yourself. Being a validator involves more than just executing the Polkadot binary.
 
 ## Token Requirements
-- There is no minimum funding requirement to become a candidate
-- Become a validator
+Currently there is no minimum funding requirement to become a validator candidate. There are 12 Validators seats on the OAK testnet, meaning at any time the maximum number of validators selected is 12. The number 12 might change in future.
 
-	Currently, there are 12 Validators seats on the OAK blockchain. This amount may be adjusted as needed in the future.
+Whether to be selected as a validator depends on the amount of staking funds. Staking funds can be provided by both validators and nominators. Validator can set more staking reward sharing ratios to encourage more nominees for support.
 
-	Whether to be selected as a validator depends on the amount of staking funds. Staking funds can be provided by validators and nominators.
+In order to select a validator, a nominator should consider several factors comprehensively, including the stability of the Validator node, the amount of staked funds and the profit share ratio.
 
-	Validator can set more staking reward sharing ratios to encourage more nominees to support himself.
-
-	The nominator can comprehensively consider the stability of the Validator, the amount of funds and the share ratio to select the validator.
 ## Slashing
 
 Slashing will happen if a validator misbehaves (e.g. goes offline, attacks the network, or runs modified software) in the network. They and their nominators will get slashed by losing a percentage of their bonded/staked OAK.
