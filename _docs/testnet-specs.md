@@ -6,9 +6,7 @@ tags: [validator]
 ---
 
 ### Source code
-The source code of OAK's testnet is hosted on OAK Network's Github.
-https://github.com/OAK-Foundation/OAK-blockchain/tree/oak-testnet
-
+The source code of OAK's testnet is hosted on [OAK Network's Github](https://github.com/OAK-Foundation/OAK-blockchain/tree/oak-testnet).  
 
 ### Core modules
 The major pallets included in OAK Testnet and their usages are as follows.
