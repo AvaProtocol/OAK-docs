@@ -9,7 +9,7 @@
   docs:
   - overview
   - features
-  # - consensus
+  - consensus
   # - validator-nominator
   - staking
   # - governance
