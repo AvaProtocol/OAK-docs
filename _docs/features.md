@@ -1,6 +1,6 @@
 ---
 title: Core Features
-subtitle: This document covers the setup and options of theme feature described in the doc title
+subtitle: This document highlights the core features of OAK blockchain
 author: chris
 tags: [architecture]
 ---

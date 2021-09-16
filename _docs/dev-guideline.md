@@ -1,6 +1,6 @@
 ---
 title: Dev Guideline
-subtitle: This document covers the setup and options of theme feature described in the doc title
+subtitle: This document explains the basics of developing on OAK Network
 author: chris
 tags: [develop]
 ---

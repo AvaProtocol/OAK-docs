@@ -1,6 +1,6 @@
 ---
 title: Token Faucet
-subtitle: This document covers the requirement of OAK node in both local and testnet network
+subtitle: This document explains the steps to acquire test tokens from OAK testnet
 author: chris
 tags: [testnet]
 ---

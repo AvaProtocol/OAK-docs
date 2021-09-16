@@ -1,6 +1,6 @@
 ---
 title: Overview
-subtitle: This document covers the setup and options of theme feature described in the doc title
+subtitle: This document draws an overview of OAK Network ideas and concepts
 author: chris
 tags: [architecture]
 ---

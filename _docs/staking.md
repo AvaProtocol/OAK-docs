@@ -1,6 +1,6 @@
 ---
 title: Staking
-subtitle: This document covers the setup of OAK node in both local and testnet network
+subtitle: This document covers the staking, reward mechanism and estimated rate of return.
 author: chris
 tags: [develop]
 ---
@@ -9,10 +9,6 @@ tags: [develop]
 OAK Network uses [NPoS (Nominated Proof-of-Stake)](../consensus) as its consensus mechanism. In NPoS, users are free to become validator candidates, or become nominators. Nominators approve of candidates that they trust and back them with their tokens, and once per era a committee of validators is elected according to the current nominators’ preferences.
 
 Both validators and nominators lock their tokens as collateral and receive staking rewards on a pro-rata basis, but may also be slashed and lose their collateral in case a backed validator shows negligent or adversarial behavior. Nominators thus participate indirectly in the consensus protocol with an economic incentive to pay close attention to the evolving set of candidates and make sure that only the most capable and trustworthy among them get elected.
-
-
-
-
 ### Reward Rate
 The staking reward for validators and nominators is designed in a way that it correlates to the staking rate of all OAK tokens. The inflation rate of the network is designed to be approximately 10% annually, and an ideal staking rate is set at 70%, as shown in below graph. Validators and nominators are incentivized to stake OAK towards the ideal staking rate. At 70% staking rate, __the annual rate of return for stakers is approximately at 20%__, assuming that the OAK tokens are continuously staked during a year.
 

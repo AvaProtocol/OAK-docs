@@ -1,6 +1,6 @@
 ---
 title: Network Specifications
-subtitle: This document covers the specifications of testnet
+subtitle: This document covers the specifications of OAK testnet
 author: charles
 tags: [validator]
 ---

@@ -1,6 +1,6 @@
 ---
 title: Validator Requirements
-subtitle: This document covers the requirement of Becoming a validator
+subtitle: This document covers the operating and token requirements of a validator
 author: charles
 tags: [validator]
 ---

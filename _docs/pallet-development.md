@@ -1,6 +1,6 @@
 ---
 title: Pallet Development
-subtitle: This document explains the pallet development
+subtitle: This document explains the procedures of pallet development with an example
 author: charles
 tags: [develop]
 ---
