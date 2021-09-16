@@ -9,7 +9,6 @@
   docs:
   - overview
   - features
-  # - token-economics
   # - consensus
   # - validator-nominator
   - staking
