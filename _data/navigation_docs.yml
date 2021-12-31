@@ -13,7 +13,8 @@
   # - validator-nominator
   - staking
   # - governance
-  - launch-phases
+  # - launch-phases
+  - detailed-roadmap
 
 - title: Develop
   docs:
