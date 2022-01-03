@@ -1,6 +1,6 @@
 ---
-title: Detailed Roadmap
-subtitle: This document covers the detail of OAK network Roadmap
+title: Product Roadmap
+subtitle: This document covers the detail of OAK, TUR, NEU network roadmap
 author: chris
 tags: [develop]
 ---
@@ -10,9 +10,9 @@ tags: [develop]
 
 ## 1Q2022 - Turing Network Launch
 - OAK Website Design Rebrand
+- Kusama crowdloan for Turing (TUR) Network parachain
 - Neumann Testnet Launch
   - Neumann is a parachain version of the forenamed “OAK Testnet” in the PolkadotJS App
-- Kusama crowdloan for Turing (TUR) Network parachain
 - Turing Network Launch
   - Event Registry
   - Triggers: time
@@ -21,6 +21,7 @@ tags: [develop]
 ## 2Q2022 - Automation Platform
 - Turing Automation Dashboard
 - Turing Private tasks proof of concept
+- Polkadot crowdloan for Turing (TUR) Network parachain
 - Fully decentralize Turing Network
   - Enable governance
   - Remove sudo
@@ -28,7 +29,7 @@ tags: [develop]
   - Private tasks
   - Triggers: price, XCMP events
   - Actions: cross-chain asset transfer, limit order, stop-loss orders
-- Polkadot crowdloan for Turing (TUR) Network parachain
+
 
 ## 3Q2022 - OAK Network Launch (Production)
 - Turing Payroll Portal
