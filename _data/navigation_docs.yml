@@ -8,12 +8,10 @@
 - title: Basics
   docs:
   - overview
+  - product-roadmap
   - features
   - consensus
-  # - validator-nominator
   - staking
-  # - governance
-  - detailed-roadmap
 
 - title: Develop
   docs:
