@@ -1,6 +1,6 @@
 ---
 title: Token Faucet
-subtitle: This document explains the steps to acquire test tokens from OAK testnet
+subtitle: This document explains the steps to acquire test tokens from the Neumann (NEU) testnet
 author: chris
 tags: [testnet]
 ---
@@ -11,7 +11,7 @@ We have set up an automatic process for test token dispensing via Discord Bot. 1
 1. Navigate to the #oak-testnet-faucet channel.
 1. Enter below text in the channel to receive token with a wallet address.
     ```
-    !drip <OAK_testnet_address>
+    !drip <NEU_testnet_address>
     ```
     for example,
     ```

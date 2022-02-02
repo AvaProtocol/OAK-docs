@@ -1,7 +1,7 @@
 ---
 title: Ways to Contact Us
 subtitle: This document covers the setup and options of theme feature described in the doc title
-author: leah
+author: irsal
 tags: [engage]
 ---
 

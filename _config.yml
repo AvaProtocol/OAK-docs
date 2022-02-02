@@ -28,23 +28,27 @@ navbar:
 # Default author settings
 author:
     name:           Chris Li
-    title:          Founder
+    title:          CEO
     avatar:         avatar-chris.png
 
 # Author settings, displayed on post and doc pages if front matter references author name e.g. author: peter
 authors:
     chris:
       name:         Chris Li
-      title:        Founder     
+      title:        CEO     
       avatar:       avatar-chris.png
     charles:
       name:         Charles Chen
       title:        Developer    
       avatar:       avatar-xingyou.png
-    leah:
-      name:         Leah Li
-      title:        Communication    
-      avatar:       avatar-leah.png
+    irsal:
+      name:         Irsal McGinnis
+      title:        CTO    
+      avatar:       avatar-irsal.png
+    ryan:
+      name:         Ryan Huttman
+      title:        Lead Engineer    
+      avatar:       avatar-ryan.png
 
 # Social icons displayed in footer
 social:
@@ -71,7 +75,7 @@ share:
 
 # Default footer image settings
 footer:
-    copyright:      © 2021 OAK Foundation. All rights reserved.
+    copyright:      © 2022 OAK Foundation. All rights reserved.
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
 # disqus:
