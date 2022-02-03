@@ -10,30 +10,6 @@ These APIs allow you to schedule an action to occur at a specific minute, and to
 
 ## Launched
 
-### Cancel a Task
-This API allows you to cancel a scheduled task. In order to do this you must have created the task and have the `task_id`.
-
-#### Call
-```rust
-fn cancel_task(
-    /// The `account_id` of the caller. Automatically passed in when the transaction is signed.
-    origin: OriginFor<T>, 
-    /// The id of the task.
-    task_id: Hash,
-    )
-```
-
-#### Errors
-```rust
-pub enum Error {
-    /// You are not the owner of the task.
-    NotTaskOwner,
-    /// The task does not exist.
-    TaskDoesNotExist,
-}
-```
-
-
 ### Schedule a Native Event
 This API allows you to schedule firing an event on the chain with a custom message.
 
@@ -70,6 +46,29 @@ pub enum Error {
     TimeSlotFull,
     /// The message cannot be empty.
 	EmptyMessage,
+}
+```
+
+### Cancel a Task
+This API allows you to cancel a scheduled task. In order to do this you must have created the task and have the `task_id`.
+
+#### Call
+```rust
+fn cancel_task(
+    /// The `account_id` of the caller. Automatically passed in when the transaction is signed.
+    origin: OriginFor<T>, 
+    /// The id of the task.
+    task_id: Hash,
+    )
+```
+
+#### Errors
+```rust
+pub enum Error {
+    /// You are not the owner of the task.
+    NotTaskOwner,
+    /// The task does not exist.
+    TaskDoesNotExist,
 }
 ```
 

@@ -15,28 +15,6 @@ These APIs allow you to schedule an action to occur based on token price, and to
 
 **The schemas in this section are mostly locked in, but some changes could occur.**
 
-### Cancel a Task
-This API allows you to cancel a scheduled task. In order to do this you must have created the task and have the `task_id`.
-
-#### Call
-```rust
-fn cancel_task(
-    /// The `account_id` of the caller. Automatically passed in when the transaction is signed.
-    origin: OriginFor<T>, 
-    /// The id of the task.
-    task_id: Hash,
-    )
-```
-
-#### Errors
-```rust
-pub enum Error {
-    /// You are not the owner of the task.
-    NotTaskOwner,
-    /// The task does not exist.
-    TaskDoesNotExist,
-}
-```
 
 ## Coming soon
 
@@ -67,3 +45,25 @@ fn schedule_transfer_task(
     )
 ```
 
+### Cancel a Task
+This API allows you to cancel a scheduled task. In order to do this you must have created the task and have the `task_id`.
+
+#### Call
+```rust
+fn cancel_task(
+    /// The `account_id` of the caller. Automatically passed in when the transaction is signed.
+    origin: OriginFor<T>, 
+    /// The id of the task.
+    task_id: Hash,
+    )
+```
+
+#### Errors
+```rust
+pub enum Error {
+    /// You are not the owner of the task.
+    NotTaskOwner,
+    /// The task does not exist.
+    TaskDoesNotExist,
+}
+```
