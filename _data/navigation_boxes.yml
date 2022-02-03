@@ -5,10 +5,10 @@
   icon: bolt
   doc: company-overview
 
-- title: Getting Started
-  desc: Follow step-by-step instructions to set up your environment. Then follow the smart contract guides to deploy your first smart contract
+- title: What's coming soon
+  desc: Take a peek at our product roadmap for our L1 & L2 strategies
   icon: cog
-  doc: dev-guideline
+  doc: product-roadmap
 
 - title: API References
   desc: Read our documentation for OAK APIs and SDKs

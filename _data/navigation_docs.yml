@@ -21,7 +21,6 @@
 - title: Contribute
   docs:
   - token-faucet
-  - dev-guideline
   - collators
   - pallets
   - pallet-development
