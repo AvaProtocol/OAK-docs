@@ -13,7 +13,20 @@
   - consensus
   - staking
 
-- title: Develop
+- title: Developer Guide
+  docs:
+  - developer-guide-overview
+  - triggers
+  - actions
+  - examples
+
+- title: APIs
+  docs:
+  - api-overview
+  - automation-time-apis
+  - automation-price-apis
+
+- title: Contribute
   docs:
   - dev-guideline
   - identity

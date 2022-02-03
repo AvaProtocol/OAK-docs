@@ -18,7 +18,7 @@
 - title: API References
   desc: Read our documentation for OAK APIs and SDKs
   icon: code
-  doc: customize
+  doc: api-overview
 
 - title: Resources
   desc: Dive into helpful resources such as white papers, glossary, community and more
