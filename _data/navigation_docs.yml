@@ -1,19 +1,30 @@
 - title: Basics
   docs:
-  - companyoverview
+  - company-overview
   - networks
   - product-roadmap
   - features
 
-- title: Community
+- title: Developer Guide
+  docs:
+  - developer-guide-overview
+  - triggers
+  - actions
+  - examples
+
+- title: APIs
+  docs:
+  - api-overview
+  - automation-time-apis
+  - automation-price-apis
+
+- title: Contribute
   docs:
   - token-faucet
+  - dev-guideline
   - collators
   - pallets
-  - dev-guideline
-  - identity
   - pallet-development
-  - benchmarking
   - bug-bounty
   
 

@@ -1,5 +1,5 @@
 ---
-title: Why do you choose to build with Polkadot?
+title: Why did you choose to build on Polkadot?
 categories: [faq]
 ---
 

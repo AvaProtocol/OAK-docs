@@ -7,7 +7,7 @@ tags: [engage]
 
 Please contact us through below methods. Our decentralized team can usually respond within 8 hours.
 
-1. Email: <contact@oak.tech>
+1. Email: <developers@oak.tech>
 1. Twitter: [@oak_network](https://twitter.com/oak_network)
 1. Discord:[OAK Network](https://discord.gg/7W9UDvsbwh)
 1. LinkedIn: <https://www.linkedin.com/company/oak-network>

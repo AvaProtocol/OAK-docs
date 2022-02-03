@@ -8,7 +8,7 @@ tags: [develop]
 ## 4Q2021
 - Event Registry Proof of Concept
 
-## 1Q2022 - Turing Network Launch
+## 1Q2022 - Turing Network Launch Prep
 - OAK Website Design Rebrand
 - Kusama crowdloan for Turing (TUR) Network parachain
 - Neumann Testnet Launch
@@ -16,34 +16,30 @@ tags: [develop]
 - Turing Network Launch
   - Event Registry
   - Triggers: time
-  - Actions: transaction within TUR
+  - Actions: sending an event, and wallet-to-wallet transaction for NEU
 
-## 2Q2022 - Automation Platform
-- Turing Automation Dashboard
+## 2Q2022 - Price & Smart Contract Trigger
+- Kusama crowdloan for Turing (TUR) Network parachain
+- Turing Demo Apps
 - Turing Private tasks proof of concept
-- Polkadot crowdloan for Turing (TUR) Network parachain
-- Fully decentralize Turing Network
-  - Enable governance
-  - Remove sudo
+- Wallet integration
+- Collators
 - Turing Network Features
   - Private tasks
-  - Triggers: price, XCMP events
-  - Actions: cross-chain asset transfer, limit order, stop-loss orders
-
+  - Triggers: price, XCMP events, smart contracts
+  - Actions: cross-chain asset transfer, limit order, stop-loss orders, smart contracts
 
 ## 3Q2022 - OAK Network Launch (Production)
 - Turing Payroll Portal
 - Turing Private tasks pilot
-- OAK Automation Dashboard
-- Network Features
-  - Triggers: smart contracts
-  - Actions: smart contracts
+- Automation Dashboard
 
 ## 4Q2022
-- Fully decentralize OAK Network
 - Dapplets Marketplace
-- Metamask App
 - Private tasks on OAK
+- Fully decentralize Turing Network
+  - Enable governance
+  - Remove sudo
 - Network Features
   - Triggers: external data feed (weather, etc.)
   - Actions: IoT actions

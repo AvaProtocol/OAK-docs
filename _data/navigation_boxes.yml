@@ -3,22 +3,17 @@
 - title: How OAK Blockchain Works
   desc: Get familiar with the key concepts behind OAK, learn about the core stack, and what it can do for your project
   icon: bolt
-  doc: overview
+  doc: company-overview
 
 - title: Getting Started
   desc: Follow step-by-step instructions to set up your environment. Then follow the smart contract guides to deploy your first smart contract
   icon: cog
   doc: dev-guideline
 
-- title: Validator Setup
-  desc: Learn how to implement the core modules of OAK platform in your applications
-  icon: settings
-  doc: validator-setup
-
 - title: API References
   desc: Read our documentation for OAK APIs and SDKs
   icon: code
-  doc: customize
+  doc: api-overview
 
 - title: Resources
   desc: Dive into helpful resources such as white papers, glossary, community and more
