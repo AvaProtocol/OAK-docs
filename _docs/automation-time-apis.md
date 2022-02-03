@@ -1,7 +1,7 @@
 ---
 title: Time Trigger APIs
 subtitle: The API specifications for Time Triggers
-author: ryanh
+author: ryan
 tags: [api, time, triggers]
 ---
 

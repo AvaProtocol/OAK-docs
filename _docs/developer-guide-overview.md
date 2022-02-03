@@ -1,7 +1,7 @@
 ---
 title: Overview
 subtitle: A high level view of OAK
-author: ryanh
+author: ryan
 tags: [develop]
 ---
 

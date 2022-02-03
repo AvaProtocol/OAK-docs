@@ -1,7 +1,7 @@
 ---
 title: Triggers
 subtitle: A guide to OAK's triggers
-author: ryanh
+author: ryan
 tags: [develop]
 ---
 

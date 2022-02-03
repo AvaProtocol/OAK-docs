@@ -1,7 +1,7 @@
 ---
 title: APIs Overview
 subtitle: API specifications
-author: ryanh
+author: ryan
 tags: [api, actions, triggers]
 ---
 

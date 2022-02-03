@@ -1,7 +1,7 @@
 ---
 title: Actions
 subtitle: A guide to OAK's actions
-author: ryanh
+author: ryan
 tags: [develop]
 ---
 At this point in time OAK only supports the following actions:

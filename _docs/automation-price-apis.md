@@ -1,7 +1,7 @@
 ---
 title: Price Trigger APIs
 subtitle: The API specifications for Price Triggers
-author: ryanh
+author: ryan
 tags: [api, price, triggers]
 ---
 
