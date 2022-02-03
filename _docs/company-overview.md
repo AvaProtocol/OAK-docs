@@ -5,7 +5,7 @@ author: chris
 tags: [architecture]
 ---
 
-REPLACE! ![setup_validator_1](../../assets/img/validator-setup/setup_validator_1.png)
+![oak_event_driven](../../assets/img/oak-event-driven.png)
 
 [__OAK (On-chain Autonomous Kernel) Network__](https://oak.tech) is an automation blockchain for Defi and recurring payments across protocols. The blockchain is built on Parity Substrate with an event-driven execution model. Different from Ethereum’s transaction-based model, where a transaction requires private key signing, OAK allows transactions to be triggered by event signals such as time, price, event triggers and smart contract state changes. 
  
