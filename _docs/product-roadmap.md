@@ -8,7 +8,7 @@ tags: [develop]
 ## 4Q2021
 - Event Registry Proof of Concept
 
-## 1Q2022 - Turing Network Launch Prep
+## 1Q2022 - Turing Network Launch Prep (Canary)
 - OAK Website Design Rebrand
 - Kusama crowdloan for Turing (TUR) Network parachain
 - Neumann Testnet Launch
@@ -29,10 +29,9 @@ tags: [develop]
   - Triggers: price, XCMP events, smart contracts
   - Actions: cross-chain asset transfer, limit order, stop-loss orders, smart contracts
 
-## 3Q2022 - OAK Network Launch (Production)
-- Turing Payroll Portal
+## 3Q2022 - OAK Network Launch (Mainnet)
 - Turing Private tasks pilot
-- Automation Dashboard
+- Automation Dashboard DApp
 
 ## 4Q2022
 - Dapplets Marketplace
