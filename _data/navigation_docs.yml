@@ -21,7 +21,6 @@
 - title: Contribute
   docs:
   - token-faucet
-  - collators
   - pallets
   - pallet-development
   - bug-bounty
