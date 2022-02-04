@@ -11,3 +11,5 @@ separating the storage and logic for each trigger. This allows us to lower the c
 
 - [Time Triggers](../automation-time-apis)
 - [Price Triggers](../automation-price-apis)
+
+If you are interested in using our API for partnerships and integrations, please contact <developers@oak.tech>

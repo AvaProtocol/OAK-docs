@@ -1,15 +1,17 @@
 ---
-title: Network Specifications
+title: Pallets & Modules
 subtitle: This document covers the specifications of OAK testnet
 author: charles
-tags: [validator]
+tags: [collators]
 ---
 
 ### Source code
-The source code of OAK's testnet is hosted on [OAK Network's Github](https://github.com/OAK-Foundation/OAK-blockchain/tree/oak-testnet).  
+The source code of OAK's testnet is hosted on [OAK Network's Github](https://github.com/OAK-Foundation/OAK-blockchain).  
 
 ### Core modules
-The major pallets included in OAK Testnet and their usages are as follows.
+The major pallets are as follows
+- Automation Time - our core automation for time triggers
+
 - System - core substrate functionality
 
 - Timestamp - timestamp runtime oracle
@@ -17,8 +19,6 @@ The major pallets included in OAK Testnet and their usages are as follows.
 - Session - authority session keys management
 
 - BABE - block producing consensus engine
-
-- GRANDPA - block finalizing consensus engine
 
 - Indices - account indexing engine
 

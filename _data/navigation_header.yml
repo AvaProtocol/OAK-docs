@@ -5,7 +5,7 @@ left:
     url: /
 
   - title: Docs
-    url: /docs/requirement/
+    url: /docs/company-overview/
 
   - title: Blog
     url: https://medium.com/oak-blockchain
@@ -22,43 +22,3 @@ right:
   - title: Contact
     url: /docs/contact-us/
     button: default
-
-  # - title: Changelog
-  #   url: /contact/
-  #   button: default
-
-  # - title: Contact
-  #   url: /contact/
-  #   button: primary
-
-  # - title: Changelog
-  #   url: /contact/
-  #   button: secondary
-
-  # - title: Contact
-  #   url: /contact/
-  #   button: danger
-
-  # - title: Changelog
-  #   url: /contact/
-  #   button: success
-
-  # - title: Contact
-  #   url: /contact/
-  #   button: warning
-
-  # - title: Changelog
-  #   url: /contact/
-  #   button: primary-outline
-
-  # - title: Contact
-  #   url: /contact/
-  #   button: danger-outline
-
-  # - title: Changelog
-  #   url: /contact/
-  #   button: success-outline
-
-  # - title: Contact
-  #   url: /contact/
-  #   button: warning-outline

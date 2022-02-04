@@ -1,17 +1,9 @@
-- title: OAK Testnet Guide
-  docs:
-  - testnet-specs
-  - token-faucet
-  - requirement
-  - validator-setup
-
 - title: Basics
   docs:
-  - overview
+  - company-overview
+  - networks
   - product-roadmap
   - features
-  - consensus
-  - staking
 
 - title: Developer Guide
   docs:
@@ -28,11 +20,11 @@
 
 - title: Contribute
   docs:
-  - dev-guideline
-  - identity
+  - token-faucet
+  - pallets
   - pallet-development
-  - benchmarking
   - bug-bounty
+  
 
 - title: Engage
   docs:
