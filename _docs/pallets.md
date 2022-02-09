@@ -12,6 +12,8 @@ The source code of OAK's testnet is hosted on [OAK Network's Github](https://git
 The major pallets are as follows
 - Automation Time - our core automation for time triggers
 
+- Valve - our shutoff valve for all-or-nothing extrinsics and gates for each pallet
+
 - System - core substrate functionality
 
 - Timestamp - timestamp runtime oracle
