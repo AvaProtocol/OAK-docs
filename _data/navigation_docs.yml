@@ -21,6 +21,7 @@
 - title: Contribute
   docs:
   - token-faucet
+  - neumann-testnet
   - pallets
   - pallet-development
   - bug-bounty
