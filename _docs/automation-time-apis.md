@@ -29,6 +29,7 @@ fn schedule_notify_task(
 ```
 
 ** For those who are not familiar with rust `Vec<u8>` accepts a string input. For example, "I am as unique as a snowflake" is a valid input.
+** If you are unfamiliar with unix time here is a handy [converter](https://www.epochconverter.com).
 
 
 #### Errors
@@ -51,6 +52,8 @@ pub enum Error {
 
 ### Cancel a Task
 This API allows you to cancel a scheduled task. In order to do this you must have created the task and have the `task_id`.
+
+** We are still working on the RPC call to generate the task_id. Please save your `provided_id` so you can generate this later.
 
 #### Call
 ```rust
