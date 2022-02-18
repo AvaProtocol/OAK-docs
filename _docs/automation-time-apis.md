@@ -80,7 +80,7 @@ This API allows you to schedule transfering the chain's native token to another 
 
 #### Call
 ```rust
-fn schedule_transfer_task(
+fn schedule_native_transfer_task(
     /// The `account_id` of the caller. Automatically passed in when the transaction is signed.
     origin: OriginFor<T>, 
     /// An id provided by the user. This id must be unique for each task for a given user.
