@@ -28,14 +28,14 @@ fn schedule_notify_task(
     )
 ```
 
-** For those who are not familiar with rust `Vec<u8>` accepts a string input. For example, "I am as unique as a snowflake" is a valid input.
-** If you are unfamiliar with unix time here is a handy [converter](https://www.epochconverter.com).
+** For those who are not familiar with rust `Vec<u8>` accepts a string input. For example, "I am as unique as a snowflake" is a valid input.  
+** If you are unfamiliar with unix time here is a handy [converter](https://www.epochconverter.com).  
 
 
 #### Errors
 ```rust
 pub enum Error {
-     /// If the `time` parameter does not end in a whole minute.
+    /// If the `time` parameter does not end in a whole minute.
     InvalidTime,
     /// The `time` parameter must be in the future.
     PastTime,
@@ -87,17 +87,22 @@ fn schedule_native_transfer_task(
     provided_id: Vec<u8>,
     /// The unix standard time in seconds for when the task should run.
     time: u64,
-    /// The account you want to transfer tokens to. This timestamp must be at the start of any minute.
+    /// The account you want to transfer tokens to.
     recipient_id: AccountId,
-    /// The amount you want to transfer. The smallest acceptable amount is 1_000_000_000, which is equivalent to 0.1 NEU.
+    /// The amount you want to transfer. 
     amount: u128,
     )
 ```
 
+** For those who are not familiar with rust `Vec<u8>` accepts a string input. For example, "I am as unique as a snowflake" is a valid input.  
+** If you are unfamiliar with unix time here is a handy [converter](https://www.epochconverter.com).  
+** The unix time stamp must be at the start of any minute. This means that the timestamp number modulo 60 must be 0.  
+** The smallest acceptable amount is 1,000,000,000, which is equivalent to 0.1 NEU.  
+
 #### Errors
 ```rust
 pub enum Error {
-     /// If the `time` parameter does not end in a whole minute.
+    /// If the `time` parameter does not end in a whole minute.
     InvalidTime,
     /// The `time` parameter must be in the future.
     PastTime,
