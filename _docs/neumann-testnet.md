@@ -9,8 +9,9 @@ tags: [testing]
 
 1. Please grab your NEU tokens from our Discord faucet. [Instructions here.](https://medium.com/oak-blockchain/launching-neumann-oaks-parachain-testnet-c982e7f492f)
 2. Head over to the [Neumann PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fneumann.api.onfinality.io%2Fpublic-ws#/explorer)
+3. Go to the developer > extrinsics tab
 
-### Go to the developer > extrinsics tab
+### Scheduling a Future Notification
 
 ![automation_time_124](../../assets/img/automation-time-124.png)
 
@@ -22,3 +23,18 @@ Note: Please make sure the seconds are set to 00, or the extrinsic will throw an
 5. Write any message you'd like.
 6. Hit "Submit Transaction".
 7. If successful (green check mark on the top right), watch the ["Explorer" tab](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fneumann.api.onfinality.io%2Fpublic-ws#/explorer) and wait for your message to pop up.
+
+### Scheduling a Future Transfer of Neumann Tokens
+
+![automation_transfer_217](../../assets/img/automation-transfer-217.png)
+
+1. Select the "automationTime" [extrinsic](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fneumann.api.onfinality.io%2Fpublic-ws#/extrinsics)
+2. Select the "scheduleTransferTask" function
+3. Set providedId as a unique identifier for the task (could be anything). Please do not reuse the same identifier. 
+4. Find a timeslot in the future in one of the [many unix timestamp converters](https://www.unixtimestamp.com/). For example, find a time 5 minutes in the future. 
+Note: Please make sure the seconds are set to 00, or the extrinsic will throw an error. We currently only support 2 tasks per minute.
+5. Select a recipient. Currently, this functionality only sends to your accounts or accounts in your address book. If you would like to send to an address, please make sure you have added to your address book first. 
+Note: You cannot send to tokens from an address back to the same address. Please make sure that the selected account is different from the recipientId.
+6. Input a value. Currently, the smallest value allowed is 1,000,000,000 (NOTE: please remove commas when inputting value into the extrinsic). This number is the equivalent of 0.1 NEU.
+7. Hit "Submit Transaction".
+8. If successful (green check mark on the top right), watch the ["Explorer" tab](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fneumann.api.onfinality.io%2Fpublic-ws#/explorer) and wait for the message to confirm successful transfer of tokens.
