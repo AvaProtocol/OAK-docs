@@ -26,10 +26,10 @@ Note: Please make sure the seconds are set to 00, or the extrinsic will throw an
 
 ### Scheduling a Future Transfer of Neumann Tokens
 
-![automation_transfer_217](../../assets/img/automation-transfer-217.png)
+![automation_native_transfer_217](../../assets/img/automation-native-transfer-217.png)
 
 1. Select the "automationTime" [extrinsic](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fneumann.api.onfinality.io%2Fpublic-ws#/extrinsics)
-2. Select the "scheduleTransferTask" function
+2. Select the "scheduleNativeTransferTask" function
 3. Set providedId as a unique identifier for the task (could be anything). Please do not reuse the same identifier. 
 4. Find a timeslot in the future in one of the [many unix timestamp converters](https://www.unixtimestamp.com/). For example, find a time 5 minutes in the future. 
 Note: Please make sure the seconds are set to 00, or the extrinsic will throw an error. We currently only support 2 tasks per minute.
