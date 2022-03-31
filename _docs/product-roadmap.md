@@ -17,7 +17,8 @@ tags: [develop]
 - Neumann Testnet Launch (Testnet)
   - Neumann is a parachain version of the forenamed “OAK Testnet” in the PolkadotJS App
 - Onboarding community collators (closed set) to the Neumann testnet
-- Event Registry (Event VM)
+- Event Registry (Event VM): development and testing of the core time-based event data structure
+- Missed events implementation: handling missed tasks for a given time slot
 - **Triggers:** time
 - **Actions:** sending an event, and wallet-to-wallet transaction for NEU
 
@@ -32,6 +33,7 @@ tags: [develop]
 ### Blockchain
 - [Turing Network Launch (Kusama Parachain)](https://oak.tech/turing/phases/)
 - Onboarding more collators to the Neumann & Turing Networks
+- Time specificity: crafting granularity in when a task is to be triggered and at what slippage
 - HRMP Channels to select partners
 - Private automated tasks pilot
 - **Triggers:** price, XCMP events
@@ -57,7 +59,7 @@ tags: [develop]
 
 ## 4Q2022
 ### Apps
-- DApplets Marketplace
+- DApplets Marketplace: an online marketplace where creators can submit automation DApps and consumers can opt to use them similar to (IFTTT)[https://ifttt.com/explore]
 
 ### Blockchain
 - OAK Network Launch
