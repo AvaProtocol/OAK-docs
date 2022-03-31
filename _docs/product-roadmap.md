@@ -8,37 +8,60 @@ tags: [develop]
 ## 4Q2021
 - Event Registry Proof of Concept
 
-## 1Q2022 - Turing Network Launch Prep (Canary)
+## 1Q2022
+### Apps
 - OAK Website Design Rebrand
 - Kusama crowdloan for Turing (TUR) Network parachain
-- Neumann Testnet Launch
+
+### Blockchain
+- Neumann Testnet Launch (Testnet)
   - Neumann is a parachain version of the forenamed “OAK Testnet” in the PolkadotJS App
-- Turing Network Launch
-  - Event Registry
-  - Triggers: time
-  - Actions: sending an event, and wallet-to-wallet transaction for NEU
+- Onboarding community collators (closed set) to the Neumann testnet
+- Event Registry (Event VM)
+- **Triggers:** time
+- **Actions:** sending an event, and wallet-to-wallet transaction for NEU
 
-## 2Q2022 - Price & Smart Contract Trigger
-- Kusama crowdloan for Turing (TUR) Network parachain
-- Turing Demo Apps
-- Turing Private tasks proof of concept
-- Wallet integration
-- Collators
-- Turing Network Features
-  - Private tasks
-  - Triggers: price, XCMP events, smart contracts
-  - Actions: cross-chain asset transfer, limit order, stop-loss orders, smart contracts
+## 2Q2022 
+### Apps
+- Blockchain SDKs for developers (JS)
+- Turing Automation DApps: transparency for the end-users' transactions
+- DEX integration with select partner
+- Yield farming integration with select partner (e.g. adjusting composable yield strategies based on personal risk profiles)
+- Wallet integration with select partner
 
-## 3Q2022 - OAK Network Launch (Mainnet)
-- Turing Private tasks pilot
-- Automation Dashboard DApp
+### Blockchain
+- [Turing Network Launch (Kusama Parachain)](https://oak.tech/turing/phases/)
+- Onboarding more collators to the Neumann & Turing Networks
+- HRMP Channels to select partners
+- Private automated tasks pilot
+- **Triggers:** price, XCMP events
+- **Actions:** recurring actions, cross-chain asset transfer, limit order, stop-loss orders
+
+## 3Q2022
+### Apps
+- Polkadot crowdloan app for OAK
+- Dollar cost average with select partners
+- Portfolio and other DApp integrations with additional partners for Turing
+
+### Blockchain
+- Turing Network is fully decentralized
+- EVM integration with select partner
+- Automation fees optimization
+- Insurance fees pilot
+- Refunding tasks pilot
+- Node infrastructure performance optimization
+- Security & technical audits
+- Customized triggers for consumers and developers
+- **Triggers:** smart contracts
+- **Actions:** smart contracts
 
 ## 4Q2022
-- Dapplets Marketplace
-- Private tasks on OAK
-- Fully decentralize Turing Network
-  - Enable governance
-  - Remove sudo
-- Network Features
-  - Triggers: external data feed (weather, etc.)
-  - Actions: IoT actions
+### Apps
+- DApplets Marketplace
+
+### Blockchain
+- OAK Network Launch
+- Customized triggers for consumers and developers
+- **Triggers:** external data feed (weather, etc.)
+- **Actions:** IoT actions
+
