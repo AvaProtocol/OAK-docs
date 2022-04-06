@@ -35,7 +35,7 @@ To support scheduling an action to be executed on one or more time triggers the 
 Scheduling a task will be done through an extrinsic.  The extrinsic will require a user to provide a list of Unix timestamps containing a minimum of 1 timestamp and maximum of 24.
 
 Scheduling of a task will consist of 3 main pieces within the blockchain code:
-1. Creating an instance of the task.  More information on task creation can be found here.
+1. Creating an instance of the task.
 2. Adding the hashed task to the Task Map.
 3. For each timestamp, inserting the task Id of the task into the Trigger Map.
 Additional validation will be needed for the time vector to remove any duplicate timestamps before creating the task structure.
@@ -43,7 +43,7 @@ Additional validation will be needed for the time vector to remove any duplicate
 There is always the possibility that one of the provided timestamps within the Trigger Map may be full.  In this case the extrinsic will fail.  To support this scenario, all interactions with RocksDB for task scheduling will be written as a transaction.  Allowing for rolling back any successful insertions into the Trigger Map before the point of failure.
 
 ### Running
-The process to run a task does not change except for the clean up for a task after it has fully executed.  More on the process of running a task can be found here.  A task is only considered fully executed after every trigger in the time vector has been triggered.  At this time the task can be removed from the Task Map.  To know if a task has been fully executed, each time a task is triggered the current trigger time should be compared with the last time in the sorted time vector.  If the current trigger time is equal to the last time in the vector then the task will not be triggered again and can be removed.
+The process to run a task does not change except for the clean up for a task after it has fully executed.  More on the process of running a task can be found [here](time-intervals.md).  A task is only considered fully executed after every trigger in the time vector has been triggered.  At this time the task can be removed from the Task Map.  To know if a task has been fully executed, each time a task is triggered the current trigger time should be compared with the last time in the sorted time vector.  If the current trigger time is equal to the last time in the vector then the task will not be triggered again and can be removed.
 
 ### Cancellation
 Canceling a task will be requested through an extrinsic.  The extrinsic will require the Id of the task to be canceled.  To cancel a task will require removing the task Id from all remaining time triggers in the Trigger Map.  This will be done by sorting the task’s `time` vector and traversing in reverse so as to read it in descending order, checking each timestamp in the Trigger Map and removing the task Id. The vector will continue to be traversed until a timestamp less than the time of the requested cancellation is reached.
