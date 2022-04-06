@@ -26,7 +26,7 @@ This TRD assumes the ability to schedule an action with a single time trigger ex
 
 ## Technical Implementation
 
-![action-limits](../assets/img/rfc/action-limits.png)
+![action-limits](../assets/img/rfc/recurring-data-model.png)
 
 ### Task Structure
 To support scheduling an action to be executed on one or more time triggers the task structure will need to be modified to contain a bounded vector of times as opposed to a single time.  Specifically within the task structure the following will be migrated from `time: u64` to `time: BoundedVec<u64, 24>`.  Initial implementation will be limited to a maximum of 24 timestamps. 
