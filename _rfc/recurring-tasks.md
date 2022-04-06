@@ -26,7 +26,6 @@ This TRD assumes the ability to schedule an action with a single time trigger ex
 
 ## Technical Implementation
 
-IMAGE????
 ![action-limits](../assets/img/rfc/action-limits.png)
 
 ### Task Structure
