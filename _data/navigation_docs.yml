@@ -5,6 +5,12 @@
   - product-roadmap
   - features
 
+- title: Node Operator Guide
+  docs:
+  - node-operator-requirements
+  - bootnode
+  - collator
+
 - title: Developer Guide
   docs:
   - developer-guide-overview

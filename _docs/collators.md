@@ -1,8 +1,8 @@
 ---
-title: Collator Requirements
+title: Collator Guide
 subtitle: This document covers the operating and token requirements of a collator
-author: charles
-tags: [collator]
+author: irsal
+tags: [infra]
 ---
 
 ## Minimum System Requirements

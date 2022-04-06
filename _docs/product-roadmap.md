@@ -59,7 +59,7 @@ tags: [develop]
 
 ## 4Q2022
 ### Apps
-- DApplets Marketplace: an online marketplace where creators can submit automation DApps and consumers can opt to use them similar to (IFTTT)[https://ifttt.com/explore]
+- DApplets Marketplace: an online marketplace where creators can submit automation DApps and consumers can opt to use them similar to [IFTTT](https://ifttt.com/explore)
 
 ### Blockchain
 - OAK Network Launch
