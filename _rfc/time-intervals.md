@@ -64,7 +64,7 @@ This implementation tries to address the following problems:
 2. All tasks handle “being missed” the same
 3. **Finding a time slot: is handled by providing the user with perfect information and allowing them to make the decision on their own.
 
-![recurring-data-model](../assets/img/rfc/recurring-data-model.png)
+![recurring-data-model](../assets/img/rfc/sorted-queues.png)
 
 
 #### API/extrinsics Changes
