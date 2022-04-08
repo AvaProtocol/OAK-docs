@@ -1,0 +1,52 @@
+
+# This workflow will build and push files to Amazon S3 bucket.
+# To use this workflow, you will need to complete the following set-up steps:
+# 1. Setup S3 bucket
+#    Replace the value of the `BUCKET_NAME` environment variable in the workflow below with your S3 bucket name.
+#    Replace the value of the `AWS_REGION` environment variable in the workflow below with your S3 bucket's region.
+# 2. Store an IAM user access key in GitHub Actions secrets named `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`.
+#    See the documentation for each action used below for the recommended IAM policies for this IAM user,
+#    and best practices on handling the access key credentials.
+
+name: Deploy to Amazon S3 production bucket
+
+# Triggered on commits to the main branch.
+on:
+  push:
+    branches:
+      - main
+
+env:
+  AWS_REGION: us-east-1                                        # set this to your preferred AWS region, e.g. us-west-1
+  BUCKET_NAME: docs.oak.tech
+
+permissions:
+  id-token: write # required to use OIDC authentication
+  contents: read # required to checkout the code from the repo
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install ruby
+        uses: ruby/setup-ruby@v1
+
+      - name: Export files
+        run: |
+          bundle install
+          jekyll build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_TO_ASSUME }}
+          role-duration-seconds: 900 # the ttl of the session, in seconds.
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Deploy files to S3
+        run: |
+          aws s3 sync --delete out/ s3://${{ env.BUCKET_NAME }}
