@@ -19,6 +19,7 @@ on:
 env:
   AWS_REGION: us-east-1                                        # set this to your preferred AWS region, e.g. us-west-1
   BUCKET_NAME: docs.oak.tech
+  CF_DISTRIBUTION_ID: E1AES8IDWU4SMA
 
 permissions:
   id-token: write # required to use OIDC authentication
@@ -50,3 +51,4 @@ jobs:
       - name: Deploy files to S3
         run: |
           aws s3 sync --delete _site/ s3://${{ env.BUCKET_NAME }}
+          aws cloudfront create-invalidation --path "/*" --distribution-id ${{ env.CF_DISTRIBUTION_ID }}
