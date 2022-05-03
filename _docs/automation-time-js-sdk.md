@@ -8,7 +8,7 @@ tags: [api, time, triggers, js, sdk]
 This is the documentation for the Javascript SDK for the Time Trigger blockchain APIs. You can find the SDK here: https://github.com/OAK-Foundation/OAK-JS-SDK.
 
 
-## Launched
+## SDK docs
 
 ### Schedule Tasks
 You can schedule Notify and Native Transfer tasks with the SDK. Timestamps are an array, which you can either provide on your own or generate with the Recurrer object in the JS SDK, outlined below.
@@ -209,9 +209,9 @@ This API allows you to cancel a scheduled task. In order to do this you must hav
  * Recurring timestamps is a feature that allows for users to schedule regularly
  * recurring tasks with a single blockchain extrinsic, rather than through multiple
  * extrinsic calls, as evidenced by the array of timestamps accepted in the Scheduler
- * class. This is currently only limited to 24 instances. These timstamps do not
+ * class. This is currently only limited to 24 instances. These timestamps do not
  * have to be evenly spaced. It can be any timestamps in the future, on the hour, and 
- * limited to up to 24 occurences per extrinsic call. 
+ * limited to up to 24 occurrences per extrinsic call. 
  * 
  * This utility class will help generate timestamps on more regular cadences:
  * - Hourly
@@ -374,3 +374,38 @@ export class Observer {
 }
 ```
 
+## Example
+This will be an example of how we create an hourly recurring call for 24 hours.
+
+We recommend that you create the extrinsic on the frontend and sign and send in the backend. The frontend provides easy access to the polkadot.js extension, which lets you sign the extrinsic without needing to store user-sensitive data.
+
+Meanwhile, on the backend, you can easily handle new websocket statuses and store errors as needed.
+
+### Frontend
+On the frontend, you can call the Recurrer class to create a set of valid timestamps and use the Scheduler class to create the extrinsic as a hex string and validate all of the extrinsic parameters. It's recommended that you don't necessarily send the extrinsic in the frontend, since sending the extrinsic opens up a websocket, for which you will not be able to record any of the results.
+
+NOTE: the below is just an example, but we do not recommend creating new instances of the Scheduler, Recurrer, etc classes on each invocation. It's probably best to start your service with the classes instantiated and then utilize those classes as needed on an ongoing basis.
+
+```javascript
+async function NEUNotify(account) {
+  await web3Enable('neumann-demo');
+  const injector = await web3FromAddress(account);
+  const scheduler = new Scheduler(oakConstants.OakChains.NEU)
+  const recurrer = new Recurrer()
+  const timestamps = recurrer.getHourlyRecurringTimestamps(Date.now(), 24)
+  const providedID = uuid.v4()
+  const hex = await scheduler.buildScheduleNotifyExtrinsic(account, providedID, timestamps, providedID, injector.signer)
+  return hex
+}
+```
+
+### Backend
+On the backend, you can use the Scheduler.sendExtrinsic() call to decode the hex string and send the extrinsic. Below would be an example of some code written in an API route that receives the extrinsic hexstring.
+
+NOTE: You don't have to put in a custom error handler, but it is recommended. There is a default error handler that logs the transaction status as well as any errors, but it does not have any level of persistence or storage to validate in the future that a specific transaction was finalized. 
+
+```javascript
+const customErrorHandler = (result) => {...}
+const backendScheduler = new Scheduler(oakConstants.OakChains.NEU)
+const txHash = await backendScheduler.sendExtrinsic(hex, customErrorHandler)
+```
