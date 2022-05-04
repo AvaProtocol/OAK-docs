@@ -5,7 +5,7 @@ author: justin
 tags: [api, time, triggers, js, sdk]
 ---
 
-This is the documentation for the Javascript SDK for the Time Trigger blockchain APIs. You can find the SDK here: https://github.com/OAK-Foundation/OAK-JS-SDK.
+This is the documentation for the Javascript SDK for the Time Trigger blockchain APIs. You can find the SDK [here](https://github.com/OAK-Foundation/OAK-JS-SDK).
 
 
 ## SDK docs
@@ -85,8 +85,13 @@ If the transaction hash was not saved for the user, it can be retreived through 
 
 ```javascript
 const scheduler = new Scheduler(oakConstants.OakChains.NEU)
-const txHash = await scheduler.getTaskID(address, providedID)
-const extrinsicHex = await scheduler.buildCancelTaskExtrinsic(account, txHash, injector.signer)
+// txHash should look like `0x{string}`
+const txHash = await scheduler.getTaskID(address, taskHash)
+const extrinsicHex = await scheduler.buildCancelTaskExtrinsic(
+  account,
+  txHash,
+  injector.signer
+)
 ```
 
 #### Sending an Extrinsic
@@ -98,7 +103,11 @@ A transaction hash should be returned as a result of sending the extrinsic.
 const customerErrorHandler = (result) => {...}
 const scheduler = new Scheduler(oakConstants.OakChains.NEU)
 const txHash = await scheduler.getTaskID(address, providedID)
-const extrinsicHex = await scheduler.buildCancelTaskExtrinsic(account, txHash, injector.signer)
+const extrinsicHex = await scheduler.buildCancelTaskExtrinsic(
+  account,
+  txHash,
+  injector.signer
+)
 
 await scheduler.sendExtrinsic(extrinsicHex, customErrorHandler)
 ```
@@ -137,7 +146,13 @@ const recurrer = new Recurrer()
 const recurrences = 5
 // output is a 5-item array of unix timestamps
 const timestamps = recurrer.getHourlyRecurringTimestamps(Date.now(), recurrences)
-const hex = await scheduler.buildScheduleNotifyExtrinsic(account, providedID, timestamps, message, injector.signer)
+const hex = await scheduler.buildScheduleNotifyExtrinsic(
+  account,
+  providedID,
+  timestamps,
+  message,
+  injector.signer
+)
 ```
 
 #### Daily Recurring Tasks
@@ -149,9 +164,19 @@ For example, if the start timestamp represents 5/1/2022 at 23:00:00 UTC, but inp
 const recurrer = new Recurrer()
 const recurrences = 5
 const hourOfDay = 12 // noon UTC
-// output is a 5-item array of unix timestamps
-const timestamps = recurrer.getDailyRecurringTimestamps(Date.now(), recurrences, hourOfDay)
-const hex = await scheduler.buildScheduleNotifyExtrinsic(account, providedID, timestamps, message, injector.signer)
+// timestamps output is a 5-item array of unix timestamps
+const timestamps = recurrer.getDailyRecurringTimestamps(
+  Date.now(),
+  recurrences,
+  hourOfDay
+)
+const hex = await scheduler.buildScheduleNotifyExtrinsic(
+  account,
+  providedID,
+  timestamps,
+  message,
+  injector.signer
+)
 ```
 
 #### Weekly Recurring Tasks
@@ -164,9 +189,20 @@ const recurrer = new Recurrer()
 const recurrences = 5
 const hourOfDay = 12 // noon UTC
 const dayOfWeek = 0 // Sunday
-// output is a 5-item array of unix timestamps
-const timestamps = recurrer.getWeeklyRecurringTimestamps(Date.now(), recurrences, hourOfDay, dayOfWeek)
-const hex = await scheduler.buildScheduleNotifyExtrinsic(account, providedID, timestamps, message, injector.signer)
+// timestamps output is a 5-item array of unix timestamps
+const timestamps = recurrer.getWeeklyRecurringTimestamps(
+  Date.now(),
+  recurrences,
+  hourOfDay,
+  dayOfWeek
+)
+const hex = await scheduler.buildScheduleNotifyExtrinsic(
+  account,
+  providedID,
+  timestamps,
+  message,
+  injector.signer
+)
 ```
 
 #### Monthly Recurring Tasks By Date
@@ -181,9 +217,20 @@ const recurrer = new Recurrer()
 const recurrences = 5
 const hourOfDay = 12 // noon UTC
 const dateOfMonth = 1 // first day of month
-// output is a 5-item array of unix timestamps
-const timestamps = recurrer.getMonthlyRecurringTimestampsByDate(Date.now(), recurrences, hourOfDay, dateOfMonth)
-const hex = await scheduler.buildScheduleNotifyExtrinsic(account, providedID, timestamps, message, injector.signer)
+// timestamps output is a 5-item array of unix timestamps
+const timestamps = recurrer.getMonthlyRecurringTimestampsByDate(
+  Date.now(),
+  recurrences,
+  hourOfDay,
+  dateOfMonth
+)
+const hex = await scheduler.buildScheduleNotifyExtrinsic(
+  account,
+  providedID,
+  timestamps,
+  message,
+  injector.signer
+)
 ```
 
 #### Monthly Recurring Tasks By Weekday
@@ -199,9 +246,21 @@ const recurrences = 5
 const hourOfDay = 12 // noon UTC
 const dayOfWeek = 0 // Sunday
 const weekOfMonth = 1 // first week of month
-// output is a 5-item array of unix timestamps
-const timestamps = recurrer.getMonthlyRecurringTimestampsByWeekday(Date.now(), recurrences, hourOfDay, dayOfWeek, weekOfMonth)
-const hex = await scheduler.buildScheduleNotifyExtrinsic(account, providedID, timestamps, message, injector.signer)
+// timestamps output is a 5-item array of unix timestamps
+const timestamps = recurrer.getMonthlyRecurringTimestampsByWeekday(
+  Date.now(),
+  recurrences,
+  hourOfDay,
+  dayOfWeek,
+  weekOfMonth
+)
+const hex = await scheduler.buildScheduleNotifyExtrinsic(
+  account,
+  providedID,
+  timestamps,
+  message,
+  injector.signer
+)
 ```
 
 ### Observe Chainstate
@@ -271,7 +330,8 @@ interface AutomationTask {
 
 ```javascript
 const observer = new Observer(oakConstants.OakChains.NEU)
-const txHash = "0xf43a77d7262e2fcdee1756f1796d4db7f4fc24183096533c9a8e826a3c29a551" // translates to Wed May 04 2022 04:00:00 GMT+0000
+// can get this txHash with Scheduler.getTaskID if not already saved
+const txHash = "0xf43a77d7262e2fcdee1756f1796d4db7f4fc24183096533c9a8e826a3c29a551"
 const scheduledTasks = await observer.getAutomationTimeTasks(txHash)
 ```
 
@@ -288,14 +348,25 @@ On the frontend, you can call the Recurrer class to create a set of valid timest
 NOTE: the below is just an example, but we do not recommend creating new instances of the Scheduler, Recurrer, etc classes on each invocation. It's probably best to start your service with the classes instantiated and then utilize those classes as needed on an ongoing basis.
 
 ```javascript
+/* In the example below, we are scheduling a single notification task
+ * that recurs 24 times on an hourly basis.
+ */
 async function NEUNotify(senderAddress) {
-  await web3Enable('neumann-demo');
+  await web3Enable('neumann-demo')
   const injector = await web3FromAddress(senderAddress);
   const scheduler = new Scheduler(oakConstants.OakChains.NEU)
   const recurrer = new Recurrer()
-  const timestamps = recurrer.getHourlyRecurringTimestamps(Date.now(), 24)
+  const recurrences = 24
+  const timestamps = recurrer.getHourlyRecurringTimestamps(Date.now(), recurrences)
+  // Recommended to save this providedID to retreive task in the future
   const providedID = uuid.v4()
-  const hex = await scheduler.buildScheduleNotifyExtrinsic(senderAddress, providedID, timestamps, receiverAddress, injector.signer)
+  const hex = await scheduler.buildScheduleNotifyExtrinsic(
+    senderAddress,
+    providedID,
+    timestamps,
+    receiverAddress,
+    injector.signer
+  )
   return hex
 }
 ```
