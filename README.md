@@ -19,11 +19,4 @@ To upload a Jekyll site to a AWS S3, run the build command and copy the contents
 jekyll build
 ``` 
 
-Currently this repo works with the following Ruby version:
-```bash
-➞  ruby -v
-
-ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [arm64-darwin21]
-```
-
 You can find more on [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
