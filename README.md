@@ -23,7 +23,7 @@ Currently this repo works with the following Ruby version:
 ```bash
 ➞  ruby -v
 
-ruby 2.6.3p62 (2019-04-16 revision 67580) [universal.arm64e-darwin20]
+ruby 3.1.2p20 (2022-04-12 revision 4491bb740a) [arm64-darwin21]
 ```
 
 You can find more on [Deployment Methods](https://jekyllrb.com/docs/deployment-methods/) page on Jekyll website.
