@@ -5,11 +5,12 @@
   - product-roadmap
   - features
 
-- title: Node Operator Guide
+- title: Collator Operation & Staking
   docs:
   - node-operator-requirements
-  - bootnode
+  # - bootnode
   - collator
+  - delegator
 
 - title: Developer Guide
   docs:
