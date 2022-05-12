@@ -9,7 +9,11 @@ ruby RUBY_VERSION
 #
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
-gem "jekyll", "3.6.3"
+gem "jekyll", "4.2.2"
+
+# Temp workaround to allow running jekyll with ruby 3
+#   See: https://github.com/jekyll/jekyll/issues/8523
+gem "webrick", "~> 1.7"
 
 # This is the default theme for new Jekyll sites. You may change this to anything you like.
 # gem "minima", "~> 2.0"
@@ -20,11 +24,10 @@ gem "jekyll", "3.6.3"
 
 # If you have any plugins, put them here!
 group :jekyll_plugins do
-   gem "jekyll-feed", "~> 0.6"
+   gem "jekyll-feed", "~> 0.16"
    gem 'jekyll-paginate', '~> 1.1'
    gem 'jekyll-seo-tag'
    gem 'jekyll-gist'
-   gem 'jekyll-livereload'
    gem 'jekyll-avatar'
 end
 
