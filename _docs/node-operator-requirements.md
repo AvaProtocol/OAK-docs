@@ -69,7 +69,7 @@ Please ensure that both the relay chain block number and parachain block number 
 While you're blocks are syncing, monitor the initialization, especially for the first few lines to ensure that you are pointing to the correct network. If you run into any issues, head over to the [OAK Discord](https://discord.gg/7W9UDvsbwh) for help.
 
 ### Step 8: Onboard your collator
-Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. ![Collator On-boarding](./collators.md)
+Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](./collators.md)
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ## Turing Staging Network - Rococo Testnet
@@ -114,7 +114,7 @@ If you're successful in connecting to the network and sending your Telemetry dat
 Please ensure that both the relay chain block number and parachain block number are up to the latest block number. The logs will indicate whether or not the nodes are fully synced.
 
 ### Step 8: Onboard your collator
-Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. ![Collator On-boarding](./collators.md)
+Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](./collators.md)
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ## OAK Network - Polkadot Parachain
