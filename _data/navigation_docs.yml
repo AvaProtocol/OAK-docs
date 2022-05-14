@@ -5,6 +5,10 @@
   - product-roadmap
   - features
 
+- title: Staking
+  docs:
+  - node-operator-requirements
+
 - title: Developer Guide
   docs:
   - developer-guide-overview
