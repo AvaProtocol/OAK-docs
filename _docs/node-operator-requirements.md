@@ -17,12 +17,11 @@ Bare metal over cloud, especially when costs are a consideration to the node ope
 Please sync a few days before your intended collation / block production candidacy to sync the nodes. Once your node is synced, you will find that the block numbers are up to date with both the relay chain and the parachain. Check out the [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d) site for more information.
 
 ## Ports
-@nikhil TODO
+
 Please ensure the following configuration for your node.
 - P2P port must be open to incoming traffic:
     - Source: Any
     - Destination: 30333, 30334 TCP
-- RPC port is closed down. (In other words, only you can do rpc calls.)
 
 ## Performance Incentives
 We will need to ensure that collators are economically incentivized to have the most optimal node infrastructure in place to do what’s best for the network at large. While initially we are not implementing slashing, however, it would be to the benefit of the collator to have the requirements above to ensure that they can receive their rewards and get chosen from the collator pool.
