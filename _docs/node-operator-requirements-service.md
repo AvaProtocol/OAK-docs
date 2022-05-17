@@ -110,7 +110,7 @@ If you're managing multiple nodes, you can also double check that the session ke
 ![onfinality-setup-9](../../assets/img/node-operator/onfinality-setup-9.png)
 
 ### Step 6: Onboard your collator
-Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](../../collators.md)
+Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](../collators)
 
 ### Step 7: Secure your endpoints
 Once you are on-boarded with your session keys, you need to close down your ports to secure your node by doing the following steps.
