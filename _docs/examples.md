@@ -37,11 +37,6 @@ You define the following parameters - and never sign over custody of your privat
 - **`tokenID` -** the identifier for the token that you are transferring
 - **`amount` -** the amount of the specified token that you are transferring
 
-**Open Questions**
-
-- Do we need parachain ID?
-- How do we identify the token / what is an example for this field?
-
 *This assumes a cross-parachain transaction. You may use `schedule_native_transfer_task` if you are scheduling a transfer of tokens that are native to the OAK Network (i.e. TUR or OAK).
 
 ### Dollar-Cost Averaging
@@ -62,13 +57,6 @@ You define the following parameters - and never sign over custody of your privat
 - **`function` -** the ‘swap’ function in the smart contract that you are executing
 - **`tokenID` -** the identifier for the token that you are transferring (e.g. aUSD identifier XYZ)
 - **`amount` -** the amount of the specified token that you are swapping
-
-**Open Questions**
-
-- Is there a way to scan the blockchain for existing contracts to understand how standardized specific functions are?
-- Do we need to verify that a contract and function pair are valid?
-- Do we need to verify that a given contract accepts the specified token?
-- How do we identify the token / what is an example for this field?
 
 *Coming soon. Subject to change and may differ for non-EVM chains. 
 
