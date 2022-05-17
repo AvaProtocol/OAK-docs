@@ -8,6 +8,7 @@
 - title: Staking
   docs:
   - node-operator-requirements
+  - node-operator-requirements-service
 
 - title: Developer Guide
   docs:
