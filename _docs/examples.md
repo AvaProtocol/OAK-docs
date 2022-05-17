@@ -11,7 +11,7 @@ tags: [develop]
 
 ---
 
-Prior to Substrate and the Oak Network, scheduling and automating blockchain transactions required off-chain cron jobs run on centralized servers or semi-on-chain “keepers”; both of which require sacrificing custody of assets and/or security of private keys.
+Prior to Substrate and the OAK Network, scheduling and automating blockchain transactions required off-chain cron jobs run on centralized servers or semi-on-chain “keepers”; both of which require sacrificing custody of assets and/or security of private keys.
 
 The OAK Network enables any dApp or parachain to trustlessly automate blockchain transactions by using a simple “event” trigger and “action” pair made possible by our event-driven execution kernel built on Substrate.
 
@@ -23,7 +23,7 @@ The Time Triggers API enables scheduling transactions at any pre-determined poin
 
 ### Scheduling payments
 
-Tl;dr - send ‘some asset’ to ‘some address’ at ‘some time(s)’
+tl;dr - send ‘some asset’ to ‘some address’ at ‘some time(s)’
 
 You can use OAK Network’s `schedule_transfer_task`* API to schedule repayment on DeFi loans, automatically process payroll (to DAO contributors, for example), pay for a subscription, or any other case where you want to schedule sending assets between accounts and between DotSama parachains.
 
@@ -46,7 +46,7 @@ You define the following parameters - and never sign over custody of your privat
 
 ### Dollar-Cost Averaging
 
-Tl;dr - swap ‘some token’ for ‘some other token’ at ‘some time(s)’
+tl;dr - swap ‘some token’ for ‘some other token’ at ‘some time(s)’
 
 Investors frequently benefit from frequently buying smaller amounts of a given asset over a period of time when compared to buying a large amount of an asset at a single point in time (“apeing in”). However, executing on this strategy in DeFi typically requires the investor to execute and sign the same transaction each time (e.g. to be at their computer at the same time every week to swap aUSD for TUR).
 
@@ -74,7 +74,7 @@ You define the following parameters - and never sign over custody of your privat
 
 ### Compounding Yield
 
-Tl;dr - automatically claim and deposit rewards to compound returns
+tl;dr - automatically claim and deposit rewards to compound returns
 
 DeFi protocols often incentivize deposits by offering rewards in the protocol’s native token, similar to how traditional banks offer interest (measured in APY) to incentivize fiat deposits. However, unlike the traditional banking system that systematically pays interest in fiat, token rewards typically remain locked in the smart contract until the user initiates a request to “claim rewards”. This results in capital inefficiencies as those tokens are not generating additional interest on top of the assets that were initially deposited. 
 
@@ -102,11 +102,4 @@ To prevent failed deposit transactions, we recommend including a time delay in b
 - **`tokenID` -** the identifier for the token that you are depositing (e.g. aUSD identifier XYZ)
 - **`amount` -** the amount of the specified token that you are depositing in the contract
 
-**Open Questions**
-
-- Can we claim and deposit in the same block?
-- How do they know how much to deposit (or how much was claimed)?
-
 *Coming soon. Subject to change and may differ for non-EVM chains. 
-
-[Price Triggers](https://www.notion.so/Price-Triggers-1d24a64b9fbc4c2d8a3c75f25cdbad3e)
