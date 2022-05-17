@@ -37,7 +37,7 @@ Create an [OnFinality account](https://app.onfinality.io/signup), and add a paym
 ### Step 2: Dedicated Node selection
 Once you've confirmed your account, you are ready to setup a node. Starting with navigating to the Dedicated Nodes section. 
 
-![onfinality-setup-1](../assets/img/node-operator/onfinality-setup-1.png)
+![onfinality-setup-1](../../assets/img/node-operator/onfinality-setup-1.png)
 
 Click on *Deploy New Node* Button, and this will direct you to a multi-step node infrastructure setup.
 
@@ -45,7 +45,7 @@ Click on *Deploy New Node* Button, and this will direct you to a multi-step node
 *Step 3.1: Search for the right network*
 If you'd like to setup Turing, for example, search for "Turing" on the top right search box. Then click on that network spec.
 
-![onfinality-setup-2](../assets/img/node-operator/onfinality-setup-2.png)
+![onfinality-setup-2](../../assets/img/node-operator/onfinality-setup-2.png)
 
 *Step 3.2: Node Configuration*
 The public network spec provided by the OAK Team has the recommended specs above, and is up to date. 
@@ -55,17 +55,17 @@ The public network spec provided by the OAK Team has the recommended specs above
 - Cloud provider & region: We recommend changing up deployment locations and cloud providers. However, certain configurations can allow for a faster node sync time with OnFinality's [Lighting Restore](https://documentation.onfinality.io/support/Lightning-Restore.1651703824.html) feature.
 - Node & storage size: We recommend sticking with the recommended size based on the public network spec.
 
-![onfinality-setup-3](../assets/img/node-operator/onfinality-setup-3.png)
+![onfinality-setup-3](../../assets/img/node-operator/onfinality-setup-3.png)
 
 *Step 3.3: Launch Configuration*
 The parachain and relay chain arguments should be up to date. However, it's always prudent to double check and cross-reference the respective chain specs. See relevant network sections above.
 
-![onfinality-setup-4](../assets/img/node-operator/onfinality-setup-4.png)
+![onfinality-setup-4](../../assets/img/node-operator/onfinality-setup-4.png)
 
 *Step 3.4: Confirmation*
 Double check all of the parameters, configuration and costs. Once you're ready, click "Deploy Node".
 
-![onfinality-setup-5](../assets/img/node-operator/onfinality-setup-5.png)
+![onfinality-setup-5](../../assets/img/node-operator/onfinality-setup-5.png)
 
 ### Step 4: Sync and observe your node
 Once your node is successfully deployed, you can find it in the "Dedicated Nodes" section of the site. Click on your node and observe the following:
@@ -76,20 +76,21 @@ Once your node is successfully deployed, you can find it in the "Dedicated Nodes
 
 Wait and observe in this step until your node is fully synced to the relay chain and parachain. It's important that BOTH are synced. You can cross-reference the respective network blocks on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/explorer).
 
-![onfinality-setup-6](../assets/img/node-operator/onfinality-setup-6.png)
+![onfinality-setup-6](../../assets/img/node-operator/onfinality-setup-6.png)
 
 ### Step 5: Rotate keys in your collator node
 Once your node is fully synced, the next step is to setup an association with the node and its peers. To do so you need to generate a session key. The steps are as follows.
 *Step 5.1: Grab the WSS address* 
 In the monitoring view of your node, click the "API Endpoints" button on the top right. You'll see a number of options. Stick with "RPC", and copy the "Websocket" address, starting with `wss://node-*`.
 
-![onfinality-setup-7](../assets/img/node-operator/onfinality-setup-7.png)
+![onfinality-setup-7](../../assets/img/node-operator/onfinality-setup-7.png)
+
 *Step 5.2: Navigate to PolkadotJS' RPC call* 
 Take the copied Websocket address, and navigate to PolkadotJS. For ease of reference, [here](https://polkadot.js.org/apps/?rpc=ws%3A%2F%2F127.0.0.1%3A9944#/rpc) is the local development default URL.
 
 Paste the `wss://node-*` address under "custom endpoint" input field, and hit Enter or click "Switch" on the top of the panel. 
 
-![onfinality-setup-8](../assets/img/node-operator/onfinality-setup-8.png)
+![onfinality-setup-8](../../assets/img/node-operator/onfinality-setup-8.png)
 
 *Step 5.3: RPC call to rotate keys* 
 Once your node's UI has loaded, then click on *Developer > RPC call* in the dropdown. Once your there your URL should look something like `https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Fnode-12345-*#/rpc`. Please follow the following steps:
@@ -98,7 +99,23 @@ Once your node's UI has loaded, then click on *Developer > RPC call* in the drop
 
 If you're managing multiple nodes, you can also double check that the session key is associated with the node by calling `author.hasSessionKeys()` and inserting the session key you believe it's associated with.
 
-![onfinality-setup-9](../assets/img/node-operator/onfinality-setup-9.png)
+![onfinality-setup-9](../../assets/img/node-operator/onfinality-setup-9.png)
 
 ### Step 6: Onboard your collator
-Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](./collators.md)
+Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](../../collators.md)
+
+### Step 7: Secure your endpoints
+Once you are on-boarded with your session keys, you need to close down your ports to secure your node by doing the following steps.
+
+*Step 7.1: Get to the Launch Configuration edit screen*
+Go back to the node view on the Onfinality UI. (Reminder: Dedicated Nodes > Click on your node)Then click on "Launch Configuration". After you see the command line parameters from Launch Configuration, click on Edit on the top right of the command line section. 
+
+![onfinality-setup-10](../../assets/img/node-operator/onfinality-setup-10.png)
+
+*Step 7.1: Disable ports*
+Make sure you disable and edit the following to ensure that only you can access your node. 
+- `--unsafe-ws-external` --> Toggle this OFF
+- `--unsafe-rpc-external` --> Toggle this OFF
+- Set `--rpc-methods` to `Safe`
+
+![onfinality-setup-11](../../assets/img/node-operator/onfinality-setup-11.png)
