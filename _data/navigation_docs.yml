@@ -9,6 +9,7 @@
   docs:
   - node-operator-requirements
   - node-operator-requirements-service
+  - collators
 
 - title: Developer Guide
   docs:
