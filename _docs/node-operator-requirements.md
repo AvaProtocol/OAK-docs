@@ -99,7 +99,6 @@ oak-collator \
   --execution=wasm \
   --state-cache-size=0 \
   -- \
-  --chain=kusama \
   --execution=wasm \
   --no-telemetry
 ```

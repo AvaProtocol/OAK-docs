@@ -23,15 +23,14 @@ If you have any questions or run into issues, head over to the [OAK Discord](htt
 - [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.testnet.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
 - [Telemetry](https://telemetry.polkadot.io/#list/0x42e75532d6809775cef4b9ca8e4bb49be2dc1e87c9ff1ba299e78481b5cb3047)
 
-| Field                                                          | Current Value                                                 |
-| -------------------------------------------------------------- | ------------------------------------------------------------- |
-| Minimum Collator Bond `const parachainStaking.minCandidateStk` | 1MM NEU or `10000000000000000` planck                         |
-| Number of selected candidates `parachainStaking.totalSelected` | 10                                                            |
-| Round Length                                                   | 25 blocks or ~5 minutes                                       |
-| Leave candidacy duration                                       | 2 rounds or ~4 hours                                          |
-| Revoke candidacy duration                                      | 2 rounds or ~4 hours                                          |
-| Reduction of self-delegation bond duration                     | 2 rounds or ~4 hours                                          |
-| Rewards payout                                                 | Time left to complete current round + 2 rounds or ~10 minutes |
+| Field                                                                                     | Current Value                                                 |
+| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
+| Minimum Collator Bond `const parachainStaking.minCandidateStk`                            | 1MM NEU or `10000000000000000` planck                         |
+| Number of selected candidates `parachainStaking.totalSelected`                            | 10                                                            |
+| Round Length `parachainStaking.round`                                                     | 25 blocks or ~5 minutes                                       |
+| Leave candidacy duration `const parachainStaking.leaveCandidatesDelay`                    | 2 rounds or ~10 minutes                                       |
+| Reduction of self-delegation bond duration `const parachainStaking.revokeDelegationDelay` | 2 rounds or ~10 minutes                                       |
+| Rewards payout `const parachainStaking.rewardPaymentDelay`                                | Time left to complete current round + 2 rounds or ~10 minutes |
 
 _Note: The source of truth for the values above is the chain state and constants, so please query that to double-check the values_
 
@@ -42,15 +41,14 @@ _Note: The source of truth for the values above is the chain state and constants
 - [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
 - [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
 
-| Field                                                          | Current Value                                              |
-| -------------------------------------------------------------- | ---------------------------------------------------------- |
-| Minimum Collator Bond `const parachainStaking.minCandidateStk` | 400K TUR or `4000000000000000` planck                      |
-| Number of selected candidates `parachainStaking.totalSelected` | 24                                                         |
-| Round Length                                                   | 600 blocks or ~2 hours                                     |
-| Leave candidacy duration                                       | 24 rounds or ~48 hours                                     |
-| Revoke candidacy duration                                      | 24 rounds or ~48 hours                                     |
-| Reduction of self-delegation bond duration                     | 24 rounds or ~48 hours                                     |
-| Rewards payout                                                 | Time left to complete current round + 2 rounds or ~4 hours |
+| Field                                                                                     | Current Value                                              |
+| ----------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
+| Minimum Collator Bond `const parachainStaking.minCandidateStk`                            | 400K TUR or `4000000000000000` planck                      |
+| Number of selected candidates `parachainStaking.totalSelected`                            | 24                                                         |
+| Round Length `parachainStaking.round`                                                     | 600 blocks or ~2 hours                                     |
+| Leave candidacy duration `const parachainStaking.leaveCandidatesDelay`                    | 24 rounds or ~48 hours                                     |
+| Reduction of self-delegation bond duration `const parachainStaking.revokeDelegationDelay` | 24 rounds or ~48 hours                                     |
+| Rewards payout `const parachainStaking.rewardPaymentDelay`                                | Time left to complete current round + 2 rounds or ~4 hours |
 
 _Note: The source of truth for the values above is the chain state and constants, so please query that to double-check the values_
 
