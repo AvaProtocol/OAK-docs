@@ -23,15 +23,15 @@ If you have any questions or run into issues, head over to the [OAK Discord](htt
 - [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.testnet.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
 - [Telemetry](https://telemetry.polkadot.io/#list/0x42e75532d6809775cef4b9ca8e4bb49be2dc1e87c9ff1ba299e78481b5cb3047)
 
-| Field                                                          | Current Value                                              |
-| -------------------------------------------------------------- | ---------------------------------------------------------- |
-| Minimum Collator Bond `const parachainStaking.minCandidateStk` | 1MM NEU or `10000000000000000` planck                      |
-| Number of selected candidates `parachainStaking.totalSelected` | 10                                                         |
-| Round Length                                                   | 25 blocks or ~5 minutes                                    |
-| Leave candidacy duration                                       | 2 rounds or ~4 hours                                       |
-| Revoke candidacy duration                                      | 2 rounds or ~4 hours                                       |
-| Reduction of self-delegation bond duration                     | 2 rounds or ~4 hours                                       |
-| Rewards payout                                                 | Time left to complete current round + 2 rounds or ~4 hours |
+| Field                                                          | Current Value                                                 |
+| -------------------------------------------------------------- | ------------------------------------------------------------- |
+| Minimum Collator Bond `const parachainStaking.minCandidateStk` | 1MM NEU or `10000000000000000` planck                         |
+| Number of selected candidates `parachainStaking.totalSelected` | 10                                                            |
+| Round Length                                                   | 25 blocks or ~5 minutes                                       |
+| Leave candidacy duration                                       | 2 rounds or ~4 hours                                          |
+| Revoke candidacy duration                                      | 2 rounds or ~4 hours                                          |
+| Reduction of self-delegation bond duration                     | 2 rounds or ~4 hours                                          |
+| Rewards payout                                                 | Time left to complete current round + 2 rounds or ~10 minutes |
 
 _Note: The source of truth for the values above is the chain state and constants, so please query that to double-check the values_
 
