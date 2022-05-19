@@ -72,10 +72,6 @@ While you're blocks are syncing, monitor the initialization, especially for the 
 Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](./collators.md)
 
 ----------------------------------------------------------------------------------------------------------------------------------
-## Turing Staging Network - Rococo Testnet
-Coming soon...to test XCMP.
-
-----------------------------------------------------------------------------------------------------------------------------------
 ## Turing Network - Kusama Parachain 
 ### Step 1: Grab the latest binary [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest)
 
@@ -114,7 +110,3 @@ Please ensure that both the relay chain block number and parachain block number 
 
 ### Step 8: Onboard your collator
 Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](../collators)
-
-----------------------------------------------------------------------------------------------------------------------------------
-## OAK Network - Polkadot Parachain
-This chain is not live yet. We target launch to be 4Q2022.
