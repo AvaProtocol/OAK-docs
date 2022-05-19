@@ -156,4 +156,4 @@ For example, in Turing, if you've joined as a collator candidate, and you are co
   length: 600
 }
 ```
-Becuase you opted to join sometime during this round, you can calculate the `FIRST_BLOCK_NUMBER_OF_ROUND + 1800`, which would mean you can expect to start producing blocks at `202,537`.
+Because you opted to join sometime during this round, you can calculate the `FIRST_BLOCK_NUMBER_OF_ROUND + 1800`, which would mean you can expect to start producing blocks at `202,537`.
