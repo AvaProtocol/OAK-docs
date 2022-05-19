@@ -1,0 +1,14 @@
+// Anchor style
+.anchorjs-link {
+  text-decoration: none;
+}
+
+.link-primary a.anchorjs-link:not(.lightbox):not(.uk-inline):not(.uk-link-muted):not(.uk-slidenav) {
+  border-bottom: none;
+}
+
+// Adjust anchor position
+:target {
+  padding-top: 100px;
+  margin-top: -100px;
+}
