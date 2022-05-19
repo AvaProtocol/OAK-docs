@@ -46,14 +46,14 @@ If you're using ubuntu, you can simply run the following:
 oak-collator \
   --name=YOUR_COLLATOR_NAME \
   --base-path=PATH_TO_DATA_DIR \
-  --chain=PATH_TO_CHAIN_SPEC_FILE \
+  --chain=neumann \
   --node-key=NODE_KEY \
   --collator \
   --force-authoring \
   --execution=wasm \
   --state-cache-size=0 \
   -- \
-  --chain=PATH_TO_RELAY_CHAIN_SPEC \
+  --chain=neumann-relay \
   --execution=wasm \
   --no-telemetry
 ```
@@ -92,14 +92,14 @@ Follow [these instructions](https://docs.substrate.io/v3/tools/subkey/#generatin
 oak-collator \
   --name=YOUR_COLLATOR_NAME \
   --base-path=PATH_TO_DATA_DIR \
-  --chain=PATH_TO_CHAIN_SPEC_FILE \
+  --chain=turing \
   --node-key=NODE_KEY \
   --collator \
   --force-authoring \
   --execution=wasm \
   --state-cache-size=0 \
   -- \
-  --chain=PATH_TO_RELAY_CHAIN_SPEC \
+  --chain=kusama \
   --execution=wasm \
   --no-telemetry
 ```
