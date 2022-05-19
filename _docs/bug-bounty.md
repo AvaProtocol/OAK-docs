@@ -44,11 +44,9 @@ The OAK team is eager to engage developers in building the OAK Network ecosystem
 4. Once your submission is accepted, we will contact you to collect your wallet information to issue the rewards.
 
 ## Scope
-Currently, the following OAK Network code repositories are in scope for bug bounty program:<br>
-<https://github.com/OAK-Foundation/OAK-blockchain/tree/oak-testnet/node/runtime><br>
-<https://github.com/OAK-Foundation/OAK-blockchain/tree/oak-testnet/pallets/quadratic-funding><br>
-<https://github.com/OAK-Foundation/OAK-blockchain/tree/oak-testnet/node/cli><br>
-<https://github.com/OAK-Foundation/quadratic-funding-webapp><br>
+Currently, the following OAK Network code repositories are in scope for bug bounty program:
+- [OAK's blockchain code](https://github.com/OAK-Foundation/OAK-blockchain)
+- [Parachain Staking Module](https://github.com/OAK-Foundation/moonbeam/tree/oak-staging/pallets/parachain-staking)
 
 ## Vulnerability Classifications
 **High-risk Vulnerabilities:** stealing and arbitrarily issuing or distributing tokens/disrupting consensus causes the blockchain to stop generating blocks/destroying on-chain governance and software upgrade processes/memory leaks and abnormal resource consumption.
