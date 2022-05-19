@@ -74,7 +74,7 @@ Navigate to our other documentation to use the PolkadotJS app to rotate keys. Na
 
 ### Step 2: Set your session keys
 
-**Step 2.1: Head over to the extrinsics tab in PolkadotJS**
+**Step 2.1: Head over to the Developer -> Chain state tab in PolkadotJS**
 Once you're in the extrinsics tab find `session.setKeys`.
 
 ![collator-setup-1](../../assets/img/collators/collator-setup-1.png)
@@ -88,19 +88,21 @@ Take the result from Step 1.1, in our example `0xfoo123bar`, input the following
 
 ### Step 3: Figure out the size of the candidate set
 
-As part of a later call, you will need to know how large the current candidate pool is. To compute that, you'll need to navigate to the chain state and call `parachainStaking.candidatePool`. This is returned as an array, you'll need to count the number of candidates.
+As part of a later call, you will need to know how large the current candidate pool is. To compute that, you'll need to navigate to **the Storage tab under Developer -> Chain state**,  and call `parachainStaking.candidatePool`. This is returned as an array, you'll need to count the number of candidates.
 
 ![collator-setup-2](../../assets/img/collators/collator-setup-2.png)
 
 ### Step 4: Join the candidate set
 
-In the extrinsics tab, navigate to `parachainStaking.joinCandidates`.
+In the **Developer -> Extrinsics** tab, navigate to `parachainStaking.joinCandidates`.
 
 Once you've set your session keys, use the same wallet from Step 2.2 to signup as a candidate. Make sure you have enough tokens for the bond amount, fees and existential deposit left over.
 
 - wallet: the same wallet you registered your session keys with from Step 2.2
 - bond: `4000000000000000` (this is the minimum bond from above; you can certainly bond more if you wish)
 - candidateCount: `6` (take the number from Step 2 and increment by 1; so from the example above 5+1 = 6)
+
+If the wallet selected doesn’t have more tokens than the minimum bond + a little transaction fee, the extrinsic call will fail and your wallet will not be added to the candidate pool.
 
 ![collator-setup-3](../../assets/img/collators/collator-setup-3.png)
 
