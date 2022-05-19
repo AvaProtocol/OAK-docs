@@ -143,3 +143,17 @@ If the call succeeds, you are removed from the pool of candidates so you cannot 
 ## FAQ
 
 For any questions or support, please reach out via [OAK Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>.
+
+### When will my collator start producing blocks?
+Collators start producing blocks 2 rounds after they become the `parachainStaking.selectedCandidates`.
+
+For example, in Turing, if you've joined as a collator candidate, and you are considered as one of the top delegated collators, you can call `parachainStaking.round` in the chain state, you will see the following output.
+
+```
+{
+  current: 88
+  first: 200,737
+  length: 600
+}
+```
+Because you opted to join sometime during this round, you can calculate the `FIRST_BLOCK_NUMBER_OF_ROUND + 1800`, which would mean you can expect to start producing blocks at `202,537`.
