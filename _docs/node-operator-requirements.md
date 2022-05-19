@@ -30,7 +30,7 @@ For now, the incentives are purely rewards based since we've vetted a closed set
 ## Neumann Network - Testnet
 *Neumann is a testnet, thus it will have maximal amount of chaos and will NOT have 100% uptime. This might be reset at a given time dur to a number of different reasons. If you are a stakeholder (collator, dev, consumer) of this chain, please expect occasional instability, thus the ability to re-deploy your system as needed. The OAK team will always re-instate the same wallet amounts as before a reset occurs, so users should expect that for any given chain reset. If a chain reset is required, it will be announced via Discord.*
 
-### Step 1: Grab the latest binary [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/tag/v1.2.8)
+### Step 1: Grab the latest binary [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/tag/v1.3.0)
 
 ### Step 2: Grab the latest parachain chain spec [here](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/neumann.json)
 
@@ -77,7 +77,7 @@ Coming soon...to test XCMP.
 
 ----------------------------------------------------------------------------------------------------------------------------------
 ## Turing Network - Kusama Parachain 
-### Step 1: Grab the latest binary [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/tag/v1.2.8)
+### Step 1: Grab the latest binary [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/tag/v1.3.0)
 
 ### Step 2: Grab the parachain chain spec [here](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/turing.json)
 

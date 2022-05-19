@@ -5,15 +5,20 @@
   icon: bolt
   doc: company-overview
 
-- title: What's coming soon
-  desc: Take a peek at our product roadmap for our L1 & L2 strategies
-  icon: cog
-  doc: product-roadmap
+- title: Staking
+  desc: Join as a collator or delegator and stake your tokens to earn rewards
+  icon: star
+  doc: collators
 
 - title: API References
   desc: Read our documentation for OAK APIs and SDKs
   icon: code
   doc: api-overview
+
+- title: What's coming soon
+  desc: Take a peek at our product roadmap for our L1 & L2 strategies
+  icon: cog
+  doc: product-roadmap
 
 - title: Resources
   desc: Dive into helpful resources such as white papers, glossary, community and more
