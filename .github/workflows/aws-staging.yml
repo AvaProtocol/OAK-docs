@@ -48,4 +48,4 @@ jobs:
 
       - name: Deploy files to S3
         run: |
-          aws s3 sync --delete _site/ s3://${{ env.BUCKET_NAME }}
+          aws s3 sync --delete --exclude "rust/*" _site/ s3://${{ env.BUCKET_NAME }}
