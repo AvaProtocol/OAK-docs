@@ -37,6 +37,7 @@ You may not have a need for all of these resources, but they can be useful to cr
 - [Docker image repository](https://hub.docker.com/repository/docker/oaknetwork/neumann)
 - [Neumann Network parachain chain spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/neumann.json)
 - [OAK-hosted-relay chain spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/neumann-rococo-testnet.json)
+- [Telemetry](https://telemetry.polkadot.io/#list/0x42e75532d6809775cef4b9ca8e4bb49be2dc1e87c9ff1ba299e78481b5cb3047)
 
 ### Turing Network - Kusama Parachain
 The Turing Network is live on Kusama. If you're interested in collating, please reach out via [OAK Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>. You will need to meet the minimum bond found in [the collator on-boarding page](../collators/#turing-network---kusama-parachain).
@@ -45,6 +46,7 @@ The Turing Network is live on Kusama. If you're interested in collating, please 
 - [Docker image repository](https://hub.docker.com/repository/docker/oaknetwork/turing)
 - [Turing Network parachain chain spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/turing.json)
 - [Kusama chain spec](https://github.com/paritytech/polkadot/blob/master/node/service/res/kusama.json)
+- [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
 
 ## How to setup your node
 
@@ -78,7 +80,7 @@ cargo build --release --features turing-node
 #### Option 3: Grab the latest image from Docker
 *Note regarding Docker: while we do support Docker images, we generally do not recommend this option unless you're testing. Docker builds are less performant when running nodes than using the binary paths above.*
 
-If you choose to run the collator via Docker, you can find the Docker repository linked in the helpful resources above. You can grab the latest image (tagged `latest`). For example, for the v1.3.0 version of the image on the Neummann network, you can run the following.
+If you choose to run the collator via Docker, you can find the Docker repository linked in the helpful resources above. You can grab the latest image (tagged `latest`), or the specific version. Create a volume for your data and check that the volume exists by inspecting. The following commands help you to do so.
 
 ```
 docker pull oaknetwork/neumann:1.3.0
@@ -168,11 +170,13 @@ docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data oak
 ```
 
 ### Step 4: Check that your node is in the Telemetry list and is connected to the network
-If you're successful in connecting to the network and sending your Telemetry data, you can see your node's name (`YOUR_COLLATOR_NAME`) on [this list](https://telemetry.polkadot.io/#list/0x42e75532d6809775cef4b9ca8e4bb49be2dc1e87c9ff1ba299e78481b5cb3047).
+If you're successful in connecting to the network and sending your Telemetry data, you can see your node's name (`YOUR_COLLATOR_NAME`) on either Telemetry dashboards.
+- [Neumann Network](https://telemetry.polkadot.io/#list/0x42e75532d6809775cef4b9ca8e4bb49be2dc1e87c9ff1ba299e78481b5cb3047)
+- [Turing Network](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
 
 ### Step 5: Sync your node
 Please ensure that both the relay chain block number and parachain block number are up to the latest block number. The logs will indicate whether or not the nodes are fully synced.
 While you're blocks are syncing, monitor the initialization, especially for the first few lines to ensure that you are pointing to the correct network. If you run into any issues, head over to the [OAK Discord](https://discord.gg/7W9UDvsbwh) for help.
 
 ### Step 6: Onboard your collator
-Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](./collators.md)
+Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](../collators)
