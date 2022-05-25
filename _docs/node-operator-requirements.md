@@ -53,13 +53,15 @@ The Turing Network is live on Kusama. If you're interested in collating, please 
 ### Step 1: Get your binary ready
 
 #### Option 1: Grab a compiled binary from OAK's Github
-If you are using Ubuntu, you can run the binary compiled by OAK that can be found in a zip [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest). You'll use this to run your collator on your node. So copy this over to your node. For example, for the v1.3.0 binary, you can run the following command on your node.
+If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK that can be found in a zip [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest). You'll use this to run your collator on your node. To acquire a copy of this via command line, use the commands below.
 
 ```
-wget https://github.com/OAK-Foundation/OAK-blockchain/releases/download/v1.3.0/turing-v1.3.0.zip
-unzip turing-v1.3.0.zip
+chain=turing
+latest_url=$(curl -Lsf -w %{url_effective} https://github.com/OAK-Foundation/OAK-blockchain/releases/latest/download/)
+version=${latest_url##*/}
+wget https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/${chain}-${version}.zip
+unzip ${chain}-${version}.zip
 ```
-We recommend using [Systemd](https://systemd.io/) as a service manager, however, however you can simply run the binary in your Linux box.
 
 #### Option 2: Compile the binary
 If you are using another machine, or are struggling with errors from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/OAK-Foundation/OAK-blockchain#install-oak-blockchain). For example, for the v1.3.0 binary, you can run the following command on your node.
