@@ -9,8 +9,9 @@ tags: [dpos, collators]
 
 Before you start producing blocks and earning rewards as a collator, you must first setup your node. Head over to the following pages for a tutorial on the node setup:
 
-1. [Experienced Node Operators](../node-operator-requirements)
-2. [Using our partner services](../node-operator-requirements-service)
+1. [Experienced Node Operators setup for Turing Network](../node-operator-requirements-turing)
+2. [Experienced Node Operators setup for Neumann Network](../node-operator-requirements-neumann)
+3. [Using our partner services](../node-operator-requirements-service)
 
 If you have any questions or run into issues, head over to the [OAK Discord](https://discord.gg/7W9UDvsbwh) for help.
 
