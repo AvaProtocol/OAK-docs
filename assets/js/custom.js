@@ -95,3 +95,61 @@
     run();
   };
 })();
+
+(function() {
+  const createCopiedIcon = () => {
+    const icon = document.createElement("span");
+    icon.innerHTML = 'copied!';
+    icon.setAttribute('style', 'padding-left: 10px; font-size: 9px; color: green; cursor: default;');
+    icon.style.verticalAlign = 'middle';
+    return icon;
+  };
+
+  const run = () => {
+    const codeBlocks = document.querySelectorAll('pre.highlight');
+    if (!codeBlocks) {
+      return;
+    }
+
+    codeBlocks.forEach(function (codeBlock) {
+      const iconHtml = '<svg style="width:20px; height:20px; cursor: pointer;" viewBox="0 0 24 24"> \
+          <path fill="currentColor"d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" /> \
+        </svg>';
+
+      const copiedIcon = createCopiedIcon();
+
+      const copyWrapper = document.createElement('div');
+      copyWrapper.className = 'copy-code-wrapper';
+      codeBlock.append(copyWrapper);
+
+      const copyButton = document.createElement('div');
+      copyButton.className = 'copy-code-button';
+      copyButton.type = 'button';
+      copyButton.ariaLabel = 'Copy code to clipboard';
+      copyButton.innerHTML = iconHtml;
+      copyWrapper.append(copyButton);
+
+      copyButton.addEventListener('click', function () {
+        try {
+          const code = codeBlock.querySelector('code').innerText.trim();
+          window.navigator.clipboard.writeText(code);
+        } catch (error) {}
+
+        copyWrapper.innerHTML = null;
+        copyWrapper.append(copiedIcon);
+
+        setTimeout(function () {
+          copyWrapper.innerHTML = null;
+          copyWrapper.append(copyButton);
+        }, 1000);
+      });
+    });
+  }
+
+  // Executed when the page is loaded.
+  const onload = window.onload || function() {};
+  window.onload = () => {
+    onload();
+    run();
+  };
+})();

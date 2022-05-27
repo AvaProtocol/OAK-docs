@@ -2,3 +2,30 @@
   padding-top: 100px;
   margin-top: -100px;
 }
+
+pre.highlight .copy-code-button {
+  opacity: 0;
+}
+
+pre.highlight:hover .copy-code-button {
+  opacity: 1;
+}
+
+pre.highlight .copy-code-button:active,
+pre.highlight .copy-code-button:focus {
+  opacity: 1;
+}
+
+pre.highlight {
+  position: relative;
+}
+
+.copy-code-wrapper {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.copy-code-button {
+  color: #777;
+}
