@@ -17,11 +17,11 @@ Please sync a few days before your intended collation / block production candida
 
 ----------------------------------------------------------------------------------------------------------------------------------
 
-## Neumann Network - Testnet
-*Neumann is a testnet, thus it will have maximal amount of chaos and will NOT have 100% uptime. This might be reset at a given time due to a number of different reasons. If you are a stakeholder (collator, dev, consumer) of this chain, please expect occassional instability, thus the ability to re-deploy your system as needed. The OAK team will always re-instate the same wallet amounts as before a reset occurs, so users should expect that for any given chain reset. If a chain reset is required, it will be announced via Discord.*
+## Turing Staging Network - Testnet
+*Turing Staging is a testnet, thus it will have maximal amount of chaos and will NOT have 100% uptime. This might be reset at a given time due to a number of different reasons. If you are a stakeholder (collator, dev, consumer) of this chain, please expect occassional instability, thus the ability to re-deploy your system as needed. The OAK team will always re-instate the same wallet amounts as before a reset occurs, so users should expect that for any given chain reset. If a chain reset is required, it will be announced via Discord.*
 
-- [Neumann Chain Spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/neumann.json)
-- [OAK-hosted Rococo Chain Spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/neumann-rococo-testnet.json)
+- [Turing Staging Chain Spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/turing-staging.json)
+- [Rococo Chain Spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/resources/rococo.json)
 
 ## Turing Network
 - [Turing Chain Spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/turing.json)
