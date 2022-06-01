@@ -49,6 +49,9 @@ authors:
       name:         Ryan Huttman
       title:        Lead Engineer    
       avatar:       avatar-ryan.png
+    andrew:
+      name:         Andrew Tomaka
+      title:        Software Engineer
 
 # Social icons displayed in footer
 social:

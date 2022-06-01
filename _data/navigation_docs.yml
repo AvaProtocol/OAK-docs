@@ -9,6 +9,7 @@
   docs:
   - node-operator-requirements-turing
   - node-operator-requirements-service
+  - turing-as-a-service
   - collators
 
 - title: Developer Guide
@@ -32,7 +33,7 @@
   - pallets
   - pallet-development
   - bug-bounty
-  
+
 
 - title: Engage
   docs:
