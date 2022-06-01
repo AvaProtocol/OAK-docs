@@ -5,11 +5,6 @@ author: andrew
 tags: [infra]
 ---
 
-# Running a Turing node as a service
-
-Setting up your Turing collator node as a service allows the operating system to
-keep your service running.
-
 ## Preparation
 
 To prepare for setting up a systemd service for the OAK binary, you'll need the
