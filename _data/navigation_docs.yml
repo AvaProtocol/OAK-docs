@@ -7,10 +7,10 @@
 
 - title: Staking
   docs:
-  - node-operator-requirements-turing
-  - node-operator-requirements-service
-  - turing-as-a-service
   - collators
+  - setup-collator-node
+  - setup-collator-node-partner
+  - run-node-service
 
 - title: Developer Guide
   docs:

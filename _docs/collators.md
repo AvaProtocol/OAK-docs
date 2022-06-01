@@ -1,39 +1,20 @@
 ---
-title: Collator Guide
+title: Collator Overview
 subtitle: This document covers the operating and token requirements of a collator
 author: irsal
-tags: [dpos, collators]
+tags: [dpos, collator]
 ---
 
 ## Pre-requisites to start producing blocks
 
 Before you start producing blocks and earning rewards as a collator, you must first setup your node. Head over to the following pages for a tutorial on the node setup:
 
-1. [Experienced Node Operators setup for Turing Network](../node-operator-requirements-turing)
-2. [Experienced Node Operators setup for Turing Staging Network]()
-3. [Using our partner services](../node-operator-requirements-service)
+1. [Experienced Node Operators setup for Turing Network](../setup-collator-node)
+2. [Using our partner services](../setup-collator-node-partner)
 
 If you have any questions or run into issues, head over to the [OAK Discord](https://discord.gg/7W9UDvsbwh) for help.
 
 ## Network Specific Information
-
-### Turing Staging Network - Testnet
-
-- [PolkadotJS Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing-staging.oak.tech#/extrinsics) - use this to execute post calls or functions (e.g. signing up to be a collator)
-- [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing-staging.oak.tech#/chainstate) - use this to query fungible storage items (e.g. the number of selected candidates)
-- [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing-staging.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
-- [Telemetry](https://telemetry.polkadot.io/#list/0x42e75532d6809775cef4b9ca8e4bb49be2dc1e87c9ff1ba299e78481b5cb3047)
-
-| Field                                                                                     | Current Value                                                 |
-| ----------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| Minimum Collator Bond `const parachainStaking.minCandidateStk`                            | 1MM NEU or `10000000000000000` planck                         |
-| Number of selected candidates `parachainStaking.totalSelected`                            | 10                                                            |
-| Round Length `parachainStaking.round`                                                     | 25 blocks or ~5 minutes                                       |
-| Leave candidacy duration `const parachainStaking.leaveCandidatesDelay`                    | 2 rounds or ~10 minutes                                       |
-| Reduction of self-delegation bond duration `const parachainStaking.revokeDelegationDelay` | 2 rounds or ~10 minutes                                       |
-| Rewards payout `const parachainStaking.rewardPaymentDelay`                                | Time left to complete current round + 2 rounds or ~10 minutes |
-
-_Note: The source of truth for the values above is the chain state and constants, so please query that to double-check the values_
 
 ### Turing Network - Kusama Parachain
 

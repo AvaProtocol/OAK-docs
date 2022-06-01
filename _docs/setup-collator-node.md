@@ -1,8 +1,8 @@
 ---
-title: Turing Network Node Operator Requirements
+title: Setup a collator node
 subtitle: Technical infrastructure requirements to run your node
 author: irsal
-tags: [infra]
+tags: [infra, collator]
 ---
 
 ## Node Infrastructure Requirements
@@ -29,6 +29,8 @@ For now, the incentives are purely rewards based since we've vetted a closed set
 
 ## Helpful Resources
 You may not have a need for all of these resources, but they can be useful to cross-reference or for debugging.
+
+Please read over using [how to use a service](../run-node-service) to run your node. 
 
 ### Turing Network - Kusama Parachain
 The Turing Network is live on Kusama. If you're interested in collating, please reach out via [OAK Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>. You will need to meet the minimum bond found in [the collator on-boarding page](../collators/#turing-network---kusama-parachain).
