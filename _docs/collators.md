@@ -10,18 +10,18 @@ tags: [dpos, collators]
 Before you start producing blocks and earning rewards as a collator, you must first setup your node. Head over to the following pages for a tutorial on the node setup:
 
 1. [Experienced Node Operators setup for Turing Network](../node-operator-requirements-turing)
-2. [Experienced Node Operators setup for Neumann Network](../node-operator-requirements-neumann)
+2. [Experienced Node Operators setup for Turing Staging Network]()
 3. [Using our partner services](../node-operator-requirements-service)
 
 If you have any questions or run into issues, head over to the [OAK Discord](https://discord.gg/7W9UDvsbwh) for help.
 
 ## Network Specific Information
 
-### Neumann Network - Testnet
+### Turing Staging Network - Testnet
 
-- [PolkadotJS Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.testnet.oak.tech#/extrinsics) - use this to execute post calls or functions (e.g. signing up to be a collator)
-- [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.testnet.oak.tech#/chainstate) - use this to query fungible storage items (e.g. the number of selected candidates)
-- [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.testnet.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
+- [PolkadotJS Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing-staging.oak.tech#/extrinsics) - use this to execute post calls or functions (e.g. signing up to be a collator)
+- [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing-staging.oak.tech#/chainstate) - use this to query fungible storage items (e.g. the number of selected candidates)
+- [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing-staging.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
 - [Telemetry](https://telemetry.polkadot.io/#list/0x42e75532d6809775cef4b9ca8e4bb49be2dc1e87c9ff1ba299e78481b5cb3047)
 
 | Field                                                                                     | Current Value                                                 |

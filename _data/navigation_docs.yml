@@ -8,7 +8,6 @@
 - title: Staking
   docs:
   - node-operator-requirements-turing
-  - node-operator-requirements-neumann
   - node-operator-requirements-service
   - collators
 
@@ -29,7 +28,7 @@
 - title: Contribute
   docs:
   - token-faucet
-  - neumann-testnet
+  - turing-staging-testnet
   - pallets
   - pallet-development
   - bug-bounty
