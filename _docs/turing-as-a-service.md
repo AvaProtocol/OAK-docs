@@ -1,3 +1,10 @@
+---
+title: Running a Turing node as a service
+subtitle: Setting up systemd for your collator
+author: andrew
+tags: [infra]
+---
+
 # Running a Turing node as a service
 
 Setting up your Turing collator node as a service allows the operating system to
@@ -8,18 +15,12 @@ keep your service running.
 To prepare for setting up a systemd service for the OAK binary, you'll need the
 following information:
 
-1. `INSTALLATION_DIR`
-    * Directory where downloaded the `oak-collator` binary
-2. `NODE_NAME`
-    * Custom identifier for your node
-3. `DATA_DIR`
-    * Directory where you would like to store OAK blockchain data
-4. `NODE_KEY`
-    * Key for running your collator
-5. `USER`
-    * User that the service should run as
-6. `GROUP`
-    * Group that the service should run as
+1. `INSTALLATION_DIR`: Directory where downloaded the `oak-collator` binary
+2. `NODE_NAME`: Custom identifier for your node
+3. `DATA_DIR`: Directory where you would like to store OAK blockchain data
+4. `NODE_KEY`: Key for running your collator
+5. `USER`: User that the service should run as
+6. `GROUP`: Group that the service should run as
 
 ## Installation
 
