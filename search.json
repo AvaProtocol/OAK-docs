@@ -9,7 +9,7 @@ layout: null
       "tags"     : "{{ doc.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ doc.url }}",
       "date"     : "{{ doc.date }}",
-      "body"     : "{{ page.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' | replace: '	', '    ' }}"
+      "content"  : "{{ doc.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' | replace: '	', '    ' }}"
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
