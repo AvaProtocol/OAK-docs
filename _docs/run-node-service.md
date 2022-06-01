@@ -1,13 +1,13 @@
 ---
-title: Running a Turing node as a service
+title: Running a Turing node using a service
 subtitle: Setting up systemd for your collator
 author: andrew
-tags: [infra]
+tags: [infra, collator]
 ---
 
 ## Preparation
 
-To prepare for setting up a systemd service for the OAK binary, you'll need the
+To prepare for setting up a `systemd` service for the OAK binary, you'll need the
 following information:
 
 1. `INSTALLATION_DIR`: Directory where downloaded the `oak-collator` binary

@@ -1,8 +1,8 @@
 ---
-title: Node Operator Requirements via partner services
+title: Setup a collator node with partners
 subtitle: How to setup your node with one of our node infrastructure partner services
 author: irsal
-tags: [infra]
+tags: [infra, collator]
 ---
 
 ## Node Infrastructure Requirements
