@@ -31,7 +31,9 @@ After the extrinsic is confirmed, there will be a gray minus sign to the left of
 
 As shown above, there are currently two registrars.
 
-The fee of the first person (6Ah9LrGFyc4AT22dYUQTuSY8vxJkegZ5F5Udqx4eVJh8AJ6T) is 0, which means that he charges 0 tokens to do a judgement.
+The fee of the first registrar (6Ah9LrGFyc4AT22dYUQTuSY8vxJkegZ5F5Udqx4eVJh8AJ6T) is 0, which means that he charges 0 tokens to do a judgement.
+
+The token unit is `Planck`. 1 `TUR` = 10000000000 `Planck`.
 
 ### Request Judegement
 
@@ -40,7 +42,7 @@ Select “Developer” -> “Extrinsics”, and use your account to send a `iden
 ![request-judgement](../../assets/img/identity/request-judgement.png)
 
 - regIndex: The index of registrars.
-- maxFee: You need to provide a fee higher than registrar.
+- maxFee: You need to provide a fee in `Planck` higher than registrar.
 
 ## Asks registrar to approve judgement
 
