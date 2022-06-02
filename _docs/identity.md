@@ -11,7 +11,7 @@ tags: [identity, registrar]
 
 ## Set Identity
 
-On polkadot.js apps page, select the “Accounts” tab and select “Set on-chain identity” with your account as shown below.
+On [polkadot.js apps](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/) page, select the “Accounts” tab and select “Set on-chain identity” with your account as shown below.
 
 ![set-on-chain-identity](../../assets/img/identity/set-on-chain-identity.png)
 
