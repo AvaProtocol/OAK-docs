@@ -8,7 +8,8 @@ layout: null
       "category" : "{{ doc.category }}",
       "tags"     : "{{ doc.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ doc.url }}",
-      "date"     : "{{ doc.date }}"
+      "date"     : "{{ doc.date }}",
+      "content"  : "{{ doc.content | strip_html | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' | replace: '	', '    ' }}"
     } {% unless forloop.last %},{% endunless %}
   {% endfor %}
 ]
