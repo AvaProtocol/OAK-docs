@@ -25,7 +25,7 @@ Before starting to stake tokens, it is important to retrieve the list of collato
 1. Click on Chain State > Storage
 1. Query `parachainStaking.candidatePool`. 
 
-![candidate-pool](../assets/img/staking-delegation/candidate-pool.png)
+![candidate-pool](../../assets/img/staking-delegation/candidate-pool.png)
 
 As shown above, there are currently two collator candidates in the network.
 
@@ -33,7 +33,7 @@ As shown above, there are currently two collator candidates in the network.
 
 Query `parachainStaking.delegatorState` by your account.
 
-![delegator-state](../assets/img/staking-delegation/delegator-state.png)
+![delegator-state](../../assets/img/staking-delegation/delegator-state.png)
 
 As shown above, there are currently **`1` delegation** in the account. **Remember this `delegationCount`**, we will use it in the process below.
 
@@ -46,7 +46,7 @@ Therefore, in the following process, we will not operate on this candidate. So I
 
 You need to get the candidateInfo, which will contain the delegator count, as you'll need to submit this parameter in a later transaction. To retrieve the parameter, make sure you're still on the Chain State tab of the Developer page, and query `parachainStaking.candidateInfo` by candidate account. 
 
-![candidate-info](../assets/img/staking-delegation/candidate-info.png)
+![candidate-info](../../assets/img/staking-delegation/candidate-info.png)
 
 **Remember the `candidateDelegationCount` value of this candidate**, we will use it in the next section.
 
@@ -54,7 +54,7 @@ You need to get the candidateInfo, which will contain the delegator count, as yo
 
 Currently, everything related to staking needs to be accessed via the Extrinsics menu, under the Developer tab. To delegate a candidate, provide the following information:
 
-![delegate](../assets/img/staking-delegation/delegate.png)
+![delegate](../../assets/img/staking-delegation/delegate.png)
 
 - amount: Amounts are in `Planck`. 1 `TUR` = 10000000000 `Planck`. 
 
@@ -68,7 +68,7 @@ Currently, everything related to staking needs to be accessed via the Extrinsics
 
 To delegate a candidate, send `parachainStaking.scheduleRevokeDelegation` extrinsic by the following information:
 
-![schedule-revoke-delegation](../assets/img/staking-delegation/schedule-revoke-delegation.png)
+![schedule-revoke-delegation](../../assets/img/staking-delegation/schedule-revoke-delegation.png)
 
 Once you have scheduled an exit delay(24 rounds * 600 block, 12 seconds per block in current Turing Network), you must wait an exit delay before you can then execute it.
 
@@ -80,7 +80,7 @@ In summary, delegators will earn rewards based on their stake of the total deleg
 
 You can view the delegated amount and the change in the balance due to each round of staking rewards on the Accounts page.
 
-![accounts](../assets/img/staking-delegation/accounts.png)
+![accounts](../../assets/img/staking-delegation/accounts.png)
 
 # Risks
 
