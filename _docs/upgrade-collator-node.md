@@ -11,10 +11,10 @@ The steps below should only cause 3-5 minutes of downtime for your node, if done
 
 ## How to upgrade your node
 
-### Step X: Get to your node
+### Step 1: Get to your node
 SSH to your target node, and make sure it's functioning properly by vetting Telemetry, and your monitoring/dashboards.
 
-### Step X: Get the new binary ready
+### Step 2: Get the new binary ready
 
 #### Option 1: Grab a compiled binary from OAK's Github
 If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK that can be found in a zip [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest). You'll use this to run your collator on your node. To acquire a copy of this via command line, use the commands below.
@@ -52,7 +52,7 @@ docker volume create turing-data
 docker volume inspect turing-data
 ```
 
-### Step X: Replace your old binary
+### Step 3: Replace your old binary
 
 #### Options 1 & 2
 ```bash
@@ -69,7 +69,7 @@ unzip -o /tmp/$chain-$version.zip -d PATH_TO_DATA_DIR
 docker pull oaknetwork/turing:1.4.0
 ```
 
-### Step X: Restart your service
+### Step 4: Restart your service
 
 #### Options 1 & 2
 Restart the `oak-collator` service
@@ -96,3 +96,6 @@ oaknetwork/turing:1.4.0 \
   --execution=wasm \
   --no-telemetry
 ```
+
+### Step 5: Monitor your node
+Please make sure to monitor your node for a few minutes to ensure that it continues to produce blocks.

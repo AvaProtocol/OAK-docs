@@ -5,30 +5,58 @@ author: charles
 tags: [delegator]
 ---
 
-## Risks
-*Holders of TUR tokens should perform careful due diligence on collators before delegating. Being listed as a collator is not an endorsement or recommendation from the Turing Network, or OAK Foundation. Neither the Turing Network, nor has OAK Foundation vetted the list collators and assumes no responsibility with regard to the selection, performance, security, accuracy, or use of any third-party offerings. You alone are responsible for doing your own diligence to understand the applicable fees and all risks present, including actively monitoring the activity of your collators.*
+**Important disclaimer about risks**
 
-*You agree and understand that neither the Turing Network, nor OAK Foundation guarantees that you will receive staking rewards and any applicable percentage provided (i) is an estimate only and not guaranteed, (ii) may change at any time and (iii) may be more or less than the actual staking rewards you receive. The OAK Foundation makes no representations as to the monetary value of any rewards at any time.*
+_Holders of TUR tokens should perform careful due diligence on collators before delegating. Being listed as a collator is not an endorsement or recommendation from the Turing Network, or OAK Foundation. Neither the Turing Network, nor has OAK Foundation vetted the list collators and assumes no responsibility with regard to the selection, performance, security, accuracy, or use of any third-party offerings. You alone are responsible for doing your own diligence to understand the applicable fees and all risks present, including actively monitoring the activity of your collators._
 
-*Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and retrieving them requires a waiting period. Additionally, if a collator fails to perform required functions or acts in bad faith, a portion of their total stake can be slashed (i.e. destroyed). This includes the stake of their delegators. If a collators behaves suspiciously or is too often offline, delegators can choose to unbond from them or switch to another collator. Delegators can also mitigate risk by electing to distribute their stake across multiple collators.*
+_You agree and understand that neither the Turing Network, nor OAK Foundation guarantees that you will receive staking rewards and any applicable percentage provided (i) is an estimate only and not guaranteed, (ii) may change at any time and (iii) may be more or less than the actual staking rewards you receive. The OAK Foundation makes no representations as to the monetary value of any rewards at any time._
+
+_Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and retrieving them requires a waiting period. Additionally, if a collator fails to perform required functions or acts in bad faith, a portion of their total stake can be slashed (i.e. destroyed). This includes the stake of their delegators. If a collators behaves suspiciously or is too often offline, delegators can choose to unbond from them or switch to another collator. Delegators can also mitigate risk by electing to distribute their stake across multiple collators._
+
+## Network Specific Information
+
+### Turing Network - Kusama Parachain
+
+- [PolkadotJS Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics) - use this to execute post calls or functions (e.g. signing up to be a collator)
+- [Subscan](https://turing.subscan.io/) - use this for an indexing or reference service with a delightful user experience
+- [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate) - use this to query fungible storage items (e.g. the number of selected candidates)
+- [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
+- [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
+
+| Field                                                         | Current Value                                              |
+| ------------------------------------------------------------- | ---------------------------------------------------------- |
+| Minimum Delegator Bond `const parachainStaking.minDelegation` | 50 TUR or `500000000000` planck                            |
+| Maximum Number of Delegators per Collator                     | 300                                                        |
+| Round Length `parachainStaking.round`                         | 600 blocks or ~2 hours                                     |
+| Rewards payout `const parachainStaking.rewardPaymentDelay`    | Time left to complete current round + 2 rounds or ~4 hours |
+| Inflation `parachainStaking.inflationConfig`                  | 5.00% annually                                             |
+
+_Note: The source of truth for the values above is the chain state and constants, so please query that to double-check the values_
 
 ## How to stake
 
 ### Step 1: Figure out who you want to stake to
 
-Before staking tokens to collators, we recommend you do your research on who to stake towards. To figure out the candidate pool, you can find the set of collators in [Subscan](https://turing.subscan.io/validator). Save their wallet address as `COLLATOR_WALLET_ADDRESS` to be used on the step below.
+Before staking tokens to collators, we recommend you do your research on who to stake towards. To figure out the candidate pool, you can find the set of collators in [Subscan](https://turing.subscan.io/blocks), under the Collator column. Save their wallet address as `COLLATOR_WALLET_ADDRESS` to be used on the step below.
 
 ### Step 2: Figure out your inputs
+
 To be stake your delegator via PolakdotJS extrinsics, you'll need to figure out three numbers. We've provided a helpful script for you to use. Navigate to the **Developer > Javascript** tab on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/js).
 
 ```javascript
-const collatorWalletAddress = 'COLLATOR_WALLET_ADDRESS';
-const delegatorWalletAddress = 'YOUR_WALLET_ADDRESS';
+const collatorWalletAddress = "COLLATOR_WALLET_ADDRESS";
+const delegatorWalletAddress = "YOUR_WALLET_ADDRESS";
 const minDelegationStake = await api.consts.parachainStaking.minDelegation;
-const candidateInfo = await api.query.parachainStaking.candidateInfo(collatorWalletAddress);
+const candidateInfo = await api.query.parachainStaking.candidateInfo(
+  collatorWalletAddress
+);
 const candidateDelegationCount = JSON.parse(candidateInfo).delegationCount;
-const delegatorState = await api.query.parachainStaking.delegatorState(delegatorWalletAddress);
-const delegationsLength = delegatorState.delegations ? delegatorState.delegations.length : 0;
+const delegatorState = await api.query.parachainStaking.delegatorState(
+  delegatorWalletAddress
+);
+const delegationsLength = delegatorState.delegations
+  ? delegatorState.delegations.length
+  : 0;
 console.log(`2a. Minimum amount to be staked: ${minDelegationStake}`);
 console.log(`2b. Candidate delegation count: ${candidateDelegationCount}`);
 console.log(`2c. Delegation count: ${delegationsLength}`);
@@ -45,20 +73,10 @@ Currently, everything related to staking needs to be accessed via the Extrinsics
 - `candidateDelegationCount`: Values ​​are available from section above as `2b. Candidate delegation count`.
 - `delegationCount`: Values ​​are available from the section above as `2c. Delegation count`.
 
----
-## How to stop staking to a collator
-
-### Step 1: Schedule Request to Stop Delegations
-
-To delegate a candidate, send `parachainStaking.scheduleRevokeDelegation` extrinsic by the following information:
-
-![schedule-revoke-delegation](../../assets/img/staking-delegation/schedule-revoke-delegation.png)
-
-Once you have scheduled an exit delay(24 rounds * 600 block, 12 seconds per block in current Turing Network), you must wait an exit delay before you can then execute it.
-
 ## FAQ
 
 ### How do I pick which collator to delegate to?
+
 While we cannot answer this question for you, you can identify the collator from the [identity](../identity) that they set on-chain. Please do your research on their background based on the information provided. You can also ask #collator-open-chat in our Discord server for more information.
 
 Staking rewards are split evenly between all delegators for a given collator so delegating to a collator with less total stake will net you more proportional rewards.
@@ -66,10 +84,12 @@ Only the top 24 collators are selected to the active set for block authoring so 
 Only the top 300 delegators for each collator will receive rewards.
 
 ### How do I check how many TUR rewards I’ve received?
-You can navigate to [Turing's Subscan](https://turing.subscan.io/event?address=YOUR_NOMINATOR_WALLET&module=parachainstaking&event=reward) page to view your rewards. 
+
+You can navigate to [Turing's Subscan](https://turing.subscan.io/event?address=YOUR_NOMINATOR_WALLET&module=parachainstaking&event=reward) page to view your rewards.
 
 ### What rewards will I get?
-2.5% of annual inflation is distributed amongst the stakers of each collator (including the collator themselves) based on the number of blocks they successfully author.  Those rewards are distributed proportionally among the stakers of that collator.
+
+2.5% of annual inflation is distributed amongst the stakers of each collator (including the collator themselves) based on the number of blocks they successfully author. Those rewards are distributed proportionally among the stakers of that collator.
 
 As candidates in the active set of collators receive rewards from block production, delegators get rewards as well.
 
