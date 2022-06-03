@@ -110,7 +110,7 @@ If you're using a Linux box, you can simply run the following for Turing:
 ```
 docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data oaknetwork/turing:1.4.0 \
   --name=YOUR_COLLATOR_NAME \
-  --base-path=PATH_TO_DATA_DIR \
+  --base-path=/data \
   --chain=turing \
   --node-key=NODE_KEY \
   --collator \
