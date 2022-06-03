@@ -57,11 +57,11 @@ unzip ${chain}-${version}.zip
 ```
 
 #### Option 2: Compile the binary
-If you are using another machine, or are struggling with errors from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/OAK-Foundation/OAK-blockchain#install-oak-blockchain). For example, for the v1.3.0 binary, you can run the following command on your node.
+If you are using another machine, or are struggling with errors from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/OAK-Foundation/OAK-blockchain#install-oak-blockchain). For example, for the v1.4.0 binary, you can run the following command on your node.
 
 ```
 git clone git@github.com:OAK-Foundation/OAK-blockchain.git    
-git checkout v1.3.0
+git checkout v1.4.0
 ```
 
 Then build your executable.
@@ -76,7 +76,7 @@ cargo build --release --features turing-node
 If you choose to run the collator via Docker, you can find the Docker repository linked in the helpful resources above. You can grab the latest image (tagged `latest`), or the specific version. Create a volume for your data and check that the volume exists by inspecting. The following commands help you to do so.
 
 ```
-docker pull oaknetwork/turing:1.3.0
+docker pull oaknetwork/turing:1.4.0
 docker volume create turing-data
 docker volume inspect turing-data
 ```
@@ -108,7 +108,7 @@ It's important that we keep the state-cache-size to 0 for now. It causes downstr
 #### Option 3: Docker users
 If you're using a Linux box, you can simply run the following for Turing:
 ```
-docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data oaknetwork/turing:1.3.0 \
+docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data oaknetwork/turing:1.4.0 \
   --name=YOUR_COLLATOR_NAME \
   --base-path=PATH_TO_DATA_DIR \
   --chain=turing \
