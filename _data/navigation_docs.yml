@@ -5,12 +5,19 @@
   - product-roadmap
   - features
 
+- title: User Guide
+  docs:
+  - on-chain-automation
+  - identity
+
 - title: Staking
   docs:
+  - delegators
   - collators
   - setup-collator-node
   - setup-collator-node-partner
   - run-node-service
+  - upgrade-collator-node
 
 - title: Developer Guide
   docs:
@@ -28,8 +35,6 @@
 
 - title: Contribute
   docs:
-  - token-faucet
-  - turing-staging-testnet
   - pallets
   - pallet-development
   - bug-bounty
