@@ -6,7 +6,7 @@ tags: [delegator]
 ---
 
 ## Risks
-*Holders of TUR tokens should perform careful due diligence on collators before delegating. Being listed as a collator is not an endorsement or recommendation from the Turing Network, or OAK Foundation. Neither the Turing Network, nor OAK Foundation has vetted the list collators and assumes no responsibility with regard to the selection, performance, security, accuracy, or use of any third-party offerings. You alone are responsible for doing your own diligence to understand the applicable fees and all risks present, including actively monitoring the activity of your collators.*
+*Holders of TUR tokens should perform careful due diligence on collators before delegating. Being listed as a collator is not an endorsement or recommendation from the Turing Network, or OAK Foundation. Neither the Turing Network, nor has OAK Foundation vetted the list collators and assumes no responsibility with regard to the selection, performance, security, accuracy, or use of any third-party offerings. You alone are responsible for doing your own diligence to understand the applicable fees and all risks present, including actively monitoring the activity of your collators.*
 
 *You agree and understand that neither the Turing Network, nor OAK Foundation guarantees that you will receive staking rewards and any applicable percentage provided (i) is an estimate only and not guaranteed, (ii) may change at any time and (iii) may be more or less than the actual staking rewards you receive. The OAK Foundation makes no representations as to the monetary value of any rewards at any time.*
 
@@ -14,89 +14,47 @@ tags: [delegator]
 
 ## How to stake
 
-### Step 1: Retrieving the List of Candidates
+### Step 1: Figure out who you want to stake to
 
-Before starting to stake tokens, it is important to retrieve the list of collator candidates available in the network. To do so:
+Before staking tokens to collators, we recommend you do your research on who to stake towards. To figure out the candidate pool, you can find the set of collators in [Subscan](https://turing.subscan.io/validator). Save their wallet address as `COLLATOR_WALLET_ADDRESS` to be used on the step below.
 
-1. Head to the [Developer tab](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate).
-1. Click on Chain State > Storage
-1. Query `parachainStaking.candidatePool`. 
+### Step 2: Figure out your inputs
+To be stake your delegator via PolakdotJS extrinsics, you'll need to figure out three numbers. We've provided a helpful script for you to use. Navigate to the **Developer > Javascript** tab on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/js).
 
-![candidate-pool](../../assets/img/staking-delegation/candidate-pool.png)
+```javascript
+const collatorWalletAddress = 'COLLATOR_WALLET_ADDRESS';
+const delegatorWalletAddress = 'YOUR_WALLET_ADDRESS';
+const minDelegationStake = await api.consts.parachainStaking.minDelegation;
+const candidateInfo = await api.query.parachainStaking.candidateInfo(collatorWalletAddress);
+const candidateDelegationCount = JSON.parse(candidateInfo).delegationCount;
+const delegatorState = await api.query.parachainStaking.delegatorState(delegatorWalletAddress);
+const delegationsLength = delegatorState.delegations ? delegatorState.delegations.length : 0;
+console.log(`2a. Minimum amount to be staked: ${minDelegationStake}`);
+console.log(`2b. Candidate delegation count: ${candidateDelegationCount}`);
+console.log(`2c. Delegation count: ${delegationsLength}`);
+```
 
-As shown above, there are currently two collator candidates in the network.
-
-### Step 2: Get your Number of Existing Delegations
-
-Query `parachainStaking.delegatorState` by your account.
-
-![delegator-state](../../assets/img/staking-delegation/delegator-state.png)
-
-As shown above, there are currently **`1` delegation** in the account. **Remember this `delegationCount`**, we will use it in the process below.
-
-If you have not delegated, the content here should be `<null>`.
-
-The address of collator candidate is `691Fmzb8rhYmBxLvaqYEUApK22s3o6eCzC4whDY7dZZ83YYQ`, We cannot add delegation repeatedly to the same candidate.
-Therefore, in the following process, we will not operate on this candidate. So I use another candidate(`699AH5KqTiTUsdtpQzxa3Bt3fc9yZzt4w5aYj5GPW6byUkmR`) in following sections.
-
-### Step 3: Get the Candidate Delegation Count
-
-You need to get the candidateInfo, which will contain the delegator count, as you'll need to submit this parameter in a later transaction. To retrieve the parameter, make sure you're still on the Chain State tab of the Developer page, and query `parachainStaking.candidateInfo` by candidate account. 
-
-![candidate-info](../../assets/img/staking-delegation/candidate-info.png)
-
-**Remember the `candidateDelegationCount` value of this candidate**, we will use it in the next section.
-
-### Step 4: Figure out the minimum delegation stake
-
-In the current Turing network, Min delegtaion is 50 `TUR` (500000000000 `Planck`).
-
-You can get this value by querying `parachainStaking.minDelegation`.
-
-![candidate-info](../../assets/img/staking-delegation/min-delegation.png)
-
-You need to get the candidateInfo, which will contain the delegator count, as you'll need to submit this parameter in a later transaction. To retrieve the parameter, make sure you're still on the Chain State tab of the Developer page, and query `parachainStaking.candidateInfo` by candidate account. 
-
-![candidate-info](../../assets/img/staking-delegation/candidate-info.png)
-
-**Remember the `candidateDelegationCount` value of this candidate**, we will use it in the next section.
-
-### Step 5: Stake your tokens to a collator
+### Step 3: Stake your tokens to a collator
 
 Currently, everything related to staking needs to be accessed via the Extrinsics menu, under the Developer tab. To delegate a candidate, provide the following information:
 
 ![delegate](../../assets/img/staking-delegation/delegate.png)
 
-- amount: Amounts are in `Planck`. 1 `TUR` = 10000000000 `Planck`. 
-
-- candidateDelegationCount: Values ​​are available in the "[Get the Candidate Delegation Count](#get-the-candidate-delegation)" section above.
-
-- delegationCount: Values ​​are available in the "[Get your Number of Existing Delegations](#get-your-number-of-existing-delegations)" section above.
+- `candidate`: This will be the collator you so choose to stake towards from your research in Step 1 and has the same `COLLATOR_WALLET_ADDRESS` from Step 2 above.
+- `amount`: Figure out how much you would like to stake to the collator. At minimum you must stake `2a. Minimum amount to be staked` from the output above.
+- `candidateDelegationCount`: Values ​​are available from section above as `2b. Candidate delegation count`.
+- `delegationCount`: Values ​​are available from the section above as `2c. Delegation count`.
 
 ---
-## How to Stop Delegations
+## How to stop staking to a collator
 
-### Schedule Request to Stop Delegations
+### Step 1: Schedule Request to Stop Delegations
 
 To delegate a candidate, send `parachainStaking.scheduleRevokeDelegation` extrinsic by the following information:
 
 ![schedule-revoke-delegation](../../assets/img/staking-delegation/schedule-revoke-delegation.png)
 
 Once you have scheduled an exit delay(24 rounds * 600 block, 12 seconds per block in current Turing Network), you must wait an exit delay before you can then execute it.
-
-## Staking Rewards
-
-As candidates in the active set of collators receive rewards from block production, delegators get rewards as well.
-
-In summary, delegators will earn rewards based on their stake of the total delegations for the collator being rewarded (including the collator's stake as well).
-
-You can view the delegated amount and the change in the balance due to each round of staking rewards on the Accounts page.
-
-![accounts](../../assets/img/staking-delegation/accounts.png)
-
-## Risks
-
-
 
 ## FAQ
 
@@ -112,3 +70,9 @@ You can navigate to [Turing's Subscan](https://turing.subscan.io/event?address=Y
 
 ### What rewards will I get?
 2.5% of annual inflation is distributed amongst the stakers of each collator (including the collator themselves) based on the number of blocks they successfully author.  Those rewards are distributed proportionally among the stakers of that collator.
+
+As candidates in the active set of collators receive rewards from block production, delegators get rewards as well.
+
+You can view the delegated amount and the change in the balance due to each round of staking rewards on the Accounts page.
+
+![accounts](../../assets/img/staking-delegation/accounts.png)

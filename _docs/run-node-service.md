@@ -75,4 +75,4 @@ while operating an OAK node.
 
 ## Monitoring & Alerting
 
-Since OAK is a Substrate-based project, you can use Node Export, Prometheus and Grafana to monitor your nodes. For more information, please follow [this tutorial](https://docs.substrate.io/tutorials/v3/node-metrics/).
+Since OAK is a Substrate-based project, you can use Node Exporter, Prometheus and Grafana to monitor your nodes. For more information, please follow [this tutorial](https://docs.substrate.io/tutorials/v3/node-metrics/).
