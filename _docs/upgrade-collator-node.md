@@ -23,7 +23,7 @@ If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK
 chain=turing
 latest_url=$(curl -Lsf -w %{url_effective} https://github.com/OAK-Foundation/OAK-blockchain/releases/latest/download/)
 version=${latest_url##*/}
-wget https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/${chain}-${version}.zip
+curl -o ${chain}-${version}.zip https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/${chain}-${version}.zip
 unzip ${chain}-${version}.zip
 ```
 
@@ -59,13 +59,15 @@ docker volume inspect turing-data
 #!/usr/bin/env bash
 set -ex
 chain=turing # OR turing-staging
-base_dir=/home/ubuntu
 cp $chain-$version.zip /tmp
-unzip -o /tmp/$chain-$version.zip -d $base_dir
+unzip -o /tmp/$chain-$version.zip -d PATH_TO_DATA_DIR
 ```
 
 #### Options 3
-// TODO insert docker instructions
+
+```bash
+docker pull oaknetwork/turing:1.4.0
+```
 
 ### Step X: Restart your service
 
@@ -77,4 +79,20 @@ sudo systemctl restart oak-collator
 ```
 
 #### Options 3
-// TODO insert docker instructions
+
+```bash
+docker stop EXISTING_CONTAINER_ID
+docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data
+oaknetwork/turing:1.4.0 \
+  --name=YOUR_COLLATOR_NAME \
+  --base-path=/data \
+  --chain=turing \
+  --node-key=NODE_KEY \
+  --collator \
+  --force-authoring \
+  --execution=wasm \
+  --state-cache-size=0 \
+  -- \
+  --execution=wasm \
+  --no-telemetry
+```
