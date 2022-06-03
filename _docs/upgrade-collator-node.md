@@ -23,7 +23,7 @@ If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK
 chain=turing
 latest_url=$(curl -Lsf -w %{url_effective} https://github.com/OAK-Foundation/OAK-blockchain/releases/latest/download/)
 version=${latest_url##*/}
-wget https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/${chain}-${version}.zip
+curl -o ${chain}-${version}.zip https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/${chain}-${version}.zip
 unzip ${chain}-${version}.zip
 ```
 
