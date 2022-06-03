@@ -37,11 +37,11 @@ _Note: The source of truth for the values above is the chain state and constants
 
 ### Step 1: Figure out who you want to stake to
 
-Before staking tokens to collators, we recommend you do your research on who to stake towards. To figure out the candidate pool, you can find the set of collators in [Subscan](https://turing.subscan.io/blocks), under the Collator column. Save their wallet address as `COLLATOR_WALLET_ADDRESS` to be used on the step below.
+Before staking tokens to collators, we recommend you do your research on who to stake towards. To figure out the candidate pool, you can find the set of collators in [Subscan](https://turing.subscan.io/block), under the Collator column. Save their wallet address as `COLLATOR_WALLET_ADDRESS` to be used on the step below.
 
 ### Step 2: Figure out your inputs
 
-To be stake your delegator via PolakdotJS extrinsics, you'll need to figure out three numbers. We've provided a helpful script for you to use. Navigate to the **Developer > Javascript** tab on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/js).
+To be stake your delegator via PolakdotJS extrinsics, you'll need to figure out three numbers. We've provided a helpful script for you to use. Navigate to the **Developer > Javascript** tab on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/js). Delete the content of the white box, and replace `COLLATOR_WALLET_ADDRESS` and `YOUR_WALLET_ADDRESS` with the correct addresses.
 
 ```javascript
 const collatorWalletAddress = "COLLATOR_WALLET_ADDRESS";
@@ -77,7 +77,7 @@ Currently, everything related to staking needs to be accessed via the Extrinsics
 
 ### How do I pick which collator to delegate to?
 
-While we cannot answer this question for you, you can identify the collator from the [identity](../identity) that they set on-chain. Please do your research on their background based on the information provided. You can also ask #collator-open-chat in our Discord server for more information.
+While we cannot answer this question for you, you can identify the collator from the [identity](../identity) that they set on-chain. Please do your research on their background based on the information provided. You can also ask #collator-open-chat in the [OAK Discord](https://discord.gg/7W9UDvsbwh) server for more information.
 
 Staking rewards are split evenly between all delegators for a given collator so delegating to a collator with less total stake will net you more proportional rewards.
 Only the top 24 collators are selected to the active set for block authoring so any delegations to collators outside the active set will not receive rewards.
