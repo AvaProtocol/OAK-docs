@@ -19,6 +19,7 @@ If you have any questions or run into issues, head over to the [OAK Discord](htt
 ### Turing Network - Kusama Parachain
 
 - [PolkadotJS Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics) - use this to execute post calls or functions (e.g. signing up to be a collator)
+- [Subscan](https://turing.subscan.io/) - use this for an indexing or reference service with a delightful user experience
 - [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate) - use this to query fungible storage items (e.g. the number of selected candidates)
 - [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
 - [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
@@ -31,8 +32,48 @@ If you have any questions or run into issues, head over to the [OAK Discord](htt
 | Leave candidacy duration `const parachainStaking.leaveCandidatesDelay`                    | 24 rounds or ~48 hours                                     |
 | Reduction of self-delegation bond duration `const parachainStaking.revokeDelegationDelay` | 24 rounds or ~48 hours                                     |
 | Rewards payout `const parachainStaking.rewardPaymentDelay`                                | Time left to complete current round + 2 rounds or ~4 hours |
+| Inflation `parachainStaking.inflationConfig`                                              | 5.00% annually                                             |
 
 _Note: The source of truth for the values above is the chain state and constants, so please query that to double-check the values_
+
+## Helpful query to get the chain state
+
+You need to query the chain state a number of times for these operations. With that, we've provided a helpful script for you to use. Navigate to the **Developer > Javascript** tab on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/js).
+
+```javascript
+// Useful to know the duration of different actions from the table above
+const minCandidateStk = await api.consts.parachainStaking.minCandidateStk;
+const totalSelected = await api.query.parachainStaking.totalSelected();
+const roundLength = await api.query.parachainStaking.round();
+const leaveCandidatesDelay = await api.consts.parachainStaking
+  .leaveCandidatesDelay;
+const revokeDelegationDelay = await api.consts.parachainStaking
+  .revokeDelegationDelay;
+const rewardPaymentDelay = await api.consts.parachainStaking.rewardPaymentDelay;
+const inflation = await api.query.parachainStaking.inflationConfig();
+console.log(`------ HELPFUL CHAIN STATE DATA ------`);
+console.log(`Minimum Collator Bond: ${minCandidateStk}`);
+console.log(`Number of selected candidates: ${totalSelected}`);
+console.log(`Round Length: ${roundLength}`);
+console.log(`Leave candidacy duration: ${leaveCandidatesDelay}`);
+console.log(
+  `Reduction of self-delegation bond duration: ${revokeDelegationDelay}`
+);
+console.log(`Rewards payout: ${rewardPaymentDelay}`);
+console.log(`Inflation: ${inflation}`);
+
+// Useful for collator extrinsics below
+const collatorWalletAddress = "YOUR_COLLATOR_WALLET_ADDRESS";
+const candidatePool = await api.query.parachainStaking.candidatePool();
+const candidateCount = candidatePool.length;
+const candidateInfo = await api.query.parachainStaking.candidateInfo(
+  collatorWalletAddress
+);
+const delegationCount = JSON.parse(candidateInfo).delegationCount;
+console.log(`------ HELPFUL COLLATOR ACTIONS DATA ------`);
+console.log(`Total Candidates in pool: ${candidateCount}`);
+console.log(`Your Delegation Count: ${delegationCount}`);
+```
 
 ## How to register as a collator
 
@@ -70,7 +111,7 @@ Take the result from Step 1.1, in our example `0xfoo123bar`, input the following
 
 ### Step 3: Figure out the size of the candidate set
 
-As part of a later call, you will need to know how large the current candidate pool is. To compute that, you'll need to navigate to **the Storage tab under Developer -> Chain state**,  and call `parachainStaking.candidatePool`. This is returned as an array, you'll need to count the number of candidates.
+As part of a later call, you will need to know how large the current candidate pool is. To compute that, you'll need to navigate to **the Storage tab under Developer -> Chain state**, and call `parachainStaking.candidatePool`. This is returned as an array, you'll need to count the number of candidates.
 
 ![collator-setup-2](../../assets/img/collators/collator-setup-2.png)
 
@@ -96,6 +137,10 @@ Similar to Step 3, you'll have to navigate to the chain state page, and call `pa
 
 Top delegated collators will be part of the active set, which is set / chosen at the beginning of each round.
 
+### Step 6 (Optional, but recommended): Setup your on-chain identity
+
+To increase your chances of community members [staking](../delegators) to your collator, we recommend you setup an [on-chain identity](../identity).
+
 ## How to leave as a collator
 
 There are two ways to leave as a collator.
@@ -110,23 +155,30 @@ If you need to run node upgrades and other maintenance operations, you can navig
 
 If you need to leave the candidate set and unbond, you have to perform two calls.
 
-**Call #1**
+**Step 1**
 Navigate to the extrinsics tab, and go to `parachainStaking.scheduleLeaveCandidates` with the candidateCount re-computed from Step 3 above. Note that the candidateCount may have increased or decreased since you last did Step 3.
+
+If the call succeeds, you are removed from the pool of candidates so you cannot be selected for future collator sets, but you are not unbonded until their exit request (Call #2) is executed. Please note that this is not an instant execution, you'll need to wait which is the next step.
 
 ![collator-setup-5](../../assets/img/collators/collator-setup-5.png)
 
-**Call #2**
-Navigate to the extrinsics tab, and go to `parachainStaking.executeLeaveCandidates` with the candidateCount re-computed from Step 3 above.
+**Step 2**
+Wait for however long **Leave candidacy duration** is from the table above. After that time has passed, then you can proceed to the next step.
+
+**Step 3**
+Query for the number of delegates for your collator by going to the Chain State tab and executing `parachainStaking.candidateInfo`. From this output, grab the `delegationCount` and use that as your number of delegates.
+
+**Step 4**
+Navigate to the extrinsics tab, and go to `parachainStaking.executeLeaveCandidates` with the delegationCount from Step 3 above.
 
 ![collator-setup-6](../../assets/img/collators/collator-setup-6.png)
-
-If the call succeeds, you are removed from the pool of candidates so you cannot be selected for future collator sets, but you are not unbonded until their exit request (Call #2) is executed. Please note that this is not an instant execution, you'll need to wait for the "Leave candidacy duration" from the table(s) above.
 
 ## FAQ
 
 For any questions or support, please reach out via [OAK Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>.
 
 ### When will my collator start producing blocks?
+
 Collators start producing blocks 2 rounds after they become the `parachainStaking.selectedCandidates`.
 
 For example, in Turing, if you've joined as a collator candidate, and you are considered as one of the top delegated collators, you can call `parachainStaking.round` in the chain state, you will see the following output.
@@ -138,4 +190,30 @@ For example, in Turing, if you've joined as a collator candidate, and you are co
   length: 600
 }
 ```
+
 Because you opted to join sometime during this round, you can calculate the `FIRST_BLOCK_NUMBER_OF_ROUND + 1800`, which would mean you can expect to start producing blocks at `202,537`.
+
+### When will my new session keys be used?
+
+New session keys are used after the current session completes and two full sessions elapse.
+
+### Under what circumstances would I be removed from the candidate pool?
+
+Currently slashing has not been implemented on the Turing network. You will only be removed from the candidate pool if you initiate leaving the pool through extrinsic.
+
+### I want to run multiple collators, can I use the same wallet?
+
+No. Each collator must be associated with a unique wallet in order to join the candidate pool.
+
+### What rewards will I get?
+
+Collators collect 2 types of rewards: the collator reward and the staking reward. 1% annual inflation goes directly to collators. This does not dilute based on the number of people staking to your node. 2.5% annual inflation goes to staking rewards. This is split proportionately among all stakers to that node. This will be diluted as more people stake to your node. This creates an incentive for roughly all the nodes to have similar stakes for stakers to maximize their APY.
+
+Performance differences between nodes may cause stakers to choose to split their stakes in way that is not perfectly even. Since rewards are paid out per block successfully authored.
+For more information, please read our [Turing Tokenomics Paper](https://docs.oak.tech/papers/turing_tokenomics_paper.pdf).
+
+### If I joined as a collator in the candidate pool, and the minimum self bond increases, what happens to my node?
+
+Collators in the candidate pool with the minimum self-bond met will remain as valid collators in the candidate pool. The raised minimum self bond will not prevent that collator from entering the active set given the total amount staked to that collator is high enough to enter the active set. They will be grandfathered in at the previous self-bond.
+
+If you choose to leave the candidate pool, you will be subject to the higher minimum bond when re-entering.

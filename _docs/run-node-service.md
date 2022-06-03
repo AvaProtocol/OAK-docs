@@ -1,5 +1,5 @@
 ---
-title: Running a Turing node using a service
+title: Run a node using a service
 subtitle: Setting up systemd for your collator
 author: andrew
 tags: [infra, collator]
@@ -72,3 +72,7 @@ while operating an OAK node.
     * View logs for the node. `man journalctl` for more filtering options.
 * `systemctl restart oak-collator`
     * Restart the collator service 
+
+## Monitoring & Alerting
+
+Since OAK is a Substrate-based project, you can use Node Exporter, Prometheus and Grafana to monitor your nodes. For more information, please follow [this tutorial](https://docs.substrate.io/tutorials/v3/node-metrics/).

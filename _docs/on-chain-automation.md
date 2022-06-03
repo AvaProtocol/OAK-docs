@@ -1,5 +1,5 @@
 ---
-title: User Testing on Turing Staging
+title: Setup on-chain automation
 subtitle: Learn more about how to test our automation on the Turing Staging testnet
 author: irsal
 tags: [testing]
