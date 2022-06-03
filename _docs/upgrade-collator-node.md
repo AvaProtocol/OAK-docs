@@ -64,7 +64,10 @@ unzip -o /tmp/$chain-$version.zip -d PATH_TO_DATA_DIR
 ```
 
 #### Options 3
-// TODO insert docker instructions
+
+```bash
+docker pull oaknetwork/turing:1.4.0
+```
 
 ### Step X: Restart your service
 
@@ -76,4 +79,20 @@ sudo systemctl restart oak-collator
 ```
 
 #### Options 3
-// TODO insert docker instructions
+
+```bash
+docker stop EXISTING_CONTAINER_ID
+docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data
+oaknetwork/turing:1.4.0 \
+  --name=YOUR_COLLATOR_NAME \
+  --base-path=/data \
+  --chain=turing \
+  --node-key=NODE_KEY \
+  --collator \
+  --force-authoring \
+  --execution=wasm \
+  --state-cache-size=0 \
+  -- \
+  --execution=wasm \
+  --no-telemetry
+```
