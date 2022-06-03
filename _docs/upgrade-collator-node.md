@@ -63,7 +63,7 @@ cp $chain-$version.zip /tmp
 unzip -o /tmp/$chain-$version.zip -d PATH_TO_DATA_DIR
 ```
 
-#### Options 3
+#### Option 3
 
 ```bash
 docker pull oaknetwork/turing:1.4.0
@@ -78,7 +78,7 @@ Restart the `oak-collator` service
 sudo systemctl restart oak-collator
 ```
 
-#### Options 3
+#### Option 3
 
 ```bash
 docker stop EXISTING_CONTAINER_ID
