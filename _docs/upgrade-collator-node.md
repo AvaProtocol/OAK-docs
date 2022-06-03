@@ -59,9 +59,8 @@ docker volume inspect turing-data
 #!/usr/bin/env bash
 set -ex
 chain=turing # OR turing-staging
-base_dir=/home/ubuntu
 cp $chain-$version.zip /tmp
-unzip -o /tmp/$chain-$version.zip -d $base_dir
+unzip -o /tmp/$chain-$version.zip -d PATH_TO_DATA_DIR
 ```
 
 #### Options 3
