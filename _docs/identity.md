@@ -27,7 +27,7 @@ After the extrinsic is confirmed, there will be a gray minus sign to the left of
 
 ### Step 4: Contact a registrar to acquire the judgement
 
-You can either contact the registrar via their on-chain information or you can ask the registrar to review your request in [OAK Discord room](https://discord.gg/7W9UDvsbwh).
+You can either contact the registrar via their on-chain information or you can ask the registrar to review your request in **#on-chain-registrar** [OAK Discord](https://discord.gg/7W9UDvsbwh).
 
 ### Step 5: Registrar makes a judgement
 
