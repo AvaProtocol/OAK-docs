@@ -74,13 +74,27 @@ console.log(`2c. Delegation Count: ${delegationsLength}`);
 ![minDelegation](../../assets/img/staking-delegation/minDelegation.png)
 This should show the number that represents the minimum amount that can be inputted into the `amount` field on the `parachainStaking.delegate` call in Step 3. Your input for `amount` must be larger than or equal to this number.
 
+1. Go Developer > Chain State > Constants in order to reach the page
+2. For the query, use the left drop down on the page to select `parachainStaking` first. This should allow you to select `minDelegation` from the right drop down.
+3. Press the circular `+` button on the right of the drop downs in order to execute your query.
+
 ##### Candidate Delegation Count
 ![candidateInfo](../../assets/img/staking-delegation/candidateInfo.png)
 This contains information about the collator candidate. Under the field `delegationCount` from the result of the query, you can find the number you need for the `candidateDelegationCount` field on the `parachainStaking.delegate` call in the Step 3. Remember to save this number. Each time another delegator delegates funds to a given collator, this number increases by 1 for that specific collator.
 
+1. Go Developer > Chain State > Storage in order to reach the page
+2. For the query, use the left drop down on the page to select `parachainStaking` first. This should allow you to select `candidateInfo` from the right drop down.
+3. In the field below that says `AccountId32`, please insert the wallet address of the collator you want to stake with.
+4. Press the circular `+` button on the right of the drop downs in order to execute your query.
+
 ##### Delegation Count
 ![minDelegation](../../assets/img/staking-delegation/delegatorState.png)
 This contains information about the delegator state. The field `delegations` should be a list. Count the number of items in this list, with each item defined by a set of brackets containing an owner and an amount. In the picture above, it consists of 2 items. Remember to save this number for the `delegationCount` field on the `parachainStaking.delegate` call in the Step 3. Each time you delegate to another collator, this number increases by 1. 
+
+1. Go Developer > Chain State > Storage in order to reach the page
+2. For the query, use the left drop down on the page to select `parachainStaking` first. This should allow you to select `delegatorState` from the right drop down.
+3. In the field below that says `AccountId32`, please insert your wallet address where you have your TUR tokens for staking.
+4. Press the circular `+` button on the right of the drop downs in order to execute your query.
 
 ### Step 3: Stake your tokens to a collator
 
@@ -89,7 +103,7 @@ Currently, everything related to staking needs to be accessed via the Extrinsics
 ![delegate](../../assets/img/staking-delegation/delegate.png)
 
 - `candidate`: This will be the collator you so choose to stake towards from your research in Step 1 and has the same `COLLATOR_WALLET_ADDRESS` from Step 2 above.
-- `amount`: Figure out how much you would like to stake to the collator. At minimum you must stake `2a. Minimum Amount to be staked` from the output above.
+- `amount`: Figure out how much you would like to stake to the collator. At minimum you must stake `2a. Minimum Amount to be staked` from the output above. This minimum represents 50 TUR. In other words, you have to multiply the number of TUR you want to stake by 10,000,000,000. In other words, take the number of TUR you want to stake and add 10 zeros behind it. Please be sure to type the correct number of zeros, as it could result in significantly more or less TUR than intended being staked.
 - `candidateDelegationCount`: Values ​​are available from section above as `2b. Candidate Delegation Count`. Each time another delegator delegates funds to a given collator, this number increases by 1 for that specific collator.
 - `delegationCount`: Values ​​are available from the section above as `2c. Delegation Count`. Each time you delegate to another collator, this number increases by 1. 
 
