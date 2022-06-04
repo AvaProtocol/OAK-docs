@@ -80,7 +80,7 @@ This contains information about the collator candidate. Under the field `delegat
 
 ##### Delegation Count
 ![minDelegation](../../assets/img/staking-delegation/delegatorState.png)
-This contains information about the delegator state. The field `delegations` should be a list. Count the number of items in this list, with each item defined by a set of brackets containing an owner and an amount. In the picture above, it consists of 2 items. Remember to save this number for the `delegationCount` field on the `parachainStaking.delegate` call in the Step 3. In the example above, this number would be 2. Each time you delegate to another collator, this number increases by 1. 
+This contains information about the delegator state. The field `delegations` should be a list. Count the number of items in this list, with each item defined by a set of brackets containing an owner and an amount. In the picture above, it consists of 2 items. Remember to save this number for the `delegationCount` field on the `parachainStaking.delegate` call in the Step 3. Each time you delegate to another collator, this number increases by 1. 
 
 ### Step 3: Stake your tokens to a collator
 
