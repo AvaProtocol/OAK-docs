@@ -48,7 +48,7 @@ You will need 3 inputs to stake your tokens. These inputs are as follows:
 These numbers are dynamic and will change with additional delegators. Please check these inputs every time before staking more tokens. In this step, there are 2 options below to find these inputs. You can either use Javascript or read the chain state on the UI.
 
 #### Find Inputs Via Javascript
-To be stake your delegator via PolakdotJS extrinsics, you'll need to figure out three numbers. We've provided a helpful script for you to use. Navigate to the **Developer > Javascript** tab on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/js). Delete the content of the white box, and replace `COLLATOR_WALLET_ADDRESS` and `YOUR_WALLET_ADDRESS` with the correct addresses.
+To be stake your delegator via PolakdotJS extrinsics, you'll need to figure out three numbers. We've provided a helpful script for you to use. Navigate to the **Developer > Javascript** tab on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/js). Delete the content of the white box, copy and paste the script below, then replace `COLLATOR_WALLET_ADDRESS` and `YOUR_WALLET_ADDRESS` with the correct addresses.
 
 ```javascript
 const collatorWalletAddress = "COLLATOR_WALLET_ADDRESS";
