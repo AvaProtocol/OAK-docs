@@ -103,7 +103,7 @@ Currently, everything related to staking needs to be accessed via the Extrinsics
 ![delegate](../../assets/img/staking-delegation/delegate.png)
 
 - `candidate`: This will be the collator you so choose to stake towards from your research in Step 1 and has the same `COLLATOR_WALLET_ADDRESS` from Step 2 above.
-- `amount`: Figure out how much you would like to stake to the collator. At minimum you must stake `2a. Minimum Amount to be staked` from the output above. This minimum represents 50 TUR. In other words, you have to multiply the number of TUR you want to stake by 10,000,000,000. In other words, take the number of TUR you want to stake and add 10 zeros behind it. Please be sure to type the correct number of zeros, as it could result in significantly more or less TUR than intended being staked.
+- `amount`: Figure out how much you would like to stake to the collator. At minimum you must stake `2a. Minimum Amount to be staked` from the output above. Please note, in order to determine how much TUR to stake, you must multiply the number of TUR you want to stake by 10,000,000,000. In other words, take the number of TUR you want to stake and add 10 zeros behind it. Please be sure to type the correct number of zeros, as it could result in significantly more or less TUR than intended being staked.
 - `candidateDelegationCount`: Values ​​are available from section above as `2b. Candidate Delegation Count`. Each time another delegator delegates funds to a given collator, this number increases by 1 for that specific collator.
 - `delegationCount`: Values ​​are available from the section above as `2c. Delegation Count`. Each time you delegate to another collator, this number increases by 1. 
 
