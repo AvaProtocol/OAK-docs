@@ -40,7 +40,14 @@ _Note: The source of truth for the values above is the chain state and constants
 Before staking tokens to collators, we recommend you do your research on who to stake towards. To figure out the candidate pool, you can find the set of collators in [Subscan](https://turing.subscan.io/block), under the Collator column. Save their wallet address as `COLLATOR_WALLET_ADDRESS` to be used on the step below.
 
 ### Step 2: Figure out your inputs
+You will need 3 inputs to stake your tokens. These inputs are as follows:
+1. Amount
+2. Candidate Delegation Count
+3. Delegation Count
 
+These numbers are dynamic and will change with additional delegators. Please check these inputs every time before staking more tokens. In this step, there are 2 options below to find these inputs. You can either use Javascript or read the chain state on the UI.
+
+#### Find Inputs Via Javascript
 To be stake your delegator via PolakdotJS extrinsics, you'll need to figure out three numbers. We've provided a helpful script for you to use. Navigate to the **Developer > Javascript** tab on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/js). Delete the content of the white box, and replace `COLLATOR_WALLET_ADDRESS` and `YOUR_WALLET_ADDRESS` with the correct addresses.
 
 ```javascript
@@ -54,13 +61,26 @@ const candidateDelegationCount = JSON.parse(candidateInfo).delegationCount;
 const delegatorState = await api.query.parachainStaking.delegatorState(
   delegatorWalletAddress
 );
-const delegationsLength = delegatorState.delegations
-  ? delegatorState.delegations.length
+const delegationsLength = (delegatorState.toJSON() !== null && delegatorState.toJSON().delegations)
+  ? delegatorState.toJSON().delegations.length
   : 0;
-console.log(`2a. Minimum amount to be staked: ${minDelegationStake}`);
-console.log(`2b. Candidate delegation count: ${candidateDelegationCount}`);
-console.log(`2c. Delegation count: ${delegationsLength}`);
+console.log(`2a. Minimum Amount to be staked: ${minDelegationStake}`);
+console.log(`2b. Candidate Delegation Count: ${candidateDelegationCount}`);
+console.log(`2c. Delegation Count: ${delegationsLength}`);
 ```
+
+#### Find Inputs Via Polkadot JS UI
+##### Minimum Amount
+![minDelegation](../../assets/img/staking-delegation/minDelegation.png)
+This should show the number that represents the minimum amount that can be inputted into the `amount` field on the `parachainStaking.delegate` call in Step 3. Your input for `amount` must be larger than or equal to this number.
+
+##### Candidate Delegation Count
+![candidateInfo](../../assets/img/staking-delegation/candidateInfo.png)
+This contains information about the collator candidate. Under the field `delegationCount` from the result of the query, you can find the number you need for the `candidateDelegationCount` field on the `parachainStaking.delegate` call in the Step 3. Remember to save this number. Each time another delegator delegates funds to a given collator, this number increases by 1 for that specific collator.
+
+##### Delegation Count
+![minDelegation](../../assets/img/staking-delegation/delegatorState.png)
+This contains information about the delegator state. The field `delegations` should be a list. Count the number of items in this list, with each item defined by a set of brackets containing an owner and an amount. In the picture above, it consists of 2 items. Remember to save this number for the `delegationCount` field on the `parachainStaking.delegate` call in the Step 3. In the example above, this number would be 2. Each time you delegate to another collator, this number increases by 1. 
 
 ### Step 3: Stake your tokens to a collator
 
@@ -69,9 +89,9 @@ Currently, everything related to staking needs to be accessed via the Extrinsics
 ![delegate](../../assets/img/staking-delegation/delegate.png)
 
 - `candidate`: This will be the collator you so choose to stake towards from your research in Step 1 and has the same `COLLATOR_WALLET_ADDRESS` from Step 2 above.
-- `amount`: Figure out how much you would like to stake to the collator. At minimum you must stake `2a. Minimum amount to be staked` from the output above.
-- `candidateDelegationCount`: Values ​​are available from section above as `2b. Candidate delegation count`.
-- `delegationCount`: Values ​​are available from the section above as `2c. Delegation count`.
+- `amount`: Figure out how much you would like to stake to the collator. At minimum you must stake `2a. Minimum Amount to be staked` from the output above.
+- `candidateDelegationCount`: Values ​​are available from section above as `2b. Candidate Delegation Count`. Each time another delegator delegates funds to a given collator, this number increases by 1 for that specific collator.
+- `delegationCount`: Values ​​are available from the section above as `2c. Delegation Count`. Each time you delegate to another collator, this number increases by 1. 
 
 ## FAQ
 
