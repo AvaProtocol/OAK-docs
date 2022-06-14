@@ -4,6 +4,27 @@ subtitle: How to stake to a collator and earn rewards
 author: charles
 tags: [delegator]
 ---
+## Staking Resources (External)
+_The following links are provided for convenience and may include functionality that has not been built, tested, or audited by OAK Network._
+
+### Mobile 
+- [Nova Wallet (Android)](https://play.google.com/store/apps/details?id=io.novafoundation.nova.market)
+- [Nova (iOS)](https://apps.apple.com/us/app/nova-polkadot-kusama-wallet/id1597119355) - by Nova Wallet
+
+### Web (Interface)
+- [StakeTur](https://staketur.com) - read only
+- [OAK Staking Dashboard](https://web3go.xyz/#/OAKStaking) - by Web3Go
+
+### Web (PolkadotJS)
+- [How to stake](https://docs.oak.tech/docs/delegators/#how-to-stake) - by OAK Network
+- [Turing Staking Guide](https://oak-turing.pathrocknetwork.org) - by pathrocknetwork
+- [How to Stake TUR with the Turing Network](https://medium.com/stakebaby/how-to-stake-tur-with-the-turing-oak-network-by-stakebaby-23229f632b29) - by StakeBaby
+
+- [PolkadotJS Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics) - use this to execute post calls or functions (e.g. signing up to be a collator)
+- [Subscan](https://turing.subscan.io/) - use this for an indexing or reference service with a delightful user experience
+- [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate) - use this to query fungible storage items (e.g. the number of selected candidates)
+- [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
+- [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
 
 **Important disclaimer about risks**
 
@@ -12,26 +33,6 @@ _Holders of TUR tokens should perform careful due diligence on collators before 
 _You agree and understand that neither the Turing Network, nor OAK Foundation guarantees that you will receive staking rewards and any applicable percentage provided (i) is an estimate only and not guaranteed, (ii) may change at any time and (iii) may be more or less than the actual staking rewards you receive. The OAK Foundation makes no representations as to the monetary value of any rewards at any time._
 
 _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and retrieving them requires a waiting period. Additionally, if a collator fails to perform required functions or acts in bad faith, a portion of their total stake can be slashed (i.e. destroyed). This includes the stake of their delegators. If a collators behaves suspiciously or is too often offline, delegators can choose to unbond from them or switch to another collator. Delegators can also mitigate risk by electing to distribute their stake across multiple collators._
-
-## Network Specific Information
-
-### Turing Network - Kusama Parachain
-
-- [PolkadotJS Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics) - use this to execute post calls or functions (e.g. signing up to be a collator)
-- [Subscan](https://turing.subscan.io/) - use this for an indexing or reference service with a delightful user experience
-- [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate) - use this to query fungible storage items (e.g. the number of selected candidates)
-- [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
-- [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
-
-| Field                                                         | Current Value                                              |
-| ------------------------------------------------------------- | ---------------------------------------------------------- |
-| Minimum Delegator Bond `const parachainStaking.minDelegation` | 50 TUR or `500000000000` planck                            |
-| Maximum Number of Delegators per Collator                     | 300                                                        |
-| Round Length `parachainStaking.round`                         | 600 blocks or ~2 hours                                     |
-| Rewards payout `const parachainStaking.rewardPaymentDelay`    | Time left to complete current round + 2 rounds or ~4 hours |
-| Inflation `parachainStaking.inflationConfig`                  | 5.00% annually                                             |
-
-_Note: The source of truth for the values above is the chain state and constants, so please query that to double-check the values_
 
 ## How to stake
 
@@ -130,3 +131,15 @@ As candidates in the active set of collators receive rewards from block producti
 You can view the delegated amount and the change in the balance due to each round of staking rewards on the Accounts page.
 
 ![accounts](../../assets/img/staking-delegation/accounts.png)
+
+## Turing Network - Kusama Parachain
+
+| Field                                                         | Current Value                                              |
+| ------------------------------------------------------------- | ---------------------------------------------------------- |
+| Minimum Delegator Bond `const parachainStaking.minDelegation` | 50 TUR or `500000000000` planck                            |
+| Maximum Number of Delegators per Collator                     | 300                                                        |
+| Round Length `parachainStaking.round`                         | 600 blocks or ~2 hours                                     |
+| Rewards payout `const parachainStaking.rewardPaymentDelay`    | Time left to complete current round + 2 rounds or ~4 hours |
+| Inflation `parachainStaking.inflationConfig`                  | 5.00% annually                                             |
+
+_Note: The source of truth for the values above is the chain state and constants, so please query that to double-check the values_
