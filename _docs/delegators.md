@@ -13,7 +13,7 @@ _The following links are provided for convenience and may include functionality 
 
 ### Web (Interface)
 - [StakeTur](https://staketur.com) - read only
-- [OAK Staking Dashboard](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics](https://web3go.xyz/#/OAKStaking) - by Web3Go
+- [OAK Staking Dashboard](https://web3go.xyz/#/OAKStaking) - by Web3Go
 
 ### Web (PolkadotJS)
 - [How to stake](https://docs.oak.tech/docs/delegators/#how-to-stake) - by OAK Network
