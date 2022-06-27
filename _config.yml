@@ -52,6 +52,10 @@ authors:
     andrew:
       name:         Andrew Tomaka
       title:        Software Engineer
+    laura:
+      name:         Laura Reesby
+      title:        Software Engineer
+      avatar:       avatar-laura.jpeg
 
 # Social icons displayed in footer
 social:
