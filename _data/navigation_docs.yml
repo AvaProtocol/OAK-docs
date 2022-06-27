@@ -10,9 +10,9 @@
   - on-chain-automation
   - identity
 
-- title: Governance
-  docs:
-  - verify-runtime-upgrade
+# - title: Governance
+#   docs:
+#   - verify-runtime-upgrade
 
 - title: Staking
   docs:

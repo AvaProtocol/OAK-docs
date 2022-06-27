@@ -7,7 +7,7 @@ tags: [governance]
 
 ### Finding the Proposal
 
-To find the proposed runtime upgrade navigate to [Turing's Democracy page](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/democracy).  If a runtime upgrade has been proposed you will see a proposal under the `proposals` section for `parachainSystem.authorizeUpgrade` as seen in the image below.  For this example we are using a proposed runtime upgrade to v1.4.0.1.
+To find the proposed runtime upgrade navigate to [Turing's Democracy page](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/democracy).  If a runtime upgrade has been proposed you will see a proposal under the `proposals` section for `parachainSystem.authorizeUpgrade` as shown in the image below.  For this example we are using a proposed runtime upgrade to v1.4.0.1.
 
 ![democracy-page](../../assets/img/governance/democracy-page.png)
 
@@ -31,7 +31,7 @@ First, you will want to verify the `BLAKE2_256` hash in the release notes matche
 
 1. Install [srtool](https://github.com/paritytech/srtool#install).
 2. Follow the directions in OAK-blockchain repository to [build from source](https://github.com/OAK-Foundation/OAK-blockchain#building-from-source).
-3. Checkout release branch
+3. Checkout release branch.
 ```
 git checkout v1.4.0.1
 ```
