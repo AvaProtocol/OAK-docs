@@ -10,6 +10,10 @@
   - on-chain-automation
   - identity
 
+- title: Governance
+  docs:
+  - verify-runtime-upgrade
+
 - title: Staking
   docs:
   - delegators
