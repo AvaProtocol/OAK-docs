@@ -9,7 +9,7 @@ tags: [governance]
 
 #### Introduction
 
-The Turing Network is a decentralized network in which all token holders will have the opportunity to help govern and influence the future development of the network. Turing’s governance process will enable the sentiment and desires of our community to be considered when advancing our protocol. Our governance process has been designed to be inclusive of all members of the Polkadot and Kusama ecosystems including developers, collators, users, investors, partners, and other contributors. OAK Network highly values open discussion and will utilize governance forums such as the [<u>Subsquare governance dashboard</u>](https://turing.subsquare.io/) to enable proposals to be generated and shaped based on community input.
+The Turing Network is a decentralized network in which all token holders will have the opportunity to help govern and influence the future development of the network. Turing’s governance process will enable the sentiment and desires of our community to be considered when advancing our protocol. Our governance process has been designed to be inclusive of all members of the Polkadot and Kusama ecosystems including developers, collators, users, investors, partners, and other contributors. OAK Network highly values open discussion and will utilize governance forums such as the [Subsquare governance dashboard](https://turing.subsquare.io/) to enable proposals to be generated and shaped based on community input.
 
 #### Governance Definitions
 
@@ -73,7 +73,7 @@ The core components of the Turing Network governance model include:
 
 -   **Treasury –** A collection of TUR funds that the council can spend on appropriate proposals. Proposals must be approved by the council and require a deposit to be submitted. Rejected proposals will result in the deposit being burnt.
 
-To learn more about how on-chain governance is implemented for Polkadot and Kusama parachains you can visit the [<u>Walkthrough of Polkadot’s governance</u>](https://polkadot.network/blog/a-walkthrough-of-polkadots-governance/) article.
+To learn more about how on-chain governance is implemented for Polkadot and Kusama parachains you can visit the [Walkthrough of Polkadot’s governance](https://polkadot.network/blog/a-walkthrough-of-polkadots-governance/) article.
 
 #### Voting Weights
 
@@ -81,7 +81,7 @@ The voting weight of a token holder is determined by two parameters. The vote mu
 
 The conviction multiplier increases the vote multiplier every time the lock period is doubled.
 
-More information about the Kusama governance process can be found [<u>here.</u>](https://guide.kusama.network/docs/learn-governance/)
+More information about the Kusama governance process can be found [here.](https://guide.kusama.network/docs/learn-governance/)
 
 #### The Council and Technical Committee’s Voting Rights
 

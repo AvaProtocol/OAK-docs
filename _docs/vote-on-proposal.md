@@ -72,7 +72,7 @@ After the conclusion of the voting period, approved proposals from the referendu
 
 #### How to Vote via Subsquare
 
-If you would like an alternative to voting using the democracy tab on Polkadot.js you can also use the [<u>Turing Network Governance dashboard</u>](https://turing.subsquare.io/) on Subsquare for governance. The Subsquare dashboard can be used for endorsing proposals, voting on referenda, and participating in governance-based discussions. You will still need the Polkadot.js wallet extension. Once you have navigated to the [<u>Turing Network Governance dashboard</u>](https://turing.subsquare.io/) you will need to complete the following steps.
+If you would like an alternative to voting using the democracy tab on Polkadot.js you can also use the [Turing Network Governance dashboard](https://turing.subsquare.io/) on Subsquare for governance. The Subsquare dashboard can be used for endorsing proposals, voting on referenda, and participating in governance-based discussions. You will still need the Polkadot.js wallet extension. Once you have navigated to the [Turing Network Governance dashboard](https://turing.subsquare.io/) you will need to complete the following steps.
 
 1.  Login to the Subsquare platform using the account you wish to vote from.
 
