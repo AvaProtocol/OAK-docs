@@ -88,5 +88,3 @@ More information about the Kusama governance process can be found [<u>here.</u>]
 -   The technical committee may cancel a proposal before it has been passed if there is a unanimous vote.
 
 -   Each technical committee member may veto a council proposal. This may only be done once per proposal. A proposal which has been subject to a veto must complete the required cool-off period.
-
-More information about the Turing Network governance process can be found on our documents hub.
