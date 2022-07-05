@@ -7,12 +7,16 @@ tags: [infra, collator]
 
 ## Node Infrastructure Requirements
 On our path to decentralization and trustlessness, collators are a very important piece of the puzzle. We must maintain a high level of performance (as close to a 12 second block production time as possible), and a high degree of availability. As such, the Foundation must prescribe certain technical specifications when onboarding node operators. 
-Bare metal over cloud, especially when costs are a consideration to the node operator.
-- High internet connection (5 gigabits per second).
-- At least 8 CPU cores (fastest core speed).
-- At least 16GB of RAM.
-- At least 1TB of storage.
-- Monitoring and alerting in place (Prometheus, Grafana, the like).
+
+- Network: 1Gbit/s
+- CPU: 4.2GHz
+    - We use Intel Xeon E-2388G processors
+- RAM: 16GB
+- Storage: 1TB NVMe
+
+We recommend using a dedicated server instead of a virtual machine from a cloud provider to ensure maximum single-thread performance.
+
+Be sure to monitor your collator with tooling like Prometheus and Grafana.
 
 Please sync a few days before your intended collation / block production candidacy to sync the nodes. Once your node is synced, you will find that the block numbers are up to date with both the relay chain and the parachain. Check out the [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d) site for more information.
 
@@ -46,14 +50,12 @@ The Turing Network is live on Kusama. If you're interested in collating, please 
 ### Step 1: Get your binary ready
 
 #### Option 1: Grab a compiled binary from OAK's Github
-If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK that can be found in a zip [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest). You'll use this to run your collator on your node. To acquire a copy of this via command line, use the commands below.
+If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK that can be found [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest). You'll use this to run your collator on your node. To acquire a copy of this via command line, use the commands below.
 
 ```
-chain=turing
 latest_url=$(curl -Lsf -w %{url_effective} https://github.com/OAK-Foundation/OAK-blockchain/releases/latest/download/)
 version=${latest_url##*/}
-wget https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/${chain}-${version}.zip
-unzip ${chain}-${version}.zip
+curl -L https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/oak-collator -o oak-collator
 ```
 
 #### Option 2: Compile the binary

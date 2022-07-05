@@ -17,14 +17,12 @@ SSH to your target node, and make sure it's functioning properly by vetting Tele
 ### Step 2: Get the new binary ready
 
 #### Option 1: Grab a compiled binary from OAK's Github
-If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK that can be found in a zip [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest). You'll use this to run your collator on your node. To acquire a copy of this via command line, use the commands below.
+If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK that can be found [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest). You'll use this to run your collator on your node. To acquire a copy of this via command line, use the commands below.
 
 ```
-chain=turing
 latest_url=$(curl -Lsf -w %{url_effective} https://github.com/OAK-Foundation/OAK-blockchain/releases/latest/download/)
 version=${latest_url##*/}
-curl -o ${chain}-${version}.zip https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/${chain}-${version}.zip
-unzip ${chain}-${version}.zip
+curl -L https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/oak-collator -o oak-collator
 ```
 
 #### Option 2: Compile the binary
@@ -55,13 +53,12 @@ docker volume inspect turing-data
 ### Step 3: Replace your old binary
 
 #### Options 1 & 2
-```bash
-#!/usr/bin/env bash
-set -ex
-chain=turing # OR turing-staging
-cp $chain-$version.zip /tmp
-unzip -o /tmp/$chain-$version.zip -d PATH_TO_DATA_DIR
-```
+
+Linux binaries can be safely replaced while running if you perform an `unlink()` before placing the new file:
+1. Remove the existing binary (ie. `rm oak-collator`)
+2. Move the new binary into position (ie. `mv /tmp/oak-collator /data/dir/oak-collator`)
+
+If you are not comfortable replacing the running binary, you can stop the service (ie. `systemctl stop oak-collator`) and follow the same steps.
 
 #### Option 3
 
