@@ -19,7 +19,7 @@ Some important terms to understand when engaging with Turing Network governance.
 
 -   **Referendum –** A proposal which has received the most votes by the community during a launch period. There can be a maximum of five active referenda at a time.
 
--   **Launch period –** A period of 7 days in which new public referenda are launched.
+-   **Launch period –** A period of 5 days in which new public referenda are launched.
 
 -   **Voting period –** The time length in which TUR token holders have to vote for a referendum.
 
