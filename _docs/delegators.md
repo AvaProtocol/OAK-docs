@@ -4,27 +4,28 @@ subtitle: How to stake to a collator and earn rewards
 author: charles
 tags: [delegator]
 ---
-## Staking Resources (External)
-_The following links are provided for convenience and may include functionality that has not been built, tested, or audited by OAK Network._
+## How to stake TUR
+This guide provides links and instructions for staking by delegating an existing Turing Network collator. See [Collator Overview](https://docs.oak.tech/docs/collators/) for instructions on setting up your own collator.
 
-### Mobile 
-- [Nova Wallet (Android)](https://play.google.com/store/apps/details?id=io.novafoundation.nova.market)
-- [Nova (iOS)](https://apps.apple.com/us/app/nova-polkadot-kusama-wallet/id1597119355) - by Nova Wallet
+_Please exercise caution when following links to external resources that are not maintained or tested by the OAK Network team!_
 
-### Web (Interface)
-- [StakeTur](https://staketur.com) - read only
-- [OAK Staking Dashboard](https://web3go.xyz/#/OAKStaking) - by Web3Go
+## Which wallet are you using?
 
-### Web (PolkadotJS)
-- [How to stake](https://docs.oak.tech/docs/delegators/#how-to-stake) - by OAK Network
-- [Turing Staking Guide](https://oak-turing.pathrocknetwork.org) - by pathrocknetwork
-- [How to Stake TUR with the Turing Network](https://medium.com/stakebaby/how-to-stake-tur-with-the-turing-oak-network-by-stakebaby-23229f632b29) - by StakeBaby
+### Option 1: Browser Extension
+- Use [OAK Staking Dashboard](https://web3go.xyz/#/OAKStaking) by Web3Go to stake and delegate an existing collator from your web browser. 
 
-- [PolkadotJS Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics) - use this to execute post calls or functions (e.g. signing up to be a collator)
-- [Subscan](https://turing.subscan.io/) - use this for an indexing or reference service with a delightful user experience
-- [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate) - use this to query fungible storage items (e.g. the number of selected candidates)
-- [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
-- [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
+### Option 2: Nova Wallet
+- Nova Wallet ([Android](https://play.google.com/store/apps/details?id=io.novafoundation.nova.market)) and ([iOS](https://apps.apple.com/us/app/nova-polkadot-kusama-wallet/id1597119355)) supports staking and delegating from your mobile device.
+
+### Option 3: Polkadot JS ([Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics))
+Keep scrolling in this document or visit one the following guides created by members of the OAK Network community:
+
+- [Turing Staking Guide](https://oak-turing.pathrocknetwork.org) by pathrocknetwork, one of Turing Network's node operators.
+- [How to Stake TUR with the Turing Network](https://medium.com/stakebaby/how-to-stake-tur-with-the-turing-oak-network-by-stakebaby-23229f632b29) by StakeBaby, one of Turing Network's node operators. 
+
+### Which collator will you delegate your stake to?
+
+[StakeTur](https://staketur.com) by StakeBaby, staking applications, and wallet interfaces with staking support will provide additional information that can help you choose who to delegate. Join the [OAK Discord Server](https://discord.gg/7W9UDvsbwh) for #collator-open-chat about delegation.
 
 **Important disclaimer about risks**
 
@@ -34,13 +35,9 @@ _You agree and understand that neither the Turing Network, nor OAK Foundation gu
 
 _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and retrieving them requires a waiting period. Additionally, if a collator fails to perform required functions or acts in bad faith, a portion of their total stake can be slashed (i.e. destroyed). This includes the stake of their delegators. If a collators behaves suspiciously or is too often offline, delegators can choose to unbond from them or switch to another collator. Delegators can also mitigate risk by electing to distribute their stake across multiple collators._
 
-## How to stake
+## How to stake TUR using PolkadotJS
 
-### Step 1: Figure out who you want to stake to
-
-Before staking tokens to collators, we recommend you do your research on who to stake towards. To figure out the candidate pool, you can find the set of collators in [Subscan](https://turing.subscan.io/block), under the Collator column. Save their wallet address as `COLLATOR_WALLET_ADDRESS` to be used on the step below.
-
-### Step 2: Figure out your inputs
+### Step 1: Figure out your inputs
 You will need 3 inputs to stake your tokens. These inputs are as follows:
 1. Amount
 2. Candidate Delegation Count
@@ -49,7 +46,9 @@ You will need 3 inputs to stake your tokens. These inputs are as follows:
 These numbers are dynamic and will change with additional delegators. Please check these inputs every time before staking more tokens. In this step, there are 2 options below to find these inputs. You can either use Javascript or read the chain state on the UI.
 
 #### Option 1: Find Inputs Via Javascript
-To be stake your delegator via PolakdotJS extrinsics, you'll need to figure out three numbers. We've provided a helpful script for you to use. Navigate to the **Developer > Javascript** tab on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/js). Delete the content of the white box, copy and paste the script below, then replace `COLLATOR_WALLET_ADDRESS` and `YOUR_WALLET_ADDRESS` with the correct addresses.
+To be stake your delegator via PolakdotJS extrinsics, you'll need to figure out three numbers. We've provided a helpful script for you to use. Navigate to the **Developer > Javascript** tab on the [PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/js). 
+
+Delete the content of the white box, copy and paste the script below, then replace `COLLATOR_WALLET_ADDRESS` and `YOUR_WALLET_ADDRESS` with the correct addresses.
 
 ```javascript
 const collatorWalletAddress = "COLLATOR_WALLET_ADDRESS";
@@ -97,7 +96,7 @@ This contains information about the delegator state. The field `delegations` sho
 3. In the field below that says `AccountId32`, please insert your wallet address where you have your TUR tokens for staking.
 4. Press the circular `+` button on the right of the drop downs in order to execute your query.
 
-### Step 3: Stake your tokens to a collator
+### Step 2: Stake your tokens to a collator
 
 Currently, everything related to staking needs to be accessed via the Extrinsics menu, under the Developer tab. To delegate a candidate, provide the following information:
 
@@ -110,29 +109,21 @@ Currently, everything related to staking needs to be accessed via the Extrinsics
 
 ## FAQ
 
-### How do I pick which collator to delegate to?
-
-While we cannot answer this question for you, you can identify the collator from the [identity](../identity) that they set on-chain. Please do your research on their background based on the information provided. You can also ask #collator-open-chat in the [OAK Discord](https://discord.gg/7W9UDvsbwh) server for more information.
-
-Staking rewards are split evenly between all delegators for a given collator so delegating to a collator with less total stake will net you more proportional rewards.
-Only the top 24 collators are selected to the active set for block authoring so any delegations to collators outside the active set will not receive rewards.
-Only the top 300 delegators for each collator will receive rewards.
-
 ### How do I check how many TUR rewards I’ve received?
 
-You can navigate to [Turing's Subscan](https://turing.subscan.io/event?address=YOUR_NOMINATOR_WALLET&module=parachainstaking&event=reward) page to view your rewards.
+Search for your wallet on the [Turing Subscan](https://turing.subscan.io/event?address=YOUR_NOMINATOR_WALLET&module=parachainstaking&event=reward) and filter for "reward" events.
 
 ### What rewards will I get?
 
-2.5% of annual inflation is distributed amongst the stakers of each collator (including the collator themselves) based on the number of blocks they successfully author. Those rewards are distributed proportionally among the stakers of that collator.
+The Turing Network pays 2.5% in annual token inflation to the stakers who back the collators which successfully author blocks. Those rewards are distributed proportionally among the stakers for each collator, including the self-bond of the node operator and up to 300 delegators.
 
-As candidates in the active set of collators receive rewards from block production, delegators get rewards as well.
+Each block pays the same amount in rewards, so your portion of rewards for authoring each block will be lower when delegating to a collator with a higher total stake (self-bond plus delegated stake) when compared to a collator with a lower total stake.
 
-You can view the delegated amount and the change in the balance due to each round of staking rewards on the Accounts page.
-
-![accounts](../../assets/img/staking-delegation/accounts.png)
+[StakeTur](https://staketur.com) by StakeBaby, staking applications, and wallet interfaces with staking support will provide additional information that can help you estimate staking rewards and APR.
 
 ## Turing Network - Kusama Parachain
+
+_Note: The source of truth for these values is the chain state and constants, so please query that to confirm the values_
 
 | Field                                                         | Current Value                                              |
 | ------------------------------------------------------------- | ---------------------------------------------------------- |
@@ -141,5 +132,3 @@ You can view the delegated amount and the change in the balance due to each roun
 | Round Length `parachainStaking.round`                         | 600 blocks or ~2 hours                                     |
 | Rewards payout `const parachainStaking.rewardPaymentDelay`    | Time left to complete current round + 2 rounds or ~4 hours |
 | Inflation `parachainStaking.inflationConfig`                  | 5.00% annually                                             |
-
-_Note: The source of truth for the values above is the chain state and constants, so please query that to double-check the values_
