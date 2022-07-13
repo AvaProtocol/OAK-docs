@@ -43,7 +43,7 @@ tags: [develop]
 ## 3Q2022 - In Progress
 ### Apps
 - Polkadot crowdloan app for OAK
-- Auto-compounding for with select partners
+- Auto-compounding with select partners
 - Liquidity pool compounding with select partner
 - Portfolio and other DApp integrations with additional partners for Turing
 
