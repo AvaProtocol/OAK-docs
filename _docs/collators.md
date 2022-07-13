@@ -210,7 +210,7 @@ No. Each collator must be associated with a unique wallet in order to join the c
 Collators collect 2 types of rewards: the collator reward and the staking reward. 1% annual inflation goes directly to collators. This does not dilute based on the number of people staking to your node. 2.5% annual inflation goes to staking rewards. This is split proportionately among all stakers to that node. This will be diluted as more people stake to your node. This creates an incentive for roughly all the nodes to have similar stakes for stakers to maximize their APY.
 
 Performance differences between nodes may cause stakers to choose to split their stakes in way that is not perfectly even. Since rewards are paid out per block successfully authored.
-For more information, please read our [Turing Tokenomics Paper](https://docs.oak.tech/papers/turing_tokenomics_paper.pdf).
+For more information, please read our [Turing Tokenomics Paper](/papers/turing_tokenomics_paper.pdf).
 
 ### If I joined as a collator in the candidate pool, and the minimum self bond increases, what happens to my node?
 
