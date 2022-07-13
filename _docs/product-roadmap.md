@@ -5,10 +5,10 @@ author: irsal
 tags: [develop]
 ---
 
-## 4Q2021
+## 4Q2021 - Completed & Launched
 - Event Registry Proof of Concept
 
-## 1Q2022
+## 1Q2022 - Completed & Launched
 ### Apps
 - OAK Website Design Rebrand
 - Kusama crowdloan for Turing (TUR) Network parachain
@@ -22,9 +22,9 @@ tags: [develop]
 - **Triggers:** time
 - **Actions:** sending an event, and wallet-to-wallet transaction for NEU
 
-## 2Q2022 
+## 2Q2022 - Completed & Launched 
 ### Apps
-- Blockchain SDKs for developers (JS)
+- Blockchain SDKs for developers (JS) - [DApp Competition](https://oak.tech/community/grants/)
 - Turing Automation DApps: transparency for the end-users' transactions
 - DEX integration with select partner
 - Yield farming integration with select partner (e.g. adjusting composable yield strategies based on personal risk profiles)
@@ -32,38 +32,41 @@ tags: [develop]
 
 ### Blockchain
 - [Turing Network Launch (Kusama Parachain)](https://oak.tech/turing/phases/)
+- Turing Network is fully decentralized
 - Onboarding more collators to the Neumann & Turing Networks
+- Security & technical audits
 - Time specificity: crafting granularity in when a task is to be triggered and at what slippage
-- HRMP Channels to select partners
-- Private automated tasks pilot
-- **Triggers:** price, XCMP events
-- **Actions:** recurring actions, cross-chain asset transfer, limit order, stop-loss orders
+- HRMP Channels to select partners (Karura, Parallel, Khala)
+- **Triggers:** staking events
+- **Actions:** recurring actions, cross-chain asset transfer
 
-## 3Q2022
+## 3Q2022 - In Progress
 ### Apps
 - Polkadot crowdloan app for OAK
-- Dollar cost average with select partners
+- Auto-compounding for with select partners
+- Liquidity pool compounding with select partner
 - Portfolio and other DApp integrations with additional partners for Turing
 
 ### Blockchain
-- Turing Network is fully decentralized
+- Removal of sudo for Turing Network
 - EVM integration with select partner
-- Automation fees optimization
-- Insurance fees pilot
-- Refunding tasks pilot
 - Node infrastructure performance optimization
-- Security & technical audits
 - Customized triggers for consumers and developers
-- **Triggers:** smart contracts
-- **Actions:** smart contracts
+- **Triggers:** price, XCMP events
+- **Actions:** smart contracts, limit orders, XCMP events
 
 ## 4Q2022
 ### Apps
-- DApplets Marketplace: an online marketplace where creators can submit automation DApps and consumers can opt to use them similar to [IFTTT](https://ifttt.com/explore)
+- Trigges and Actions DApp Marketplace: an online marketplace where creators can submit automation DApps and consumers can opt to use them similar to [IFTTT](https://ifttt.com/explore)
 
 ### Blockchain
 - OAK Network Launch
+- Ethereum bridge expansion
+- Private automated tasks pilot
+- Automation fees optimization
+- Insurance fees pilot
+- Refunding tasks pilot
 - Customized triggers for consumers and developers
-- **Triggers:** external data feed (weather, etc.)
+- **Triggers:** smart contracts, external data feed (weather, etc.)
 - **Actions:** IoT actions
 
