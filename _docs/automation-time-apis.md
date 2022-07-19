@@ -121,6 +121,92 @@ pub enum Error {
 }
 ```
 
+### RPC: Generate Task ID based on Provided ID and Account ID
+This API allows you to generate the Task ID based on the Provided ID and Account ID used to create the task.
+
+#### Call
+```rust
+fn generate_task_id(
+    /// The `account_id` of the user. This is the wallet address of the user who created the task.
+    account_id: AccountId,
+    /// An id provided by the user. This id must be unique for each task for a given user.
+    provided_id: Vec<u8>,
+    )
+```
+
+** For those who are not familiar with rust `Vec<u8>` accepts a string input. For example, "I am as unique as a snowflake" is a valid input.
+
+### RPC: Get Time Automation Fees
+This API allows you to get the fees for the automation time task.
+
+#### Call
+```rust
+fn get_time_automation_fees(
+    /// The action that you will be using, provided in String format.  
+    action: AutomationAction,
+    /// The number of task executions
+    executions: u32,
+    )
+```
+
+** The 4 enums for action are: Notify, NativeTransfer, XCMP, AutoCompoundDelegatedStake.
+
+#### Errors
+```rust
+pub enum Error {
+    // fee calculation went wrong
+    "Unable to get time automation fees",
+    // the fee is too large and cannot fit in u64 representation.
+    "RPC value doesn't fit in u64 representation",
+}
+```
+
+### RPC: Calculate Optimal Autostaking
+This API calculates the optimal parameters for autostaking.
+
+#### Call
+```rust
+fn calculate_optimal_autostaking(
+    /// The amount that will be staked.
+    principal: i128,
+    /// The collator to which the principal will be staked.
+    collator: AccountId,
+    )
+```
+
+** This will return a JSON object with a time period and an APY. The time period represents the optimal staking duration and the APY is the projected staking return.
+
+#### Errors
+```rust
+pub enum Error {
+    // The optimal autostaking calculation went wrong.
+    "Unable to calculate optimal autostaking",
+    // The collator provided is not a real collator.
+    "collator does not exist",
+    // The fee calculation went wrong.
+    "could not calculate fee",
+}
+```
+
+### RPC: Get Task IDs for Auto-compounding staking delegation tasks.
+This API gets the task IDs for auto-compounded stake delegation tasks.
+
+#### Call
+```rust
+fn get_auto_compound_delegated_stake_task_ids(
+    /// The account ID of the wallet of the delegator.
+    account_id: AccountId
+    )
+```
+
+#### Errors
+```rust
+pub enum Error {
+    // Retrieval of Task IDs went wrong.
+    "Unable to get AutoCompoundDelegatedStakeTask ids",
+}
+```
+
 ## Coming soon
 
 **The schemas in this section are preliminary. Expect them to change.**
