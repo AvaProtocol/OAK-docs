@@ -25,11 +25,11 @@ fn schedule_notify_task(
     time: u64,
     /// The message you want the event to have.
     message: Vec<u8>,
-    )
+)
 ```
 
-** For those who are not familiar with rust `Vec<u8>` accepts a string input. For example, "I am as unique as a snowflake" is a valid input.  
-** If you are unfamiliar with unix time here is a handy [converter](https://www.epochconverter.com).  
+* Rust `Vec<u8>` input fields accepts a string input. For example, "I am as unique as a snowflake" is a valid input.  
+* If you are unfamiliar with unix time here is a handy [converter](https://www.epochconverter.com).  
 
 
 #### Errors
@@ -53,7 +53,7 @@ pub enum Error {
 ### Cancel a Task
 This API allows you to cancel a scheduled task. In order to do this you must have created the task and have the `task_id`.
 
-** We are still working on the RPC call to generate the task_id. Please save your `provided_id` so you can generate this later.
+* We are still working on the RPC call to generate the task_id. Please save your `provided_id` so you can generate this later.
 
 #### Call
 ```rust
@@ -62,7 +62,7 @@ fn cancel_task(
     origin: OriginFor<T>, 
     /// The id of the task.
     task_id: Hash,
-    )
+)
 ```
 
 #### Errors
@@ -91,13 +91,13 @@ fn schedule_native_transfer_task(
     recipient_id: AccountId,
     /// The amount you want to transfer. 
     amount: u128,
-    )
+)
 ```
 
-** For those who are not familiar with rust `Vec<u8>` accepts a string input. For example, "I am as unique as a snowflake" is a valid input.  
-** If you are unfamiliar with unix time here is a handy [converter](https://www.epochconverter.com).  
-** The unix time stamp must be at the start of any minute. This means that the timestamp number modulo 60 must be 0.  
-** The smallest acceptable amount is 1,000,000,000, which is equivalent to 0.1 NEU.  
+* Rust `Vec<u8>` input fields accepts a string input. For example, "I am as unique as a snowflake" is a valid input.  
+* If you are unfamiliar with unix time here is a handy [converter](https://www.epochconverter.com).  
+* The unix time stamp must be at the start of any minute. This means that the timestamp number modulo 60 must be 0.  
+* The smallest acceptable amount is 1,000,000,000, which is equivalent to 0.1 NEU.  
 
 #### Errors
 ```rust
@@ -131,20 +131,15 @@ fn generate_task_id(
     account_id: AccountId,
     /// An id provided by the user. This id must be unique for each task for a given user.
     provided_id: Vec<u8>,
-    )
+)
 ```
 
-** For those who are not familiar with rust `Vec<u8>` accepts a string input. For example, "I am as unique as a snowflake" is a valid input.
-** This RPC should return the task ID associated with this unique combination of account ID and provided ID.
-** This RPC does not provide the task ID for only tasks that are scheduled. It can provided the potential task ID for non-scheduled tasks, so long as the non-scheduled tasks are scheduled with the provided account_id and provided_id. 
+* Rust `Vec<u8>` input fields accepts a string input. For example, "I am as unique as a snowflake" is a valid input.
+* This RPC should return the task ID associated with this unique combination of account ID and provided ID.
+* This RPC does not provide the task ID for only tasks that are scheduled. It can provided the potential task ID for non-scheduled tasks, so long as the non-scheduled tasks are scheduled with the provided account_id and provided_id. 
 
 #### Errors
-```rust
-pub enum Error {
-    // Could not generate the task_id.
-    "Unable to generate task_id",
-}
-```
+* **Unable to generate task_id**: Could not generate the task_id.
 
 #### Example
 Sample Request
@@ -173,22 +168,24 @@ fn get_time_automation_fees(
     action: AutomationAction,
     /// The number of task executions
     executions: u32,
-    )
+)
 ```
 
-** The 4 enums for AutomationAction are: Notify, NativeTransfer, XCMP, AutoCompoundDelegatedStake.
-** Note that this RPC does not return the inclusion fee of including the task onto the block. That is a separate RPC call: payment.queryFeeDetails. This only provides the execution fee of the task. 
-** The difference between inclusion fee and execution fee is created in the fact that the OAK blockchain runs tasks in the future off of a time trigger. This means that fees are charged not only for inclusion of the task onto the chain, but also the execution of the task in the future. This current RPC only shows the execution cost.
-
-#### Errors
-```rust
-pub enum Error {
-    // The fee calculation went wrong
-    "Unable to get time automation fees",
-    // The fee amount is too large and cannot fit in u64 representation.
-    "RPC value doesn't fit in u64 representation",
+* Note that this RPC does not return the inclusion fee of including the task onto the block. That is a separate RPC call: payment.queryFeeDetails. This only provides the execution fee of the task. 
+* The difference between inclusion fee and execution fee is created in the fact that the OAK blockchain runs tasks in the future off of a time trigger. This means that fees are charged not only for inclusion of the task onto the chain, but also the execution of the task in the future. This current RPC only shows the execution cost.
+* The enums for AutomationAction are as follows:
+```rust 
+pub enum AutomationAction {
+    Notify,
+    NativeTransfer,
+    XCMP,
+    AutoCompoundDelgatedStake,
 }
 ```
+
+#### Errors
+* **Unable to get time automation fees**: The fee calculation went wrong
+* **RPC value doesn't fit in u64 representation**: The fee amount is too large and cannot fit in u64 representation.
 
 #### Example
 Sample Request
@@ -217,22 +214,15 @@ fn calculate_optimal_autostaking(
     principal: i128,
     /// The collator to which the principal will be staked.
     collator: AccountId,
-    )
+)
 ```
 
-** This RPC will return a JSON object with a time period and an APY. The time period represents the optimal staking duration and the APY is the projected staking return.
+* This RPC will return a JSON object with a time period and an APY. The time period represents the optimal staking duration and the APY is the projected staking return.
 
 #### Errors
-```rust
-pub enum Error {
-    // The optimal autostaking calculation went wrong.
-    "Unable to calculate optimal autostaking",
-    // The collator provided is not a real collator.
-    "collator does not exist",
-    // The fee calculation went wrong.
-    "could not calculate fee",
-}
-```
+* **Unable to calculate optimal autostaking**: The optimal autostaking calculation went wrong.
+* **collator does not exist**: The collator provided is not a real collator.
+* **could not calculate fee**: The fee calculation went wrong.
 
 #### Example
 Sample Request
@@ -262,18 +252,13 @@ This API gets the task IDs for auto-compounded stake delegation tasks. Auto-comp
 fn get_auto_compound_delegated_stake_task_ids(
     /// The account ID of the wallet of the delegator.
     account_id: AccountId
-    )
+)
 ```
 
-** This RPC will return the task IDs of the auto-compounding staking delegation task for each collator that this wallet has staked with.
+* This RPC will return the task IDs of the auto-compounding staking delegation task for each collator that this wallet has staked with.
 
 #### Errors
-```rust
-pub enum Error {
-    // Retrieval of Task IDs went wrong.
-    "Unable to get AutoCompoundDelegatedStakeTask ids",
-}
-```
+* **Unable to get AutoCompoundDelegatedStakeTask ids**: Retrieval of Task IDs went wrong.
 
 #### Example
 Sample Request
@@ -317,6 +302,6 @@ fn schedule_transfer_task(
     amount: u128,
     /// The token you want to be transferred.
     token: Token,
-    )
+)
 ```
 
