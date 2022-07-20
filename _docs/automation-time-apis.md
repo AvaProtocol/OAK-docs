@@ -135,9 +135,19 @@ fn generate_task_id(
 ```
 
 ** For those who are not familiar with rust `Vec<u8>` accepts a string input. For example, "I am as unique as a snowflake" is a valid input.
+** This RPC should return the task ID associated with this unique combination of account ID and provided ID.
+** This RPC does not provide the task ID for only tasks that are scheduled. It can provided the potential task ID for non-scheduled tasks, so long as the non-scheduled tasks are scheduled with the provided account_id and provided_id. 
+
+#### Errors
+```rust
+pub enum Error {
+    // Could not generate the task_id.
+    "Unable to generate task_id",
+}
+```
 
 ### RPC: Get Time Automation Fees
-This API allows you to get the fees for the automation time task.
+This API allows you to get the execution fees for the automation time task.
 
 #### Call
 ```rust
@@ -150,6 +160,8 @@ fn get_time_automation_fees(
 ```
 
 ** The 4 enums for AutomationAction are: Notify, NativeTransfer, XCMP, AutoCompoundDelegatedStake.
+** Note that this RPC does not return the inclusion fee of including the task onto the block. That is a separate RPC call: payment.queryFeeDetails. This only provides the execution fee of the task. 
+** The difference between inclusion fee and execution fee is created in the fact that the OAK blockchain runs tasks in the future off of a time trigger. This means that fees are charged not only for inclusion of the task onto the chain, but also the execution of the task in the future. This current RPC only shows the execution cost.
 
 #### Errors
 ```rust
@@ -162,7 +174,7 @@ pub enum Error {
 ```
 
 ### RPC: Calculate Optimal Autostaking
-This API calculates the optimal parameters for autostaking.
+This API calculates the optimal parameters for autostaking. Autostaking is the process of restaking the returns from some staked principal. Restaking too frequently becomes too costly for fees, but restaking too infrequently leaves too much opportunity cost on the table, as the unstaked balance sits in the wallet without providing additional staking value. This function finds the optimal frequency and the corresponding APY for restaking.
 
 #### Call
 ```rust
@@ -189,7 +201,7 @@ pub enum Error {
 ```
 
 ### RPC: Get Task IDs for Auto-compounding staking delegation tasks.
-This API gets the task IDs for auto-compounded stake delegation tasks.
+This API gets the task IDs for auto-compounded stake delegation tasks. Auto-compounding staking delegation tasks are unique to an wallet address and collator pair. This RPC collects all of the task IDs for each unique wallet address to collator pair, given a single wallet address.
 
 #### Call
 ```rust
@@ -199,7 +211,7 @@ fn get_auto_compound_delegated_stake_task_ids(
     )
 ```
 
-** This RPC will return the task ID of the auto-compounding staking delegation task for this wallet.
+** This RPC will return the task IDs of the auto-compounding staking delegation task for each collator that this wallet has staked with.
 
 #### Errors
 ```rust
