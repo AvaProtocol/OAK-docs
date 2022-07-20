@@ -149,14 +149,14 @@ fn get_time_automation_fees(
     )
 ```
 
-** The 4 enums for action are: Notify, NativeTransfer, XCMP, AutoCompoundDelegatedStake.
+** The 4 enums for AutomationAction are: Notify, NativeTransfer, XCMP, AutoCompoundDelegatedStake.
 
 #### Errors
 ```rust
 pub enum Error {
-    // fee calculation went wrong
+    // The fee calculation went wrong
     "Unable to get time automation fees",
-    // the fee is too large and cannot fit in u64 representation.
+    // The fee amount is too large and cannot fit in u64 representation.
     "RPC value doesn't fit in u64 representation",
 }
 ```
@@ -174,7 +174,7 @@ fn calculate_optimal_autostaking(
     )
 ```
 
-** This will return a JSON object with a time period and an APY. The time period represents the optimal staking duration and the APY is the projected staking return.
+** This RPC will return a JSON object with a time period and an APY. The time period represents the optimal staking duration and the APY is the projected staking return.
 
 #### Errors
 ```rust
@@ -198,6 +198,8 @@ fn get_auto_compound_delegated_stake_task_ids(
     account_id: AccountId
     )
 ```
+
+** This RPC will return the task ID of the auto-compounding staking delegation task for this wallet.
 
 #### Errors
 ```rust
