@@ -146,6 +146,23 @@ pub enum Error {
 }
 ```
 
+#### Example
+Sample Request
+```cURL
+curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
+--header 'Content-Type: application/json' \
+--data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_generateTaskId", "params": ["5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", "savedProvidedID"]}'
+```
+
+Sample Response
+```JSON
+{
+    "jsonrpc": "2.0",
+    "result": "0x45edb12767422ace02643641c0224b7a37d584751779e78e35819212d04100fd",
+    "id": 1
+}
+```
+
 ### RPC: Get Time Automation Fees
 This API allows you to get the execution fees for the automation time task.
 
@@ -170,6 +187,23 @@ pub enum Error {
     "Unable to get time automation fees",
     // The fee amount is too large and cannot fit in u64 representation.
     "RPC value doesn't fit in u64 representation",
+}
+```
+
+#### Example
+Sample Request
+```cURL
+curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
+--header 'Content-Type: application/json' \
+--data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_getTimeAutomationFees", "params": ["Notify", 3]}'
+```
+
+Sample Response
+```JSON
+{
+    "jsonrpc": "2.0",
+    "result": 252000000,
+    "id": 1
 }
 ```
 
@@ -200,8 +234,28 @@ pub enum Error {
 }
 ```
 
+#### Example
+Sample Request
+```cURL
+curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
+--header 'Content-Type: application/json' \
+--data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_calculateOptimalAutostaking", "params": [1000000000000, "6AwtFW6sYcQ8RcuAJeXdDKuFtUVXj4xW57ghjYQ5xyciT1yd"]}'
+```
+
+Sample Response
+```JSON
+{
+    "jsonrpc": "2.0",
+    "result": {
+        "period": 63,
+        "apy": 0.08711145708327778
+    },
+    "id": 1
+}
+```
+
 ### RPC: Get Task IDs for Auto-compounding staking delegation tasks.
-This API gets the task IDs for auto-compounded stake delegation tasks. Auto-compounding staking delegation tasks are unique to an wallet address and collator pair. This RPC collects all of the task IDs for each unique wallet address to collator pair, given a single wallet address.
+This API gets the task IDs for auto-compounded stake delegation tasks. Auto-compounding staking delegation tasks are unique to an wallet address and collator pair. This RPC collects all of the task IDs for existing auto-compounding staking delegation tasks for each unique wallet address to collator pair, given a single wallet address. The auto-compounding task must exist in order for this RPC to return a task ID. The delegator must also have delegated to a collator first in order for the auto-compounding task to be included. 
 
 #### Call
 ```rust
@@ -218,6 +272,26 @@ fn get_auto_compound_delegated_stake_task_ids(
 pub enum Error {
     // Retrieval of Task IDs went wrong.
     "Unable to get AutoCompoundDelegatedStakeTask ids",
+}
+```
+
+#### Example
+Sample Request
+```cURL
+curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
+--header 'Content-Type: application/json' \
+--data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_getAutoCompoundDelegatedStakeTaskIds", "params": ["68vqVx27xVYeCkqJTQnyXrcMCaKADUa7Rywn9TSrUZyp4NGP"]}'
+```
+
+Sample Response
+```JSON
+{
+    "jsonrpc": "2.0",
+    "result": [
+        "0xceff6bb4a24529cbd4707cafd9ee158774ecbdc31e3479e1452a259df91f2c50",
+        "0xb222b3501b23c6482894b6051d7fcbae7de3da9c8a8dc9e54971dbaff129b028"
+    ],
+    "id": 1
 }
 ```
 
