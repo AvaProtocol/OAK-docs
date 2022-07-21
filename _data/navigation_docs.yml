@@ -26,6 +26,7 @@
   - setup-collator-node-partner
   - run-node-service
   - upgrade-collator-node
+  - proxy-collator-permissions
 
 - title: Developer Guide
   docs:
