@@ -217,7 +217,7 @@ fn calculate_optimal_autostaking(
 )
 ```
 
-* This RPC will return a JSON object with a time period and an APY. The time period represents the optimal staking duration and the APY is the projected staking return.
+* This RPC will return a JSON object with a time period and an APY. The time period represents the optimal staking duration in days and the APY is the projected staking return.
 
 #### Errors
 * **Unable to calculate optimal autostaking**: The optimal autostaking calculation went wrong.
@@ -243,6 +243,8 @@ Sample Response
     "id": 1
 }
 ```
+
+* In this example, the optimal autostaking period is 63 days, which will yield APY of 8.71%.
 
 ### RPC: Get Task IDs for Auto-compounding staking delegation tasks
 This API gets the task IDs for auto-compounded stake delegation tasks. Auto-compounding staking delegation tasks are unique to an wallet address and collator pair. This RPC collects all of the task IDs for existing auto-compounding staking delegation tasks for each unique wallet address to collator pair, given a single wallet address. The auto-compounding task must exist in order for this RPC to return a task ID. The delegator must also have delegated to a collator first in order for the auto-compounding task to be included. 
