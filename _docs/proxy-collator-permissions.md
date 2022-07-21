@@ -32,7 +32,7 @@ Use the Polkadot JS wallet app to execute the extrinsic to delegate permissions.
     * delay: Count in blocks before this proxy is valid
 5. Submit and sign the extrinsic.
 
-Once the permission has been delegated, the second account can be used to update session keys for collating.  See the [collator documentation](../collators/#how-to-register-as-a-collator) for information on acquiring and setting session keys.
+Once the permission has been delegated, the second account can be used to execute session extrinsics using the `proxy.proxy` extrinsic.  See the [collator documentation](../collators/#how-to-register-as-a-collator) for information on acquiring and setting session keys.
 
 ## Advanced collating delegation
 
