@@ -12,7 +12,7 @@ The multi-sig wallet is a multi-person collaborative wallet. When a participant 
 ### Pre-requisites
 
 1. Head over to the [Turing Staging PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing-staging.oak.tech%2Fpublic-ws#/explorer) or [Turing PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing-staging.oak.tech%2Fpublic-ws#/explorer)
-2. Go to the Accounts > Accounts
+2. Go to the Accounts > My accounts
 
 ### Create multisig wallet
 
