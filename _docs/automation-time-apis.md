@@ -244,7 +244,7 @@ Sample Response
 }
 ```
 
-### RPC: Get Task IDs for Auto-compounding staking delegation tasks.
+### RPC: Get Task IDs for Auto-compounding staking delegation tasks
 This API gets the task IDs for auto-compounded stake delegation tasks. Auto-compounding staking delegation tasks are unique to an wallet address and collator pair. This RPC collects all of the task IDs for existing auto-compounding staking delegation tasks for each unique wallet address to collator pair, given a single wallet address. The auto-compounding task must exist in order for this RPC to return a task ID. The delegator must also have delegated to a collator first in order for the auto-compounding task to be included. 
 
 #### Call
@@ -280,28 +280,45 @@ Sample Response
 }
 ```
 
-## Coming soon
+## Experimental
 
-**The schemas in this section are preliminary. Expect them to change.**
-
-### Schedule a Token Transfer
-This API allows you to schedule transfering the provided token to another user.
+### Experimental: XCMP Custom Action
+This API allows another parachain to schedule a call in the future and have OAK call back to the initiating parachain with a pre-packaged extrinsic call in order to perform an action in the future. For example, this can be used to schedule transferring a provided token to another user. Currently this extrinsic is built in such a way that the cross-chain action is being initiated by another parachain to schedule something on OAK, for OAK to send back later. However, this paradigm may shift in the future to have the user directly schedule on OAK. 
 
 #### Call
 ```rust
-fn schedule_transfer_task(
+fn schedule_xcmp_task(
     /// The `account_id` of the caller. Automatically passed in when the transaction is signed.
-    origin: OriginFor<T>, 
+    origin: OriginFor<T>,
     /// An id provided by the user. This id must be unique for the user.
     provided_id: Vec<u8>,
-    /// The unix standard time in seconds for when the task should run.
-    time: u64,
-    /// The account you want to transfer tokens to.
-    receiver_account_id: AccountId,
-    /// The amount you want to transfer.
-    amount: u128,
-    /// The token you want to be transferred.
-    token: Token,
+    /// The unix standard time in seconds for when the task should run. You can insert up to 24 reoccurances.
+    execution_times: Vec<UnixTime>,
+    /// The parachain location to where the user wants to send the call back
+    para_id: ParaId,
+    /// The encoded extrinsic call to perform a custom action.
+    call: Vec<u8>,
+    /// The total weight of the encoded call that will be sent back to the parachain.
+    weight_at_most: Weight,
 )
 ```
 
+#### Errors
+```rust
+pub enum Error {
+    /// If the `time` parameter does not end in a whole minute.
+    InvalidTime,
+    /// The `time` parameter must be in the future.
+    PastTime,
+    /// The `provided_id` cannot be empty.
+    EmptyProvidedId,
+    /// The `provided_id` is already in use for your account.
+    DuplicateTask,
+    /// The time you requested in full. No more tasks can be scheduled for this time.
+    TimeSlotFull,
+    /// The message cannot be empty.
+	EmptyMessage,
+    /// ParaId provided does not match origin paraId.
+    ParaIdMismatch,
+}
+```
