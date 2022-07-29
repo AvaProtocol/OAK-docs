@@ -1,15 +1,17 @@
 ---
-title: Company Overview
-subtitle: Learn more about what OAK as a company is all about.
+title: OAK Network
+subtitle: Web3's hub for cross-chain automation.
 author: chris
 tags: [architecture]
 ---
 
-![oak_event_driven](../../assets/img/oak-event-driven.png)
+[__OAK Network__](https://oak.tech) is web3’s hub for cross-chain automation, enabling multi-chain apps to schedule and automate any substrate extrinsic or EVM smart contract function. OAK is built to deliver trustless automation, dedicating its block space and optimizing gas to store, trigger, and execute transactions on connected blockchains. 
 
-[__OAK (On-chain Autonomous Kernel) Network__](https://oak.tech) is an automation blockchain for Defi and recurring payments across protocols. The blockchain is built on Parity Substrate with an event-driven execution model. Different from Ethereum’s transaction-based model, where a transaction requires private key signing, OAK allows transactions to be triggered by event signals such as time, price, event triggers and smart contract state changes. 
- 
-OAK Network aims to be the best-in-class automation utility across protocols, offering on-chain automation not possible today, such as [limit & stop-loss orders](https://docs.uniswap.org/protocol/concepts/V3-overview/range-orders) on Automated-Market-Making DEX and recurring payments. With OAK's on-chain finality and network security, it can empower any blockchain with its autonomous functionality, unleashing endless product potentials.
+OAK’s automation combines off-chain data streams with event-driven execution to automatically execute any transaction or smart contract function. Cross-consensus messaging (XCM) enables OAK to not only automate transactions on OAK, but also on any connected blockchains without tokens or private keys ever touching OAK. OAK’s trustless automation unlocks rich user experiences including scheduled and recurring payments, stable-cost-averaging, stop loss orders, and automatically-compounding rewards for staking, liquidity pool participants, and money market deposits.
+
+As a layer one blockchain, OAK provides automation infrastructure that enables decentralized applications to automate single or recurring transactions using a simple “if this” condition and “then that” transaction instruction.
+
+![oak_event_driven](../../assets/img/oak-event-driven.png)
 
 ## Mission
 To make automation seamless, trustless and secure for consumers of all generations.
