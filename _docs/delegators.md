@@ -12,14 +12,16 @@ _Please exercise caution when following links to external resources that are not
 ## Which wallet are you using?
 
 ### Option 1: Browser Extension
-- Use [OAK Staking Dashboard](https://web3go.xyz/#/OAKStaking) by Web3Go to stake and delegate an existing collator from your web browser. 
+- Use [OAK Staking Dashboard](https://web3go.xyz/#/TuringStaking) by Web3Go to stake and delegate an existing collator from your web browser. 
 
 ### Option 2: Nova Wallet
-- Nova Wallet ([Android](https://play.google.com/store/apps/details?id=io.novafoundation.nova.market)) and ([iOS](https://apps.apple.com/us/app/nova-polkadot-kusama-wallet/id1597119355)) supports staking and delegating from your mobile device.
+- Nova Wallet on [Android](https://play.google.com/store/apps/details?id=io.novafoundation.nova.market) and [iOS](https://apps.apple.com/us/app/nova-polkadot-kusama-wallet/id1597119355) supports staking and delegating from your mobile device.
+- Video tutorial for Nova Wallet is available in [English](https://www.youtube.com/watch?v=UhmNwO4hhRQ).
 
 ### Option 3: Polkadot JS ([Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics))
 Keep scrolling in this document or visit one the following guides created by members of the OAK Network community:
 
+- Video tutorial is available in [English](https://www.youtube.com/watch?v=XDryLlbQs8g).
 - [Turing Staking Guide](https://oak-turing.pathrocknetwork.org) by pathrocknetwork, one of Turing Network's node operators.
 - [How to Stake TUR with the Turing Network](https://medium.com/stakebaby/how-to-stake-tur-with-the-turing-oak-network-by-stakebaby-23229f632b29) by StakeBaby, one of Turing Network's node operators. 
 
