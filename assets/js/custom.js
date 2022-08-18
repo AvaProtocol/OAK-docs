@@ -153,3 +153,26 @@
     run();
   };
 })();
+
+
+(function() {
+  const run = () => {
+    const docs = document.querySelectorAll('.sidebar-docs')[0];
+
+    const docDivs = docs.querySelectorAll('div');
+    docDivs.forEach(function (divElem) {
+      const h5Element = divElem.querySelectorAll('h5')[0];
+      h5Element.addEventListener('click', function () {
+        const ulElement = divElem.querySelectorAll('ul')[0];
+        ulElement.style.display = ulElement.style.display === 'none' ? 'block' : 'none';
+      });
+    });
+  }
+
+  // Executed when the page is loaded.
+  const onload = window.onload || function() {};
+  window.onload = () => {
+    onload();
+    run();
+  };
+})();

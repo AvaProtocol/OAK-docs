@@ -20,6 +20,7 @@ layout: default
 
                     {% for section in site.data.navigation_docs %}
                     {% if group == section.group %}
+                    <div>
                     <h5>{{ section.title }}</h5>
 
                     <ul class="uk-nav uk-nav-default doc-nav">
@@ -33,6 +34,7 @@ layout: default
                       {% endif %}
                     {% endfor %}
                     </ul>
+                    </div>
                     {% endif %}
                     {% endfor %}
                 </div>
