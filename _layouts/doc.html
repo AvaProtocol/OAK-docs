@@ -21,9 +21,9 @@ layout: default
                     {% for section in site.data.navigation_docs %}
                     {% if group == section.group %}
                     <div>
-                    <h5>{{ section.title }}</h5>
+                    <h5><span>{{ section.title }}</span><i class="icofont-simple-right"></i></h5>
 
-                    <ul class="uk-nav uk-nav-default doc-nav">
+                    <ul class="uk-nav uk-nav-default doc-nav" style="display: none;">
                     {% for doc in section.docs %}
                       {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
                       {% if doc.title == nil %}

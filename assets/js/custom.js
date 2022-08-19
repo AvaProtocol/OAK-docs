@@ -157,16 +157,25 @@
 
 (function() {
   const run = () => {
-    const docs = document.querySelectorAll('.sidebar-docs')[0];
-
-    const docDivs = docs.querySelectorAll('div');
-    docDivs.forEach(function (divElem) {
-      const h5Element = divElem.querySelectorAll('h5')[0];
-      h5Element.addEventListener('click', function () {
-        const ulElement = divElem.querySelectorAll('ul')[0];
-        ulElement.style.display = ulElement.style.display === 'none' ? 'block' : 'none';
+    try {
+      const docs = document.querySelector('.sidebar-docs');
+      const docDivs = docs.querySelectorAll('div');
+      docDivs.forEach(function (divElem) {
+        const h5Element = divElem.querySelector('h5');
+        h5Element.addEventListener('click', function () {
+          try {
+            const ulElement = divElem.querySelector('ul');
+            ulElement.style.display = ulElement.style.display === 'none' ? 'block' : 'none';
+            const iconElement = h5Element.querySelector('i');
+            iconElement.className = iconElement.className === 'icofont-simple-down' ? 'icofont-simple-right' : 'icofont-simple-down';
+          } catch (error) {
+            console.log(error);
+          }
+        });
       });
-    });
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // Executed when the page is loaded.
