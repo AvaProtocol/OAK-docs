@@ -14,15 +14,20 @@ layout: default
                     {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
                     {% if doc_url == page.url %}
                     {% assign group = section.group %}
+                    {% assign title = section.title %}
                     {% endif %}
                     {% endfor %}
                     {% endfor %}
 
                     {% for section in site.data.navigation_docs %}
                     {% if group == section.group %}
-                    <h5>{{ section.title }}</h5>
+                    <div>
+                    <h5 style="cursor: pointer;"><span>{{ section.title }}</span><i class="icofont-simple-right"></i></h5>
 
-                    <ul class="uk-nav uk-nav-default doc-nav">
+                    <ul
+                        class="uk-nav uk-nav-default doc-nav"
+                        style="{% if title == section.title %}display: block;{% else %}display: none;{% endif %}"
+                    >
                     {% for doc in section.docs %}
                       {% assign doc_url = doc | prepend:"/docs/" | append:"/" %}
                       {% if doc.title == nil %}
@@ -33,6 +38,7 @@ layout: default
                       {% endif %}
                     {% endfor %}
                     </ul>
+                    </div>
                     {% endif %}
                     {% endfor %}
                 </div>
