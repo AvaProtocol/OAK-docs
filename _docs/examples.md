@@ -58,8 +58,6 @@ You define the following parameters - and never sign over custody of your privat
 - **`tokenID` -** the identifier for the token that you are transferring (e.g. aUSD identifier XYZ)
 - **`amount` -** the amount of the specified token that you are swapping
 
-*Coming soon. Subject to change and may differ for non-EVM chains. 
-
 ### Compounding Yield
 
 tl;dr - automatically claim and deposit rewards to compound returns
@@ -89,5 +87,3 @@ To prevent failed deposit transactions, we recommend including a time delay in b
 - **`function` -** the ‘deposit’ or ‘enter market’ function in the smart contract
 - **`tokenID` -** the identifier for the token that you are depositing (e.g. aUSD identifier XYZ)
 - **`amount` -** the amount of the specified token that you are depositing in the contract
-
-*Coming soon. Subject to change and may differ for non-EVM chains. 

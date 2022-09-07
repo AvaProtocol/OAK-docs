@@ -8,18 +8,6 @@ tags: [api, price, triggers]
 These APIs allow you to schedule an action to occur based on token price, and to cancel the task. All the APIs in this section are prefixed by `Automation-price`. 
 
 
-## Launched
-
-
-## In Development
-
-**The schemas in this section are mostly locked in, but some changes could occur.**
-
-
-## Coming soon
-
-**The schemas in this section are preliminary. Expect them to change.**
-
 ### Schedule a Token Transfer
 This API allows you to schedule transfering the provided token to another user.
 

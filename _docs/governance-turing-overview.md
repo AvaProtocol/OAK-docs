@@ -5,6 +5,8 @@ author: christian
 tags: [governance]
 ---
 
+*Note: OAK Network governance coming soon after the launch.*
+
 ![governance-overview](../../assets/img/governance/governance-overview.png)
 
 #### Introduction
