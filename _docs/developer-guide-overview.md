@@ -12,7 +12,7 @@ The goal of the OAK blockchain is to allow users to schedule actions to execute 
 **OAK**: The name of our blockchain. While the name changes for each deployment we will refer to it as OAK in this document regardless of the environment you are integrating with.
 - OAK -> Polkadot
 - TUR -> Kusama
-- TUR -> testnet
+- TUR -> Rococo (testnet)
 
 **Native**: This will be preceding “token” or “event”. This refers to the token and events of     the OAK chain you are interacting with.
 
