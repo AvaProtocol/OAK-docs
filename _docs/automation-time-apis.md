@@ -282,9 +282,8 @@ Sample Response
 }
 ```
 
-## Experimental
 
-### Experimental: XCMP Custom Action
+### XCMP Custom Action
 This API allows another parachain to schedule a call in the future and have OAK call back to the initiating parachain with a pre-packaged extrinsic call in order to perform an action in the future. For example, this can be used to schedule transferring a provided token to another user. Currently this extrinsic is built in such a way that the cross-chain action is being initiated by another parachain to schedule something on OAK, for OAK to send back later. However, this paradigm may shift in the future to have the user directly schedule on OAK. 
 
 #### Call

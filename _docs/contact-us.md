@@ -9,6 +9,8 @@ Please contact us through below methods. Our decentralized team can usually resp
 
 1. Email: <developers@oak.tech>
 1. Twitter: [@oak_network](https://twitter.com/oak_network)
+1. Telegram: [OAK Network Community](https://t.me/OAKNetworkCommunity)
+1. Telegram: [OAK Network Announcements](https://t.me/OAK_Announcements)
 1. Discord:[OAK Network](https://discord.gg/7W9UDvsbwh)
 1. LinkedIn: <https://www.linkedin.com/company/oak-network>
 1. Github: <https://github.com/OAK-Foundation/>

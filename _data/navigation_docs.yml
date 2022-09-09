@@ -1,39 +1,26 @@
 ## Network
-- title: Basics
+- title: Network
   group: 1
   docs:
   - company-overview
-  - networks
   - product-roadmap
-  - features
   - governance-turing-overview
   - bug-bounty
+  - papers
   - contact-us
-
-- title: Engage
-  group: 1
-  docs:
-  - learning
-  - contribute
-  - title: Security Audit
-    url: /papers/SlowMist.Audit.Report.-.Turing.Network.-.June.2022.pdf
 
 ## Developers
 - title: Developer Guide
   group: 2
   docs:
   - developer-guide-overview
-  - triggers
-  - actions
   - examples
-
-- title: APIs
-  group: 2
-  docs:
-  - api-overview
-  - automation-time-apis
-  - automation-price-apis
-  - automation-time-js-sdk
+  - yield-boost-staking-apis
+  # - yield-boost-general-apis
+  - powered-by-oak-time-apis
+  - powered-by-oak-price-apis
+  - oak-js
+  # - xcmp
 
 ## User Guide
 - title: User Guide
