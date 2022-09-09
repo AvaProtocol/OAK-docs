@@ -17,27 +17,17 @@ The OAK Network enables any dApp or parachain to trustlessly automate blockchain
 
 Here we explore many of the use cases that are open to dApps and parachains building with OAK Network. Join our [Telegram](https://t.me/OAKNetworkCommunity) and [Discord](https://discord.gg/UaqqV6wE) communities to discuss [#partnerships](https://discord.gg/uTcmAWFY)! 
 
-## OAK Time Triggers
+## Time-based triggers
 
-The Time Triggers API enables scheduling transactions at any pre-determined point in the future. All APIs in this section are prefixed by `Automation-time`.
+The Time Triggers API enables scheduling transactions at any pre-determined point in the future. All APIs in this section are prefixed by `automation-time`.
 
 ### Scheduling payments
 
 tl;dr - send ‘some asset’ to ‘some address’ at ‘some time(s)’
 
-You can use OAK Network’s `schedule_transfer_task`* API to schedule repayment on DeFi loans, automatically process payroll (to DAO contributors, for example), pay for a subscription, or any other case where you want to schedule sending assets between accounts and between DotSama parachains.
+You can use OAK Network’s API to schedule repayment on DeFi loans, automatically process payroll (to DAO contributors, for example), pay for a subscription, or any other case where you want to schedule sending assets between accounts and between DotSama parachains.
 
 You define the following parameters - and never sign over custody of your private key or tokens. 
-
-**API Parameters**
-
-- **`time` -** the UNIX standard time when OAK will execute the transaction (or series of times for up to 24 recurring transactions)
-- **`accountID` -** the account identifier for the recipient (may be a person’s wallet or smart contract, etc.)
-- **`paraID` -** the identifier of the parachain on which to enact the transaction (e.g. 2114 is the parachain ID for Turing Network)
-- **`tokenID` -** the identifier for the token that you are transferring
-- **`amount` -** the amount of the specified token that you are transferring
-
-*This assumes a cross-parachain transaction. You may use `schedule_native_transfer_task` if you are scheduling a transfer of tokens that are native to the OAK Network (i.e. TUR or OAK).
 
 ### Dollar-Cost Averaging
 
@@ -45,18 +35,9 @@ tl;dr - swap ‘some token’ for ‘some other token’ at ‘some time(s)’
 
 Investors frequently benefit from frequently buying smaller amounts of a given asset over a period of time when compared to buying a large amount of an asset at a single point in time (“apeing in”). However, executing on this strategy in DeFi typically requires the investor to execute and sign the same transaction each time (e.g. to be at their computer at the same time every week to swap aUSD for TUR).
 
- You can use OAK Network’s `schedule_contract_task`* API to schedule swapping your  and depositing awards as frequently as every hour. 
+ You can use OAK Network’s  API to schedule swapping your  and depositing awards as frequently as every hour. 
 
 You define the following parameters - and never sign over custody of your private key or tokens. 
-
-**API Parameters**
-
-- **`time` -** the UNIX standard time when OAK will execute the transaction (or series of times for up to 24 recurring transactions)
-- **`contractID` -** the identifier for the liquidity pool smart contract that you are interacting with
-- **`paraID` -** the identifier of the parachain on which the smart contract exists (e.g. 2114 is the parachain ID for Turing Network)
-- **`function` -** the ‘swap’ function in the smart contract that you are executing
-- **`tokenID` -** the identifier for the token that you are transferring (e.g. aUSD identifier XYZ)
-- **`amount` -** the amount of the specified token that you are swapping
 
 ### Compounding Yield
 
@@ -64,26 +45,26 @@ tl;dr - automatically claim and deposit rewards to compound returns
 
 DeFi protocols often incentivize deposits by offering rewards in the protocol’s native token, similar to how traditional banks offer interest (measured in APY) to incentivize fiat deposits. However, unlike the traditional banking system that systematically pays interest in fiat, token rewards typically remain locked in the smart contract until the user initiates a request to “claim rewards”. This results in capital inefficiencies as those tokens are not generating additional interest on top of the assets that were initially deposited. 
 
-You can use OAK Network’s `schedule_contract_task`* API to schedule both claiming and depositing awards as frequently as every hour. 
+You can use OAK Network’s API to schedule both claiming and depositing awards as frequently as every hour. 
 
 You define the following parameters - and never sign over custody of your private key or tokens. 
 
-**API Parameters (Claim)**
-
-- **`time` -** the UNIX standard time when OAK will execute the transaction (or series of times for up to 24 recurring transactions)
-- **`contractID` -** the identifier for the smart contract that you are claiming rewards from
-- **`paraID` -** the identifier of the parachain on which the rewards contract exists (e.g. 2114 is the parachain ID for Turing Network)
-- **`function` -** the ‘claim rewards’ function in the smart contract
-- **`tokenID` -** null
-- **`amount` -** null
-
 To prevent failed deposit transactions, we recommend including a time delay in between the claim and deposit events. 
 
-**API Parameters (Deposit)**
+## Price-based or Numeric-based triggers
 
-- **`time` -** the UNIX standard time when OAK will execute the transaction (or series of times for up to 24 recurring transactions)
-- **`contractID` -** the identifier for the smart contract that you are depositing claimed rewards into
-- **`paraID` -** the identifier of the parachain on which the deposit contract exists (e.g. 2114 is the parachain ID for Turing Network)
-- **`function` -** the ‘deposit’ or ‘enter market’ function in the smart contract
-- **`tokenID` -** the identifier for the token that you are depositing (e.g. aUSD identifier XYZ)
-- **`amount` -** the amount of the specified token that you are depositing in the contract
+The Price or Numeric Triggers API enables scheduling transactions based on an increase or decrease of any variable numeric data stream provided by the DApp or user. All APIs in this section are prefixed by `automation-price`.
+
+### Stop-loss order
+
+If you're keen on ensuring that you don't leave money on the table, you can send a data stream of any price or price-pair you'd like to the OAK Blockchain. Then you can indicate that when the price goes below a certain threshold, you want to swap or sell for another asset or stable.
+
+### TVL detection
+
+Worried about your favorite protocol going below a certain threshold of TVL due to liquidiations, then you can rest assured that OAK can cover the use case of if the TVL drops below a certain threshold, then you can exit your liquidity in a matter of seconds (~12 seconds).
+
+Similarly, if you'd like to keep your ownership percentage at the same, you can add conditional logic to lock up more tokens to your favorite protocol.
+
+### Wallet balance top-up
+
+Do you have a wallet that you use for staking, governance, nft purchases and subscriptions? Do you need to make sure your wallet keeps a certain amount present? Then our numeric-based data stream can support this.
