@@ -8,19 +8,19 @@
 - title: Staking
   desc: Join as a collator or delegator and stake your tokens to earn rewards
   icon: star
-  doc: collators
+  doc: delegators
 
 - title: API References
   desc: Read our documentation for OAK APIs and SDKs
   icon: code
-  doc: api-overview
+  doc: developer-guide-overview
 
 - title: What's coming soon
   desc: Take a peek at our product roadmap for our L1 & L2 strategies
   icon: cog
   doc: product-roadmap
 
-- title: Resources
-  desc: Dive into helpful resources such as white papers, glossary, community and more
+- title: Technical Papers
+  desc: Dive into helpful resources such as whitepapers, glossary, community and more
   icon: database
-  doc: learning
+  doc: papers

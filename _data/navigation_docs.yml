@@ -1,24 +1,44 @@
-- title: Basics
+## Network
+- title: Network
+  group: 1
   docs:
   - company-overview
-  - networks
   - product-roadmap
-  - features
+  - governance-turing-overview
+  - bug-bounty
+  - papers
+  - contact-us
 
+## Developers
+- title: Developer Guide
+  group: 2
+  docs:
+  - developer-guide-overview
+  - examples
+  - yield-boost-staking-apis
+  # - yield-boost-general-apis
+  - powered-by-oak-time-apis
+  - powered-by-oak-price-apis
+  - oak-js
+  # - xcmp
+
+## User Guide
 - title: User Guide
+  group: 3
   docs:
   - on-chain-automation
   - identity
   - multi-sig-wallets
 
 - title: Governance
+  group: 3
   docs:
-  - governance-turing-overview
   - governance-propose-change
   - vote-on-proposal
   - verify-runtime-upgrade
 
 - title: Staking
+  group: 3
   docs:
   - delegators
   - collators
@@ -27,30 +47,3 @@
   - run-node-service
   - upgrade-collator-node
   - proxy-collator-permissions
-
-- title: Developer Guide
-  docs:
-  - developer-guide-overview
-  - triggers
-  - actions
-  - examples
-
-- title: APIs
-  docs:
-  - api-overview
-  - automation-time-apis
-  - automation-price-apis
-  - automation-time-js-sdk
-
-- title: Contribute
-  docs:
-  - pallets
-  - pallet-development
-  - bug-bounty
-
-
-- title: Engage
-  docs:
-  - learning
-  - contribute
-  - contact-us

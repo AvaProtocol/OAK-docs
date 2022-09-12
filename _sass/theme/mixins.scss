@@ -498,12 +498,26 @@
         bottom: 70px;
         overflow-y: scroll;
         overflow-x: hidden;
-        > h5 {
+        > div {
             margin: 15px 0 0;
             &:first-child {
                 margin-top: 17px
             }
+
+            > h5 {
+                display: flex;
+                span {
+                    flex-grow: 2;
+                }
+
+                i {
+                    // transform: translateY(3px);
+                    font-size: 22px;
+                }
+            }
         }
+
+        
     }
     
     @media (min-width: $breakpoint-large) {
