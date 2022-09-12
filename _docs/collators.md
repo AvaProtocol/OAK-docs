@@ -26,7 +26,7 @@ If you have any questions or run into issues, head over to the [OAK Discord](htt
 
 | Field                                                                                     | Current Value                                              |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| Minimum Collator Bond `const parachainStaking.minCandidateStk`                            | 400K TUR or `4000000000000000` planck                      |
+| Minimum Collator Bond `const parachainStaking.minCandidateStk`                            | 2MM TUR or `20000000000000000` planck                      |
 | Number of selected candidates `parachainStaking.totalSelected`                            | 24                                                         |
 | Round Length `parachainStaking.round`                                                     | 600 blocks or ~2 hours                                     |
 | Leave candidacy duration `const parachainStaking.leaveCandidatesDelay`                    | 24 rounds or ~48 hours                                     |
