@@ -56,11 +56,11 @@ Triggers that are supported but not limited to:
 These triggers are based on inital conversations with potential partners. If you have suggestions for other potential triggers which have a strong value proposition to a project you're involved with, please reach out in our #parternships [Discord](https://discord.gg/7W9UDvsbwh) channel.
 
 ### Time
-Our time trigger allows you to schedule an action to occur during a specific minute. To clarify we will ensure your action is executed within the requested minute but cannot guarantee when in that minute it will execute. In order to use this trigger you will need to provide a timestamp that is at least one minute in the future.
+Our time trigger allows you to schedule an action to occur during a specific hour. To clarify we will ensure your action is executed within the requested hour but cannot guarantee when in that hour it will execute. In order to use this trigger you will need to provide a timestamp that is at least one hour in the future.
 
 The following features are available for time-based triggers:
 
-- Support scheduling for an hour
+- Support scheduling for an minute
 - Support scheduling for a day
 - Support scheduling recurring actions
 
