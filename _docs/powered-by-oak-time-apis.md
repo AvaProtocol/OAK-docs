@@ -7,10 +7,10 @@ tags: [api, price, triggers]
 
 ## User Experience (assumptions)
 
-Any DApp or connected parachain can create automated tasks with time triggers to execute any extrinsic call. We assume that most DApps do not have persistent storage outside of the blockchain itself (aka statless). Thus, we assume that a DApp can initiate the OAK.js call to schedule call(s) and create tasks on OAK and execute an extrinsic in [any connected parachain](https://dotsama-channels.vercel.app/#/). 
+Any DApp or connected parachain can create automated tasks with time triggers to execute any extrinsic call. We assume that most DApps do not have persistent storage outside of the blockchain itself (aka stateless). Thus, we assume that a DApp can initiate the OAK.js call to schedule call(s) and create tasks on OAK and execute an extrinsic in [any connected parachain](https://dotsama-channels.vercel.app/#/).
 
 1. `schedule_xcmp_task` - Schedule an action to occur based on a set of provided timestamps.
-2. `scheduled_tasks_V2` - Get scheduled tasks for the whole c
+2. `scheduled_tasks_V2` - Get scheduled tasks for the whole time slot
 3. `cancel_task` - Cancel an existing task
 
 | Environment             | RPC Endpoint                                                 |
@@ -33,7 +33,7 @@ The following requirements apply for any Kusama parachain that wishes to support
 
 ## Application Requirements
 ### Calculate Fees
-Swap parahcain token for TUR and pay Turing inclusion, execution, and XCM fees in TUR.
+Swap parachain token for TUR and pay Turing inclusion, execution, and XCM fees in TUR.
 
 #### Get combined fees for inclusion, execution, and XCM.
 
@@ -92,7 +92,7 @@ fn schedule_xcmp_task(
 #### Errors
 ```rust
 pub enum Error {
-    /// If the `time` parameter does not end in a whole minute.
+    /// If the `time` parameter does not end in a whole hour.
     InvalidTime,
     /// The `time` parameter must be in the future.
     PastTime,
@@ -103,7 +103,7 @@ pub enum Error {
     /// The time you requested in full. No more tasks can be scheduled for this time.
     TimeSlotFull,
     /// The message cannot be empty.
-	EmptyMessage,
+    EmptyMessage,
     /// ParaId provided does not match origin paraId.
     ParaIdMismatch,
 }
@@ -112,7 +112,7 @@ pub enum Error {
 ### Cancel a Task
 Only the account that created the task can cancel the task:
 
-`taskID` - a unique identifier for this account’s task. A single account may schedule multiple tasks for a single data stream and single direction.
+`taskID` - a unique identifier for this account’s task.
 
 #### API Call
 ```rust
@@ -121,7 +121,7 @@ fn cancel_task(
     origin: OriginFor<T>, 
     /// The id of the task.
     task_id: Hash,
-    )
+)
 ```
 
 ### Errors
