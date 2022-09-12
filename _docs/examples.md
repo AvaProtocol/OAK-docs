@@ -35,7 +35,7 @@ tl;dr - swap ‘some token’ for ‘some other token’ at ‘some time(s)’
 
 Investors frequently benefit from frequently buying smaller amounts of a given asset over a period of time when compared to buying a large amount of an asset at a single point in time (“apeing in”). However, executing on this strategy in DeFi typically requires the investor to execute and sign the same transaction each time (e.g. to be at their computer at the same time every week to swap aUSD for TUR).
 
- You can use OAK Network’s  API to schedule swapping your  and depositing awards as frequently as every hour. 
+You can use OAK Network’s API to schedule swaps as frequently as every hour.
 
 You define the following parameters - and never sign over custody of your private key or tokens. 
 
