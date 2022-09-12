@@ -46,7 +46,7 @@ The Turing blockchain exposes a rpc endpoint that allows developers to query a u
 
 Module: **AutomationTime**
 
-Method: **getScheduledAutoCompoundDelegatedStakeTasks**
+Method: **getAutoCompoundDelegatedStakeTaskIds**
 
 Args:
 - **accountId**: The user's ss58 encoded account id
@@ -55,21 +55,11 @@ Example Response:
 ```
 {
     "jsonrpc": "2.0",
-    "result": {
-        "0xa22d90bd566e7abfcb3d7a06032a046677c2f33e5a9404ec62724cc07dc6fbad" (taskId): {
-            "executionTimes": [
-                1657947600 (unix timestamp of next execution)
-            ],
-            "action": {
-                "AutoCompoundDelegatedStake": {
-                    "delegator": "69RP3c4mjtHruDpKQWA1TeSacmA2FqS214oiDBZXBPszxzvD" (accountId),
-                    "collator": "6AwtFW6sYcQ8RcuAJeXdDKuFtUVXj4xW57ghjYQ5xyciT1yd" (accountId),
-                    "accountMinimum": 1000000000000 (TUR),
-                    "frequency": 604800 (seconds)
-                }
-            }
-        },
+    "result": [
+        "0xa22d90bd566e7abfcb3d7a06032a046677c2f33e5a9404ec62724cc07dc6fbad", // TaskId
+        "0x43aa90bd566e7abfcb3d7a06032a046677c2f33e5a9404ec62724cc07dc6fdba",
         ...
+    ]
     },
     "id": 1
 }
