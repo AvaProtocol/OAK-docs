@@ -38,14 +38,19 @@ The following requirements apply for any Kusama parachain that wishes to support
     2b. [XCM converter implementation](https://github.com/OAK-Foundation/substrate-parachain-template/pull/14)
     
     2c. Get proxy accountId:
-```    
-curl --location --request POST 
-'http:*//rpc.turing-staging.oak.tech' \*
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": 
-"xcmpHandler_crossChainAccount", 
-"params": ["{{accountId32}}"]}' \
+
+```bash
+curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+   "id":1,
+   "jsonrpc":"2.0",
+   "method": "xcmpHandler_crossChainAccount",
+   "params": ["SS58_ACCOUNT_ID"]
+ }'
 ```
+
+Replace `SS58_ACCOUNT_ID` with the account you want to lookup.
 
 ## Application Requirements [Extrinsics]
 ### Fees
