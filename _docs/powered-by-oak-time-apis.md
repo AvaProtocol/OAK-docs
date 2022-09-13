@@ -38,35 +38,65 @@ Swap parachain token for TUR and pay Turing inclusion, execution, and XCM fees i
 #### Get combined fees for inclusion, execution, and XCM.
 
 ```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_fees", "params": ["{{encoded_call}}"]}' \
+curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+    "id":1,
+    "jsonrpc":"2.0",
+    "method": "xcmpHandler_fees",
+    "params": ["SIGNED_ENCODED_CALL"]
+  }'
 ```
+
+Replace `SIGNED_ENCODED_CALL` with a hex encoded call that has been signed.
 
 #### Get user accountId for proxy account.
 
 ```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_crossChainAccount", "params": ["{{accountId32}}"]}' \
+curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+   "id":1,
+   "jsonrpc":"2.0",
+   "method": "xcmpHandler_crossChainAccount",
+   "params": ["SS58_ACCOUNT_ID"]
+ }'
 ```
+
+Replace `SS58_ACCOUNT_ID` with the account you want to lookup.
 
 #### Query tasks by user accountId.
 
 ```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_queryTasks", "params": ["{{accountId32}}"]}' \
+curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+    "id":1,
+    "jsonrpc":"2.0",
+    "method": "automationTime_getAutoCompoundDelegatedStakeTaskIds",
+    "params": ["SS58_ACCOUNT_ID"]
+  }'
 ```
+
+Replace `SS58_ACCOUNT_ID` with a Turing account you want to lookup.
 
 #### [Get extrinsic fee](https://polkadot.js.org/docs/api/cookbook/tx/#how-do-i-estimate-the-transaction-fees)
 
-### Get a task by taskId
+### Generate a task by taskId
+
 ```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_Tasks", "params": ["{{task_id}}"]}' \
+curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+    "id":1,
+    "jsonrpc":"2.0",
+    "method": "automationTime_generateTaskId",
+    "params": ["SS58_ACCOUNT_ID", "PROVIDED_ID"]
+  }'
 ```
+
+Replace `SS58_ACCOUNT_ID` with your Turing account.
+Replace `PROVIDED_ID` with a random identifier.
 
 ### Schedule an XCMP task
 This API allows another parachain to schedule a call in the future and have OAK call back to the initiating parachain with a pre-packaged extrinsic call in order to perform an action in the future. For example, this can be used to schedule transferring a provided token to another user. 
