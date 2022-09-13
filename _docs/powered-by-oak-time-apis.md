@@ -65,7 +65,7 @@ curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
 
 Replace `SS58_ACCOUNT_ID` with the account you want to lookup.
 
-#### Query tasks by user accountId.
+#### Query autocompounding tasks by user accountId.
 
 ```bash
 curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
