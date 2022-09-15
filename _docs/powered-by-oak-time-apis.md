@@ -51,22 +51,7 @@ curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
 --data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_crossChainAccount", "params": ["{{accountId32}}"]}' \
 ```
 
-#### Query tasks by user accountId.
-
-```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_queryTasks", "params": ["{{accountId32}}"]}' \
-```
-
 #### [Get extrinsic fee](https://polkadot.js.org/docs/api/cookbook/tx/#how-do-i-estimate-the-transaction-fees)
-
-### Get a task by taskId
-```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_Tasks", "params": ["{{task_id}}"]}' \
-```
 
 ### Schedule an XCMP task
 This API allows another parachain to schedule a call in the future and have OAK call back to the initiating parachain with a pre-packaged extrinsic call in order to perform an action in the future. For example, this can be used to schedule transferring a provided token to another user. 
