@@ -1,98 +1,110 @@
 ---
 title: Powered By OAK - Time APIs
-subtitle: Trigger any transaction based on the increase or decrease in value change of any numerical data (e.g. price).
+subtitle: Trigger any transaction to occur at a future time or set of times.
 author: irsal
 tags: [api, price, triggers]
 ---
 
-## User Experience (assumptions)
+The APIs and Polkadot{.js} libraries on this page allow users and multi-chain applications to schedule calling any Substrate extrinsic or smart contract function at a future time (stamp) or set of times. 
 
-Any DApp or connected parachain can create automated tasks with time triggers to execute any extrinsic call. We assume that most DApps do not have persistent storage outside of the blockchain itself (aka stateless). Thus, we assume that a DApp can initiate the OAK.js call to schedule call(s) and create tasks on OAK and execute an extrinsic in [any connected parachain](https://dotsama-channels.vercel.app/#/).
+1. `scheduleXcmpTask` can be used to store transaction instructions and time-based trigger conditions for future execution, unlocking cross-chain automation features including:
+ - compounding returns (yield boost), 
+ - buying over time (stable-cost-averaging), 
+ - paying over time (recurring payments on a foreign chain),
+ - anything else you can do on supported parachains, sometime(s) in the future.
 
-1. `schedule_xcmp_task` - Schedule an action to occur based on a set of provided timestamps.
-2. `scheduled_tasks_V2` - Get scheduled tasks for the whole time slot
-3. `cancel_task` - Cancel an existing task
+2. `scheduleNativeTransferTask` can be used to schedule a transfer of Turing Network’s native token ($TUR).
+
+3. `cancelTask` can be used to cancel any existing automation tasks (must be from the account which created the task). 
+
+Head over to [Price Automation](https://docs.oak.tech/docs/automation-price-apis/) if you want to trigger future transactions using any data other than "time".
+
+# Application Requirements (Assumptions, APIs, and Extrinsics)
 
 | Environment             | RPC Endpoint                                                 |
 | ----------------------- | ------------------------------------------------------------ |
 | Turing Staging (Rococo) | `rpc.turing-staging.oak.tech`                                |
-| Turing (Kusama)         | `rpc.turing.oak.tech`                                        |
-| OAK (Polkadot)          | [Crowdloan launching soon!](https://oak.tech/oak/crowdloan/) |
+| Turing Network (Kusama) | `rpc.turing.oak.tech`                                        |
+| OAK Network (Polkadot)  | `Coming Soon!` Don't miss [the OAK crowdloan!](https://oak.tech/oak/crowdloan/) |
 
-## Parachain Requirements
-The following requirements apply for any Kusama parachain that wishes to support cross-chain automation (including recurring payments, auto-compounding liquidity / staking rewards, automatic swaps, and more):
+## Assumptions
+1. The application interface presents the user with the option to interact with a parachain's extrinsic at some time(s) in the future.
+    1. The time(s) may be defined by the user or the application.
+    2. The target parachain may be any parachain that satisfies [Parachain Prerequisites](https://docs.oak.tech/docs/powered-by-oak-time-apis/#parachain-prerequisites).
+2. The user has created an OAK-derived proxy that can (only) be used by OAK (or Turing) to trigger future transactions via XCM.
+    1. See [Application Prerequisites: Derive proxy identifier](https://docs.oak.tech/docs/powered-by-oak-time-apis/#derive-proxy-identifier)
+3. The user's Turing account contains a balance that is sufficient for automation fees.
+    1. See [Application Prerequisites: Get fees](https://docs.oak.tech/docs/powered-by-oak-time-apis/#get-fees)
 
-1. **Open bi-directional HRMP channels** - [HRMP Channels and You](https://github.com/OAK-Foundation/OAK-blockchain/wiki/HRMP-Channels-and-You)
-2. **Enable users to authorize future transactions powered by OAK** using a proxy pallet and XCM origin converter.
-    
-    2a. [Proxy pallet implementation](https://github.com/OAK-Foundation/substrate-parachain-template/pull/12)
-    
-    2b. [XCM converter implementation](https://github.com/OAK-Foundation/substrate-parachain-template/pull/14)
+If any of these are not true (i.e. the proxy doesn't exist or you assume that users never have enough $TUR), then any of following may be required prior to scheduling a user's first automation task on a foreign chain:
 
-3. Ability to swap the parachain token (e.g. MGX) for TUR (or OAK).
+1. Create and permission a proxy to be used for cross-chain automation.
+2. Acquire $TUR for payment of automation fees
+3. Transfer $TUR to Turing Network for payment of automation fees. 
+4. Execute a transaction immediately (if the user wishes to stake/pay/buy/supply "now" as well as in the future).
 
-## Application Requirements
-### Calculate Fees
-Swap parachain token for TUR and pay Turing inclusion, execution, and XCM fees in TUR.
+Endpoints and libraries will vary by foreign chain.
 
-#### Get combined fees for inclusion, execution, and XCM.
+## Scheduling a cross-chain task (scheduleXcmpTask)
+Automate a future transaction using the available RPCs or [OAK.js](https://docs.oak.tech/docs/oak-js/). 
 
-```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_fees", "params": ["{{encoded_call}}"]}' \
-```
+OAK (Turing) will communicate the encoded extrinsic call to the specified parachain at the scheduled time(s) using a proxy that can be used only for future transactions and only by OAK (Turing) via XCM. 
 
-#### Get user accountId for proxy account.
-
-```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_crossChainAccount", "params": ["{{accountId32}}"]}' \
-```
-
-#### Query tasks by user accountId.
-
-```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_queryTasks", "params": ["{{accountId32}}"]}' \
-```
-
-#### [Get extrinsic fee](https://polkadot.js.org/docs/api/cookbook/tx/#how-do-i-estimate-the-transaction-fees)
-
-### Get a task by taskId
-```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_Tasks", "params": ["{{task_id}}"]}' \
-```
-
-### Schedule an XCMP task
-This API allows another parachain to schedule a call in the future and have OAK call back to the initiating parachain with a pre-packaged extrinsic call in order to perform an action in the future. For example, this can be used to schedule transferring a provided token to another user. 
-
-#### Call
+#### API
 ```rust
 fn schedule_xcmp_task(
-    /// The `account_id` of the caller. Automatically passed in when the transaction is signed.
+
     origin: OriginFor<T>,
-    /// An id provided by the user. This id must be unique for the user.
-    provided_id: Vec<u8>,
-    /// The unix standard time in seconds for when the task should run. You can insert up to 24 reoccurances.
+    /// The address of the account that created or is creating the task. Automatically passed in when the transaction is signed.
+    
+    provided_id: Vec<u8>,      
+    /// Your unique identifier for the task. Accepts any string input (e.g. "I am as unique as a snowflake").
+
     execution_times: Vec<UnixTime>,
-    /// The parachain location to where the user wants to send the call back
+    /// An array of unix standard time stamps (in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0). 
+
     para_id: ParaId,
-    /// The encoded extrinsic call to perform a custom action.
+    /// The parachain location where the encoded extrinsic call will be sent.
+
+    currency_id: Vec<u8>,
+    /// The identifier of the token that is to be used for cross-chain automation fees (assume $TUR).
+
     call: Vec<u8>,
-    /// The total weight of the encoded call that will be sent back to the parachain.
+    /// A proxied version of the encoded extrinsic call to perform the future action.
+
     weight_at_most: Weight,
+    /// The total weight of the encoded call that will be sent back to the parachain.
+)
+```
+
+## Create a native token transfer task
+This API allows you to schedule transfering Turing Network's native token ($TUR) to another account.
+
+#### API
+```rust
+fn schedule_native_transfer_task(
+
+    origin: OriginFor<T>,
+    /// The address of the account that created or is creating the task. Automatically passed in when the transaction is signed.
+    
+    provided_id: Vec<u8>,      
+    /// Your unique identifier for the task. Accepts any string input (e.g. "I am as unique as a snowflake").
+
+    execution_times: Vec<UnixTime>,
+    /// An array of unix standard time stamps (in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0).
+    
+    recipient_id: AccountId,
+    /// The account you want to transfer tokens to.
+
+    amount: u128,
+    /// The amount you want to transfer. 
 )
 ```
 
 #### Errors
 ```rust
 pub enum Error {
-    /// If the `time` parameter does not end in a whole hour.
+    /// If the `time` parameter does not end in a whole minute.
     InvalidTime,
     /// The `time` parameter must be in the future.
     PastTime,
@@ -103,28 +115,30 @@ pub enum Error {
     /// The time you requested in full. No more tasks can be scheduled for this time.
     TimeSlotFull,
     /// The message cannot be empty.
-    EmptyMessage,
-    /// ParaId provided does not match origin paraId.
-    ParaIdMismatch,
+	EmptyMessage,
+    /// Amount has to be larger than 0.1 OAK.
+    InvalidAmount,
+    /// Sender cannot transfer money to self.
+    TransferToSelf,
 }
 ```
 
-### Cancel a Task
-Only the account that created the task can cancel the task:
+## Cancel a Task
+This API allows you to cancel a scheduled task with a specified task identifier. 
 
-`taskID` - a unique identifier for this account’s task.
-
-#### API Call
+#### API
 ```rust
 fn cancel_task(
-    /// The `account_id` of the caller. Automatically passed in when the transaction is signed.
+    
     origin: OriginFor<T>, 
-    /// The id of the task.
+    /// The `account_id` of the caller. Automatically passed in when the transaction is signed.
+
     task_id: Hash,
+   /// The id of the task.
 )
 ```
 
-### Errors
+#### Errors
 ```rust
 pub enum Error {
     /// You are not the owner of the task.
@@ -133,3 +147,141 @@ pub enum Error {
     TaskDoesNotExist,
 }
 ```
+
+# Application Prerequisites
+
+## Derive proxy and task identifiers (new and existing)
+Unique identifiers for the proxy (unique for each account) and the task ID (unique for each automation task) can be derived using the available RPCs or [OAK.js](https://docs.oak.tech/docs/oak-js/). 
+
+Applications are recommended to store identifiers in order to more easily reference existing accounts and tasks in the future (to [Cancel Task](https://docs.oak.tech/docs/powered-by-oak-time-apis/#cancel-a-task), for example).
+
+### Derive proxy identifier
+This API will return a deterministic proxy identifier using Account ID for both new and existing accounts. This proxy can be used only for future transactions and only by OAK (Turing) Network via XCM.
+
+While the proxy implementation may vary by parachain, each account must create a proxy on the chain where the transaction is to be executed prior to scheduling any automation tasks. Many Substrate wallets streamline the multi-chain user experience to enable creating the proxy (on the foreign chain) while scheduling automation (on Turing) without manually changing networks. 
+
+#### API
+```rust
+fn generate_accountID(
+
+    account_id: AccountId,     
+    /// The address of the account that created or is creating a proxy.
+    
+)
+```
+
+#### Request (Sample)
+```- curl --location --request POST 'http:*//rpc.turing-staging.oak.tech' \
+--header 'Content-Type: application/json' \
+--data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_crossChainAccount", "params": ["{{accountId32}}"]}' \
+```
+
+### Derive task identifier
+This API will return a deterministic task identifier using a Provided ID and Account ID for both new and existing tasks. Generating and using your own unique (provided) ID to derive the OAK Task ID will allow tasks to be more easily referenced in the future (to [Cancel Task](https://docs.oak.tech/docs/powered-by-oak-time-apis/#cancel-a-task), for example).
+
+#### API
+```rust
+fn generate_TaskId(
+
+    account_id: AccountId,     
+    /// The address of the account that created or is creating the task.
+    
+    provided_id: Vec<u8>,      
+    /// Your unique identifier for the task. Accepts any string input (e.g. "I am as unique as a snowflake").
+)
+```
+
+#### Request (Sample)
+
+```-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
+--header 'Content-Type: application/json' \
+--data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_generateTaskId", "params": ["5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", "savedProvidedID"]}'
+```
+#### Response (Sample)
+
+```JSON
+{
+    "jsonrpc": "2.0",
+    "result": "0x45edb12767422ace02643641c0224b7a37d584751779e78e35819212d04100fd",
+    "id": 1
+}
+```
+## Get fees
+Automation fees for Turing can be retrieved using the available RPCs or [OAK.js](https://docs.oak.tech/docs/oak-js/). Call weight from the foreign chain is required in order to retrieve fees for Turing Network. Additional fees may be required for setting up a proxy , swapping, and/or transferring tokens for automation fees.
+
+### Get foreign chain weight (and fees, if applicable)
+Retrieve the [call weight](https://polkadot.js.org/docs/api/cookbook/tx/#how-do-i-estimate-the-transaction-fees) for the transaction by encoding the extrinsic call that will be sent to the parachain by Turing via XCM. 
+
+Additional fees may apply on the foreign chain if user has not completed proxy setup or has an insufficient Turing account balance for automation fees:
+1. Inclusion fee to create and permission a proxy to be used for cross-chain automation.
+2. Inclusion fee to execute the first transaction (if the user wishes to stake/pay/buy/supply "now" as well as in the future).
+3. Inclusion fee for the user to acquire $TUR for automation fees.
+4. The XCM fee to transfer $TUR to Turing Network for automation fees. 
+
+Endpoints and libraries for retrieving fees will vary by foreign chain.
+
+### Get Turing fees for automation task
+This API will retrieve the fees for a given (time automation) task. Payment is collected up front from the user’s Turing account when scheduling future task(s), including all fees for a defined number of occurrences. Fees for indefinitely recurring transactions can be paid at each occurrence. 
+
+#### API
+```rust
+fn get_time_automation_fees(
+    
+    action: AutomationAction,
+    /// The action that you will be using. Valid values {Notify, NativeTransfer, XCMP, AutoCompoundDelgatedStake}. 
+    
+    executions: u32,
+    /// The number of task executions. (Support for indefinite reccurrences coming soon)
+)
+```
+#### Request (Sample)
+
+```-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
+--header 'Content-Type: application/json' \
+--data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_getTimeAutomationFees", "params": ["Notify", 3]}'
+```
+
+#### Response (Sample)
+
+```JSON
+{
+    "jsonrpc": "2.0",
+    "result": 252000000,
+    "id": 1
+}
+```
+
+# Parachain Prerequisites
+The following requirements apply for any Kusama parachain that wishes to support cross-chain automation (including recurring payments, auto-compounding liquidity / staking rewards, automatic swaps, and more):
+
+## Enable support for XCM communication from OAK
+Open [bi-directional HRMP Channels](https://github.com/OAK-Foundation/OAK-blockchain/wiki/HRMP-Channels-and-You) with Turing Network (Kusama relay chain) and Turing Staging (Rococo relay chain):
+
+#### Request (Sample)
+```hrmp.hrmpInitOpenChannel(recipient: 2114, proposedMaxCapacity: 1000, proposedMaxMessageSize: 102400)```
+
+#### Accept (Sample)
+```hrmp.hrmpAcceptOpenChannel(sender: 2114)```
+
+(View connected parachains)[https://dotsama-channels.vercel.app/#/] 
+
+## 2. Enable proxy account creation and permissioning
+Enable users to create a proxy account that can be used only for future transactions and only by Turing Network via XCM.
+
+[OAK Foundation: Create account](https://github.com/OAK-Foundation/substrate-parachain-template/pull/12) provides an example proxy pallet implementation. 
+
+[OAK Foundation: Allow delegation](https://github.com/OAK-Foundation/substrate-parachain-template/pull/14) provides an example delegation via proxy pallet. This example demonstrates the most permissive proxy type and may differ from the proxy implementation on other parachains.
+
+## 3. Enable liquidity for fees (if applicable)
+Enable users to obtain $TUR or $OAK to pay for automation fees:
+
+1. The inclusion fee to store the future extrinsic(s).
+2. The execution fee when the future extrinsic(s) are triggered.
+3. The XCM fee to communicate future extrinsic(s) to a foreign chain (where applicable).
+
+Let's discuss if you would like to allow users to pay fees in a foreign token. 
+
+## 4. Enable smart contract automation (if applicable)
+Enable OAK to interact with smart contracts on your parachain using XCM. 
+
+Examples coming soon
