@@ -53,27 +53,26 @@ OAK (Turing) will communicate the encoded extrinsic call to the specified parach
 #### API
 ```rust
 fn schedule_xcmp_task(
-
-    origin: OriginFor<T>,
     /// The address of the account that created or is creating the task. Automatically passed in when the transaction is signed.
-    
-    provided_id: Vec<u8>,      
+    origin: OriginFor<T>,
+
     /// Your unique identifier for the task. Accepts any string input (e.g. "I am as unique as a snowflake").
+    provided_id: Vec<u8>,      
 
-    execution_times: Vec<UnixTime>,
     /// An array of unix standard time stamps (in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0). 
+    execution_times: Vec<UnixTime>,
 
-    para_id: ParaId,
     /// The parachain location where the encoded extrinsic call will be sent.
+    para_id: ParaId,
 
-    currency_id: u32,
     /// The identifier of the token that is to be used for cross-chain automation fees (assume $TUR).
+    currency_id: u32,
 
-    call: Vec<u8>,
     /// A proxied version of the encoded extrinsic call to perform the future action.
+    call: Vec<u8>,
 
-    weight_at_most: Weight,
     /// The total weight of the encoded call that will be sent back to the parachain.
+    weight_at_most: Weight,
 )
 ```
 
@@ -222,13 +221,12 @@ This API will retrieve the fees for a given (time automation) task. Payment is c
 
 #### API
 ```rust
-fn get_time_automation_fees(
-    
-    action: AutomationAction,
+fn get_time_automation_fees(    
     /// The action that you will be using. Valid values {Notify, NativeTransfer, XCMP, AutoCompoundDelgatedStake}. 
+    action: AutomationAction,
     
-    executions: u32,
     /// The number of task executions. (Support for indefinite reccurrences coming soon)
+    executions: u32,
 )
 ```
 
