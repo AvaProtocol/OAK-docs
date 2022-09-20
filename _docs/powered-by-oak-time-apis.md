@@ -43,13 +43,15 @@ curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
 --data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_fees", "params": ["{{encoded_call}}"]}' \
 ```
 
-#### Get user accountId for proxy account.
+#### Get proxy account for user.
 
 ```bash
 curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
 --header 'Content-Type: application/json' \
 --data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_crossChainAccount", "params": ["{{accountId32}}"]}' \
 ```
+
+#### [Get user task](https://github.com/OAK-Foundation/OAK-JS-SDK/blob/main/dist/observer.js#L72-L82)
 
 #### [Get extrinsic fee](https://polkadot.js.org/docs/api/cookbook/tx/#how-do-i-estimate-the-transaction-fees)
 
