@@ -9,7 +9,7 @@ The OAK Development team has created an extension of the PolkadotJS APIs in **[t
 
 To start usage, please run:
 ```bash
-npm install @oak-foundation/api-augment @oak-foundation/api
+npm install @oak-foundation/api-augment @oak-foundation/types
 ```
 
 An example snippet can be seen below.
