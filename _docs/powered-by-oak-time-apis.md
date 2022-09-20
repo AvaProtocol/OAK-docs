@@ -113,7 +113,7 @@ pub enum Error {
     /// The time you requested in full. No more tasks can be scheduled for this time.
     TimeSlotFull,
     /// The message cannot be empty.
-	EmptyMessage,
+    EmptyMessage,
     /// Amount has to be larger than 0.1 OAK.
     InvalidAmount,
     /// Sender cannot transfer money to self.
