@@ -166,7 +166,7 @@ fn generate_accountID(
 ```
 
 #### Request (Sample)
-```
+```bash
 curl --location --request POST 'http:*//rpc.turing-staging.oak.tech' \
 --header 'Content-Type: application/json' \
 --data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_crossChainAccount", "params": ["accountId32"]}' \
@@ -187,7 +187,7 @@ fn generate_TaskId(
 ```
 
 #### Request (Sample)
-```
+```bash
 curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
 --header 'Content-Type: application/json' \
 --data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_generateTaskId", "params": ["5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", "savedProvidedID"]}'
@@ -231,7 +231,7 @@ fn get_time_automation_fees(
 ```
 
 #### Request (Sample)
-```
+```bash
 curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
 --header 'Content-Type: application/json' \
 --data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_getTimeAutomationFees", "params": ["Notify", 3]}'
