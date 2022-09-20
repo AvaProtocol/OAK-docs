@@ -29,3 +29,4 @@ async function main() {
 main().catch(console.error).finally(() => process.exit()); 
 ```
 
+You can find more examples in our [Javascript Example Repo](https://github.com/OAK-Foundation/javascript-examples).
