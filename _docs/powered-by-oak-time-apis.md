@@ -66,7 +66,7 @@ fn schedule_xcmp_task(
     para_id: ParaId,
     /// The parachain location where the encoded extrinsic call will be sent.
 
-    currency_id: Vec<u8>,
+    currency_id: u32,
     /// The identifier of the token that is to be used for cross-chain automation fees (assume $TUR).
 
     call: Vec<u8>,
