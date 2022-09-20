@@ -14,7 +14,6 @@ npm install @oak-foundation/api-augment @oak-foundation/api
 
 An example snippet can be seen below.
 ```javascript
-// 
 import '@oak-foundation/api-augment'
 import { options } from '@oak-foundation/api'
 import { ApiPromise, WsProvider } from '@polkadot/api'
