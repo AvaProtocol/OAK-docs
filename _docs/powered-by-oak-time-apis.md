@@ -83,21 +83,20 @@ This API allows you to schedule transfering Turing Network's native token ($TUR)
 #### API
 ```rust
 fn schedule_native_transfer_task(
-
-    origin: OriginFor<T>,
     /// The address of the account that created or is creating the task. Automatically passed in when the transaction is signed.
-    
-    provided_id: Vec<u8>,      
+    origin: OriginFor<T>,
+   
     /// Your unique identifier for the task. Accepts any string input (e.g. "I am as unique as a snowflake").
+    provided_id: Vec<u8>,      
 
-    execution_times: Vec<UnixTime>,
     /// An array of unix standard time stamps (in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0).
+    execution_times: Vec<UnixTime>,
     
-    recipient_id: AccountId,
     /// The account you want to transfer tokens to.
+    recipient_id: AccountId,
 
-    amount: u128,
     /// The amount you want to transfer. 
+    amount: u128,
 )
 ```
 
@@ -129,12 +128,11 @@ This API allows you to cancel a scheduled task with a specified task identifier.
 #### API
 ```rust
 fn cancel_task(
-    
-    origin: OriginFor<T>, 
     /// The `account_id` of the caller. Automatically passed in when the transaction is signed.
-
+    origin: OriginFor<T>, 
+    
+    /// The id of the task.
     task_id: Hash,
-   /// The id of the task.
 )
 ```
 
@@ -163,17 +161,16 @@ While the proxy implementation may vary by parachain, each account must create a
 #### API
 ```rust
 fn generate_accountID(
-
-    account_id: AccountId,     
     /// The address of the account that created or is creating a proxy.
-    
+    account_id: AccountId,         
 )
 ```
 
 #### Request (Sample)
-```- curl --location --request POST 'http:*//rpc.turing-staging.oak.tech' \
+```
+curl --location --request POST 'http:*//rpc.turing-staging.oak.tech' \
 --header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_crossChainAccount", "params": ["{{accountId32}}"]}' \
+--data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_crossChainAccount", "params": ["accountId32"]}' \
 ```
 
 ### Derive task identifier
@@ -182,23 +179,22 @@ This API will return a deterministic task identifier using a Provided ID and Acc
 #### API
 ```rust
 fn generate_TaskId(
-
-    account_id: AccountId,     
     /// The address of the account that created or is creating the task.
-    
-    provided_id: Vec<u8>,      
+    account_id: AccountId,     
+
     /// Your unique identifier for the task. Accepts any string input (e.g. "I am as unique as a snowflake").
+    provided_id: Vec<u8>,      
 )
 ```
 
 #### Request (Sample)
-
-```-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
+```
+curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
 --header 'Content-Type: application/json' \
 --data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_generateTaskId", "params": ["5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", "savedProvidedID"]}'
 ```
-#### Response (Sample)
 
+#### Response (Sample)
 ```JSON
 {
     "jsonrpc": "2.0",
@@ -206,6 +202,7 @@ fn generate_TaskId(
     "id": 1
 }
 ```
+
 ## Get fees
 Automation fees for Turing can be retrieved using the available RPCs or [OAK.js](https://docs.oak.tech/docs/oak-js/). Call weight from the foreign chain is required in order to retrieve fees for Turing Network. Additional fees may be required for setting up a proxy , swapping, and/or transferring tokens for automation fees.
 
@@ -234,15 +231,15 @@ fn get_time_automation_fees(
     /// The number of task executions. (Support for indefinite reccurrences coming soon)
 )
 ```
-#### Request (Sample)
 
-```-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
+#### Request (Sample)
+```
+curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
 --header 'Content-Type: application/json' \
 --data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_getTimeAutomationFees", "params": ["Notify", 3]}'
 ```
 
 #### Response (Sample)
-
 ```JSON
 {
     "jsonrpc": "2.0",
