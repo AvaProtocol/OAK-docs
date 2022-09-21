@@ -9,23 +9,26 @@ The OAK Development team has created an extension of the PolkadotJS APIs in **[t
 
 To start usage, please run:
 ```bash
-npm install @oak-foundation/api-augment @oak-foundation/api
+npm install @oak-foundation/api-augment @oak-foundation/types
 ```
 
 An example snippet can be seen below.
 ```javascript
-// 
 import '@oak-foundation/api-augment'
-import { options } from '@oak-foundation/api'
+import { rpc } from '@oak-foundation/types';
 import { ApiPromise, WsProvider } from '@polkadot/api'
 
 async function main() {
-  const provider = new WsProvider("wss://rpc.turing-staging.oak.tech")
-  const api = await ApiPromise.create(options({ provider }));
+  const api = await ApiPromise.create({
+    provider: new WsProvider("wss://rpc.turing-staging.oak.tech"),
+    rpc: rpc,
+  });
 
-  const fee = await api.rpc.automationTime.getTimeAutomationFees("Notify", 1)
-  console.log("fee", fee.toPrimitive());
+  const alice = "5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY";
+  const taskId = await api.rpc.automationTime.generateTaskId(alice, "example_provided_it");
+  console.log("TaskId:", taskId.toHuman());
 }
 main().catch(console.error).finally(() => process.exit()); 
 ```
 
+You can find more examples in our [Javascript Example Repo](https://github.com/OAK-Foundation/javascript-examples).
