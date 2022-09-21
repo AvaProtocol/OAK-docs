@@ -167,10 +167,17 @@ fn generate_accountID(
 
 #### Request (Sample)
 ```bash
-curl --location --request POST 'http:*//rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "xcmpHandler_crossChainAccount", "params": ["accountId32"]}' \
+curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+   "id":1,
+   "jsonrpc":"2.0",
+   "method": "xcmpHandler_crossChainAccount",
+   "params": ["SS58_ACCOUNT_ID"]
+ }'
 ```
+
+Replace `SS58_ACCOUNT_ID` with the account you want to lookup.
 
 ### Derive task identifier
 This API will return a deterministic task identifier using a Provided ID and Account ID for both new and existing tasks. Generating and using your own unique (provided) ID to derive the OAK Task ID will allow tasks to be more easily referenced in the future (to [Cancel Task](https://docs.oak.tech/docs/powered-by-oak-time-apis/#cancel-a-task), for example).
@@ -188,10 +195,18 @@ fn generate_TaskId(
 
 #### Request (Sample)
 ```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_generateTaskId", "params": ["5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY", "savedProvidedID"]}'
+curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+    "id":1,
+    "jsonrpc":"2.0",
+    "method": "automationTime_generateTaskId",
+    "params": ["SS58_ACCOUNT_ID", "PROVIDED_ID"]
+  }'
 ```
+
+Replace `SS58_ACCOUNT_ID` with your Turing account.
+Replace `PROVIDED_ID` with a random identifier.
 
 #### Response (Sample)
 ```JSON
@@ -232,10 +247,19 @@ fn get_time_automation_fees(
 
 #### Request (Sample)
 ```bash
-curl --location --request POST 'http://rpc.turing-staging.oak.tech' \
---header 'Content-Type: application/json' \
---data-raw '{"id":1, "jsonrpc":"2.0", "method": "automationTime_getTimeAutomationFees", "params": ["Notify", 3]}'
+curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
+  --header 'Content-Type: application/json' \
+  --data-raw '{
+    "id":1,
+    "jsonrpc":"2.0",
+    "method": "automationTime_getTimeAutomationFees",
+    "params": ["TASK_TYPE", EXECUTION_COUNT]
+  }'
 ```
+
+Replace `TASK_TYPOE` with the type of task (ie. "Notify").
+Replace `EXECUTION_COUNT` with how many times the task will be scheduled to
+execute.
 
 #### Response (Sample)
 ```JSON
