@@ -13,7 +13,7 @@ The APIs and Polkadot{.js} libraries on this page allow users and multi-chain ap
  - paying over time (recurring payments on a foreign chain),
  - anything else you can do on supported parachains, sometime(s) in the future.
 
-2. `scheduleNativeTransferTask` can be used to schedule a transfer of Turing Network’s native token ($TUR).
+2. `scheduleDynamicDispatchTask` can be used to schedule a call on the OAK chain.
 
 3. `cancelTask` can be used to cancel any existing automation tasks (must be from the account which created the task). 
 
@@ -76,12 +76,60 @@ fn schedule_xcmp_task(
 )
 ```
 
-## Create a native token transfer task
-This API allows you to schedule transfering Turing Network's native token ($TUR) to another account.
+#### Errors
+```rust
+pub enum Error {
+    /// If the `time` parameter does not end in a whole minute.
+    InvalidTime,
+    /// The `time` parameter must be in the future.
+    PastTime,
+    /// The `provided_id` cannot be empty.
+    EmptyProvidedId,
+    /// The `provided_id` is already in use for your account.
+    DuplicateTask,
+    /// The time you requested in full. No more tasks can be scheduled for this time.
+    TimeSlotFull,
+    /// The message cannot be empty.
+    EmptyMessage,
+    /// We only support certain currency/chain combinations.
+    CurrencyChainComboNotSupported,
+    /// There is no entry for that currency/chain combination.
+    CurrencyChainComboNotFound,
+    /// Either the weight or fee per second is too large.
+    FeeOverflow,
+    /// Either the instruction weight or the transact weight is too large.
+    WeightOverflow,
+}
+```
+
+#### Events
+```rust
+pub enum Event<T: Config> {
+    /// Schedule task success.
+    TaskScheduled {
+        who: AccountOf<T>,
+        task_id: TaskId<T>,
+    },
+    /// Successfully sent XCMP
+    XcmpTaskSucceeded {
+        task_id: T::Hash,
+        para_id: ParaId,
+    },
+    /// Failed to send XCMP
+    XcmpTaskFailed {
+        task_id: T::Hash,
+        para_id: ParaId,
+        error: DispatchError,
+    },
+}
+```
+
+## Create a dynamic dispatch task
+This API allows you to schedule a call on Turing. For example, you could schedule a Balances.Transfer call to send $TUR to another account.
 
 #### API
 ```rust
-fn schedule_native_transfer_task(
+fn schedule_dynamic_dispatch_task(
     /// The address of the account that created or is creating the task. Automatically passed in when the transaction is signed.
     origin: OriginFor<T>,
    
@@ -91,11 +139,8 @@ fn schedule_native_transfer_task(
     /// An array of unix standard time stamps (in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0).
     execution_times: Vec<UnixTime>,
     
-    /// The account you want to transfer tokens to.
-    recipient_id: AccountId,
-
-    /// The amount you want to transfer. 
-    amount: u128,
+    /// The call that will be dispatched.
+    call: Box<<T as Config>::Call>,
 )
 ```
 
@@ -114,10 +159,28 @@ pub enum Error {
     TimeSlotFull,
     /// The message cannot be empty.
     EmptyMessage,
-    /// Amount has to be larger than 0.1 OAK.
-    InvalidAmount,
-    /// Sender cannot transfer money to self.
-    TransferToSelf,
+}
+```
+
+#### Events
+```rust
+pub enum Event<T: Config> {
+    /// Schedule task success.
+    TaskScheduled {
+        who: AccountOf<T>,
+        task_id: TaskId<T>,
+    },
+    /// The result of the DynamicDispatch action.
+    DynamicDispatchResult {
+        who: AccountOf<T>,
+        task_id: TaskId<T>,
+        result: DispatchResult, //Ok() or Err(<error>)
+    },
+    /// The call for the DynamicDispatch action can no longer be decoded.
+    CallCannotBeDecoded {
+        who: AccountOf<T>,
+        task_id: TaskId<T>,
+    }
 }
 ```
 
@@ -138,10 +201,19 @@ fn cancel_task(
 #### Errors
 ```rust
 pub enum Error {
-    /// You are not the owner of the task.
-    NotTaskOwner,
-    /// The task does not exist.
+    /// The task does not exist. **Could also be thrown because you are not the task owner.
     TaskDoesNotExist,
+}
+```
+
+#### Events
+```rust
+pub enum Event<T: Config> {
+    // Cancelled a task.
+    TaskCancelled {
+        who: AccountOf<T>,
+        task_id: TaskId<T>,
+    },
 }
 ```
 
@@ -257,7 +329,7 @@ curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
   }'
 ```
 
-Replace `TASK_TYPOE` with the type of task (ie. "Notify").
+Replace `TASK_TYPE` with the type of task (ie. "Notify").
 Replace `EXECUTION_COUNT` with how many times the task will be scheduled to
 execute.
 
