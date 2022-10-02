@@ -1,7 +1,7 @@
 ---
 title: Setup a collator node with partners
 subtitle: How to setup your node with one of our node infrastructure partner services
-author: irsal
+author: chris
 tags: [infra, collator]
 ---
 

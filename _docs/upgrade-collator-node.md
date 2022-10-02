@@ -1,7 +1,7 @@
 ---
 title: Upgrade a collator node
 subtitle: Instructions on how to upgrade your node version
-author: irsal
+author: chris
 tags: [infra, collator]
 ---
 

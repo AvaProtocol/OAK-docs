@@ -1,7 +1,7 @@
 ---
 title: Collator Overview
 subtitle: This document covers the operating and token requirements of a collator
-author: irsal
+author: chris
 tags: [dpos, collator]
 ---
 

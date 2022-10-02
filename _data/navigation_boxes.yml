@@ -8,7 +8,7 @@
 - title: Staking
   desc: Join as a collator or delegator and stake your tokens to earn rewards
   icon: star
-  doc: delegators
+  doc: delegation-user
 
 - title: API References
   desc: Read our documentation for OAK APIs and SDKs

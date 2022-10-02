@@ -1,7 +1,7 @@
 ---
 title: Yield Boost - General APIs
 subtitle: Enable auto-compounding for your liquidity pools, or any yield generating use cases.
-author: irsal
+author: chris
 tags: [api, yield-boost]
 ---
 

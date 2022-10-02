@@ -1,7 +1,7 @@
 ---
 title: RFC - PRD - Recurring time trigger (N≥1)
 subtitle: Create viable consumer use cases for recurring time triggers for any actions for a given task. 
-author: irsal
+author: chris
 tags: [feedback, community]
 ---
 

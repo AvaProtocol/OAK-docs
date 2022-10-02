@@ -1,6 +1,6 @@
 ---
-title: Governance on the Turing Network
-subtitle: Overview of governance on the Turing Network
+title: Governance Overview
+subtitle: Overview of governance on OAK and Turing Network
 author: christian
 tags: [governance]
 ---

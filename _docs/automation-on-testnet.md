@@ -1,13 +1,14 @@
 ---
-title: Setup on-chain automation
+title: Play with Testnet Tokens
 subtitle: Learn more about how to test our automation on the Turing Staging testnet
-author: irsal
+author: chris
 tags: [testing]
 ---
 
+Our testnet is connected to Polkadot’s Rococo and named Turing Staging. Its token can be used to test functionalities of the network, such as XCM transfer to other parachains of Rococo, automation scheduling and staking & delegation. 
 ### Pre-requisites
 
-1. Please grab your TUR tokens from our Discord faucet. [Instructions here.]()
+1. Please reach out to #dev-questions channel in our Discord for Turing Staging tokens.
 2. Head over to the [Turing Staging PolkadotJS App](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing-staging.oak.tech%2Fpublic-ws#/explorer)
 3. Go to the developer > extrinsics tab
 

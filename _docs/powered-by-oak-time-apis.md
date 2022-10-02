@@ -1,7 +1,7 @@
 ---
 title: Powered By OAK - Time APIs
 subtitle: Trigger any transaction to occur at a future time or set of times.
-author: irsal
+author: chris
 tags: [api, price, triggers]
 ---
 
