@@ -297,6 +297,8 @@ fn schedule_xcmp_task(
     execution_times: Vec<UnixTime>,
     /// The parachain location to where the user wants to send the call back
     para_id: ParaId,
+    /// The currency in which fees will be paid.
+    currency_id: u32,
     /// The encoded extrinsic call to perform a custom action.
     call: Vec<u8>,
     /// The total weight of the encoded call that will be sent back to the parachain.
