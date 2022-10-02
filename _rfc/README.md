@@ -1,7 +1,7 @@
 ---
 title: Request for Comments (RFCs)
 subtitle: What is an RFC and why do we need it?
-author: irsal
+author: chris
 tags: [feedback, community]
 ---
 

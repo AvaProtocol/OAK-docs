@@ -1,24 +1,16 @@
 ---
-title: Delegator Overview
+title: Delegation via Extrinsics
 subtitle: How to stake to a collator and earn rewards
 author: charles
 tags: [delegator]
 ---
-## How to stake TUR
 This guide provides links and instructions for staking by delegating an existing Turing Network collator. See [Collator Overview](https://docs.oak.tech/docs/collators/) for instructions on setting up your own collator.
 
 _Please exercise caution when following links to external resources that are not maintained or tested by the OAK Network team!_
 
 ## Which wallet are you using?
 
-### Option 1: Browser Extension
-- Use [OAK Staking Dashboard](https://web3go.xyz/#/TuringStaking) by Web3Go to stake and delegate an existing collator from your web browser. 
-
-### Option 2: Nova Wallet
-- Nova Wallet on [Android](https://play.google.com/store/apps/details?id=io.novafoundation.nova.market) and [iOS](https://apps.apple.com/us/app/nova-polkadot-kusama-wallet/id1597119355) supports staking and delegating from your mobile device.
-- Video tutorial for Nova Wallet is available in [English](https://www.youtube.com/watch?v=UhmNwO4hhRQ).
-
-### Option 3: Polkadot JS ([Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics))
+### Polkadot JS ([Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics))
 Keep scrolling in this document or visit one the following guides created by members of the OAK Network community:
 
 - Video tutorial is available in [English](https://www.youtube.com/watch?v=XDryLlbQs8g).
@@ -27,7 +19,7 @@ Keep scrolling in this document or visit one the following guides created by mem
 
 ### Which collator will you delegate your stake to?
 
-[StakeTur](https://staketur.com) by StakeBaby, staking applications, and wallet interfaces with staking support will provide additional information that can help you choose who to delegate. Join the [OAK Discord Server](https://discord.gg/7W9UDvsbwh) for #collator-open-chat about delegation.
+[StakeTur](https://staketur.com) by StakeBaby, staking applications, and wallet interfaces with staking support will provide additional information that can help you choose who to delegate. Join the #collator-open-chat channel of [OAK Discord Server](https://discord.gg/7W9UDvsbwh) to ask questions to collators.
 
 **Important disclaimer about risks**
 
@@ -121,9 +113,9 @@ The Turing Network pays 2.5% in annual token inflation to the stakers who back t
 
 Each block pays the same amount in rewards, so your portion of rewards for authoring each block will be lower when delegating to a collator with a higher total stake (self-bond plus delegated stake) when compared to a collator with a lower total stake.
 
-[StakeTur](https://staketur.com) by StakeBaby, staking applications, and wallet interfaces with staking support will provide additional information that can help you estimate staking rewards and APR.
+For simulation of Staking rate of return, please check out [Web3go Turing Staking](https://app.web3go.xyz/#/TuringStaking) page, and click on the "Simulate" button to the right of each collator.
 
-## Turing Network - Kusama Parachain
+## Turing Network Staking Configuration
 
 _Note: The source of truth for these values is the chain state and constants, so please query that to confirm the values_
 

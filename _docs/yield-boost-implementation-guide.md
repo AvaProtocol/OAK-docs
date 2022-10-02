@@ -1,7 +1,7 @@
 ---
 title: Yield Boost Implementation Guide
 subtitle: TBD
-author: irsal
+author: chris
 tags: [api]
 ---
 

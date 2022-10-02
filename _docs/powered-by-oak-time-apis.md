@@ -1,7 +1,7 @@
 ---
 title: Powered By OAK - Time APIs
 subtitle: Trigger any transaction based on the increase or decrease in value change of any numerical data (e.g. price).
-author: irsal
+author: chris
 tags: [api, price, triggers]
 ---
 

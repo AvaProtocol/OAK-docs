@@ -1,5 +1,5 @@
 ## Network
-- title: Network
+- title: Overview
   group: 1
   docs:
   - company-overview
@@ -9,9 +9,39 @@
   - papers
   - contact-us
 
-## Developers
-- title: Developer Guide
+- title: Run a Collator
+  group: 1
+  docs:
+  - collators
+  - setup-collator-node
+  - setup-collator-node-partner
+  - run-node-service
+  - upgrade-collator-node
+  - proxy-collator-permissions
+
+## User Guide
+- title: User Guide
   group: 2
+  docs:
+  - automation-on-testnet
+  - identity
+  - multi-sig-wallets
+
+- title: Governance
+  group: 2
+  docs:
+  - governance-turing-overview
+  - governance-propose-change
+  - vote-on-proposal
+
+- title: Staking
+  group: 2
+  docs:
+  - delegation-user
+
+## Develop
+- title: Get Started
+  group: 3
   docs:
   - developer-guide-overview
   - examples
@@ -21,30 +51,11 @@
   - powered-by-oak-price-apis
   - oak-js
   # - xcmp
-
-## User Guide
-- title: User Guide
-  group: 3
-  docs:
-  - on-chain-automation
-  - identity
-  - multi-sig-wallets
-
 - title: Governance
   group: 3
   docs:
-  - governance-turing-overview
-  - governance-propose-change
-  - vote-on-proposal
   - verify-runtime-upgrade
-
 - title: Staking
   group: 3
   docs:
-  - delegators
-  - collators
-  - setup-collator-node
-  - setup-collator-node-partner
-  - run-node-service
-  - upgrade-collator-node
-  - proxy-collator-permissions
+  - delegation-dev

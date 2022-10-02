@@ -1,5 +1,5 @@
 ---
-title: Multi-sig wallets
+title: Use Multi-signature Wallet
 subtitle: Learn more about how to create and use multi-sig wallets
 author: charles
 tags: [multi-sig, multisig]

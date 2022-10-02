@@ -1,7 +1,7 @@
 ---
 title: Technical Papers
 subtitle: Learn more about the tokenomics and technical whitepapers of both Turing and OAK Networks
-author: irsal
+author: chris
 tags: [architecture, tokenomics]
 ---
 
