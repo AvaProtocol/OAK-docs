@@ -1,5 +1,5 @@
 ---
-title: Proposing a Change
+title: Creating a Proposal
 subtitle: Learn how to propose a change through governance on the Turing Network
 author: christian
 tags: [governance]

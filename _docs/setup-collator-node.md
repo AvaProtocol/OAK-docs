@@ -1,7 +1,7 @@
 ---
 title: Setup a collator node
 subtitle: Technical infrastructure requirements to run your node
-author: irsal
+author: chris
 tags: [infra, collator]
 ---
 

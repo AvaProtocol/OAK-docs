@@ -6,11 +6,11 @@
 - title: Network
   url: /docs/company-overview/
 
-- title: Developer
-  url: /docs/developer-guide-overview/
-
 - title: User Guide
-  url: /docs/on-chain-automation/
+  url: /docs/automation-on-testnet/
+
+- title: Develop
+  url: /docs/developer-guide-overview/
 
 - title: Blog
   url: https://medium.com/oak-blockchain

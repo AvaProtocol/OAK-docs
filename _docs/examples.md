@@ -1,7 +1,7 @@
 ---
 title: Examples
 subtitle: A series of examples of what you can do with OAK
-author: irsal
+author: chris
 tags: [develop]
 ---
 
