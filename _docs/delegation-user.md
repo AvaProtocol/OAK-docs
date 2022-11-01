@@ -34,10 +34,48 @@ _You agree and understand that neither the Turing Network, nor OAK Foundation gu
 _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and retrieving them requires a waiting period. Additionally, if a collator fails to perform required functions or acts in bad faith, a portion of their total stake can be slashed (i.e. destroyed). This includes the stake of their delegators. If a collators behaves suspiciously or is too often offline, delegators can choose to unbond from them or switch to another collator. Delegators can also mitigate risk by electing to distribute their stake across multiple collators._
 
 ## How to stake on Nova Wallet
-Coming soon ...
+
+1. As a prerequisite, you need to have an account in the Nova wallet and have some balance in the account.
+
+1. Switch to the "Staking" tab, select the Turing network, and click "Start staking".
+
+	![staking](../../assets/img/delegation-user/nova/staking.png)
+
+1. Select a collator, fill in the amount, and click the "continue" button to complete the delegation.
+
+	![delegate](../../assets/img/delegation-user/nova/delegate.png)
+
+1. When you complete the delegation, you can check your delegation results.
+
+![result](../../assets/img/delegation-user/nova/result.png)
 
 ## How to stake on Web3go website
-Coming soon ...
+
+1. As a prerequisite, you need to have an account in the SubWallet and have some balance in the account.
+
+1. Visit https://app.web3go.xyz/#/TuringStaking in your browser. Click SubWallet extension to connect wallet to website.
+
+	![connect-wallet](../../assets/img/delegation-user/web3go/connect-wallet.png)
+
+1. Select Turing Network and Click "Confirm" button.
+
+	![network-selection](../../assets/img/delegation-user/web3go/network-selection.png)
+
+1. Refresh the page, click "Connect Wallet" in the page and select a account.
+
+	![sellect-wallet](../../assets/img/delegation-user/web3go/sellect-wallet.png)
+
+1. Select a collator, fill in the amount, and click the "Confirm" button.
+
+	![delegate](../../assets/img/delegation-user/web3go/delegate.png)
+
+1. Click the "Approve" button in the SubWallet extension to complete the delegation.
+
+	![approve-request](../../assets/img/delegation-user/web3go/approve-request.png)
+
+1. After you complete the delegation, refresh the page and you can check the results of your delegation.
+
+	![result](../../assets/img/delegation-user/web3go/result.png)
 
 ## FAQ
 
