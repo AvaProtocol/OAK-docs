@@ -22,10 +22,10 @@ Our testnet is connected to Polkadot’s Rococo and named Turing Staging. Its to
 
 2. Send a `!drip <address>` statement in order to get tokens.
 
-![account](../../assets/img/testnet-tokens/drip.png)
+![drip](../../assets/img/testnet-tokens/drip.png)
 
 3. Recheck the balance changes in the Accounts page.
 
 4. You can also send a `!faucet` statement to get access to more features of faucet.
 
-![account](../../assets/img/testnet-tokens/faucet.png)
+![faucet](../../assets/img/testnet-tokens/faucet.png)
