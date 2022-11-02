@@ -11,8 +11,8 @@ _Please exercise caution when following links to external resources that are not
 
 ## Which wallet are you using?
 
-### Option 1: Web3go Turing Staking App
-- Use [OAK Staking Dashboard](https://web3go.xyz/#/TuringStaking) by Web3Go to stake and delegate an existing collator from your web browser. 
+### Option 1: Staketur.com
+- Use [Staketur.com Dashboard](https://staketur.com/dashboard/dash-staking) to stake and delegate an existing collator from your web browser. 
 
 ### Option 2: Nova Wallet
 - Nova Wallet on [Android](https://play.google.com/store/apps/details?id=io.novafoundation.nova.market) and [iOS](https://apps.apple.com/us/app/nova-polkadot-kusama-wallet/id1597119355) supports staking and delegating from your mobile device.
@@ -49,33 +49,29 @@ _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and re
 
 ![result](../../assets/img/delegation-user/nova/result.png)
 
-## How to stake on Web3go website
+## How to stake on Staketur.com (https://staketur.com/dashboard/dash-staking)
 
-1. As a prerequisite, you need to have an account in the SubWallet and have some balance in the account.
+1. As a prerequisite, you need to have an account in the polkadot.js browser extension and have some balance in the account.
 
-1. Visit https://app.web3go.xyz/#/TuringStaking in your browser. Click SubWallet extension to connect wallet to website.
+1. Visit https://staketur.com/dashboard/dash-staking in your browser. Click "Connect Polkadot" and wait for a while. When the authorization window pops up, click "Yes, allow this application access".
 
-	![connect-wallet](../../assets/img/delegation-user/web3go/connect-wallet.png)
+	![connect-polkadot](../../assets/img/delegation-user/staketur/connect-polkadot.png)
 
-1. Select Turing Network and Click "Confirm" button.
+1. Select an account.
 
-	![network-selection](../../assets/img/delegation-user/web3go/network-selection.png)
+	![select-account](../../assets/img/delegation-user/staketur/select-account.png)
 
-1. Refresh the page, click "Connect Wallet" in the page and select a account.
+1. Select a collator, fill in the amount, click the "Delegate" button, and sign transaction. After you complete the delegation, you can check the results of your delegation.
 
-	![sellect-wallet](../../assets/img/delegation-user/web3go/sellect-wallet.png)
+	![delegate](../../assets/img/delegation-user/staketur/delegate.png)
+	
+	![sign-transaction](../../assets/img/delegation-user/staketur/sign-transaction.png)
 
-1. Select a collator, fill in the amount, and click the "Confirm" button.
+1. You can turn on Turing's auto-compound feature. Note: When the wallet balance is less than a certain threshold, the auto-compound task will be cancelled.
 
-	![delegate](../../assets/img/delegation-user/web3go/delegate.png)
+	![enable-compound](../../assets/img/delegation-user/staketur/enable-compound.png)
 
-1. Click the "Approve" button in the SubWallet extension to complete the delegation.
-
-	![approve-request](../../assets/img/delegation-user/web3go/approve-request.png)
-
-1. After you complete the delegation, refresh the page and you can check the results of your delegation.
-
-	![result](../../assets/img/delegation-user/web3go/result.png)
+  ![sign-compound-transaction](../../assets/img/delegation-user/staketur/sign-compound-transaction.png)
 
 ## FAQ
 
