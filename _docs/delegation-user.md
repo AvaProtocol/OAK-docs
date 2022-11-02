@@ -11,8 +11,8 @@ _Please exercise caution when following links to external resources that are not
 
 ## Which wallet are you using?
 
-### Option 1: Staketur.com
-- Use [Staketur.com Dashboard](https://staketur.com/dashboard/dash-staking) to stake and delegate an existing collator from your web browser. 
+### Option 1: staketur.com
+- Use [staketur.com Dashboard](https://staketur.com/dashboard/dash-staking) to stake and delegate an existing collator from your web browser. 
 
 ### Option 2: Nova Wallet
 - Nova Wallet on [Android](https://play.google.com/store/apps/details?id=io.novafoundation.nova.market) and [iOS](https://apps.apple.com/us/app/nova-polkadot-kusama-wallet/id1597119355) supports staking and delegating from your mobile device.
@@ -61,7 +61,7 @@ _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and re
 
   ![confirm-compound](../../assets/img/delegation-user/nova/confirm-compound.png)
 
-## How to stake on Staketur.com (https://staketur.com/dashboard/dash-staking)
+## How to stake on staketur.com (https://staketur.com/dashboard/dash-staking)
 
 1. As a prerequisite, you need to have an account in the polkadot.js browser extension and have some balance in the account.
 
