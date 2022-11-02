@@ -47,7 +47,19 @@ _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and re
 
 1. When you complete the delegation, you can check your delegation results.
 
-![result](../../assets/img/delegation-user/nova/result.png)
+  ![result](../../assets/img/delegation-user/nova/result.png)
+
+1. You can turn on Turing's auto-compound feature to earn more reward.
+
+  ![enable-compound](../../assets/img/delegation-user/nova/enable-compound.png)
+
+1. Select a collator, switch to "with Yield Boost", fill in boost threshold, and click "confirm" to start auto-compound. 
+   
+   Note: When the wallet balance is less than the boost threshold, the auto-compound task will be cancelled.
+
+  ![compound](../../assets/img/delegation-user/nova/compound.png)
+
+  ![confirm-compound](../../assets/img/delegation-user/nova/confirm-compound.png)
 
 ## How to stake on Staketur.com (https://staketur.com/dashboard/dash-staking)
 
@@ -67,11 +79,13 @@ _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and re
 	
 	![sign-transaction](../../assets/img/delegation-user/staketur/sign-transaction.png)
 
-1. You can turn on Turing's auto-compound feature. Note: When the wallet balance is less than a certain threshold, the auto-compound task will be cancelled.
+1. You can turn on Turing's auto-compound feature to earn more reward. 
 
-	![enable-compound](../../assets/img/delegation-user/staketur/enable-compound.png)
+    Note: When the wallet balance is less than a certain threshold, the auto-compound task will be cancelled.
 
-  ![sign-compound-transaction](../../assets/img/delegation-user/staketur/sign-compound-transaction.png)
+	  ![enable-compound](../../assets/img/delegation-user/staketur/enable-compound.png)
+    
+    ![sign-compound-transaction](../../assets/img/delegation-user/staketur/sign-compound-transaction.png)
 
 ## FAQ
 
