@@ -161,6 +161,11 @@
       const docs = document.querySelector('.sidebar-docs');
       const docDivs = docs.querySelectorAll('div');
       docDivs.forEach(function (divElem) {
+        // Unfold all side menu items
+        const ulElement = divElem.querySelector('ul');
+        ulElement.style.display = 'block';
+
+        // toggle selected menu items
         const h5Element = divElem.querySelector('h5');
         h5Element.addEventListener('click', function () {
           try {

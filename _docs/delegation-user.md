@@ -11,8 +11,8 @@ _Please exercise caution when following links to external resources that are not
 
 ## Which wallet are you using?
 
-### Option 1: Web3go Turing Staking App
-- Use [OAK Staking Dashboard](https://web3go.xyz/#/TuringStaking) by Web3Go to stake and delegate an existing collator from your web browser. 
+### Option 1: staketur.com
+- Use [staketur.com Dashboard](https://staketur.com/dashboard/dash-staking) to stake and delegate an existing collator from your web browser. 
 
 ### Option 2: Nova Wallet
 - Nova Wallet on [Android](https://play.google.com/store/apps/details?id=io.novafoundation.nova.market) and [iOS](https://apps.apple.com/us/app/nova-polkadot-kusama-wallet/id1597119355) supports staking and delegating from your mobile device.
@@ -34,10 +34,58 @@ _You agree and understand that neither the Turing Network, nor OAK Foundation gu
 _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and retrieving them requires a waiting period. Additionally, if a collator fails to perform required functions or acts in bad faith, a portion of their total stake can be slashed (i.e. destroyed). This includes the stake of their delegators. If a collators behaves suspiciously or is too often offline, delegators can choose to unbond from them or switch to another collator. Delegators can also mitigate risk by electing to distribute their stake across multiple collators._
 
 ## How to stake on Nova Wallet
-Coming soon ...
 
-## How to stake on Web3go website
-Coming soon ...
+1. As a prerequisite, you need to have an account in the Nova wallet and have some balance in the account.
+
+1. Switch to the "Staking" tab, select the Turing network, and click "Start staking".
+
+![staking](../../assets/img/delegation-user/nova/staking.png){:.centered width="60%"}
+
+1. Select a collator, fill in the amount, and click the "continue" button to complete the delegation.
+
+![delegate](../../assets/img/delegation-user/nova/delegate.png){:.centered width="60%"}
+
+1. When you complete the delegation, you can check your delegation results.
+
+![result](../../assets/img/delegation-user/nova/result.png){:.centered width="60%"}
+
+1. You can turn on Turing's auto-compound feature to earn more reward.
+
+![enable-compound](../../assets/img/delegation-user/nova/enable-compound.png){:.centered width="60%"}
+
+1. Select a collator, switch to "with Yield Boost", fill in boost threshold, and click "confirm" to start auto-compound. 
+   
+   Note: When the wallet balance is less than the boost threshold, the auto-compound task will be cancelled.
+
+![compound](../../assets/img/delegation-user/nova/compound.png){:.centered width="60%"}
+
+![confirm-compound](../../assets/img/delegation-user/nova/confirm-compound.png){:.centered width="60%"}
+
+## How to stake on staketur.com (https://staketur.com/dashboard/dash-staking)
+
+1. As a prerequisite, you need to have an account in the polkadot.js browser extension and have some balance in the account.
+
+1. Visit https://staketur.com/dashboard/dash-staking in your browser. Click "Connect Polkadot" and wait for a while. When the authorization window pops up, click "Yes, allow this application access".
+
+![connect-polkadot](../../assets/img/delegation-user/staketur/connect-polkadot.png){:.centered width="60%"}
+
+1. Select an account.
+
+![select-account](../../assets/img/delegation-user/staketur/select-account.png){:.centered width="60%"}
+
+1. Select a collator, fill in the amount, click the "Delegate" button, and sign transaction. After you complete the delegation, you can check the results of your delegation.
+
+![delegate](../../assets/img/delegation-user/staketur/delegate.png){:.centered width="60%"}
+	
+![sign-transaction](../../assets/img/delegation-user/staketur/sign-transaction.png){:.centered width="60%"}
+
+1. You can turn on Turing's auto-compound feature to earn more reward. 
+
+    Note: When the wallet balance is less than a certain threshold, the auto-compound task will be cancelled.
+
+![enable-compound](../../assets/img/delegation-user/staketur/enable-compound.png){:.centered width="60%"}
+    
+![sign-compound-transaction](../../assets/img/delegation-user/staketur/sign-compound-transaction.png){:.centered width="60%"}
 
 ## FAQ
 
