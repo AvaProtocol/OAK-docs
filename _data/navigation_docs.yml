@@ -23,6 +23,7 @@
 - title: User Guide
   group: 2
   docs:
+  - testnet-tokens
   - automation-on-testnet
   - identity
   - multi-sig-wallets
