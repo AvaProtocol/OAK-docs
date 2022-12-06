@@ -51,6 +51,10 @@
   - powered-by-oak-price-apis
   - oak-js
   # - xcmp
+- title: XCM
+  group: 3
+  docs: 
+  - xcm-overview
 - title: Governance
   group: 3
   docs:
