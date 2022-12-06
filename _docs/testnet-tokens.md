@@ -1,6 +1,6 @@
 ---
 title: Get Testnet Tokens
-subtitle: Learn more about how to get Testnet Tokens from discord
+subtitle: Learn about how to get testnet tokens from our Discord
 author: charles
 tags: [testing]
 ---
