@@ -39,27 +39,27 @@ _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and re
 
 1. Switch to the "Staking" tab, select the Turing network, and click "Start staking".
 
-![staking](../../assets/img/delegation-user/nova/staking.png){:.centered width="60%"}
+    ![staking](../../assets/img/delegation-user/nova/staking.png){:.centered width="60%"}
 
 1. Select a collator, fill in the amount, and click the "continue" button to complete the delegation.
 
-![delegate](../../assets/img/delegation-user/nova/delegate.png){:.centered width="60%"}
+    ![delegate](../../assets/img/delegation-user/nova/delegate.png){:.centered width="60%"}
 
 1. When you complete the delegation, you can check your delegation results.
 
-![result](../../assets/img/delegation-user/nova/result.png){:.centered width="60%"}
+    ![result](../../assets/img/delegation-user/nova/result.png){:.centered width="60%"}
 
 1. You can turn on Turing's auto-compound feature to earn more reward.
 
-![enable-compound](../../assets/img/delegation-user/nova/enable-compound.png){:.centered width="60%"}
+    ![enable-compound](../../assets/img/delegation-user/nova/enable-compound.png){:.centered width="60%"}
 
 1. Select a collator, switch to "with Yield Boost", fill in boost threshold, and click "confirm" to start auto-compound. 
    
    Note: When the wallet balance is less than the boost threshold, the auto-compound task will be cancelled.
 
-![compound](../../assets/img/delegation-user/nova/compound.png){:.centered width="60%"}
+    ![compound](../../assets/img/delegation-user/nova/compound.png){:.centered width="60%"}
 
-![confirm-compound](../../assets/img/delegation-user/nova/confirm-compound.png){:.centered width="60%"}
+    ![confirm-compound](../../assets/img/delegation-user/nova/confirm-compound.png){:.centered width="60%"}
 
 ## How to stake on staketur.com (https://staketur.com/dashboard/dash-staking)
 
@@ -67,25 +67,25 @@ _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and re
 
 1. Visit https://staketur.com/dashboard/dash-staking in your browser. Click "Connect Polkadot" and wait for a while. When the authorization window pops up, click "Yes, allow this application access".
 
-![connect-polkadot](../../assets/img/delegation-user/staketur/connect-polkadot.png){:.centered width="60%"}
+    ![connect-polkadot](../../assets/img/delegation-user/staketur/connect-polkadot.png){:.centered width="60%"}
 
 1. Select an account.
 
-![select-account](../../assets/img/delegation-user/staketur/select-account.png){:.centered width="60%"}
+    ![select-account](../../assets/img/delegation-user/staketur/select-account.png){:.centered width="60%"}
 
 1. Select a collator, fill in the amount, click the "Delegate" button, and sign transaction. After you complete the delegation, you can check the results of your delegation.
 
-![delegate](../../assets/img/delegation-user/staketur/delegate.png){:.centered width="60%"}
+    ![delegate](../../assets/img/delegation-user/staketur/delegate.png){:.centered width="60%"}
 	
-![sign-transaction](../../assets/img/delegation-user/staketur/sign-transaction.png){:.centered width="60%"}
+    ![sign-transaction](../../assets/img/delegation-user/staketur/sign-transaction.png){:.centered width="60%"}
 
 1. You can turn on Turing's auto-compound feature to earn more reward. 
 
     Note: When the wallet balance is less than a certain threshold, the auto-compound task will be cancelled.
 
-![enable-compound](../../assets/img/delegation-user/staketur/enable-compound.png){:.centered width="60%"}
+    ![enable-compound](../../assets/img/delegation-user/staketur/enable-compound.png){:.centered width="60%"}
     
-![sign-compound-transaction](../../assets/img/delegation-user/staketur/sign-compound-transaction.png){:.centered width="60%"}
+    ![sign-compound-transaction](../../assets/img/delegation-user/staketur/sign-compound-transaction.png){:.centered width="60%"}
 
 ## FAQ
 
