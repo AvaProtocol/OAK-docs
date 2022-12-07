@@ -54,25 +54,26 @@ We will also provide partners with product mockups as recommendation, and to mim
 ## 2. Define XCM Message
 We will go over the details of the XCM message design in the XCM Message document, but here’s a template that our automation uses to send the task function call over for the target chain to execute.
 ```rust
-let target_xcm = Xcm(vec![
-				ReserveAssetDeposited::<()>(local_asset.clone().into()),
-				BuyExecution::<()> { fees: local_asset, weight_limit: Limited(xcm_weight) },
-				DescendOrigin::<()>(descend_location),
-				Transact::<()> {
-					origin_type: OriginKind::SovereignAccount,
-					require_weight_at_most: transact_encoded_call_weight,
-					call: transact_encoded_call.into(),
-				},
-				RefundSurplus::<()>,
-				DepositAsset::<()> {
-					assets: Wild(All),
-					max_assets: 1,
-					beneficiary: MultiLocation {
-						parents: 1,
-						interior: X1(Parachain(T::SelfParaId::get().into())),
-					},
-				},
-			]);
+let target_xcm =
+Xcm(vec![
+        ReserveAssetDeposited::<()>(local_asset.clone().into()),
+        BuyExecution::<()> { fees: local_asset, weight_limit: Limited(xcm_weight) },
+        DescendOrigin::<()>(descend_location),
+        Transact::<()> {
+            origin_type: OriginKind::SovereignAccount,
+            require_weight_at_most: transact_encoded_call_weight,
+            call: transact_encoded_call.into(),
+        },
+        RefundSurplus::<()>,
+        DepositAsset::<()> {
+            assets: Wild(All),
+            max_assets: 1,
+            beneficiary: MultiLocation {
+                parents: 1,
+                interior: X1(Parachain(T::SelfParaId::get().into())),
+            },
+        },
+    ]);
 ```
 
 ## 3. Define the fees
