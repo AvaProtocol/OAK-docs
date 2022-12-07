@@ -51,10 +51,10 @@
   - powered-by-oak-price-apis
   - oak-js
   # - xcmp
-- title: XCM
+- title: Cross-chain Automation
   group: 3
   docs: 
-  - xcm-overview
+  - xcm/integration-overview
 - title: Governance
   group: 3
   docs:
