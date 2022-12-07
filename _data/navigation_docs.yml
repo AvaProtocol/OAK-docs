@@ -60,6 +60,7 @@
 - title: Governance
   group: 3
   docs:
+  - governance-guide-for-developer
   - verify-runtime-upgrade
 - title: Staking
   group: 3
