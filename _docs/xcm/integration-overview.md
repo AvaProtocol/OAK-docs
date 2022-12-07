@@ -39,17 +39,17 @@ Our partner conversation usually starts with a few questions,
 
 ### 1.2 Picture the flow
 After going through design decision calls, we will draw a high-level flow chart to picture the integration flow. For example, below is a diagram of a two-way XCM product integration.
-![Two-way XCM product integration](../../assets/img/integration-overview/two-way-xcm.png)
+![Two-way XCM product integration](../../../assets/img/integration-overview/two-way-xcm.png)
 
 
 ### 1.3 UI/UX Design
 We will also provide partners with product mockups as recommendation, and to mimic the end user experience as a guideline. For example, below are our mockups for Mangata LP reward auto-compound.
 
 1. After user turns on compound checkbox, navigate to Step 1, a one-time setup for user’s wallet, and ask to sign.
-![Mangata integration Step 1](../../assets/img/integration-overview/mangata-step-1.jpg)
+![Mangata integration Step 1](../../../assets/img/integration-overview/mangata-step-1.jpg)
 
 1. After signing, move on to Step 2 in order to set up automation on Turing Network.
-![Mangata integration Step 2](../../assets/img/integration-overview/mangata-step-2.jpg)
+![Mangata integration Step 2](../../../assets/img/integration-overview/mangata-step-2.jpg)
 
 ## 2. Define XCM Message
 We will go over the details of the XCM message design in the XCM Message document, but here’s a template that our automation uses to send the task function call over for the target chain to execute.
