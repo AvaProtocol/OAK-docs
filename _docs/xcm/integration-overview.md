@@ -29,13 +29,11 @@ Our partner conversation usually starts with a few questions,
     Taking Dapp staking as an example, the feature would automate two operations, claim and deposit.
 
     Another example would be DEX liquidity pool reward compound, which will include three operations, claim, swap, and deposit.
-3. What are the user defined input?
+3. What are the user defined inputs?
 
-    For auto-compound, normally the UI will need to ask users to provide some preferences, such as,
-    
-    Frequency: how often to compound
-    
-    Amount: percentage of claimed reward to compound(No need since the current re-deposit ratio is always 100%)
+    For auto-compound, normally the UI will need to ask users to provide some preferences, such as:
+        - Frequency: how often to compound
+        - Amount: percentage of claimed reward to compound (No need since the current re-deposit ratio is always 100%)
 
 ### 1.2 Picture the flow
 After going through design decision calls, we will draw a high-level flow chart to picture the integration flow. For example, below is a diagram of a two-way XCM product integration.
@@ -77,20 +75,20 @@ Xcm(vec![
 ```
 
 ## 3. Define the fees
-Fee is a big part of the product development, because there are several fees involved in the flow, if not implemented 100% accurately, small errors can accrue into bigger problems, such as insufficient balance for automation fees, or under-utilized residual balances.
+Fees are a big part of the product development, because there are several fees involved in the flow. If not implemented 100% accurately, small errors can accrue into bigger problems, such as insufficient balance for automation fees, or under-utilized residual balances.
 
 ### 3.1 Automation fees on Turing Network
-First, there are two types of recurring defined in executionTimes of automationTime.scheduleXcmpTask 
+First, there are two types of schedules defined in executionTimes of automationTime.scheduleXcmpTask
 
 A. **"Fixed" scheduling**. User defines the number of occurrence and particular timestamps of a task.
 Three kind of fees need to paid on the scheduling.
 1. *Inclusion fee* - to include the task in Turing’s registry; charged at the scheduleXcmpTask call. 
 2. *Execution fee* - to execute a task when time is right; also charged at the scheduleXcmpTask call. For example, if a user schedules a task to trigger 30 times, he would pay for the 30 execution fee upfront. (P.S. Refund is not implemented yet)
-3. *Xcm fee* - the same as execution fee.
+3. *Xcm fee* - included in the execution fee. The Xcm fee is used to pay fees to the target chain when executing cross chain messages.
 
 B. **"Recurring" scheduling**. This is the "good till cancel" option. The 3 fees are still there but the way in which they are charged are different.
 1. *Inclusion fee* is the same as that of "Fixed".
-2. *Execution fee* - only one execution is charged at the scheduleXcmpTask call, and at the end of every execution, the next task will be scheduled and fee needs to be paid. It keeps going on till a user calls to cancel the task. This is what we call "DynamicDisptach" internally.
+2. *Execution fee* - only one execution is charged at the scheduleXcmpTask call, and at the end of every execution, the next task will be scheduled and fee needs to be paid. It keeps going on till a user calls to cancel the task.
 3. *Xcm fee* is the same as that of "Fixed".
 ### 3.2 Execution fee on the target chain
 Since the execution of the task happens on the target chain, the partner needs to finalize the calculation method and send it off to Turing for implementation. Since we have done it repeatedly, we can help partners to determine their fee calculation.
@@ -100,7 +98,7 @@ Since the execution of the task happens on the target chain, the partner needs t
 The first step is for developers to spin up a relay chain and two parachain chains locally, build the bridge and test the integration.
 1. Build and run: Relay chain
 
-    The goal is to run a local Rococ in this step, so clone the source code from the [Polkadot repo]( https://github.com/paritytech/polkadot).
+    The goal is to run a local Rococo in this step, so clone the source code from the [Polkadot repo]( https://github.com/paritytech/polkadot).
 
 1. Build and run Turing
 
