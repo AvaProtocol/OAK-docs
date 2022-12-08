@@ -60,8 +60,10 @@
 - title: Governance
   group: 3
   docs:
-  - governance-guide-for-developer
-  - verify-runtime-upgrade
+  - gov-dev/governance-via-polkadotjs
+  - gov-dev/verify-runtime-upgrade
+  - gov-dev/fast-track
+  - gov-dev/treasury-grant
 - title: Staking
   group: 3
   docs:
