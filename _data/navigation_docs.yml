@@ -52,6 +52,11 @@
   - powered-by-oak-price-apis
   - oak-js
   # - xcmp
+- title: Cross-chain Automation
+  group: 3
+  docs: 
+  - xcm/integration-overview
+  - xcm/hrmp-channel
 - title: Governance
   group: 3
   docs:
