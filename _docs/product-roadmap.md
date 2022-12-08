@@ -1,6 +1,6 @@
 ---
-title: Roadmap
-subtitle: This document covers the detail of OAK, TUR, NEU network roadmap
+title: Updates and Roadmap
+subtitle: This document covers the detail of OAK and Turing network updates and roadmap
 author: chris
 tags: [develop]
 ---
