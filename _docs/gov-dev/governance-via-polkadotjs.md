@@ -1,6 +1,6 @@
 ---
-title: Runtime Upgrade via Polkadot.js
-subtitle: Learn how to create and vote for a runtime upgrade Governance proposal via the polkadot.js app 
+title: Governance via Polkadot.js
+subtitle: Learn how to create and vote for a governance proposal via the polkadot.js app 
 author: charles
 tags: [governance]
 ---
@@ -74,6 +74,22 @@ After `VotingPeriod`, if the proposal wins the referendum, it will wait for the 
 **4\. Fast-track from Technical Committee**
 In order to expedite the external proposal, the Technical Committee can create a motion to fast-track it. Please refer to the [Fast-track an External Proposal](./fast-track.md) for the detailed steps.
 
+## Update chain configuration through Governance
+
+Similar steps as above：
+
+1\. Submit a preimage. 
+
+![do-a-configuration](../../../assets/img/governance-guide-for-developer/configuration-proposal.png)
+
+2\. Submit a normal proposal or external proposal.
+
+3\. If the external proposal needs urgent processing, the technical committee can use the "fast track" to process it.
+
+4\. conduct a referendum.
+
+5\. When the voting period ends, the vote will be executed at the end of the enactment period.
+
 ## The outcome of the referendum
 
 There are 3 ways to win or lose a referendum:
@@ -140,6 +156,6 @@ Only the winning voter's tokens are locked.
 
 **Questions like how to count votes are very important and there are many ways to count votes, so please read the official article carefully.**
 
-Treasury
+Governance
 
-[https://wiki.polkadot.network/docs/learn-treasury](https://wiki.polkadot.network/docs/learn-treasury)
+[https://wiki.polkadot.network/docs/learn-governance](https://wiki.polkadot.network/docs/learn-governance)

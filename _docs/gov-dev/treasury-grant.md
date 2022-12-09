@@ -1,13 +1,15 @@
 ---
-title: Treasury Grant and Config Change
-subtitle: Walk through the Governance steps of granting Treasury funds and updating configuration via the polkadot.js app
+title: Treasury Grant
+subtitle: Walk through the Governance steps of granting Treasury funds via the polkadot.js app
 author: charles
 tags: [governance]
 ---
 
 ## Grant Treasury funds to community developers
 
-We need to submit a proposal on the Treasury interface first, and then council members can vote on the council.
+*Pre-requisite: Before reading this article, you should be familiar with [how to submit a proposal](/docs/gov-dev/governance-via-polkadotjs/#introduction).*
+
+We need to submit a proposal on the Treasury page first, and then council members can vote on the council.
 
 The Treasury's proposal can be approved by the council and does not need to be voted on by a referendum.
 
@@ -25,25 +27,7 @@ Tips allows anyone to submit a tip proposal, and Council members suggest how muc
 
 Bounties is to carry out a job and entrust an agent to allocate funds according to the progress of the job completion.
 
-## Update chain configuration through Governance
-
-Similar steps as above：
-
-1\. Submit a preimage. 
-
-2\. Submit a normal proposal or external proposal.
-
-3\. If the external proposal needs urgent processing, the technical committee can use the "fast track" to process it.
-
-4\. conduct a referendum.
-
-5\. When the voting period ends, the vote will be executed at the end of the enactment period.
-
-![do-a-configuration](../../../assets/img/governance-guide-for-developer/configuration-proposal.png)
-
 ## References
-
-**Questions like how to count votes are very important and there are many ways to count votes, so please read the official article carefully.**
 
 Treasury
 
