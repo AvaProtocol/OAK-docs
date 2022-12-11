@@ -43,6 +43,8 @@ After the cooloff period (5 days in Turing, 10 days in OAK), the proposal will b
 
 1. Submit extrinsic**
 
+	Submit an extrinsic to veto external proposal with proposal hash.
+
 	Because calling `vetoExternal` requires Technical Committee permission. So we call it through `technicalCommittee.execute`.
 
 	![veto-external](../../../assets/img/governance-guide-for-developer/technical-committee/veto-external/veto-external.png)
@@ -63,15 +65,19 @@ We can remove a proposal in democracy through the technical committee.
 
 	![proposal](../../../assets/img/governance-guide-for-developer/technical-committee/cancel-proposal/proposal.png)
 
-1. Get the proposal index
+1. Submit a technical-committee motion
+
+	Submit a technical-committee motion to cancel a proposal with proposal index.
+
+	This call requires all technical committee members to approve. So we need to set the `threshold` to the number of technical committee members.
 
 	![cancel-proposal](../../../assets/img/governance-guide-for-developer/technical-committee/cancel-proposal/cancel-proposal.png)
 
-1. Vote
+2. Vote
 
 	![vote](../../../assets/img/governance-guide-for-developer/technical-committee/cancel-proposal/vote.png)
 
-1. Close technical-committee propsal to execute
+3. Close technical-committee propsal to execute
 
 	When you close the technical-committee proposal, the proposal in democracy will be removed.
 
