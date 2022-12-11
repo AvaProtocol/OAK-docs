@@ -14,7 +14,7 @@ This article introduces how to use some functions of Council.
 `democracy.emerencyCancel` Schedule an emergency cancellation of a referendum. Cannot happen twice to the same referendum.
 
 
-1. Get the referendum index that needs to be canceled.**
+1. Get the referendum index that needs to be canceled
 
 	![referenda](../../../assets/img/governance-guide-for-developer/council/referenda.png)
 
@@ -24,7 +24,7 @@ This article introduces how to use some functions of Council.
 
 	![emergency-motion](../../../assets/img/governance-guide-for-developer/council/emergency-motion.png)
 
-2. Vote
+1. Vote
 
 
 	![motions](../../../assets/img/governance-guide-for-developer/council/motions.png)
