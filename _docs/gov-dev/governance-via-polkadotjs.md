@@ -72,7 +72,7 @@ After `VotingPeriod`, if the proposal wins the referendum, it will wait for the 
 ![dispatch-proposal](../../../assets/img/governance-guide-for-developer/dispatch-proposal.png)
 
 **4\. Fast-track from Technical Committee**
-In order to expedite the external proposal, the Technical Committee can create a motion to fast-track it. Please refer to the [Fast-track an External Proposal](./fast-track.md) for the detailed steps.
+In order to expedite the external proposal, the Technical Committee can create a motion to fast-track it. Please refer to the [Fast-track an External Proposal](/docs/gov-dev/technical-committee/#fast-track) for the detailed steps.
 
 ## Update chain configuration through Governance
 
