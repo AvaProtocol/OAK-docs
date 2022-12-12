@@ -4,7 +4,6 @@
   docs:
   - company-overview
   - product-roadmap
-  - governance-turing-overview
   - bug-bounty
   - papers
   - contact-us
@@ -23,6 +22,7 @@
 - title: User Guide
   group: 2
   docs:
+  - testnet-tokens
   - automation-on-testnet
   - identity
   - multi-sig-wallets
@@ -51,10 +51,19 @@
   - powered-by-oak-price-apis
   - oak-js
   # - xcmp
+- title: Cross-chain Automation
+  group: 3
+  docs: 
+  - xcm/integration-overview
+  - xcm/hrmp-channel
 - title: Governance
   group: 3
   docs:
-  - verify-runtime-upgrade
+  - gov-dev/governance-via-polkadotjs
+  - gov-dev/verify-runtime-upgrade
+  - gov-dev/technical-committee
+  - gov-dev/cancel-referendum
+  - gov-dev/treasury-grant
 - title: Staking
   group: 3
   docs:

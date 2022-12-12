@@ -1,5 +1,5 @@
 ---
-title: OAK.js
+title: Javascript SDK oak.js
 subtitle: Use javascript to interact with the OAK Blockchain
 author: justin
 tags: [api, time, triggers, js, sdk]
