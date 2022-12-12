@@ -1,5 +1,5 @@
 ---
-title: Verify Runtime of an Upgrade Proposal
+title: Verify Runtime of Upgrade
 subtitle: Learn how to verify a runtime upgrade proposed through governance
 author: laura
 tags: [governance]
