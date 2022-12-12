@@ -62,7 +62,7 @@
   - gov-dev/governance-via-polkadotjs
   - gov-dev/verify-runtime-upgrade
   - gov-dev/technical-committee
-  - gov-dev/council
+  - gov-dev/cancel-referendum
   - gov-dev/treasury-grant
 - title: Staking
   group: 3

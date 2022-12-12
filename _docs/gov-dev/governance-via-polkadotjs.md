@@ -19,7 +19,7 @@ The council can propose an external proposal, Then this external will have prior
 
 ![external-proposal](../../../assets/img/governance-guide-for-developer/external-proposal.png)
 
-There may be more than two referendas if the technical committee uses the "Fast track" to urgently process an `external proposal`.
+There may be more than two referendum if the technical committee uses the "Fast track" to urgently process an `external proposal`.
 
 ![fast-track-referenda](../../../assets/img/governance-guide-for-developer/fast-track-referenda.png)
 
@@ -122,7 +122,7 @@ The condition for winning the referendum:
 
 when the turnout rate is low, a super-majority is required to reject the proposal, which means a lower threshold of "aye" votes have to be reached
 
-**3. Majority Council Referend**
+**3. Majority Council Referendum**
 
 When **agreement from only a simple majority of council members** occurs, the referendum can also be voted upon.
 

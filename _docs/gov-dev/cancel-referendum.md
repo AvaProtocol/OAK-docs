@@ -1,6 +1,6 @@
 ---
-title: Council
-subtitle: Learn how to use Council via the polkadot.js app
+title: Cancel a Referendum
+subtitle: Learn how to use cancel an on-going Referendum via the polkadot.js app
 author: charles
 tags: [governance]
 ---
@@ -9,7 +9,7 @@ This article introduces how to use some functions of Council.
 
 *Pre-requisite: Before reading this article, you should be familiar with [how to submit a proposal](/docs/gov-dev/governance-via-polkadotjs/#introduction).*
 
-## Emerency cancel referendum
+## Emergency cancel a referendum
 
 `democracy.emerencyCancel` Schedule an emergency cancellation of a referendum. Cannot happen twice to the same referendum.
 

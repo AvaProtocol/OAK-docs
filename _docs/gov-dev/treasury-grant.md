@@ -1,5 +1,5 @@
 ---
-title: Treasury Grant
+title: Grant Treasury Funds
 subtitle: Walk through the Governance steps of granting Treasury funds via the polkadot.js app
 author: charles
 tags: [governance]
