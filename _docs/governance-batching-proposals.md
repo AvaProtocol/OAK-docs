@@ -1,6 +1,6 @@
 ---
-title: Batching proposals
-subtitle: Learn how to batch governance calls using Polkadot.js and can be used for proposals, council motions, and external proposals.
+title: Batching Proposals
+subtitle: Learn how to batch governance calls using Polkadot.js to speed up process of public and external proposals.
 author: christian
 tags: [governance]
 ---
