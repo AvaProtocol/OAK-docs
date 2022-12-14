@@ -33,6 +33,7 @@
   - governance-turing-overview
   - governance-propose-change
   - vote-on-proposal
+  - governance-batching-proposals
 
 - title: Staking
   group: 2
