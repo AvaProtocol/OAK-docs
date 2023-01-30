@@ -31,7 +31,7 @@ Switching collator delegations is one of many workflows that Dynamic Dispatch un
 
 ![staking-delegation](../../assets/img/develop-custom-workflow/staking-delegation.png)
 
-Using Polkadot{.js} to switch Turing Network staking delegation using Dynamic Dispatch
+<div class="figure-caption">Using Polkadot{.js} to switch Turing Network staking delegation using Dynamic Dispatch</div>
 
 ## Auto-compounding with Dynamic Dispatch
 
@@ -43,7 +43,7 @@ timestamp) and recurs at a set frequency (expressed in seconds).
 
 ![recurring-delegations](../../assets/img/develop-custom-workflow/recurring-delegations.png)
 
-Using Polkadot.js of schedule indefinitely recurring delegations using Dynamic Dispatch
+<div class="figure-caption">Using Polkadot{.js} of schedule indefinitely recurring delegations using Dynamic Dispatch</div>
 
 Note that automation fees for indefinitely recurring tasks are calculated (in $TUR) and debited from the user's account each time the task is triggered. Tasks scheduled for a finite number of occurrences still require up-front payment for automation fees.
 
