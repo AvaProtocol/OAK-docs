@@ -183,3 +183,5 @@ staked_portion = total_staked / (total_issued + additional)
 ## References：
 
 1. Ruslan Rezin. [APR calculation](https://hackmd.io/@sbAqOuXkRvyiZPOB3Ryn6Q/Sypr3ZJh5)
+
+1. Ruslan Rezin. [Nova Wallet](https://novawallet.io/)
