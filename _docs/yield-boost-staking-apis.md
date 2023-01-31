@@ -135,3 +135,51 @@ Example Response:
 - ParachainStaking.DelegationIncreased { delegator: AccountId, candidate: AccountId, amount: Balance }
   - The user's delegation was increased by the specified `amount`
   - [Example block with event](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing-staging.oak.tech#/explorer/query/0x485624b3c61626e8f9b7d3dadb168f3b67aa05b8290b2562c836a27643f7427c)
+
+## APR calculation
+
+The goal is to calculate the return of a delegator if one delegates tokens to a particular collator. We start with the fact that
+there is inflation config (inflation_config = [ParachainStaking.InflationConfig](https://github.com/OAK-Foundation/moonbeam/blob/12947e185e5bf7e5d2692e2589a7968484fe6d7e/pallets/parachain-staking/src/inflation.rs#L107)) value that determines how many tokens are issued per round based on amount
+of currently issued tokens (total_issued = Balances.TotalIssued).
+
+Also there is total staked amount (total_staked = [ParachainStaking.Staked](https://github.com/OAK-Foundation/moonbeam/blob/12947e185e5bf7e5d2692e2589a7968484fe6d7e/pallets/parachain-staking/src/lib.rs#L564)) which is updated each round. Having this information one can calculate
+annual return per staked token:
+
+```
+staked_portion = total_staked / total_issued
+annual_return = annual_inflation / staked_portion
+```
+
+For annual_inflation the following logic is applied:
+
+```
+1) annual_inflation = inflation_config.annual.min when total_staked < inflation_config.expect.min;
+2) annual_inflation = inflation_config.annual.max when total_staked > inflation_config.expect.max;
+3) annual_inflation = inflation_config.annual.ideal otherwise;
+```
+
+Then one also need to take into account that part of the tokens goes to parachain
+bond account (par_bond_percent = [ParachainStaking.ParachainBondInfo.percent_of_inflation](https://github.com/OAK-Foundation/moonbeam/blob/12947e185e5bf7e5d2692e2589a7968484fe6d7e/pallets/parachain-staking/src/types.rs#L1658)) and the fact that the lower collator’s stake the higher reward will be given
+per delegator. Last important point is that collator’s commission (commission = [ParachainStaking.CollatorCommission](https://github.com/OAK-Foundation/moonbeam/blob/12947e185e5bf7e5d2692e2589a7968484fe6d7e/pallets/parachain-staking/src/lib.rs#L458)) must be taken into account too. So the final formulat is the following:
+
+```
+apr(collator) = annual_return * (1 - par_bond_percent - commission) * (average_stake/collator.stake);
+
+average_stake = sum(collators.stake) / count(collators);
+
+apr_avg = annual_return * (1 - par_bond_percent - commission);
+
+apr_max = apr(c) where c is a selected collator with minimum stake;
+```
+
+### Turing APR calculation
+
+For Turing network APR calculation is different in a way that inflation is not only depends on total_issued but also from a additional value that is retrived from the storage Vesting.TotalUnvestedAllocation. Thus the staked_portion is calculated in the following way:
+
+```
+staked_portion = total_staked / (total_issued + additional)
+```
+
+## References：
+
+1. Ruslan Rezin, [Nova Wallet](https://novawallet.io/). [APR calculation for Turing Network staking](https://hackmd.io/@sbAqOuXkRvyiZPOB3Ryn6Q/Sypr3ZJh5)

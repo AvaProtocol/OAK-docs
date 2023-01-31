@@ -50,6 +50,7 @@
   # - yield-boost-general-apis
   - powered-by-oak-time-apis
   - powered-by-oak-price-apis
+  - develop-custom-workflow
   - oak-js
   # - xcmp
 - title: Cross-chain Automation

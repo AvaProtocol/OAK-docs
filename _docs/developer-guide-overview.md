@@ -41,7 +41,7 @@ The first two pieces of data are required for all task types and are hashed toge
 Once a task is created we link your action to the provided trigger. Then once the trigger is triggered we execute your action. If the trigger supports it you can configure the task to be recurring. In this case will add a new task with the newly calculated trigger after your action executes. Once your last action executes we remove your task from our storage. All of this of course happens on-chain :). 
 
 ## What is a trigger?
-The OAK data structures supports the following triggers as part of the transaction. This is stored in the OAK registry until the condition is met. The condition check is frequent at varying cadences depedning on weight/fee and computational complexity.
+The OAK data structures supports the following triggers as part of the transaction. This is stored in the OAK registry until the condition is met. The condition check is frequent at varying cadences depending on weight/fee and computational complexity.
 
 Triggers that are supported but not limited to:
 
