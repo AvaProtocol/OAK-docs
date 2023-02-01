@@ -3,6 +3,7 @@ title: Run a node using a service
 subtitle: Setting up systemd for your collator
 author: andrew
 tags: [infra, collator]
+date: 2022-06-01
 ---
 
 ## Preparation

@@ -3,6 +3,7 @@ title: Proxy collating permissions
 subtitle: Allow wallets to run collators on your behalf
 author: andrew
 tags: [infra, collator]
+date: 2022-07-22
 ---
 
 ## Account Proxies

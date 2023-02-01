@@ -3,6 +3,7 @@ title: Yield Boost - Staking APIs
 subtitle: Enable auto-compounding for your validator/collator stake.
 author: chris
 tags: [api, yield-boost]
+date: 2022-09-13
 ---
 
 

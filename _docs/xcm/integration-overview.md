@@ -3,6 +3,7 @@ title: Cross-chain Product Integration
 subtitle: Explain XCM and cross-chain integration work flow with OAK Network
 author: chris
 tags: [xcm]
+date: 2022-12-12
 ---
 
 # Overview

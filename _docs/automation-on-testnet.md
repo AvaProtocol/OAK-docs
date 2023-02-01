@@ -3,6 +3,7 @@ title: Play with Testnet Tokens
 subtitle: Learn more about how to test our automation on the Turing Staging testnet
 author: chris
 tags: [testing]
+date: 2022-10-03
 ---
 
 Our testnet is connected to Polkadot’s Rococo and named Turing Staging. Its token can be used to test functionalities of the network, such as XCM transfer to other parachains of Rococo, automation scheduling and staking & delegation. 

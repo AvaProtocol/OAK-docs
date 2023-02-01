@@ -3,6 +3,7 @@ title: About OAK Network
 subtitle: Web3's hub for cross-chain automation.
 author: chris
 tags: [architecture]
+date: 2022-02-05
 ---
 
 [__OAK Network__](https://oak.tech) is Web3’s hub for cross-chain automation, enabling multi-chain apps to schedule and automate any substrate extrinsic or EVM smart contract function. OAK is built to deliver trustless automation, dedicating its block space and optimizing gas to store, trigger, and execute transactions to connected blockchains. 

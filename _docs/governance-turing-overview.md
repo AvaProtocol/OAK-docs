@@ -3,6 +3,7 @@ title: Governance Overview
 subtitle: Overview of governance on OAK and Turing Network
 author: christian
 tags: [governance]
+date: 2022-06-30
 ---
 
 *Note: OAK Network governance coming soon after the launch.*

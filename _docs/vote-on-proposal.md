@@ -3,6 +3,7 @@ title: Voting on Proposals
 subtitle: Learn how to vote on governance proposals on the Turing Network
 author: christian
 tags: [governance]
+date: 2022-06-30
 ---
 
 ![how-to-vote](../../assets/img/governance/how-to-vote.jpg)

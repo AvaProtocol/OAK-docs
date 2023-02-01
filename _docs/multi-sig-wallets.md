@@ -3,6 +3,7 @@ title: Use Multi-signature Wallet
 subtitle: Learn more about how to create and use multi-sig wallets
 author: charles
 tags: [multi-sig, multisig]
+date: 2022-07-21
 ---
 
 ### Introduction

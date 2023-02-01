@@ -3,6 +3,7 @@ title: Time Trigger APIs
 subtitle: The API specifications for Time Triggers
 author: ryan
 tags: [api, time, triggers]
+date: 2022-02-03
 ---
 
 These APIs allow you to schedule an action to occur at a specific minute, and to cancel the task. All the APIs in this section are prefixed by `Automation-time`. 

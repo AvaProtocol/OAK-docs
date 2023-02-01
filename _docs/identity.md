@@ -3,6 +3,7 @@ title: Set up On-chain Identity
 subtitle: This document covers the steps of setting up on-chain identity for your account
 author: charles
 tags: [identity, registrar]
+date: 2021-05-11
 ---
 
 ## How to setup your on-chain identity

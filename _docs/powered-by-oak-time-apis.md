@@ -3,6 +3,7 @@ title: Powered By OAK - Time APIs
 subtitle: Trigger any transaction to occur at a future time or set of times.
 author: chris
 tags: [api, price, triggers]
+date: 2022-09-13
 ---
 
 The APIs and Polkadot{.js} libraries on this page allow users and multi-chain applications to schedule calling any Substrate extrinsic or smart contract function at a future time (stamp) or set of times. 

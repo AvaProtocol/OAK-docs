@@ -3,6 +3,7 @@ title: Delegation via Extrinsics
 subtitle: How to stake to a collator and earn rewards
 author: charles
 tags: [delegator]
+date: 2022-10-03
 ---
 This guide provides links and instructions for staking by delegating an existing Turing Network collator. See [Collator Overview](https://docs.oak.tech/docs/collators/) for instructions on setting up your own collator.
 

@@ -3,6 +3,7 @@ title: Collator Overview
 subtitle: This document covers the operating and token requirements of a collator
 author: chris
 tags: [dpos, collator]
+date: 2022-05-20
 ---
 
 ## Pre-requisites to start producing blocks
