@@ -121,6 +121,22 @@ pub enum Error<T> {
     EmptyMessage,
     /// The provided_id cannot be empty
     EmptyProvidedId,
+    /// There can be no duplicate tasks.
+    DuplicateTask,
+    /// Time slot is full. No more tasks can be scheduled for this time.
+    TimeSlotFull,
+    /// The task does not exist.
+    TaskDoesNotExist,
+    /// Block time not set.
+    BlockTimeNotSet,
+    /// Amount has to be larger than 0.1 OAK.
+    InvalidAmount,
+    /// Sender cannot transfer money to self.
+    TransferToSelf,
+    /// Insufficient balance to pay execution fee.
+    InsufficientBalance,
+    /// Account liquidity restrictions prevent withdrawal.
+    LiquidityRestrictions,
     /// Too many execution times provided.
     TooManyExecutionsTimes,
     /// The call can no longer be decoded.
