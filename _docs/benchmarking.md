@@ -3,6 +3,7 @@ title: Benchmarking
 subtitle: This document covers the benchmarking, the performance testing procedure for pallet development
 author: charles
 tags: [develop]
+date: 2021-08-31
 ---
 
 In this section, we’re going to explain the concept of benchmarking during Substrate pallet development. When referred to, “benchmarking” in this article means to establish a standard for runtime performance in particular. 

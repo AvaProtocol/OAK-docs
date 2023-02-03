@@ -3,6 +3,7 @@ title: Cancel a Referendum
 subtitle: Learn how to use cancel an on-going Referendum via the polkadot.js app
 author: charles
 tags: [governance]
+date: 2022-12-12
 ---
 
 This article introduces how to use some functions of Council.

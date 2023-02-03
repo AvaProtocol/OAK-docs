@@ -3,6 +3,7 @@ title: Pallet Development
 subtitle: This document explains the procedures of pallet development with an example
 author: charles
 tags: [develop]
+date: 2021-08-31
 ---
 
 ## Pallet Development

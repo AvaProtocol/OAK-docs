@@ -3,6 +3,7 @@ title: Examples
 subtitle: A series of examples of what you can do with OAK
 author: chris
 tags: [develop]
+date: 2022-02-03
 ---
 
 # Examples

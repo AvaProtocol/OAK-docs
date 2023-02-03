@@ -3,6 +3,7 @@ title: Bug Bounty Program
 subtitle: A reward program by which developers can receive recognition and compensation for reporting bugs, especially those pertaining to security exploits and vulnerabilities.
 author: chris
 tags: [develop]
+date: 2021-09-01
 ---
 
 The OAK team is eager to engage developers in building the OAK Network ecosystem. In order to enhance the product’s user experience and to improve on-chain security, OAK team launched the first “Bug-Bounty” program with potential payouts of $2,500 per report.

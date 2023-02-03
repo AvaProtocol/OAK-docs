@@ -3,6 +3,7 @@ title: Governance via Polkadot.js
 subtitle: Learn how to create and vote for a governance proposal via the polkadot.js app 
 author: charles
 tags: [governance]
+date: 2022-12-12
 ---
 
 ## Introduction

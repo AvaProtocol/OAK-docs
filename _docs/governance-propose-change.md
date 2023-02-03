@@ -3,6 +3,7 @@ title: Creating a Proposal
 subtitle: Learn how to propose a change through governance on the Turing Network
 author: christian
 tags: [governance]
+date: 2022-06-30
 ---
 
 ![how-to-create-a-proposal](../../assets/img/governance/how-to-create-a-proposal.jpg)

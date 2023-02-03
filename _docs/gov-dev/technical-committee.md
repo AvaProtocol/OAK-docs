@@ -3,6 +3,7 @@ title: Technical Committee Operations
 subtitle: Learn how to use Technical Committee via the polkadot.js app
 author: charles
 tags: [governance]
+date: 2022-12-12
 ---
 
 This article introduces how to use some functions of Technical committee.

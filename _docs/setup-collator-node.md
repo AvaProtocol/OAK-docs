@@ -3,6 +3,7 @@ title: Setup a collator node
 subtitle: Technical infrastructure requirements to run your node
 author: chris
 tags: [infra, collator]
+date: 2022-06-01
 ---
 
 ## Node Infrastructure Requirements

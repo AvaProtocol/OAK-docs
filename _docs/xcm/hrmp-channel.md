@@ -3,6 +3,7 @@ title: Establish HRMP channel with Turing
 subtitle: Walk through the process of establishing HRMP channel via XCM and Governance
 author: chris
 tags: [xcm]
+date: 2022-12-12
 ---
 
 # About HRMP Channel

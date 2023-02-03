@@ -3,6 +3,7 @@ title: Powered By OAK - Price APIs
 subtitle: Trigger any transaction based on the increase or decrease in value change of any numerical data (e.g. price).
 author: ryan
 tags: [api, price, triggers]
+date: 2022-09-13
 ---
 
 <img width="1135" alt="image" src="https://user-images.githubusercontent.com/104159482/189097949-7a474862-9e76-4ba1-afde-aa92dfae497d.png">

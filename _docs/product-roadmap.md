@@ -3,6 +3,7 @@ title: Updates and Roadmap
 subtitle: This document covers the detail of OAK and Turing network updates and roadmap
 author: chris
 tags: [develop]
+date: 2022-01-04
 ---
 
 The Polkadot ecosystem enables multiple types of networks: a testnet, canary and mainnet. Below are the different networks.

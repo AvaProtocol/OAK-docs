@@ -3,6 +3,7 @@ title: Setup a collator node with partners
 subtitle: How to setup your node with one of our node infrastructure partner services
 author: chris
 tags: [infra, collator]
+date: 2022-06-01
 ---
 
 ## Node Infrastructure Requirements

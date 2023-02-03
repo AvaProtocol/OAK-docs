@@ -3,6 +3,7 @@ title: Upgrade a collator node
 subtitle: Instructions on how to upgrade your node version
 author: chris
 tags: [infra, collator]
+date: 2022-06-04
 ---
 
 Please join the [OAK Discord](https://discord.gg/7W9UDvsbwh) server to be notified of new node versions. This will be announced in technical updates channels. If are not diligent about upgrading to the lastest node version, your node may stop producing blocks and you will likely get less rewards (if you are part of the candidate pool).
