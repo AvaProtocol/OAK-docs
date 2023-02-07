@@ -13,7 +13,7 @@ The APIs and Polkadot{.js} libraries on this page allow users and multi-chain ap
  - paying over time (recurring payments on a foreign chain),
  - anything else you can do on supported parachains, sometime(s) in the future.
 
-1. `scheduleDynamicDispatchTask` can be used to schedule a dynamic dispatch task.
+1. `scheduleDynamicDispatchTask` can be used to schedule execution of any extrinsic or batch of extrinsics on-chain.
 
 1. `cancelTask` can be used to cancel any existing automation tasks (must be from the account which created the task). 
 
@@ -74,10 +74,11 @@ fn schedule_xcmp_task(
     /// The total weight of the encoded call that will be sent back to the parachain.
     encoded_call_weight: u64,
 )
+
 ```
 
 ## Create a dynamic dispatch task
-This API allows you to schedule a dynamic dispatch task.
+This API allows you to schedule execution of any extrinsic or batch of extrinsics on-chain.
 
 #### API
 ```rust
@@ -88,9 +89,14 @@ fn schedule_dynamic_dispatch_task(
     /// Your unique identifier for the task. Accepts any string input (e.g. "I am as unique as a snowflake").
     provided_id: Vec<u8>,      
 
-    /// An array of unix standard time stamps (in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0).
+    /// API Param for Scheduling. You can schdule fixed or recurring task.
+    /// pub enum ScheduleParam {
+	///     Fixed { execution_times: Vec<UnixTime> },
+	///     Recurring { next_execution_time: UnixTime, frequency: Seconds },
+    /// }
     schedule: ScheduleParam,
 	
+    //  The call to be executed. Any call on the chain can be executed.
     call: Box<<T as Config>::Call>,
 )
 ```
@@ -108,22 +114,6 @@ pub enum Error<T> {
     EmptyMessage,
     /// The provided_id cannot be empty
     EmptyProvidedId,
-    /// There can be no duplicate tasks.
-    DuplicateTask,
-    /// Time slot is full. No more tasks can be scheduled for this time.
-    TimeSlotFull,
-    /// The task does not exist.
-    TaskDoesNotExist,
-    /// Block time not set.
-    BlockTimeNotSet,
-    /// Amount has to be larger than 0.1 OAK.
-    InvalidAmount,
-    /// Sender cannot transfer money to self.
-    TransferToSelf,
-    /// Insufficient balance to pay execution fee.
-    InsufficientBalance,
-    /// Account liquidity restrictions prevent withdrawal.
-    LiquidityRestrictions,
     /// Too many execution times provided.
     TooManyExecutionsTimes,
     /// The call can no longer be decoded.
