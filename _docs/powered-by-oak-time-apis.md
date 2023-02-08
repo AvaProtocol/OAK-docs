@@ -59,7 +59,12 @@ fn schedule_xcmp_task(
     /// Your unique identifier for the task. Accepts any string input (e.g. "I am as unique as a snowflake").
     provided_id: Vec<u8>,      
 
-    /// An array of unix standard time stamps (in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0). 
+    /// API Param for Scheduling. You can schdule fixed or recurring task.
+    /// pub enum ScheduleParam {
+	///     Fixed { execution_times: Vec<UnixTime> },
+	///     Recurring { next_execution_time: UnixTime, frequency: Seconds },
+    /// }
+    /// Both execution_times and next_execution_time should be unix standard time stamps(in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0). 
     schedule: ScheduleParam,
 
     /// The parachain location where the encoded extrinsic call will be sent.
@@ -94,6 +99,7 @@ fn schedule_dynamic_dispatch_task(
 	///     Fixed { execution_times: Vec<UnixTime> },
 	///     Recurring { next_execution_time: UnixTime, frequency: Seconds },
     /// }
+    /// Both execution_times and next_execution_time should be unix standard time stamps(in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0). 
     schedule: ScheduleParam,
 	
     //  The call to be executed. Any call on the chain can be executed.
