@@ -89,7 +89,6 @@ oaknetwork/turing:1.4.0 \
   --collator \
   --force-authoring \
   --execution=wasm \
-  --state-cache-size=0 \
   -- \
   --execution=wasm \
   --no-telemetry
