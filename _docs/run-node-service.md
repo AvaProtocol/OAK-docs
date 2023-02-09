@@ -38,7 +38,6 @@ ExecStart=INSTALLATION_DIR/oak-collator \
   --collator \
   --force-authoring \
   --execution=wasm \
-  --state-cache-size=0 \
   -- \
   --execution=wasm \
   --no-telemetry

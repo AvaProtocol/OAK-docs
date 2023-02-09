@@ -99,13 +99,10 @@ oak-collator \
   --collator \
   --force-authoring \
   --execution=wasm \
-  --state-cache-size=0 \
   -- \
   --execution=wasm \
   --no-telemetry
 ```
-
-It's important that we keep the state-cache-size to 0 for now. It causes downstream node issues down the road which will require more overhead for the node operator.
 
 #### Option 3: Docker users
 If you're using a Linux box, you can simply run the following for Turing:
@@ -118,7 +115,6 @@ docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data oak
   --collator \
   --force-authoring \
   --execution=wasm \
-  --state-cache-size=0 \
   -- \
   --execution=wasm \
   --no-telemetry
