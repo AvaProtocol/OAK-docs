@@ -3,6 +3,7 @@ title: Powered By OAK - Time APIs
 subtitle: Trigger any transaction to occur at a future time or set of times.
 author: chris
 tags: [api, price, triggers]
+date: 2022-09-13
 ---
 
 The APIs and Polkadot{.js} libraries on this page allow users and multi-chain applications to schedule calling any Substrate extrinsic or smart contract function at a future time (stamp) or set of times. 
@@ -13,9 +14,9 @@ The APIs and Polkadot{.js} libraries on this page allow users and multi-chain ap
  - paying over time (recurring payments on a foreign chain),
  - anything else you can do on supported parachains, sometime(s) in the future.
 
-2. `scheduleNativeTransferTask` can be used to schedule a transfer of Turing Network’s native token ($TUR).
+1. `scheduleDynamicDispatchTask` can be used to schedule execution of any extrinsic or batch of extrinsics on-chain.
 
-3. `cancelTask` can be used to cancel any existing automation tasks (must be from the account which created the task). 
+1. `cancelTask` can be used to cancel any existing automation tasks (must be from the account which created the task). 
 
 Head over to [Price Automation](https://docs.oak.tech/docs/automation-price-apis/) if you want to trigger future transactions using any data other than "time".
 
@@ -59,65 +60,71 @@ fn schedule_xcmp_task(
     /// Your unique identifier for the task. Accepts any string input (e.g. "I am as unique as a snowflake").
     provided_id: Vec<u8>,      
 
-    /// An array of unix standard time stamps (in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0). 
-    execution_times: Vec<UnixTime>,
+    /// API Param for Scheduling. You can schedule fixed or recurring tasks.
+    /// pub enum ScheduleParam {
+	///     Fixed { execution_times: Vec<UnixTime> },
+	///     Recurring { next_execution_time: UnixTime, frequency: Seconds },
+    /// }
+    /// Both execution_times and next_execution_time should be unix standard timestamps (in seconds) for when the task should run (accepts a string input). The timestamp must be at the start of any hour (i.e. the timestamp number modulo 3600 must equal 0).
+    schedule: ScheduleParam,
 
     /// The parachain location where the encoded extrinsic call will be sent.
     para_id: ParaId,
 
     /// The identifier of the token that is to be used for cross-chain automation fees (assume $TUR).
-    currency_id: u32,
+    currency_id: T::CurrencyId,
 
     /// A proxied version of the encoded extrinsic call to perform the future action.
-    call: Vec<u8>,
+    encoded_call: Vec<u8>,
 
     /// The total weight of the encoded call that will be sent back to the parachain.
-    weight_at_most: Weight,
+    encoded_call_weight: u64,
 )
+
 ```
 
-## Create a native token transfer task
-This API allows you to schedule transfering Turing Network's native token ($TUR) to another account.
+## Create a dynamic dispatch task
+This API allows you to schedule execution of any extrinsic or batch of extrinsics on-chain.
 
 #### API
 ```rust
-fn schedule_native_transfer_task(
+fn schedule_dynamic_dispatch_task(
     /// The address of the account that created or is creating the task. Automatically passed in when the transaction is signed.
     origin: OriginFor<T>,
    
     /// Your unique identifier for the task. Accepts any string input (e.g. "I am as unique as a snowflake").
     provided_id: Vec<u8>,      
 
-    /// An array of unix standard time stamps (in seconds) for when the task should run (accepts a string input). The time stamp must be at the start of any minute (i.e. the timestamp number modulo 60 must equal 0).
-    execution_times: Vec<UnixTime>,
-    
-    /// The account you want to transfer tokens to.
-    recipient_id: AccountId,
-
-    /// The amount you want to transfer. 
-    amount: u128,
+    /// API Param for Scheduling. You can schdule fixed or recurring task.
+    /// pub enum ScheduleParam {
+	///     Fixed { execution_times: Vec<UnixTime> },
+	///     Recurring { next_execution_time: UnixTime, frequency: Seconds },
+    /// }
+    /// Both execution_times and next_execution_time should be unix standard timestamps (in seconds) for when the task should run (accepts a string input). The timestamp must be at the start of any hour (i.e. the timestamp number modulo 3600 must equal 0).
+    schedule: ScheduleParam,
+	
+    //  The call to be executed. Any call on the chain can be executed.
+    call: Box<<T as Config>::Call>,
 )
 ```
 
 #### Errors
 ```rust
-pub enum Error {
-    /// If the `time` parameter does not end in a whole minute.
+pub enum Error<T> {
+    /// Time must end in a whole hour.
     InvalidTime,
-    /// The `time` parameter must be in the future.
+    /// Time must be in the future.
     PastTime,
-    /// The `provided_id` cannot be empty.
-    EmptyProvidedId,
-    /// The `provided_id` is already in use for your account.
-    DuplicateTask,
-    /// The time you requested in full. No more tasks can be scheduled for this time.
-    TimeSlotFull,
+    /// Time cannot be too far in the future.
+    TimeTooFarOut,
     /// The message cannot be empty.
     EmptyMessage,
-    /// Amount has to be larger than 0.1 OAK.
-    InvalidAmount,
-    /// Sender cannot transfer money to self.
-    TransferToSelf,
+    /// The provided_id cannot be empty
+    EmptyProvidedId,
+    /// Too many execution times provided.
+    TooManyExecutionsTimes,
+    /// The call can no longer be decoded.
+    CallCannotBeDecoded,
 }
 ```
 
@@ -232,16 +239,13 @@ Additional fees may apply on the foreign chain if user has not completed proxy s
 Endpoints and libraries for retrieving fees will vary by foreign chain.
 
 ### Get Turing fees for automation task
-This API will retrieve the fees for a given (time automation) task. Payment is collected up front from the user’s Turing account when scheduling future task(s), including all fees for a defined number of occurrences. Fees for indefinitely recurring transactions can be paid at each occurrence. 
+This API will retrieve the fees for a given (time automation) task, such as `automationTime.scheduleDynamicDispatchTask` and `automationTime.scheduleXcmpTask`. Payment is collected up front from the user’s Turing account when scheduling future task(s), including all fees for a defined number of occurrences. Fees for indefinitely recurring transactions can be paid at each occurrence.
 
 #### API
 ```rust
-fn get_time_automation_fees(    
-    /// The action that you will be using. Valid values {Notify, NativeTransfer, XCMP, AutoCompoundDelgatedStake}. 
-    action: AutomationAction,
-    
-    /// The number of task executions. (Support for indefinite reccurrences coming soon)
-    executions: u32,
+fn query_fee_details(
+    /// For DynamicDispatch and XCMP automation, developers can use the new queryFeeDetails rpc. This extrinsic appropriately takes into account the correct fees for both Fixed and Scheduled executions.
+    uxt: Block::Extrinsic,
 )
 ```
 
@@ -252,20 +256,18 @@ curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
   --data-raw '{
     "id":1,
     "jsonrpc":"2.0",
-    "method": "automationTime_getTimeAutomationFees",
-    "params": ["TASK_TYPE", EXECUTION_COUNT]
+    "method": "automationTime_queryFeeDetails",
+    "params": [EXTRINSIC]
   }'
 ```
 
-Replace `TASK_TYPOE` with the type of task (ie. "Notify").
-Replace `EXECUTION_COUNT` with how many times the task will be scheduled to
-execute.
+Replace `EXTRINSIC` with encoded call data of `automationTime.scheduleDynamicDispatchTask` or `automationTime.scheduleXcmpTask`.
 
 #### Response (Sample)
 ```JSON
 {
     "jsonrpc": "2.0",
-    "result": 252000000,
+    "result": { "executionFee": "0xa8c93a80", "xcmpFee": "0x0" },
     "id": 1
 }
 ```

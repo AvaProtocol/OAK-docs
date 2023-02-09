@@ -3,6 +3,7 @@ title: NPoS Consensus
 subtitle: This document explain the consensus and its hybrid approach of implementations on OAK Network
 author: chris
 tags: [develop]
+date: 2021-08-31
 ---
 
 Consensus is a method for blockchain nodes to reach an agreement over a shared state. It is the method on which the nodes in a decentralized network rely to stay synced with each other. Without consensus, there is no way to ensure that the state one node believes true will be shared by the other nodes. Consensus aims to provide an objective view of the state amid participants who each have their own subjective views. 

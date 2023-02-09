@@ -3,6 +3,7 @@ title: Get Testnet Tokens
 subtitle: Learn about how to get testnet tokens from our Discord
 author: charles
 tags: [testing]
+date: 2022-12-12
 ---
 
 # Overview

@@ -3,6 +3,7 @@ title: Run a node using a service
 subtitle: Setting up systemd for your collator
 author: andrew
 tags: [infra, collator]
+date: 2022-06-01
 ---
 
 ## Preparation
@@ -38,7 +39,6 @@ ExecStart=INSTALLATION_DIR/oak-collator \
   --collator \
   --force-authoring \
   --execution=wasm \
-  --state-cache-size=0 \
   -- \
   --execution=wasm \
   --no-telemetry

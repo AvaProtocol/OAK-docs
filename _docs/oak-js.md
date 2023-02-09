@@ -3,6 +3,7 @@ title: Javascript SDK oak.js
 subtitle: Use javascript to interact with the OAK Blockchain
 author: justin
 tags: [api, time, triggers, js, sdk]
+date: 2022-09-13
 ---
 
 The OAK Development team has created an extension of the PolkadotJS APIs in **[this repository](https://github.com/OAK-Foundation/oak.js)**.

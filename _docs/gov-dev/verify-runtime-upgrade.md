@@ -3,6 +3,7 @@ title: Verify Runtime of Upgrade
 subtitle: Learn how to verify a runtime upgrade proposed through governance
 author: laura
 tags: [governance]
+date: 2022-06-30
 ---
 
 ### Finding the Proposal

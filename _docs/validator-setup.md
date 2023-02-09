@@ -3,6 +3,7 @@ title: Validator Setup
 subtitle: This document covers the setup of OAK validator in testnet network
 author: charles
 tags: [develop]
+date: 2021-09-01
 ---
 
 ## Run a validator node

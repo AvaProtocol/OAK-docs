@@ -3,6 +3,7 @@ title: Mainnet Launch Phases
 subtitle: This document covers the operating procedures for OAK network launch
 author: chris
 tags: [develop]
+date: 2021-08-31
 ---
 
 ## OAK Network Launch Phases

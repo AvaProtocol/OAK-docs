@@ -3,6 +3,7 @@ title: Grant Treasury Funds
 subtitle: Walk through the Governance steps of granting Treasury funds via the polkadot.js app
 author: charles
 tags: [governance]
+date: 2022-12-12
 ---
 
 ## Grant Treasury funds to community developers

@@ -3,6 +3,7 @@ title: Overview
 subtitle: Read about the basic concepts of the automation data structure
 author: ryan
 tags: [develop]
+date: 2022-02-03
 ---
 
 The goal of the OAK blockchain is to allow users to schedule actions to execute based on a condition. This guide will talk you through how to use OAK, and some examples of how it could be used.
