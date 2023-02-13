@@ -24,7 +24,7 @@ First, get the latest version number and store it in $version variable.
 ```
 latest_url=$(curl -Lsf -w %{url_effective} https://github.com/OAK-Foundation/OAK-blockchain/releases/latest/download/)
 version=${latest_url##*/}
-eho $version
+echo $version
 ```
 
 Then, compose the binary’s URL and download it a local `./tmp` folder. In addition, run chmod 700 command to make sure the downloaded file is executable by the current linux user.
