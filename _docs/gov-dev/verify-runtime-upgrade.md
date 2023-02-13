@@ -8,13 +8,13 @@ date: 2022-06-30
 
 ### Finding the Proposal
 
-To find the proposed runtime upgrade navigate to [Turing's Democracy page](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/democracy).  If a runtime upgrade has been proposed you will see a proposal under the `proposals` section for `parachainSystem.authorizeUpgrade` as shown in the image below.  For this example we are using a proposed runtime upgrade to v1.4.0.1.
+To find the proposed runtime upgrade navigate to [Turing's Democracy page](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/democracy).  If a runtime upgrade has been proposed you will see a proposal under the `proposals` section for `parachainSystem.authorizeUpgrade` as shown in the image below.  For this example we are using a proposed runtime upgrade to v1.8.0.
 
 ![democracy-page](../../../assets/img/governance/democracy-page.png)
 
 ### Upgrade Preimage Information
 
-Once you have identified the proposal click on the arrow next to `parachainSystem.authorizeUpgrade` and expand for more details.  There you will see the H256 code hash for the corresponding release version v1.4.0.1.
+Once you have identified the proposal click on the arrow next to `parachainSystem.authorizeUpgrade` and expand for more details.  There you will see the H256 code hash for the corresponding release version v1.8.0.
 
 `0xfd8d2ee0b16c13a242e41e64b08d3b5e8470d2dd2e9228e1d8affcf3fc0628c2`
 
@@ -22,7 +22,7 @@ Once you have identified the proposal click on the arrow next to `parachainSyste
 
 ### Verify Code
 
-The necessary information to verify the code can be found in the corresponding release page on Github.  The release page for v1.4.0.1 can be found [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/tag/v1.4.0.1).  To view previous releases you can navigate [here](https://github.com/OAK-Foundation/OAK-blockchain/releases).
+The necessary information to verify the code can be found in the corresponding release page on Github.  The release page for v1.8.0 can be found [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/tag/v1.8.0).  To view previous releases you can navigate [here](https://github.com/OAK-Foundation/OAK-blockchain/releases).
 
 First, you will want to verify the `BLAKE2_256` hash in the release notes matches the proposal `codeHash` from the previous section.  Next, you can build your own WASM runtime to compare with the proposed upgrade.
 
@@ -34,7 +34,11 @@ First, you will want to verify the `BLAKE2_256` hash in the release notes matche
 2. Follow the directions in OAK-blockchain repository to [build from source](https://github.com/OAK-Foundation/OAK-blockchain#building-from-source).
 3. Checkout release branch.
 ```
-git checkout v1.4.0.1
+git clone git@github.com:OAK-Foundation/OAK-blockchain.git
+git fetch --all --tags
+git checkout tags/v1.8.0 -b branch-1.8.0
+
+Switched to a new branch 'branch-1.8.0'
 ```
 4. Build release with srtool.
 ```
