@@ -10,7 +10,7 @@ Automate future tasks including switching or splitting Turing Network staking de
 
 In case you missed it, [StakeTUR](http://staketur.com/), [Nova Wallet](https://novawallet.io/), and [SubWallet](https://subwallet.app/) users are now automating web3 chores and boosting rewards by automatically staking spare $TUR. But Turing Network users have increasingly asked to automate other tasks as well-automating payments, splitting staking delegations, switching delegation to another collator, and delegating indefinitely.
 
-Rather than enable each ofthese use cases independently, OAK Network is launching Dynamic Dispatch to:
+Rather than enable each of these use cases independently, OAK Network is launching Dynamic Dispatch to:
 
 1. Extend time-based automation to every extrinsic on Turing Network
 
@@ -18,7 +18,7 @@ Rather than enable each ofthese use cases independently, OAK Network is launchin
 
 Javascript code snippets are now available in the [OAK.js SDK repo](https://github.com/OAK-Foundation/oak.js) to show developers how to build automation workflows using the new Dynamic Dispatch blockchain API.
 
-Keep reading to learn how to use Dynamic Dispatch via [Polkadot{.js}](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/explorer) to switch collator delegationsand indefinitely auto-compound with pay-as-you-go fees!
+Keep reading to learn how to use Dynamic Dispatch via [Polkadot{.js}](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/explorer) to switch collator delegations and indefinitely auto-compound with pay-as-you-go fees!
 
 ## Switching Delegations with Dynamic Dispatch
 
@@ -36,8 +36,7 @@ Switching collator delegations is one of many workflows that Dynamic Dispatch un
 
 ## Auto-compounding with Dynamic Dispatch
 
-Also new to Dynamic Dispatch is the abilityto schedule indefinitely
-recurring taskstoeliminate the needfor applicationsand users to define the set of times that atask will recur.
+Also new to Dynamic Dispatch is the ability to schedule indefinitely recurring tasks to eliminate the need for applications and users to define the set of times that a task will recur.
 
 In this example, Dynamic Dispatch is used to create an indefinite "Recurring" delegation that begins at a fixed time (expressed as a UNIX
 timestamp) and recurs at a set frequency (expressed in seconds).
