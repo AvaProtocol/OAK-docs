@@ -37,7 +37,7 @@ jobs:
       - name: Export files
         run: |
           bundle install
-          jekyll build
+          JEKYLL_ENV=production jekyll build
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
