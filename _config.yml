@@ -97,6 +97,9 @@ footer:
 # Google analytics code, get your code here https://www.google.com/analytics/
 google_analytics:   G-4BZGDFDJGP
 
+google_analytics_dev:   G-DE2E0J5DNE
+
+
 # Number of posts displayed on blog page
 paginate:           10
 
