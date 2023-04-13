@@ -27,12 +27,12 @@ If you have any questions or run into issues, head over to the [OAK Discord](htt
 
 | Field                                                                                     | Current Value                                              |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
-| Minimum Collator Bond `const parachainStaking.minCandidateStk`                            | 2MM TUR or `20000000000000000` planck                      |
-| Number of selected candidates `parachainStaking.totalSelected`                            | 24                                                         |
+| Minimum Collator Bond `parachainStaking.minCandidateStk`                            | 1 million TUR or `10000000000000000` planck                      |
+| Number of selected candidates `parachainStaking.totalSelected`                            | 26                                                         |
 | Round Length `parachainStaking.round`                                                     | 600 blocks or ~2 hours                                     |
-| Leave candidacy duration `const parachainStaking.leaveCandidatesDelay`                    | 24 rounds or ~48 hours                                     |
-| Reduction of self-delegation bond duration `const parachainStaking.revokeDelegationDelay` | 24 rounds or ~48 hours                                     |
-| Rewards payout `const parachainStaking.rewardPaymentDelay`                                | Time left to complete current round + 2 rounds or ~4 hours |
+| Leave candidacy duration `parachainStaking.leaveCandidatesDelay`                    | 24 rounds or ~48 hours                                     |
+| Reduction of self-delegation bond duration `parachainStaking.revokeDelegationDelay` | 24 rounds or ~48 hours                                     |
+| Rewards payout `parachainStaking.rewardPaymentDelay`                                | Time left to complete current round + 2 rounds or ~4 hours |
 | Inflation `parachainStaking.inflationConfig`                                              | 5.00% annually                                             |
 
 _Note: The source of truth for the values above is the chain state and constants, so please query that to double-check the values_
@@ -123,7 +123,7 @@ In the **Developer -> Extrinsics** tab, navigate to `parachainStaking.joinCandid
 Once you've set your session keys, use the same wallet from Step 2.2 to signup as a candidate. Make sure you have enough tokens for the bond amount, fees and existential deposit left over.
 
 - wallet: the same wallet you registered your session keys with from Step 2.2
-- bond: `4000000000000000` (this is the minimum bond from above; you can certainly bond more if you wish)
+- bond: `10000000000000000` (the minimum bond, currently 1M TUR, defined in `parachainStaking.minCandidateStk`; you can certainly bond more if you wish)
 - candidateCount: `6` (take the number from Step 2 and increment by 1; so from the example above 5+1 = 6)
 
 If the wallet selected doesn’t have more tokens than the minimum bond + a little transaction fee, the extrinsic call will fail and your wallet will not be added to the candidate pool.
