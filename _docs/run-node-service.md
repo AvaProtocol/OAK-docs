@@ -69,10 +69,13 @@ if the process is killed. Here are some other commands that might be useful
 while operating an OAK node.
 
 * `systemctl status oak-collator --no-pager --full`
+  
   Get the running status of the program. The `--no-pager` option will avoid text cutoff from long lines. 
 * `journalctl -u oak-collator -f`
+  
   View logs of the program. The `-f` will follow and stream the latest lines. For more display options please refer to the instructions in `man journalctl`.
 * `systemctl restart oak-collator`
+  
   Restart the collator service 
 
 ## Monitoring & Alerting
