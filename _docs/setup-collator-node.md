@@ -52,7 +52,7 @@ In this step, we'll generate a node key for your collator. The simplest method t
 #### Option 1: Download a release binary(Recommended)
 If you're running Ubuntu (20.04+ LTS x64), you can utilize the binary compiled by OAK, available on our [Latest Release](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest) page. This binary will enable you to operate your collator on your node. To download it via command line, follow the commands detailed below.
 
-```
+```bash
 latest_url=$(curl -Lsf -w %{url_effective} https://github.com/OAK-Foundation/OAK-blockchain/releases/latest/download/)
 version=${latest_url##*/}
 echo $version
@@ -60,7 +60,7 @@ echo $version
 
 The `echo` command will print out the version of the collator to be installed. Then, run the below command to download a .deb file, unpackage it and install the binary.
 
-```
+```bash
 # Download the latest .deb file
 curl -L https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/oak-collator.deb -o oak-collator-$version.deb
 
@@ -70,14 +70,14 @@ sudo dpkg -i oak-collator-$version.deb
 
 After the binary is setup, you can check it via the below command.
 
-```
+```bash
 whereis oak-collator  # print out the installed location
 oak-collator --help
 ```
 
 Now you can simply run the following to start a collator for Turing Network. Optionally, you could add the `--pruning=archive` parameter to prune the state of early blocks in order to save disk space.
 
-```
+```bash
 oak-collator \
   --name=<collator_name> \
   --base-path=<path_to_blockchain_data> \
@@ -96,7 +96,7 @@ To ensure maximum uptime, we advise you to consult our guide for automatically r
 #### Option 2: Compile from source code
 If you machine runs a different architecture, or you are struggling with binaries from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/OAK-Foundation/OAK-blockchain). For example, for the v1.9.0 binary, you can run the following command on your node.
 
-```
+```bash
 git clone git@github.com:OAK-Foundation/OAK-blockchain.git
 git fetch --all --tags
 git checkout tags/v1.9.0 -b branch-1.9.0
@@ -106,13 +106,13 @@ Switched to a new branch 'branch-1.9.0'
 
 Then build your executable with `cargo build`.
 
-```
+```bash
 cargo build --release --features turing-node
 ```
 
 Afterwards, run the following to start a collator for Turing Network. Optionally, you could add the `--pruning=archive` parameter to prune the state of early blocks in order to save disk space.
 
-```
+```bash
 oak-collator \
   --name=<collator_name> \
   --base-path=<path_to_blockchain_data> \
@@ -133,7 +133,7 @@ To ensure maximum uptime, we advise you to consult our guide for automatically r
 
 If you opt to run the collator using Docker, you'll find the Docker builds on [OAK Network’s DockerHub](https://hub.docker.com/r/oaknetwork/turing/tags). Begin by pulling the latest image and creating a volume for your data. You can confirm the volume's creation by conducting an inspection. The following commands will guide you through these steps.
 
-```
+```bash
 docker pull oaknetwork/turing:latest
 docker volume create turing-data
 docker volume inspect turing-data
@@ -143,7 +143,7 @@ Then, configure and `docker run` to start the program.
 ```bash
 docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data oaknetwork/turing:latest \
   --name=<collator_name> \
-  --base-path= \
+  --base-path=/data \
   --chain=turing \
   --node-key=<node_key_created_in_step_1> \
   --collator \

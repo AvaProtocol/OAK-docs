@@ -25,7 +25,7 @@ echo $version
 ```
 The `echo` command will print out the version of the collator to be installed. Then, run the below command to download a .deb file, unpackage it and install the binary.
 
-```
+```bash
 # Download the latest .deb file
 curl -L https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/oak-collator.deb -o oak-collator-$version.deb
 
@@ -35,7 +35,7 @@ sudo dpkg -i oak-collator-$version.deb
 
 If you're managing the program using `systemd`, you'll need to reload the daemon due to the change in the application binary file, then restart the service. If you're not using systemd, you can manually terminate the program and re-execute the oak-collator command to start the program again.
 
-```
+```bash
 sudo systemctl daemon-reload
 sudo systemctl restart oak-collator
 ```
@@ -43,7 +43,7 @@ sudo systemctl restart oak-collator
 ### Option 2: Build from source code
 If you machine runs a different architecture, or you are struggling with binaries from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/OAK-Foundation/OAK-blockchain). For example, for the v1.9.0 binary, you can run the following command on your node.
 
-```
+```bash
 git clone git@github.com:OAK-Foundation/OAK-blockchain.git
 git fetch --all --tags
 git checkout tags/v1.9.0 -b branch-1.9.0
@@ -53,13 +53,18 @@ Switched to a new branch 'branch-1.9.0'
 
 Then build your executable for Turing Network.
 
-```
+```bash
 cargo build --release --features turing-node
 ```
 
 Aftewards, manually replace the old oak-collator binary file with the new build. If you're managing the program using `systemd`, you'll need to reload the daemon due to the change in the application binary file, then restart the service. If you're not using systemd, you can manually terminate the program and re-execute the oak-collator command to start the program again.
 
-### Option 3: Pull Docker iamge
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart oak-collator
+```
+
+### Option 3: Pull Docker image
 If you opt to run the collator using Docker, you'll find the Docker builds on [OAK Network’s DockerHub](https://hub.docker.com/r/oaknetwork/turing/tags). Pull the latest image and 
 
 ```bash
@@ -67,7 +72,10 @@ docker pull oaknetwork/turing:latest
 ```
 
 ```bash
+# Stop the existing application
 docker stop <existing_container_id>
+
+# Re-run the docker run to restart the application
 docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data
   oaknetwork/turing:latest \
   --name=<collator_name> \
