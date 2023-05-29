@@ -57,7 +57,7 @@
   docs:
   - oak-js
   - benchmarking
-
+  - graphql-api
   # - xcmp
 - title: Cross-chain Automation
   group: 3
