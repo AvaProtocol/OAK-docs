@@ -1,5 +1,5 @@
 ---
-title: Setup a collator node
+title: Set up a collator
 subtitle: Technical infrastructure requirements to run your node
 author: chris
 tags: [infra, collator]
@@ -19,7 +19,7 @@ We recommend using a dedicated server instead of a virtual machine from a cloud 
 
 Be sure to monitor your collator with tooling like Prometheus and Grafana.
 
-Please sync a few days before your intended collation / block production candidacy to sync the nodes. Once your node is synced, you will find that the block numbers are up to date with both the relay chain and the parachain. Check out the [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d) site for more information.
+Please sync a few days before your intended collation / block production candidacy to sync the nodes. Once your node is synced, you will find that the block numbers are up to date with both the relay chain and the parachain. Check out the [Turing Network Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d) site for more information.
 
 ## Ports
 Please ensure the following configuration for your node.
@@ -30,12 +30,7 @@ Please ensure the following configuration for your node.
 ## Performance Incentives
 We will need to ensure that collators are economically incentivized to have the most optimal node infrastructure in place to secure and do what’s best for the network at large. While initially we are not implementing slashing, it would be to the benefit of the collator to have the requirements above to ensure that they can receive their rewards and get chosen from the collator pool.
 
-For now, the incentives are purely rewards based since we've vetted a closed set of community collators with a solid reputation in the DotSama ecosystem. 
-
-## Helpful Resources
-You may not have a need for all of these resources, but they can be useful to cross-reference or for debugging.
-
-Please read over using [how to use a service](../run-node-service) to run your node. 
+For now, the incentives are purely rewards based since we've vetted a closed set of community collators with a solid reputation in the DotSama ecosystem.
 
 ### Turing Network - Kusama Parachain
 The Turing Network is live on Kusama. If you're interested in collating, please reach out via [OAK Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>. You will need to meet the minimum bond found in [the collator on-boarding page](../collators/#turing-network---kusama-parachain).
@@ -44,42 +39,99 @@ The Turing Network is live on Kusama. If you're interested in collating, please 
 - [Docker image repository](https://hub.docker.com/repository/docker/oaknetwork/turing)
 - [Turing Network parachain chain spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/turing.json)
 - [Kusama chain spec](https://github.com/paritytech/polkadot/blob/master/node/service/res/kusama.json)
-- [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
+- [Turing Network Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
 
-## How to setup your node
+## Set up a collator
 
-### Step 1: Get your binary ready
+### Step 1 - Create a wallet for your collator
 
-#### Option 1: Grab a compiled binary from OAK's Github
-If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK that can be found [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest). You'll use this to run your collator on your node. To acquire a copy of this via command line, use the commands below.
+In this step, we'll generate a node key for your collator. The simplest method to accomplish this is by using Substrate's [Subkey command-line tool](https://docs.substrate.io/reference/command-line-tools/subkey/). After you've installed the tool, execute the command subkey `generate-node-key`. This command will yield two lines of output. The first line represents a new Substrate wallet address, and the second line is its corresponding private key.
+
+### Step 2 - Start up the collator program
+
+#### Option 1: Download a release binary(Recommended)
+If you're running Ubuntu (20.04+ LTS x64), you can utilize the binary compiled by OAK, available on our [Latest Release](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest) page. This binary will enable you to operate your collator on your node. To download it via command line, follow the commands detailed below.
 
 ```
 latest_url=$(curl -Lsf -w %{url_effective} https://github.com/OAK-Foundation/OAK-blockchain/releases/latest/download/)
 version=${latest_url##*/}
-curl -L https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/oak-collator -o oak-collator
+echo $version
 ```
 
-#### Option 2: Compile the binary
-If you are using another machine, or are struggling with errors from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/OAK-Foundation/OAK-blockchain#install-oak-blockchain). For example, for the v1.8.0 binary, you can run the following command on your node.
+The `echo` command will print out the version of the collator to be installed. Then, run the below command to download a .deb file, unpackage it and install the binary.
+
+```
+# Download the latest .deb file
+curl -L https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/oak-collator.deb -o oak-collator-$version.deb
+
+# Unpackage and install the .deb file
+sudo dpkg -i oak-collator-$version.deb
+```
+
+After the binary is setup, you can check it via the below command.
+
+```
+whereis oak-collator  # print out the installed location
+oak-collator --help
+```
+
+Now you can simply run the following to start a collator for Turing Network. Optionally, you could add the `--pruning=archive` parameter to prune the state of early blocks in order to save disk space.
+
+```
+oak-collator \
+  --name=<collator_name> \
+  --base-path=<path_to_blockchain_data> \
+  --chain=turing \
+  --node-key=<node_key_created_in_step_1> \
+  --collator \
+  --force-authoring \
+  --execution=wasm \
+  -- \
+  --execution=wasm \
+  --no-telemetry
+```
+
+To ensure maximum uptime, we advise you to consult our guide for automatically restoring the collator program upon server startup or in case of failure. For more detailed instructions, please refer to our [Manage collator with systemd](../manage-with-systemd.md) page next.
+
+#### Option 2: Compile from source code
+If you machine runs a different architecture, or you are struggling with binaries from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/OAK-Foundation/OAK-blockchain). For example, for the v1.9.0 binary, you can run the following command on your node.
 
 ```
 git clone git@github.com:OAK-Foundation/OAK-blockchain.git
 git fetch --all --tags
-git checkout tags/v1.8.0 -b branch-1.8.0
+git checkout tags/v1.9.0 -b branch-1.9.0
 
-Switched to a new branch 'branch-1.8.0'
+Switched to a new branch 'branch-1.9.0'
 ```
 
-Then build your executable.
+Then build your executable with `cargo build`.
 
 ```
 cargo build --release --features turing-node
 ```
 
-#### Option 3: Grab the latest image from Docker
+Afterwards, run the following to start a collator for Turing Network. Optionally, you could add the `--pruning=archive` parameter to prune the state of early blocks in order to save disk space.
+
+```
+oak-collator \
+  --name=<collator_name> \
+  --base-path=<path_to_blockchain_data> \
+  --chain=turing \
+  --node-key=<node_key_created_in_step_1> \
+  --collator \
+  --force-authoring \
+  --execution=wasm \
+  -- \
+  --execution=wasm \
+  --no-telemetry
+```
+
+To ensure maximum uptime, we advise you to consult our guide for automatically restoring the collator program upon server startup or in case of failure. For more detailed instructions, please refer to our [Manage collator with systemd](../manage-with-systemd.md) page next.
+
+#### Option 3: Pull Docker image
 *Note regarding Docker: while we do support Docker images, we generally do not recommend this option unless you're testing. Docker builds are less performant when running nodes than using the binary paths above.*
 
-If you choose to run the collator via Docker, you can find the Docker repository linked in the helpful resources above. You can grab the latest image (tagged `latest`), or the specific version. Create a volume for your data and check that the volume exists by inspecting. The following commands help you to do so.
+If you opt to run the collator using Docker, you'll find the Docker builds on [OAK Network’s DockerHub](https://hub.docker.com/r/oaknetwork/turing/tags). Begin by pulling the latest image and creating a volume for your data. You can confirm the volume's creation by conducting an inspection. The following commands will guide you through these steps.
 
 ```
 docker pull oaknetwork/turing:latest
@@ -87,35 +139,13 @@ docker volume create turing-data
 docker volume inspect turing-data
 ```
 
-### Step 2: Grab and save your node-key
-
-Follow [these instructions](https://docs.substrate.io/v3/tools/subkey/#generating-node-keys) to generate the `NODE_KEY` below. We recommend folks save the secret of the node key somewhere safe.
-
-### Step 3: Startup the parachain
-#### Option 1 & 2: Run the binary
-If you're using a Linux box, you can simply run the following for Turing:
-```
-oak-collator \
-  --name=YOUR_COLLATOR_NAME \
-  --base-path=PATH_TO_DATA_DIR \
-  --chain=turing \
-  --node-key=NODE_KEY \
-  --collator \
-  --force-authoring \
-  --execution=wasm \
-  -- \
-  --execution=wasm \
-  --no-telemetry
-```
-
-#### Option 3: Docker users
-If you're using a Linux box, you can simply run the following for Turing:
-```
+Then, configure and `docker run` to start the program.
+```bash
 docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data oaknetwork/turing:latest \
-  --name=YOUR_COLLATOR_NAME \
-  --base-path=/data \
+  --name=<collator_name> \
+  --base-path= \
   --chain=turing \
-  --node-key=NODE_KEY \
+  --node-key=<node_key_created_in_step_1> \
   --collator \
   --force-authoring \
   --execution=wasm \
@@ -124,13 +154,13 @@ docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data oak
   --no-telemetry
 ```
 
-### Step 4: Check that your node is in the Telemetry list and is connected to the network
-If you're successful in connecting to the network and sending your Telemetry data, you can see your node's name (`YOUR_COLLATOR_NAME`) on either Telemetry dashboards for the
- [Turing Network](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
+### Step 3: Check that your node is in the Telemetry list and is connected to the network
+If you're successful in connecting to the network and sending your Telemetry data, you can see your node's name (`<collator_name>`) on 
+ [Turing Network Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
 
-### Step 5: Sync your node
+### Step 4: Sync your node
 Please ensure that both the relay chain block number and parachain block number are up to the latest block number. The logs will indicate whether or not the nodes are fully synced.
 While you're blocks are syncing, monitor the initialization, especially for the first few lines to ensure that you are pointing to the correct network. If you run into any issues, head over to the [OAK Discord](https://discord.gg/7W9UDvsbwh) for help.
 
-### Step 6: Onboard your collator
-Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [Collator On-boarding](../collators)
+### Step 5: Onboard your collator
+Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [How to register as a collator](../collators/#how-to-register-as-a-collator)
