@@ -456,27 +456,16 @@ query event_by_tx {
 ```graphql
 {
   accountSnapshots(
-<<<<<<< HEAD
     first: 10,
     filter:{
       snapshotAtBlock: {
         greaterThan: "1500000",
-=======
-    first: 100,
-    filter:{
-      snapshotAtBlock: {
-        lessThan: "500"
->>>>>>> fbd4341 (add graphql api doc with live execution)
       },
       accountId:{
         equalTo: "66MGxr9zcyJ6ka6FBQmT1VSvMqARKfwBT7589Fikii1Ci5sg"
       }
-<<<<<<< HEAD
     },
     orderBy: [SNAPSHOT_AT_BLOCK_DESC]
-=======
-    }
->>>>>>> fbd4341 (add graphql api doc with live execution)
   ) {
     nodes {
       snapshotAtBlock
