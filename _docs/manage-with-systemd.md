@@ -1,10 +1,11 @@
 ---
-title: Run a node using a service
-subtitle: Setting up systemd for your collator
+title: Manage collator with systemd
+subtitle: Setting up systemd service for your collator for automatic startup, monitoring and log management
 author: andrew
 tags: [infra, collator]
 date: 2022-06-01
 ---
+`systemd` and its associated command `systemctl` are fundamental elements of most modern Linux distributions. They offer a host of advantages when it comes to managing and controlling system services, including various applications. In this guide, we'll walk you through the process of setting up a service for the `oak-collator` program. This setup ensures that the `oak-collator` automatically restarts after system reboot or unexpected program shutdown, enhancing its reliability and ease of use.
 
 ## Preparation
 
@@ -80,4 +81,4 @@ while operating an OAK node.
 
 ## Monitoring & Alerting
 
-Since OAK is a Substrate-based project, you can use Node Exporter, Prometheus and Grafana to monitor your nodes. For more information, please follow [this tutorial](https://docs.substrate.io/tutorials/v3/node-metrics/).
+Since OAK is a Substrate-based project, you can use Node Exporter, Prometheus and Grafana to monitor your nodes. For more information, please follow [this Substrate tutorial](https://docs.substrate.io/tutorials/v3/node-metrics/).

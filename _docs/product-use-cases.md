@@ -1,12 +1,10 @@
 ---
-title: Examples
-subtitle: A series of examples of what you can do with OAK
+title: Product Use Cases
+subtitle: Exploring potentials - a collection of use cases for OAK's Automation technology
 author: chris
 tags: [develop]
 date: 2022-02-03
 ---
-
-# Examples
 
 💡 Use cases that OAK Network enables for decentralized applications on DotSama parachains.
 
