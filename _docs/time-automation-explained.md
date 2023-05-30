@@ -1,5 +1,5 @@
 ---
-title: Powered By OAK - Time APIs
+title: Time Automation Explained
 subtitle: Trigger any transaction to occur at a future time or set of times.
 author: chris
 tags: [api, price, triggers]
@@ -31,11 +31,11 @@ Head over to [Price Automation](https://docs.oak.tech/docs/automation-price-apis
 ## Assumptions
 1. The application interface presents the user with the option to interact with a parachain's extrinsic at some time(s) in the future.
     1. The time(s) may be defined by the user or the application.
-    2. The target parachain may be any parachain that satisfies [Parachain Prerequisites](https://docs.oak.tech/docs/powered-by-oak-time-apis/#parachain-prerequisites).
+    2. The target parachain may be any parachain that satisfies [Parachain Prerequisites](https://docs.oak.tech/docs/time-automation-explained/#parachain-prerequisites).
 2. The user has created an OAK-derived proxy that can (only) be used by OAK (or Turing) to trigger future transactions via XCM.
-    1. See [Application Prerequisites: Derive proxy identifier](https://docs.oak.tech/docs/powered-by-oak-time-apis/#derive-proxy-identifier)
+    1. See [Application Prerequisites: Derive proxy identifier](https://docs.oak.tech/docs/time-automation-explained/#derive-proxy-identifier)
 3. The user's Turing account contains a balance that is sufficient for automation fees.
-    1. See [Application Prerequisites: Get fees](https://docs.oak.tech/docs/powered-by-oak-time-apis/#get-fees)
+    1. See [Application Prerequisites: Get fees](https://docs.oak.tech/docs/time-automation-explained/#get-fees)
 
 If any of these are not true (i.e. the proxy doesn't exist or you assume that users never have enough $TUR), then any of following may be required prior to scheduling a user's first automation task on a foreign chain:
 
@@ -157,7 +157,7 @@ pub enum Error {
 ## Derive proxy and task identifiers (new and existing)
 Unique identifiers for the proxy (unique for each account) and the task ID (unique for each automation task) can be derived using the available RPCs or [OAK.js](https://docs.oak.tech/docs/oak-js/). 
 
-Applications are recommended to store identifiers in order to more easily reference existing accounts and tasks in the future (to [Cancel Task](https://docs.oak.tech/docs/powered-by-oak-time-apis/#cancel-a-task), for example).
+Applications are recommended to store identifiers in order to more easily reference existing accounts and tasks in the future (to [Cancel Task](https://docs.oak.tech/docs/time-automation-explained/#cancel-a-task), for example).
 
 ### Derive proxy identifier
 This API will return a deterministic proxy identifier using Account ID for both new and existing accounts. This proxy can be used only for future transactions and only by OAK (Turing) Network via XCM.
@@ -187,7 +187,7 @@ curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
 Replace `SS58_ACCOUNT_ID` with the account you want to lookup.
 
 ### Derive task identifier
-This API will return a deterministic task identifier using a Provided ID and Account ID for both new and existing tasks. Generating and using your own unique (provided) ID to derive the OAK Task ID will allow tasks to be more easily referenced in the future (to [Cancel Task](https://docs.oak.tech/docs/powered-by-oak-time-apis/#cancel-a-task), for example).
+This API will return a deterministic task identifier using a Provided ID and Account ID for both new and existing tasks. Generating and using your own unique (provided) ID to derive the OAK Task ID will allow tasks to be more easily referenced in the future (to [Cancel Task](https://docs.oak.tech/docs/time-automation-explained/#cancel-a-task), for example).
 
 #### API
 ```rust

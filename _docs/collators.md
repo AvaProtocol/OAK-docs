@@ -23,7 +23,7 @@ If you have any questions or run into issues, head over to the [OAK Discord](htt
 - [Subscan](https://turing.subscan.io/) - use this for an indexing or reference service with a delightful user experience
 - [Chain State](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate) - use this to query fungible storage items (e.g. the number of selected candidates)
 - [Chain Constants](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/chainstate/constants) - use this to query constants for the blockchain (e.g. any parameter with a `const` below)
-- [Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
+- [Turing Network Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
 
 | Field                                                                                     | Current Value                                              |
 | ----------------------------------------------------------------------------------------- | ---------------------------------------------------------- |
