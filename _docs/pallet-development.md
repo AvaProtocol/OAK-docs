@@ -122,17 +122,16 @@ Taking [pallet-automation-time](https://github.com/OAK-Foundation/OAK-blockchain
 #### Storages
  
  The Automation Time pallet saves data in these fields.
- - `ScheduledTasksV3` - List of participating projects.
- - `AccountTasks` - Number of projects submitted to a campaign.
- - `TaskQueueV2` -  List of the past and the current round of campaigns.
- - `MissedQueueV2` - Total number of campaign including the past and the current.
- - `LastTimeSlot` - The maximum number of grants allowed in one campaign.
- - `Shutdown` - The withdrawal expiration period in block number. If grant funds are not withdrawn within a long period of time the grant will expire and funds will be unfrozen for the pallet to re-use.
+ - `ScheduledTasksV3` - List of scheduled tasks.
+ - `AccountTasks` - Record the tasks owned by each user.
+ - `TaskQueueV2` -  A queue of tasks waiting to be executed.
+ - `MissedQueueV2` - A queue of tasks that have not yet been executed.
+ - `LastTimeSlot` - The last time slot to execute tasks.
+ - `Shutdown` - Record whether to disable the function of this pallet.
 
 #### Structs
- - `Action` - Holds the data for each campaign. There is only one campaign can happen at any given time.
+ - `Action` - The enum that stores all action specific data.
     ```
-    /// The enum that stores all action specific data.
     #[derive(Clone, Debug, Eq, PartialEq, Encode, Decode, TypeInfo)]
     pub enum Action<AccountId, Balance, CurrencyId> {
       Notify {
@@ -162,7 +161,7 @@ Taking [pallet-automation-time](https://github.com/OAK-Foundation/OAK-blockchain
     }
     ```
 
- - `Schedule` - An open source software program application submitted to a campaign
+ - `Schedule` - The enum stores the execution time and rules of the task.
     ```
     pub enum Schedule {
       Fixed { execution_times: Vec<UnixTime>, executions_left: u32 },
@@ -170,7 +169,7 @@ Taking [pallet-automation-time](https://github.com/OAK-Foundation/OAK-blockchain
     }
     ```
 
- - `Task` - When admitted into a campaign, a project becomes a grant which allows users to contribute funds to.
+ - `Task` - Task structure
     ```
     pub struct Task<AccountId, Balance, CurrencyId> {
       pub owner_id: AccountId,
@@ -180,34 +179,19 @@ Taking [pallet-automation-time](https://github.com/OAK-Foundation/OAK-blockchain
     }
     ```
 
- - `Contribution` - The contribution users made to a grant project.
-    ```
-    pub struct Contribution<AccountId, Balance> {
-      account_id: AccountId,
-      value: Balance,
-    }
-    ```
-
-
 #### Extrinsics Functions
 
-- `schedule_notify_task(origin: OriginFor<T>, provided_id: Vec<u8>, execution_times: Vec<UnixTime>, message: Vec<u8>) -> DispatchResult` - Create a project by a developer.
+ - `pub fn schedule_xcmp_task(origin: OriginFor<T>, provided_id: Vec<u8>, schedule: ScheduleParam, para_id: ParaId, currency_id: T::CurrencyId, xcm_asset_location: VersionedMultiLocation, encoded_call: Vec<u8>, encoded_call_weight: Weight) -> DispatchResult` - Schedule a task through XCMP to fire an XCMP message with a provided call.
 
- - `pub fn schedule_native_transfer_task(origin: OriginFor<T>, provided_id: Vec<u8>, execution_times: Vec<UnixTime>, recipient_id: AccountOf<T>, #[pallet::compact] amount: BalanceOf<T>) -> DispatchResult` - Create a project by a developer.
+ - `pub fn schedule_xcmp_task_through_proxy(origin: OriginFor<T>, provided_id: Vec<u8>, schedule: ScheduleParam, para_id: ParaId, currency_id: T::CurrencyId, xcm_asset_location: VersionedMultiLocation, encoded_call: Vec<u8>, encoded_call_weight: Weight, schedule_as: T::AccountId) -> DispatchResult` - Schedule a task through XCMP to fire an XCMP message with a provided call through proxy account.
 
- - `pub fn schedule_xcmp_task(origin: OriginFor<T>, provided_id: Vec<u8>, schedule: ScheduleParam, para_id: ParaId, currency_id: T::CurrencyId, xcm_asset_location: VersionedMultiLocation, encoded_call: Vec<u8>, encoded_call_weight: Weight) -> DispatchResult` - Donate to the QF pallet account, usually called by the committee but can be called by any one. Tokens donated via this method will be part of the matching fund. Regular users should call contribute() instead of this method.
+ - `pub fn schedule_auto_compound_delegated_stake_task(origin: OriginFor<T>, execution_time: UnixTime, frequency: Seconds, collator_id: AccountOf<T>, account_minimum: BalanceOf<T>) -> DispatchResult` - Schedule a task to increase delegation to a specified up to a minimum balance.
 
- - `pub fn schedule_xcmp_task_through_proxy(origin: OriginFor<T>, provided_id: Vec<u8>, schedule: ScheduleParam, para_id: ParaId, currency_id: T::CurrencyId, xcm_asset_location: VersionedMultiLocation, encoded_call: Vec<u8>, encoded_call_weight: Weight, schedule_as: T::AccountId) -> DispatchResult` - Schedule a round of campaign by the committee. The method will decide what projects are included as grant projects.
+ - `pub fn schedule_dynamic_dispatch_task(origin: OriginFor<T>, provided_id: Vec<u8>, schedule: ScheduleParam, call: Box<<T as Config>::Call>) -> DispatchResult` - Schedule a task that will dispatch a call.
 
- - `pub fn schedule_auto_compound_delegated_stake_task(origin: OriginFor<T>, execution_time: UnixTime, frequency: Seconds, collator_id: AccountOf<T>, account_minimum: BalanceOf<T>) -> DispatchResult` - Cancel a whole round of campaign.
+ - `pub fn cancel_task(origin: OriginFor<T>, task_id: TaskId<T>) -> DispatchResult` - Tasks can only can be cancelled by their owners.
 
- - `pub fn schedule_dynamic_dispatch_task(origin: OriginFor<T>, provided_id: Vec<u8>, schedule: ScheduleParam, call: Box<<T as Config>::Call>) -> DispatchResult` - Finalize a round by the committee. When called, the function calculate matching funds for each grant project.
-
- - `pub fn cancel_task(origin: OriginFor<T>, task_id: TaskId<T>) -> DispatchResult` - Contribute to a grant project during a campaign, called by users.
-
- - `pub fn force_cancel_task(origin: OriginFor<T>, owner_id: AccountOf<T>, task_id: TaskId<T>) -> DispatchResult` - Make allocated grant funds available for the developer team to withdraw, called by the committee. The method allows for fund dispensing upon milestone delivery. For example, 300 DOTs were allocated to a team's funding during campaign finalization, and the committee can approve 100 DOTs after the first month, and 100 DOTs every month after. 
-
- - `pub fn cancel(origin, round_index: RoundIndex, project_index: ProjectIndex) -> DispatchResult` - Cancel a project by the committee, usually due to the reason that the project is found at foul play or withdrawal. This method can be called after the campaign start block and before campaign finalization. When this method is called, no more contribution could be made and the previous contribution from users will be returned. When cancelled, the grant project will receive no matching fund during finalization.
+ - `pub fn force_cancel_task(origin: OriginFor<T>, owner_id: AccountOf<T>, task_id: TaskId<T>) -> DispatchResult` - Sudo can force cancel a task.
  
 ### Development Guideline
 
@@ -222,11 +206,11 @@ For example:
 https://github.com/OAK-Foundation/OAK-blockchain/blob/master/pallets/automation-time/src/lib.rs#L622
 
 We write codes to cancel a round.
-1. We read round struture from Rounds storage by round_index.
-1. Set round.is_cancel to true.
-1. Save round back to storage.
-1. Dispatch a event to inform user.
+1. Check origin permissions.
+2. Get the user's task from AccountTasks storage.
+3. Remove the task.
+4. Dispatch a `TaskCancelled` event to inform user in remove_task function.
 
-![code](../../assets/img/pallet-development/code.jpg)
+![code](../../assets/img/pallet-development/code.png)
 
 For more information about the development of Substrate blockchain, please refer to [substrate.dev](https://substrate.dev/).
