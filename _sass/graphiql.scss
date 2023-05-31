@@ -1,0 +1,45 @@
+.graphiql-container {
+  min-height: 500px;
+  .graphiql-sidebar, .graphiql-session-header {
+    display: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .graphiql-session {
+    margin-top: 8px;
+  }
+
+  .graphiql-sessions {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .graphiql-editors.full-height {
+    margin-top: 0 !important;
+  }
+}
+
+.run-graphql-wrapper {
+  position: absolute;
+  right: 0;
+  z-index: 5;
+  bottom: 5px;
+  margin: 0px 14px 0px 28px;
+}
+
+.run-graphql-button {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  border-radius: 100%;
+  transition: background-color 100ms ease 0s;
+  background-color: rgb(115, 127, 136);
+  border: 6px solid rgb(238, 239, 240);
+  cursor: pointer;
+  user-select: none;
+}
