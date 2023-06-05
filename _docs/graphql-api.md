@@ -67,7 +67,7 @@ The best way to discover these models and their filters is through GraphiQL. Cli
 For each model in schema, you will know 3 things: what fields a model
 have, what filters the model support and how to sort the data.
 
-#### "What fields are included in the model
+#### What fields are included in the model
 
 Exploring a model let you know what data we offer. For example, when we look into the Event models, we can observe the following fields.
 
