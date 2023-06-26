@@ -73,7 +73,7 @@ polkadotXcm.send() call. However, since Turing Staging has removed sudo, we are 
 1. Open chain A’s [polkadot.js app](https://polkadot.js.org/apps).
 2. Navigate to Governance -> Democracy, and click on Submit preimage.
 3. Within submit preimage popup, select `polkadotXcm.send` with the below parameters, copy the **preimage hash**, and submit.
-   - destination: V1 {XcmV1MultiLocation { parents: 1, interior: Here}}
+   - destination: V3 {XcmV1MultiLocation { parents: 1, interior: Here}}
    - message:
      - V3 (or latest supported version)
      - Add the below 5 instructions to the message
