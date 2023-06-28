@@ -14,9 +14,9 @@ The APIs and Polkadot{.js} libraries on this page allow users and multi-chain ap
  - paying over time (recurring payments on a foreign chain),
  - anything else you can do on supported parachains, sometime(s) in the future.
 
-1. `scheduleDynamicDispatchTask` can be used to schedule execution of any extrinsic or batch of extrinsics on-chain.
+2. `scheduleDynamicDispatchTask` can be used to schedule execution of any extrinsic or batch of extrinsics on-chain.
 
-1. `cancelTask` can be used to cancel any existing automation tasks (must be from the account which created the task). 
+3. `cancelTask` can be used to cancel any existing automation tasks (must be from the account which created the task). 
 
 Head over to [Price Automation](https://docs.oak.tech/docs/automation-price-apis/) if you want to trigger future transactions using any data other than "time".
 
