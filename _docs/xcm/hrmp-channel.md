@@ -7,15 +7,15 @@ date: 2022-12-12
 ---
 
 # About HRMP Channel
-An HRMP channel enables a one-way communication between two parachains. There are a few pre-requisites for a chain A to open a channel to chain B.
+An HRMP (Horizontal Relay Messaging Protocol) channel enables **bidirectional** communication between two parachains. In order for chain A to open a channel to chain B, there are a few prerequisites that must be met:
 
-First, both chains are already connected with the same relay chain such as Kusama.
+Firstly, both chains must already be connected to the same relay chain, such as Kusama.
 
-Second, once connected with the relay chain, a parachain can send XCM message to it, but not its other parachains. That’s why chain A needs to send requests to the relay chain, indicating that it wants to build a trusted channel with chain B.
+Secondly, once a parachain is connected to a relay chain, it can send XCM messages to the relay chain, but it cannot directly communicate with sibling parachains. This is why Chain A needs to submit requests to the relay chain, indicating its intention to establish a trusted channel with Chain B.
 
-Lastly, it takes two requests for a channel to establish. Taking A -> B channel as an example, A needs to call `hrmp.hrmpInitOpenChannel()` for the request, and then B needs to call `hrmp.hrmpAcceptOpenChannel()` to accept it. 
+Lastly, in order to establish a channel in one direction, two requests are necessary, one from the sender and the other from the recipient. As an example, for communication from parachain A to parachain B, A must call `hrmp.hrmpInitOpenChannel()` for the request, and B must then call `hrmp.hrmpAcceptOpenChannel()` to accept it.
 
-Note that depending on product usage, sometimes a one-way channel is sufficient between two parachains, but in order to build a two-way channel, another pair of init and accept calls in the opposite direction are required.
+Note that depending on product usage, sometimes a one-way channel is sufficient between two parachains, but in order to build a bidirectional channel, another pair of init and accept calls in the opposite direction are required.
 
 To checkout what channels have been established on Polkadot and Kusama, check out https://dotsama-channels.vercel.app/#/. A request channel is shown by a dashed red line while and accept request is a solid teal line.
 
@@ -47,7 +47,7 @@ hrmp.hrmpAcceptOpenChannel(sender: 2114)
   hrmpMaxParathreadInboundChannels: 0
   hrmpChannelMaxMessageSize: 102,400 <===
 ```
-> Besides the above two parameters, the **hrmpSenderDeposit** is also very important, as it states how many relay chain token deposit required for open the channel. On Rococo it is 0 ROC, but Polkadot takes 10 DOTs to open a channel and to accept it. Note that those funds need to be deposited into the parachain’s **sovereign account**.
+> Besides the above two parameters, the **hrmpSenderDeposit** is also very important, as it states how many relay chain token deposit required for open the channel. On Rococo it is 0 ROC, but Polkadot takes 10 DOTs to open a channel and to accept it. Note that those funds need to be deposited into the parachain’s **sovereign account** ([view on Subscan](https://kusama.subscan.io/parachain/2114)).
 
 Although we understand the two calls now, we cannot call them directly. Why? Because those two extrinsics a) happens on Rococo, and b) needs sudo privilege to call. Since none of the parachains has that permission they can’t use the `hrmp` extrinsic on Rococo directly. The way is to use `polkadotXcm.send` extrinsic from the parachain to send over the `hrmp` call as a payload.
 
@@ -60,32 +60,32 @@ The first step is to prepare an encoded call data for the payload. Here we are u
     - recipient: 2006
     - proposedMaxCapacity: 1000
     - proposedMaxMessageSize: 102400
-4. Copy and store the encoded call data for later, in this case 0x3c00d6070000e803000000900100
-5. Repeat step 1 to 4 to get the encoded call data for the hrmpAcceptOpenChannel.
+4. **Copy and store the encoded call data** 0x3c00d6070000e803000000900100 for later use.
+5. Repeat step 1 to 4 to get the encoded call data for the `hrmp.hrmpAcceptOpenChannel()`.
 ![hrmp.hrmpInitOpenChannel() Screenshot](../../../assets/img/hrmp-channel/hmrpInitOpenChannel.png)
 
 ## Send the encoded call via XCM
 Next, we explain how to send the payload via polkadotXcm pallet. Please make sure polkadot’s `pallet-xcm` pallet is integrated in your chain.
 
-If you have a **sudo** account on your chain, you could construct the below polkadotXcm.send() call right from it. However, since Turing Staging has removed sudo, we are using Governance to execute the call below.
+If you have a **sudo** account on your chain, you can use it to construct the 
+polkadotXcm.send() call. However, since Turing Staging has removed sudo, we are using Governance to execute the call. For quick access, here is a link to an [Encoded call data example for polkadotXcm.send()](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics/decode/0x29000301000314000400000000070010a5d4e81300000000070010a5d4e800060002286bee419c383c00e7070000e803000000900100140d01000001000921)
 
 1. Open chain A’s [polkadot.js app](https://polkadot.js.org/apps).
 2. Navigate to Governance -> Democracy, and click on Submit preimage.
 3. Within submit preimage popup, select `polkadotXcm.send` with the below parameters, copy the **preimage hash**, and submit.
-   - destination: V1 {XcmV1MultiLocation { parents: 1, interior: Here}}
+   - destination: V3 {XcmV1MultiLocation { parents: 1, interior: Here}}
    - message:
-     - V2 (or latest supported version)
-     - Add 5 instructions to the message
+     - V3 (or latest supported version)
+     - Add the below 5 instructions to the message
      - **WithdrawAsset**: {Concrete {0, Here}, Fungible {1000000000000}}
-        
-        The value is 1,000,000,000,000 units, or 1 ROC; 1 DOT or 1 KSM is sufficient to execute this, but the parachain’s sovereign account on the relay chain needs to be sufficiently funded.
+        The phrase `Concrete {0, Here}` refers to an asset native to the recipient, such as KSM on Kusama. The value is 1,000,000,000,000 units, or 1 KSM, which is enough to execute the XCM. Keep in mind that the parachain's sovereign account on the relay chain must be adequately funded.
      - **BuyExecution**: {Concrete {0, Here}, Fungible {1000000000000}, Unlimited}
         
         The number value is the same as that in WithdrawAsset
 
-     - **Transact**: {Native, 1000000000, <encoded_call_data>}
+     - **Transact**: {Native, (1000000000, 10000), <encoded_call_data>}
         
-        Use the encoded call data prepared above; the second parameter is max_weight, whose value is 1,000,000,000 and can’t be wrong.
+        Use the encoded call data prepared above; the second parameter is max_weight(refTime, proofSize), whose value is (1,000,000,000, 10,000) and can’t be wrong.
      - **RefundSurplus**
      - **DepositAsset**: {Wild {All}, 1, {parents: 0, interior: X1(Parachain(2114))}}
         
@@ -133,9 +133,26 @@ tokenDecimals: 10
 ```
 
 ## Turing Staging
-Parachain sovereign account: 5Ec4AhNzVAVwDR54oqgWQ5YSoPbxXathSrQqTmqkF5o7xe6y
+The below details can be viewed on [Rococo Subscan](https://rococo.subscan.io/parachain/2114).
+
+Sovereign Account (Rococo V1): `5Ec4AhNzVAVwDR54oqgWQ5YSoPbxXathSrQqTmqkF5o7xe6y`
+
+Sovereign Account (Turing Staging): `5Dt6dpkWPwLaH4BBCKJwjiWrFVAGyYk3tLUabvyn4v7KtESG`
+
+Sovereign Account (Parachain): `0x7369626c42080000000000000000000000000000000000000000000000000000`
 
 ## Turing Network
-Encoded account: `0x7061726142080000000000000000000000000000000000000000000000000000`\
-[Turing open channel call](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics/decode/0x29000101000214000400000000070088526a741300000000070088526a7400060003005ed0b2183c01dc070000140d010004000101007061726142080000000000000000000000000000000000000000000000000000) - do this call from sudo tab or via governance.
+The below details can be viewed on [Kusama Subscan](https://kusama.subscan.io/parachain/2114).
+
+Sovereign Account (Kusama): `F7fq1is7XWry4tWaYVZJ2uSwytCLFhsuEFarS7hit1chXtq`
+
+Sovereign Account (Turing Network): `67y2xkd8rZD7gapMM7EA8pug4rSvUCQjaoTm95mVEcTiR3w1`
+
+Sovereign Account (Parachain): `0x7061726142080000000000000000000000000000000000000000000000000000`
+
+[Encoded call data example for polkadotXcm.send()](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics/decode/0x29000301000314000400000000070010a5d4e81300000000070010a5d4e800060002286bee419c383c00e7070000e803000000900100140d01000001000921)
+
+To perform this call, you can use the Sudo extrinsics of the Governance tab on Polkadot.js Apps interface.
+
+
 
