@@ -202,3 +202,13 @@ oak-collator parachain-param ... \
  --blocks-pruning=archive --state-pruning=archive
 ```
 
+You can monitor the memory with command such as 
+
+```
+free -h
+```
+
+Or using tool such as `htop`(available on apt with `apt-get install htop`) and observe that the memory only grow up rapidly and eventually lead to an OOM and being kill by the kernel.
+
+OOM log can also see with `dmesg` and search for `Out of memory`, `Kill process`
+
