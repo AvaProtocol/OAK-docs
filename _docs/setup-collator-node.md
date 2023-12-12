@@ -164,3 +164,56 @@ While you're blocks are syncing, monitor the initialization, especially for the 
 
 ### Step 5: Onboard your collator
 Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [How to register as a collator](../collators/#how-to-register-as-a-collator)
+
+## Setup a RPC node
+
+Oak provide an RPC which everyone can use at rpc.turing.oak.tech. It handle both of JSON RPC and websocket request.
+
+If you plan to run a node to serve RPC yourself, or have been running a RPC you can use these below parameter:
+
+```
+oak-collator --rpc-max-connections=1000 --rpc-cors=all
+```
+
+If you want to lock down to a specific hostname you can use:
+
+```
+oak-collator --rpc-max-connections=1000 --rpc-cors=wss://host-name,https://host-name
+```
+
+### 2.1.0 upgrade
+
+If you have been upgrade from pre 2.1.0 you need to adjust your RPC param as below
+
+1. we no longer need to specify `ws-port` for parachain. all the `ws-*` param is removed.
+2. you would need to move those into `rpc` such as `--rpc-max-connections=5000 --rpc-cors=all`
+
+
+### Common issues
+
+#### Memory consumption is high and not going down
+
+If you are running into a memory issue where oak-collator memory consumption won't go down, you can try to work-around this by disabling relay chain block pruning using the below parameter
+
+```
+oak-collator parachain-param ... \
+ -- \
+ --normal-relaychain-param-here \
+ --blocks-pruning=archive --state-pruning=archive
+```
+
+You can monitor the memory with command such as 
+
+```
+free -h
+
+# Example output
+              total        used        free      shared  buff/cache   available
+Mem:          7.6Gi       3.6Gi       1.4Gi        78Mi       2.6Gi       3.6Gi
+Swap:            0B          0B          0B
+```
+
+Or using tool such as `htop`(available on apt with `apt-get install htop`) and observe that the memory only grow up rapidly and eventually lead to an OOM and being kill by the kernel.
+
+OOM log can also see with `dmesg` and search for `Out of memory`, `Kill process`
+
