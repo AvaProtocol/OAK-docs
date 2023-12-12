@@ -206,6 +206,11 @@ You can monitor the memory with command such as
 
 ```
 free -h
+
+# Example output
+              total        used        free      shared  buff/cache   available
+Mem:          7.6Gi       3.6Gi       1.4Gi        78Mi       2.6Gi       3.6Gi
+Swap:            0B          0B          0B
 ```
 
 Or using tool such as `htop`(available on apt with `apt-get install htop`) and observe that the memory only grow up rapidly and eventually lead to an OOM and being kill by the kernel.
