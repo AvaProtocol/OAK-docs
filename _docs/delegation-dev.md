@@ -3,7 +3,7 @@ title: Delegation via Extrinsics
 subtitle: How to stake to a collator and earn rewards
 author: charles
 tags: [delegator]
-date: 2022-10-03
+date: 2024-02-19
 ---
 This guide provides links and instructions for staking by delegating an existing Turing Network collator. See [Collator Overview](https://docs.oak.tech/docs/collators/) for instructions on setting up your own collator.
 
@@ -102,6 +102,27 @@ Currently, everything related to staking needs to be accessed via the Extrinsics
 - `candidateDelegationCount`: Values ​​are available from section above as `2b. Candidate Delegation Count`. Each time another delegator delegates funds to a given collator, this number increases by 1 for that specific collator.
 - `delegationCount`: Values ​​are available from the section above as `2c. Delegation Count`. Each time you delegate to another collator, this number increases by 1. 
 
+## How to unstake TUR using PolkadotJS
+
+The unstaking process involves two essential steps.
+
+1. Initiate the unstaking process by submitting a `parachainStaking.scheduleRevokeDelegation` extrinsic to schedule the revocation of delegation.
+
+    ![scheduleRevokeDelegation](../../assets/img/staking-delegation/schedule-revoke-delegation.jpg)
+
+    - `collator`: Specify the collator you wish to unstake.
+
+    The delegator will be scheduled for revocation from the specified collator. The delegator continues to earn rewards until the completion of the `RevokeDelegationDelay`, which is set at 24 rounds (approximately 48 hours) on the Turing Network.
+
+2. After the `RevokeDelegationDelay` period, the delegator must execute a second call, `parachainStaking.executeDelegationRequest`.
+
+    ![executeDelegationRequest](../../assets/img/staking-delegation/execute-delegation-request.jpg)
+
+    - `delegator`: Your staking wallet.
+    - `candidate`: Specify the collator you wish to unstake.
+
+    Upon completion of this step, the unstaking process is immediately finalized, and your staked funds are released, becoming available for transfer within your wallet.
+
 ## FAQ
 
 ### How do I check how many TUR rewards I’ve received?
@@ -126,4 +147,5 @@ _Note: The source of truth for these values is the chain state and constants, so
 | Maximum Number of Delegators per Collator                     | 300                                                        |
 | Round Length `parachainStaking.round`                         | 600 blocks or ~2 hours                                     |
 | Rewards payout `const parachainStaking.rewardPaymentDelay`    | Time left to complete current round + 2 rounds or ~4 hours |
+| Rounds before the delegator revocation can be executed `const parachainStaking.RevokeDelegationDelay`    | 24 rounds (48 hours) |
 | Inflation `parachainStaking.inflationConfig`                  | 5.00% annually                                             |
