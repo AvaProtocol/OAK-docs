@@ -121,7 +121,7 @@ The unstaking process involves two essential steps.
     - `delegator`: Your staking wallet.
     - `candidate`: Specify the collator you wish to unstake.
 
-    The unstaking process will be successfully completed immediately.
+    Upon completion of this step, the unstaking process is immediately finalized, and your staked funds are released, becoming available for transfer within your wallet.
 
 ## FAQ
 
