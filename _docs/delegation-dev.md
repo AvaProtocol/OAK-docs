@@ -104,22 +104,24 @@ Currently, everything related to staking needs to be accessed via the Extrinsics
 
 ## How to unstake TUR using PolkadotJS
 
-Submit an `parachainStaking.scheduleRevokeDelegation` extrinsic to schedule to revoke delegation.
+The unstaking process involves two essential steps.
 
-![scheduleRevokeDelegation](../../assets/img/staking-delegation/schedule-revoke-delegation.jpg)
+1. Initiate the unstaking process by submitting a `parachainStaking.scheduleRevokeDelegation` extrinsic to schedule the revocation of delegation.
 
-- `collator`: The collator you want to unstake.
+    ![scheduleRevokeDelegation](../../assets/img/staking-delegation/schedule-revoke-delegation.jpg)
 
-The delegator will be scheduled to be revoked from this collator. The delegator continue to earn reward until `RevokeDelegationDelay` which is 24 rounds(about 48 hours) on Turing Network.
+    - `collator`: Specify the collator you wish to unstake.
 
-After `RevokeDelegationDelay`, the delegator need to execute a second call `parachainStaking.executeDelegationRequest`.
+    The delegator will be scheduled for revocation from the specified collator. The delegator continues to earn rewards until the completion of the `RevokeDelegationDelay`, which is set at 24 rounds (approximately 48 hours) on the Turing Network.
 
-![executeDelegationRequest](../../assets/img/staking-delegation/execute-delegation-request.jpg)
+2. After the `RevokeDelegationDelay` period, the delegator must execute a second call, `parachainStaking.executeDelegationRequest`.
 
-- `delegator`: Your staking wallet.
-- `candidate`: The collator you want to unstake.
+    ![executeDelegationRequest](../../assets/img/staking-delegation/execute-delegation-request.jpg)
 
-You will successfully unstake immediately.
+    - `delegator`: Your staking wallet.
+    - `candidate`: Specify the collator you wish to unstake.
+
+    The unstaking process will be successfully completed immediately.
 
 ## FAQ
 
