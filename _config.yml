@@ -91,7 +91,7 @@ share:
 
 # Default footer image settings
 footer:
-    copyright:      © 2022 Ava Protocol Foundation. All rights reserved.
+    copyright:      © 2022 Ava Protocol. All rights reserved.
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
 # disqus:
