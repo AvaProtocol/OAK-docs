@@ -5,7 +5,7 @@ author: charles
 tags: [delegator]
 date: 2024-02-19
 ---
-This guide provides links and instructions for staking by delegating an existing Turing Network collator. See [Collator Overview](https://docs.oak.tech/docs/collators/) for instructions on setting up your own collator.
+This guide provides links and instructions for staking by delegating an existing Turing Network collator. See [Collator Overview](https://avaprotocol.org/docs/collators/) for instructions on setting up your own collator.
 
 _Please exercise caution when following links to external resources that are not maintained or tested by the Ava Protocol team!_
 

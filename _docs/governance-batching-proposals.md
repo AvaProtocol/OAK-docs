@@ -23,7 +23,7 @@ Allowing multiple calls to be executed in a single dispatch can be useful for a 
 
 ### Parallel & Sequential
 
-If you want to include multiple actions under a singular governance pre-image, first you must determine if the actions of the request can be run in **parallel** or will need to be run **sequentially**. In most cases, we recommend you to use the sequential method to construct the actions in order. For more information about the process of starting a proposal, check out our documentation for creating a proposal on the Turing network [here](https://docs.oak.tech/docs/governance-propose-change/).
+If you want to include multiple actions under a singular governance pre-image, first you must determine if the actions of the request can be run in **parallel** or will need to be run **sequentially**. In most cases, we recommend you to use the sequential method to construct the actions in order. For more information about the process of starting a proposal, check out our documentation for creating a proposal on the Turing network [here](https://avaprotocol.org/docs/governance-propose-change/).
 
 - **Parallel** - All actions will happen simultaneously.
 
@@ -111,4 +111,4 @@ An example of a successful batch is displayed below.
 
 To review the entire example on Subsquare click the link [here](https://turing.subsquare.io/council/motion/1261270_0x76cc222d1f650eca64fd61e2ab2616411b9f15c41b9264c6848805f54328ac08).
 
-To review the example on Polkassembly click the link [here](https://docs.oak.tech/).
+To review the example on Polkassembly click the link [here](https://avaprotocol.org/).
