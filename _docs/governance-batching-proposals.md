@@ -8,7 +8,7 @@ date: 2022-12-16
 
 The following document provides information on how to batch governance calls using Polkadot.js and can be used for proposals, council motions, and external proposals. 
 
-The information can be used for creating proposals on the Turing Network, Turing Staging, and OAK Network. Though the methods will also work on other parachains.
+The information can be used for creating proposals on the Turing Network, Turing Staging, and Ava Protocol. Though the methods will also work on other parachains.
 
 ### Introduction
 

@@ -1,5 +1,5 @@
 ---
-title: About OAK Network
+title: About Ava Protocol
 subtitle: Web3's hub for cross-chain automation.
 author: chris
 tags: [architecture]
@@ -43,7 +43,7 @@ Set up once, and the transaction can be triggered on-chain, care-free.
 Different from EVM smart contracts, many core utility functions are secured by the network.
 
 ### Native upgradability
-Based on Substrate, OAK Network will constantly evolve with forkless runtime upgrade.
+Based on Substrate, Ava Protocol will constantly evolve with forkless runtime upgrade.
 
 ### Time-based guarantees for execution
 Users can rest assured that their event will execute at a certain time with a specific margin.

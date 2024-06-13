@@ -6,10 +6,10 @@ tags: [develop]
 date: 2021-09-01
 ---
 
-The OAK team is eager to engage developers in building the OAK Network ecosystem. In order to enhance the product’s user experience and to improve on-chain security, OAK team launched the first “Bug-Bounty” program with potential payouts of $2,500 per report.
+The OAK team is eager to engage developers in building the Ava Protocol ecosystem. In order to enhance the product’s user experience and to improve on-chain security, OAK team launched the first “Bug-Bounty” program with potential payouts of $2,500 per report.
 ## Submission Guideline
 
-1. The bug bounty program is only applicable to the OAK Network.
+1. The bug bounty program is only applicable to the Ava Protocol.
 
 2. Please read the following rules for your submission to be eligible:
 
@@ -45,7 +45,7 @@ The OAK team is eager to engage developers in building the OAK Network ecosystem
 4. Once your submission is accepted, we will contact you to collect your wallet information to issue the rewards.
 
 ## Scope
-Currently, the following OAK Network code repositories are in scope for bug bounty program:
+Currently, the following Ava Protocol code repositories are in scope for bug bounty program:
 - [OAK's blockchain code](https://github.com/OAK-Foundation/OAK-blockchain)
 - [Parachain Staking Module](https://github.com/OAK-Foundation/moonbeam/tree/oak-staging/pallets/parachain-staking)
 

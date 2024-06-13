@@ -131,7 +131,7 @@ To ensure maximum uptime, we advise you to consult our guide for automatically r
 #### Option 3: Pull Docker image
 *Note regarding Docker: while we do support Docker images, we generally do not recommend this option unless you're testing. Docker builds are less performant when running nodes than using the binary paths above.*
 
-If you opt to run the collator using Docker, you'll find the Docker builds on [OAK Network’s DockerHub](https://hub.docker.com/r/oaknetwork/turing/tags). Begin by pulling the latest image and creating a volume for your data. You can confirm the volume's creation by conducting an inspection. The following commands will guide you through these steps.
+If you opt to run the collator using Docker, you'll find the Docker builds on [Ava Protocol’s DockerHub](https://hub.docker.com/r/oaknetwork/turing/tags). Begin by pulling the latest image and creating a volume for your data. You can confirm the volume's creation by conducting an inspection. The following commands will guide you through these steps.
 
 ```bash
 docker pull oaknetwork/turing:latest

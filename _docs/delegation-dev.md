@@ -7,12 +7,12 @@ date: 2024-02-19
 ---
 This guide provides links and instructions for staking by delegating an existing Turing Network collator. See [Collator Overview](https://docs.oak.tech/docs/collators/) for instructions on setting up your own collator.
 
-_Please exercise caution when following links to external resources that are not maintained or tested by the OAK Network team!_
+_Please exercise caution when following links to external resources that are not maintained or tested by the Ava Protocol team!_
 
 ## Which wallet are you using?
 
 ### Polkadot JS ([Extrinsics](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/extrinsics))
-Keep scrolling in this document or visit one the following guides created by members of the OAK Network community:
+Keep scrolling in this document or visit one the following guides created by members of the Ava Protocol community:
 
 - Video tutorial is available in [English](https://www.youtube.com/watch?v=XDryLlbQs8g).
 - [Turing Staking Guide](https://oak-turing.pathrocknetwork.org) by pathrocknetwork, one of Turing Network's node operators.

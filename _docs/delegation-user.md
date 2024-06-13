@@ -8,7 +8,7 @@ date: 2022-10-03
 ## How to stake TUR
 This guide provides links and instructions for staking by delegating an existing Turing Network collator. See [Collator Overview](https://docs.oak.tech/docs/collators/) for instructions on setting up your own collator.
 
-_Please exercise caution when following links to external resources that are not maintained or tested by the OAK Network team!_
+_Please exercise caution when following links to external resources that are not maintained or tested by the Ava Protocol team!_
 
 ## Which wallet are you using?
 

@@ -6,10 +6,10 @@ tags: [develop]
 date: 2021-08-31
 ---
 
-## OAK Network Launch Phases
-The OAK Network mainnet launch follows a phased roll-out plan, with important milestones toward decentralization marking each phase. Please keep up-to-date with the OAK's phased roll-out plan at by viewing [the OAK Network Roadmap](https://oak-network.notion.site/oak-network/984d64e9778c4677883a9338e4abc1a6).
+## Ava Protocol Launch Phases
+The Ava Protocol mainnet launch follows a phased roll-out plan, with important milestones toward decentralization marking each phase. Please keep up-to-date with the OAK's phased roll-out plan at by viewing [the Ava Protocol Roadmap](https://oak-network.notion.site/oak-network/984d64e9778c4677883a9338e4abc1a6).
 ### 1. The PoA Launch
-The Genesis block of the OAK Network will be launched on the 2nd quarter of 2022, as a Proof of Authority (PoA) network. Governance was restricted to the single Sudo (super-user) key, which was held by the Ava Protocol to issue the commands and upgrades necessary to complete the launch process. During this time, validators start joining the network and signaling their intention to participate in consensus.
+The Genesis block of the Ava Protocol will be launched on the 2nd quarter of 2022, as a Proof of Authority (PoA) network. Governance was restricted to the single Sudo (super-user) key, which was held by the Ava Protocol to issue the commands and upgrades necessary to complete the launch process. During this time, validators start joining the network and signaling their intention to participate in consensus.
 ### 2. Nominated Proof of Stake
 Once the Ava Protocol feels confident in the stability of the network and there is a sufficient number of validator intentions, the Ava Protocol will use Sudo — a superuser account with access to governance functions — to initiate the first validator election. Following the election, the network transitioned from PoA into its second phase, Nominated Proof of Stake (NPoS). For detailed information about the consensus, please refer to the [NPoS Consensus](../consensus).
 ### 3. Enable Governance

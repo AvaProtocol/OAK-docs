@@ -26,7 +26,7 @@ Head over to [Price Automation](https://docs.oak.tech/docs/automation-price-apis
 | ----------------------- | ------------------------------------------------------------ |
 | Turing Staging (Rococo) | `rpc.turing-staging.oak.tech`                                |
 | Turing Network (Kusama) | `rpc.turing.oak.tech`                                        |
-| OAK Network (Polkadot)  | `Coming Soon!` Don't miss [the OAK crowdloan!](https://oak.tech/oak/crowdloan/) |
+| Ava Protocol (Polkadot)  | `Coming Soon!` Don't miss [the OAK crowdloan!](https://oak.tech/oak/crowdloan/) |
 
 ## Assumptions
 1. The application interface presents the user with the option to interact with a parachain's extrinsic at some time(s) in the future.

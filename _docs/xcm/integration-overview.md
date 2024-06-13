@@ -1,6 +1,6 @@
 ---
 title: Cross-chain Product Integration
-subtitle: Explain XCM and cross-chain integration work flow with OAK Network
+subtitle: Explain XCM and cross-chain integration work flow with Ava Protocol
 author: chris
 tags: [xcm]
 date: 2022-12-12

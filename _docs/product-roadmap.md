@@ -66,7 +66,7 @@ The Polkadot ecosystem enables multiple types of networks: a testnet, canary and
 - Trigges and Actions DApp Marketplace: an online marketplace where creators can submit automation DApps and consumers can opt to use them similar to [IFTTT](https://ifttt.com/explore)
 
 ### Blockchain
-- OAK Network Launch
+- Ava Protocol Launch
 - Ethereum bridge expansion
 - Private automated tasks pilot
 - Automation fees optimization

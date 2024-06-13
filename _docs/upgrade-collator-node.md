@@ -65,7 +65,7 @@ sudo systemctl restart oak-collator
 ```
 
 ### Option 3: Pull Docker image
-If you opt to run the collator using Docker, you'll find the Docker builds on [OAK Network’s DockerHub](https://hub.docker.com/r/oaknetwork/turing/tags). Pull the latest image and 
+If you opt to run the collator using Docker, you'll find the Docker builds on [Ava Protocol’s DockerHub](https://hub.docker.com/r/oaknetwork/turing/tags). Pull the latest image and 
 
 ```bash
 docker pull oaknetwork/turing:latest

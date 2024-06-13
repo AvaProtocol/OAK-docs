@@ -10,7 +10,7 @@ Automate future tasks including switching or splitting Turing Network staking de
 
 In case you missed it, [StakeTUR](http://staketur.com/), [Nova Wallet](https://novawallet.io/), and [SubWallet](https://subwallet.app/) users are now automating web3 chores and boosting rewards by automatically staking spare $TUR. But Turing Network users have increasingly asked to automate other tasks as well-automating payments, splitting staking delegations, switching delegation to another collator, and delegating indefinitely.
 
-Rather than enable each of these use cases independently, OAK Network is launching Dynamic Dispatch to:
+Rather than enable each of these use cases independently, Ava Protocol is launching Dynamic Dispatch to:
 
 1. Extend time-based automation to every extrinsic on Turing Network
 
@@ -49,6 +49,6 @@ Note that automation fees for indefinitely recurring tasks are calculated (in $T
 
 Join the OAK community on Discord for more updates and to [#brainstorm](https://discord.com/channels/840137038316699648/956658332112941086) automation workflows!
 
-## About OAK Network
+## About Ava Protocol
 
-OAK Network provides automation infrastructure that enables web3 applications to offer recurring payments, stable-cost-averaging, auto-compounding, and more. OAK's layer-one blockchain infrastructure is optimized for storing and triggering future transactions by using event-driven execution and cross-chain messaging.
+Ava Protocol provides automation infrastructure that enables web3 applications to offer recurring payments, stable-cost-averaging, auto-compounding, and more. OAK's layer-one blockchain infrastructure is optimized for storing and triggering future transactions by using event-driven execution and cross-chain messaging.
