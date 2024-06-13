@@ -1,4 +1,4 @@
-# OAK-docs
+# Ava Protocol-docs
 
 This site was developed by [Ava Protocol](https://oak.tech).
 ## Installation

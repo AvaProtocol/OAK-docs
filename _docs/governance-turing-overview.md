@@ -1,6 +1,6 @@
 ---
 title: Governance Overview
-subtitle: Overview of governance on OAK and Turing Network
+subtitle: Overview of governance on Ava Protocol and Turing Network
 author: christian
 tags: [governance]
 date: 2022-06-30

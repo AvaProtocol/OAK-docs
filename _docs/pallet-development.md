@@ -7,7 +7,7 @@ date: 2021-08-31
 ---
 
 ## Pallet Development
-OAK blockchain is a blockchain developed based on substrate.
+Ava Protocol blockchain is a blockchain developed based on substrate.
 ### Substrate
 
 Substrate is a modular framework that enables you to create purpose-built blockchains by composing custom or pre-built components.

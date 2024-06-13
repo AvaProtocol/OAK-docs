@@ -1,6 +1,6 @@
 ---
 title: Product Use Cases
-subtitle: Exploring potentials - a collection of use cases for OAK's Automation technology
+subtitle: Exploring potentials - a collection of use cases for Ava Protocol's Automation technology
 author: chris
 tags: [develop]
 date: 2022-02-03
@@ -56,11 +56,11 @@ The Price or Numeric Triggers API enables scheduling transactions based on an in
 
 ### Stop-loss order
 
-If you're keen on ensuring that you don't leave money on the table, you can send a data stream of any price or price-pair you'd like to the OAK Blockchain. Then you can indicate that when the price goes below a certain threshold, you want to swap or sell for another asset or stable.
+If you're keen on ensuring that you don't leave money on the table, you can send a data stream of any price or price-pair you'd like to the Ava Protocol Blockchain. Then you can indicate that when the price goes below a certain threshold, you want to swap or sell for another asset or stable.
 
 ### TVL detection
 
-Worried about your favorite protocol going below a certain threshold of TVL due to liquidiations, then you can rest assured that OAK can cover the use case of if the TVL drops below a certain threshold, then you can exit your liquidity in a matter of seconds (~12 seconds).
+Worried about your favorite protocol going below a certain threshold of TVL due to liquidiations, then you can rest assured that Ava Protocol can cover the use case of if the TVL drops below a certain threshold, then you can exit your liquidity in a matter of seconds (~12 seconds).
 
 Similarly, if you'd like to keep your ownership percentage at the same, you can add conditional logic to lock up more tokens to your favorite protocol.
 

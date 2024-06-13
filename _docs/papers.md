@@ -1,6 +1,6 @@
 ---
 title: Technical Papers
-subtitle: Learn more about the tokenomics and technical whitepapers of both Turing and OAK Networks
+subtitle: Learn more about the tokenomics and technical whitepapers of both Turing and Ava Protocol Networks
 author: chris
 tags: [architecture, tokenomics]
 date: 2022-09-13

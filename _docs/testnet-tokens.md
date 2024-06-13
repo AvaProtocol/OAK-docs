@@ -46,4 +46,4 @@ Please note due to spams we turned off automatic token faucet in Discord. Starti
 
 	![form](../../assets/img/testnet-tokens/form.jpg)
 
-1. OAK team member will review the application and send test tokens to you in 4 hours. Feel free to contact any admin in Discord if you don’t receive them.
+1. Ava Protocol team member will review the application and send test tokens to you in 4 hours. Feel free to contact any admin in Discord if you don’t receive them.

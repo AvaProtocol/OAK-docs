@@ -24,7 +24,7 @@ If you are power user who is familiar with Polkadot.js/apps website, please refe
 
 ### Which collator will you delegate your stake to?
 
-[StakeTur](https://staketur.com) by StakeBaby, staking applications, and wallet interfaces with staking support will provide additional information that can help you choose who to delegate. Join the [OAK Discord Server](https://discord.gg/7W9UDvsbwh) for #collator-open-chat about delegation.
+[StakeTur](https://staketur.com) by StakeBaby, staking applications, and wallet interfaces with staking support will provide additional information that can help you choose who to delegate. Join the [Ava Protocol Discord Server](https://discord.gg/7W9UDvsbwh) for #collator-open-chat about delegation.
 
 **Important disclaimer about risks**
 

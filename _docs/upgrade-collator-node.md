@@ -6,7 +6,7 @@ tags: [infra, collator]
 date: 2022-06-04
 ---
 
-Please join the [OAK Discord](https://discord.gg/7W9UDvsbwh) server to be notified of new node versions. This will be announced in technical updates channels. If are not diligent about upgrading to the lastest node version, your node may stop producing blocks and you will likely get less rewards (if you are part of the candidate pool).
+Please join the [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh) server to be notified of new node versions. This will be announced in technical updates channels. If are not diligent about upgrading to the lastest node version, your node may stop producing blocks and you will likely get less rewards (if you are part of the candidate pool).
 
 The steps below should only cause 3-5 minutes of downtime for your node, if done properly.
 
@@ -14,7 +14,7 @@ The steps below should only cause 3-5 minutes of downtime for your node, if done
 SSH to your target node, and make sure it's functioning properly by inspecting [Turing Network Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d), and your monitoring/dashboards.
 ## Step 2: Upgrade the collator application
 ### Option 1: Upgrade with Release binary
-If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK that can be found [here](https://github.com/AvaProtocol/OAK-blockchain/releases/latest). Below commands will help you download the binary via command line.
+If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by Ava Protocol that can be found [here](https://github.com/AvaProtocol/OAK-blockchain/releases/latest). Below commands will help you download the binary via command line.
 
 First, get the latest version number and store it in $version variable.
 
@@ -91,4 +91,4 @@ docker run -d -p 30333:30333 -p 9944:9944 -p 9933:9933  -v turing-data:/data
 ```
 
 ### Step 3: Monitor the upgrade result
-Ensure to monitor your node for a few minutes to verify that it maintains synchronization with other nodes. If the process is successful, the updated node version of your collator should be visible on [Turing Network Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d). Should you encounter any issues or notice any bugs during the upgrade, please feel free to reach out to our team via the [OAK Discord](https://discord.gg/7W9UDvsbwh) for assistance.
+Ensure to monitor your node for a few minutes to verify that it maintains synchronization with other nodes. If the process is successful, the updated node version of your collator should be visible on [Turing Network Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d). Should you encounter any issues or notice any bugs during the upgrade, please feel free to reach out to our team via the [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh) for assistance.

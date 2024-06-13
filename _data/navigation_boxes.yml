@@ -1,7 +1,7 @@
 # Boxes include navigation
 
-- title: How OAK Blockchain Works
-  desc: Get familiar with the key concepts behind OAK, learn about the core stack, and what it can do for your project
+- title: How Ava Protocol Blockchain Works
+  desc: Get familiar with the key concepts behind Ava Protocol, learn about the core stack, and what it can do for your project
   icon: bolt
   doc: company-overview
 
@@ -11,7 +11,7 @@
   doc: delegation-user
 
 - title: API References
-  desc: Read our documentation for OAK APIs and SDKs
+  desc: Read our documentation for Ava Protocol APIs and SDKs
   icon: code
   doc: developer-guide-overview
 

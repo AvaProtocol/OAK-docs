@@ -33,7 +33,7 @@ We will need to ensure that collators are economically incentivized to have the 
 For now, the incentives are purely rewards based since we've vetted a closed set of community collators with a solid reputation in the DotSama ecosystem.
 
 ### Turing Network - Kusama Parachain
-The Turing Network is live on Kusama. If you're interested in collating, please reach out via [OAK Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>. You will need to meet the minimum bond found in [the collator on-boarding page](../collators/#turing-network---kusama-parachain).
+The Turing Network is live on Kusama. If you're interested in collating, please reach out via [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>. You will need to meet the minimum bond found in [the collator on-boarding page](../collators/#turing-network---kusama-parachain).
 
 - [Latest binary](https://github.com/AvaProtocol/OAK-blockchain/releases/latest)
 - [Docker image repository](https://hub.docker.com/repository/docker/oaknetwork/turing)
@@ -50,7 +50,7 @@ In this step, we'll generate a node key for your collator. The simplest method t
 ### Step 2 - Start up the collator program
 
 #### Option 1: Download a release binary(Recommended)
-If you're running Ubuntu (20.04+ LTS x64), you can utilize the binary compiled by OAK, available on our [Latest Release](https://github.com/AvaProtocol/OAK-blockchain/releases/latest) page. This binary will enable you to operate your collator on your node. To download it via command line, follow the commands detailed below.
+If you're running Ubuntu (20.04+ LTS x64), you can utilize the binary compiled by Ava Protocol, available on our [Latest Release](https://github.com/AvaProtocol/OAK-blockchain/releases/latest) page. This binary will enable you to operate your collator on your node. To download it via command line, follow the commands detailed below.
 
 ```bash
 latest_url=$(curl -Lsf -w %{url_effective} https://github.com/AvaProtocol/OAK-blockchain/releases/latest/download/)
@@ -160,7 +160,7 @@ If you're successful in connecting to the network and sending your Telemetry dat
 
 ### Step 4: Sync your node
 Please ensure that both the relay chain block number and parachain block number are up to the latest block number. The logs will indicate whether or not the nodes are fully synced.
-While you're blocks are syncing, monitor the initialization, especially for the first few lines to ensure that you are pointing to the correct network. If you run into any issues, head over to the [OAK Discord](https://discord.gg/7W9UDvsbwh) for help.
+While you're blocks are syncing, monitor the initialization, especially for the first few lines to ensure that you are pointing to the correct network. If you run into any issues, head over to the [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh) for help.
 
 ### Step 5: Onboard your collator
 Once you're fully synced, you're ready to on-board as a collator. Proceed to this page to move forward and to start producing blocks. [How to register as a collator](../collators/#how-to-register-as-a-collator)

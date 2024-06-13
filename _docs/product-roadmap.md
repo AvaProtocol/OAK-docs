@@ -1,6 +1,6 @@
 ---
 title: Updates and Roadmap
-subtitle: This document covers the detail of OAK and Turing network updates and roadmap
+subtitle: This document covers the detail of Ava Protocol and Turing network updates and roadmap
 author: chris
 tags: [develop]
 date: 2022-01-04
@@ -9,14 +9,14 @@ date: 2022-01-04
 The Polkadot ecosystem enables multiple types of networks: a testnet, canary and mainnet. Below are the different networks.
 - *Turing Staging (TUR)*: testnet parachain; expect chaos and occassional downtime for the network; these tokens hold no value
 - *Turing (TUR)*: Kusama parachain (launched April 2022); this is a canary, expect chaos but limited/no downtime; these tokens do hold value
-- *OAK*: Polkadot parachain (expected to launch November 2022); this is the mainnet
+- *Ava Protocol*: Polkadot parachain (expected to launch November 2022); this is the mainnet
 
 ## 4Q2021 - Completed & Launched
 - Event Registry Proof of Concept
 
 ## 1Q2022 - Completed & Launched
 ### Apps
-- OAK Website Design Rebrand
+- Ava Protocol Website Design Rebrand
 - Kusama crowdloan for Turing (TUR) Network parachain
 
 ### Blockchain
@@ -48,7 +48,7 @@ The Polkadot ecosystem enables multiple types of networks: a testnet, canary and
 
 ## 3Q2022 - In Progress
 ### Apps
-- Polkadot crowdloan app for OAK
+- Polkadot crowdloan app for Ava Protocol
 - Auto-compounding with select partners
 - Liquidity pool compounding with select partner
 - Portfolio and other DApp integrations with additional partners for Turing

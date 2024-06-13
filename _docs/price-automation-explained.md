@@ -10,9 +10,9 @@ date: 2022-09-13
 
 ## User Experience (assumptions)
 
-Dotsama’s degens can get ready to buy the next dip, buy the spike faster, and (actually) take profits next time - OAK now supports cross-chain automation on supported Kusama parachains connected to Turing Network using a stream of data that you define. 
+Dotsama’s degens can get ready to buy the next dip, buy the spike faster, and (actually) take profits next time - Ava Protocol now supports cross-chain automation on supported Kusama parachains connected to Turing Network using a stream of data that you define. 
 
-While the naming and examples for these APIs imply a use case where the data stream is an asset price and the trigger is a swap, OAK APIs can be used by any multi-chain application to offer users the ability to perform any action at some point in the future. 
+While the naming and examples for these APIs imply a use case where the data stream is an asset price and the trigger is a swap, Ava Protocol APIs can be used by any multi-chain application to offer users the ability to perform any action at some point in the future. 
 
 Examples of “any action” include swaps (buys and sells), transfers (recurring and conditional payments), compounding yield (claim and supply / stake), and many more (any blockchain extrinsic or smart contract function). If “at some point in the future” for your user means a point or frequency in “time”, then you’re looking for the [Time Trigger APIs](https://docs.oak.tech/docs/time-automation-explained/). You’re in the right place if you want to **use any off-chain data to trigger future transactions**.
 
@@ -26,13 +26,13 @@ Examples of “any action” include swaps (buys and sells), transfers (recurrin
 | ----------------------- | ------------------------------------------------------------------- |
 | Turing Staging (Rococo) | `rpc.turing-staging.oak.tech`                                       |
 | Turing (Kusama)         | In Beta testing. Contact <developers@oak.tech> to get early access. |
-| OAK (Polkadot)          | [Crowdloan launching soon!](https://oak.tech/oak/crowdloan/)        |
+| Ava Protocol (Polkadot)          | [Crowdloan launching soon!](https://oak.tech/oak/crowdloan/)        |
 
 ## Parachain Requirements
 The following requirements apply for any Kusama parachain that wishes to support cross-chain automation (including recurring payments, auto-compounding liquidity / staking rewards, automatic swaps, and more):
 
 1. **Open bi-directional HRMP channels** - [HRMP Channels and You](https://github.com/AvaProtocol/OAK-blockchain/wiki/HRMP-Channels-and-You)
-2. **Enable users to authorize future transactions powered by OAK** using a proxy pallet and XCM origin converter.
+2. **Enable users to authorize future transactions powered by Ava Protocol** using a proxy pallet and XCM origin converter.
     
     2a. [Proxy pallet implementation](https://github.com/AvaProtocol/substrate-parachain-template/pull/12)
     
@@ -99,7 +99,7 @@ This example updates the asset named `TUR:MGX` with a new value of `2`:
 
 Scheduling a future task enables your application and users to define trigger conditions that include a percentage change in a data stream’s value in either direction (up or down).
 
-Any account on a connected parachain can authorize OAK to transact in the future. Proxy permissions can be included in the batch transaction to schedule the first task if it has not already been completed. (see Parachain Requirements above)
+Any account on a connected parachain can authorize Ava Protocol to transact in the future. Proxy permissions can be included in the batch transaction to schedule the first task if it has not already been completed. (see Parachain Requirements above)
 
 `providedID` - a unique identifier for this account’s task. A single account may schedule multiple tasks for a single data stream and single direction.
 

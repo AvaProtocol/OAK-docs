@@ -26,13 +26,13 @@ Head over to [Price Automation](https://docs.oak.tech/docs/automation-price-apis
 | ----------------------- | ------------------------------------------------------------ |
 | Turing Staging (Rococo) | `rpc.turing-staging.oak.tech`                                |
 | Turing Network (Kusama) | `rpc.turing.oak.tech`                                        |
-| Ava Protocol (Polkadot)  | `Coming Soon!` Don't miss [the OAK crowdloan!](https://oak.tech/oak/crowdloan/) |
+| Ava Protocol (Polkadot)  | `Coming Soon!` Don't miss [the Ava Protocol crowdloan!](https://oak.tech/oak/crowdloan/) |
 
 ## Assumptions
 1. The application interface presents the user with the option to interact with a parachain's extrinsic at some time(s) in the future.
     1. The time(s) may be defined by the user or the application.
     2. The target parachain may be any parachain that satisfies [Parachain Prerequisites](https://docs.oak.tech/docs/time-automation-explained/#parachain-prerequisites).
-2. The user has created an OAK-derived proxy that can (only) be used by OAK (or Turing) to trigger future transactions via XCM.
+2. The user has created an Ava Protocol-derived proxy that can (only) be used by Ava Protocol (or Turing) to trigger future transactions via XCM.
     1. See [Application Prerequisites: Derive proxy identifier](https://docs.oak.tech/docs/time-automation-explained/#derive-proxy-identifier)
 3. The user's Turing account contains a balance that is sufficient for automation fees.
     1. See [Application Prerequisites: Get fees](https://docs.oak.tech/docs/time-automation-explained/#get-fees)
@@ -49,7 +49,7 @@ Endpoints and libraries will vary by foreign chain.
 ## Scheduling a cross-chain task (scheduleXcmpTask)
 Automate a future transaction using the available RPCs or [OAK.js](https://docs.oak.tech/docs/oak-js/). 
 
-OAK (Turing) will communicate the encoded extrinsic call to the specified parachain at the scheduled time(s) using a proxy that can be used only for future transactions and only by OAK (Turing) via XCM. 
+Ava Protocol (Turing) will communicate the encoded extrinsic call to the specified parachain at the scheduled time(s) using a proxy that can be used only for future transactions and only by Ava Protocol (Turing) via XCM. 
 
 #### API
 ```rust
@@ -160,7 +160,7 @@ Unique identifiers for the proxy (unique for each account) and the task ID (uniq
 Applications are recommended to store identifiers in order to more easily reference existing accounts and tasks in the future (to [Cancel Task](https://docs.oak.tech/docs/time-automation-explained/#cancel-a-task), for example).
 
 ### Derive proxy identifier
-This API will return a deterministic proxy identifier using Account ID for both new and existing accounts. This proxy can be used only for future transactions and only by OAK (Turing) Network via XCM.
+This API will return a deterministic proxy identifier using Account ID for both new and existing accounts. This proxy can be used only for future transactions and only by Ava Protocol (Turing) Network via XCM.
 
 While the proxy implementation may vary by parachain, each account must create a proxy on the chain where the transaction is to be executed prior to scheduling any automation tasks. Many Substrate wallets streamline the multi-chain user experience to enable creating the proxy (on the foreign chain) while scheduling automation (on Turing) without manually changing networks. 
 
@@ -187,7 +187,7 @@ curl --location --request POST 'https://rpc.turing-staging.oak.tech' \
 Replace `SS58_ACCOUNT_ID` with the account you want to lookup.
 
 ### Derive task identifier
-This API will return a deterministic task identifier using a Provided ID and Account ID for both new and existing tasks. Generating and using your own unique (provided) ID to derive the OAK Task ID will allow tasks to be more easily referenced in the future (to [Cancel Task](https://docs.oak.tech/docs/time-automation-explained/#cancel-a-task), for example).
+This API will return a deterministic task identifier using a Provided ID and Account ID for both new and existing tasks. Generating and using your own unique (provided) ID to derive the Ava Protocol Task ID will allow tasks to be more easily referenced in the future (to [Cancel Task](https://docs.oak.tech/docs/time-automation-explained/#cancel-a-task), for example).
 
 #### API
 ```rust
@@ -275,7 +275,7 @@ Replace `EXTRINSIC` with encoded call data of `automationTime.scheduleDynamicDis
 # Parachain Prerequisites
 The following requirements apply for any Kusama parachain that wishes to support cross-chain automation (including recurring payments, auto-compounding liquidity / staking rewards, automatic swaps, and more):
 
-## Enable support for XCM communication from OAK
+## Enable support for XCM communication from Ava Protocol
 Open [bi-directional HRMP Channels](https://github.com/AvaProtocol/OAK-blockchain/wiki/HRMP-Channels-and-You) with Turing Network (Kusama relay chain) and Turing Staging (Rococo relay chain):
 
 #### Request (Sample)
@@ -289,12 +289,12 @@ Open [bi-directional HRMP Channels](https://github.com/AvaProtocol/OAK-blockchai
 ## 2. Enable proxy account creation and permissioning
 Enable users to create a proxy account that can be used only for future transactions and only by Turing Network via XCM.
 
-[OAK Foundation: Create account](https://github.com/AvaProtocol/substrate-parachain-template/pull/12) provides an example proxy pallet implementation. 
+[Ava Protocol: Create account](https://github.com/AvaProtocol/substrate-parachain-template/pull/12) provides an example proxy pallet implementation. 
 
-[OAK Foundation: Allow delegation](https://github.com/AvaProtocol/substrate-parachain-template/pull/14) provides an example delegation via proxy pallet. This example demonstrates the most permissive proxy type and may differ from the proxy implementation on other parachains.
+[Ava Protocol: Allow delegation](https://github.com/AvaProtocol/substrate-parachain-template/pull/14) provides an example delegation via proxy pallet. This example demonstrates the most permissive proxy type and may differ from the proxy implementation on other parachains.
 
 ## 3. Enable liquidity for fees (if applicable)
-Enable users to obtain $TUR or $OAK to pay for automation fees:
+Enable users to obtain $TUR or $Ava Protocol to pay for automation fees:
 
 1. The inclusion fee to store the future extrinsic(s).
 2. The execution fee when the future extrinsic(s) are triggered.
@@ -303,6 +303,6 @@ Enable users to obtain $TUR or $OAK to pay for automation fees:
 Let's discuss if you would like to allow users to pay fees in a foreign token. 
 
 ## 4. Enable smart contract automation (if applicable)
-Enable OAK to interact with smart contracts on your parachain using XCM. 
+Enable Ava Protocol to interact with smart contracts on your parachain using XCM. 
 
 Examples coming soon

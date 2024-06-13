@@ -5,8 +5,8 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site title and description
-title:              OAK Docs
-description:        Documentation for OAK Blockchain
+title:              Ava Protocol Docs
+description:        Documentation for Ava Protocol Blockchain
 lang:               en
 
 # Site subpath, e.g. /blog
@@ -91,7 +91,7 @@ share:
 
 # Default footer image settings
 footer:
-    copyright:      © 2022 OAK Foundation. All rights reserved.
+    copyright:      © 2022 Ava Protocol Foundation. All rights reserved.
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
 # disqus:

@@ -9,12 +9,12 @@ date: 2022-06-01
 
 ## Preparation
 
-To prepare for setting up a `systemd` service for the OAK binary, you'll need the
+To prepare for setting up a `systemd` service for the Ava Protocol binary, you'll need the
 following information:
 
 1. `INSTALLATION_DIR`: Directory where downloaded the `oak-collator` binary
 2. `NODE_NAME`: Custom identifier for your node
-3. `DATA_DIR`: Directory where you would like to store OAK blockchain data
+3. `DATA_DIR`: Directory where you would like to store Ava Protocol blockchain data
 4. `NODE_KEY`: Key for running your collator
 5. `USER`: User that the service should run as
 6. `GROUP`: Group that the service should run as
@@ -22,12 +22,12 @@ following information:
 ## Installation
 
 Once you have prepared the required information, you can use the following
-service definition to run the OAK collator.  On Debian based distributions, this
+service definition to run the Ava Protocol collator.  On Debian based distributions, this
 file should be placed at `/etc/systemd/system/oak-collator.service`.
 
 ```
 [Unit]
-Description="OAK Collator"
+Description="Ava Protocol Collator"
 After=network.target
 StartLimitIntervalSec=0
 
@@ -67,7 +67,7 @@ systemctl start oak-collator
 
 systemd will automatically start your collator when you restart your system or
 if the process is killed. Here are some other commands that might be useful
-while operating an OAK node.
+while operating an Ava Protocol node.
 
 * `systemctl status oak-collator --no-pager --full`
   
@@ -81,4 +81,4 @@ while operating an OAK node.
 
 ## Monitoring & Alerting
 
-Since OAK is a Substrate-based project, you can use Node Exporter, Prometheus and Grafana to monitor your nodes. For more information, please follow [this Substrate tutorial](https://docs.substrate.io/tutorials/v3/node-metrics/).
+Since Ava Protocol is a Substrate-based project, you can use Node Exporter, Prometheus and Grafana to monitor your nodes. For more information, please follow [this Substrate tutorial](https://docs.substrate.io/tutorials/v3/node-metrics/).

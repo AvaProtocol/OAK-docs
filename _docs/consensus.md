@@ -30,7 +30,7 @@ The approach is invented and applied in Polkadot Network. This is an approach of
 In below sections we will examine each component separately.
 <a name="babe"></a>
 ### BABE: Block Production
-BABE (Blind Assignment for Blockchain Extension) is the block production mechanism that runs between the validator nodes and determines the authors of new blocks. BABE is comparable as an algorithm to [Ouroboros Praos](https://eprint.iacr.org/2017/573.pdf), with some key differences in chain selection rule and slot time adjustments. BABE assigns block production slots to validators according to stake and using the OAK randomness cycle.
+BABE (Blind Assignment for Blockchain Extension) is the block production mechanism that runs between the validator nodes and determines the authors of new blocks. BABE is comparable as an algorithm to [Ouroboros Praos](https://eprint.iacr.org/2017/573.pdf), with some key differences in chain selection rule and slot time adjustments. BABE assigns block production slots to validators according to stake and using the Ava Protocol randomness cycle.
 
 Validators in Ava Protocol will participate in a lottery in every slot that will tell them whether or not they are the block producer candidate for that slot. Slots are discrete units of time, nominally 6 seconds in length. Because of this randomness mechanism, multiple validators could be candidates for the same slot. Other times, a slot could be empty, resulting in inconsistent block time.
 <a name="grandpa"></a>

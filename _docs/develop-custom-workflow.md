@@ -47,8 +47,8 @@ timestamp) and recurs at a set frequency (expressed in seconds).
 
 Note that automation fees for indefinitely recurring tasks are calculated (in $TUR) and debited from the user's account each time the task is triggered. Tasks scheduled for a finite number of occurrences still require up-front payment for automation fees.
 
-Join the OAK community on Discord for more updates and to [#brainstorm](https://discord.com/channels/840137038316699648/956658332112941086) automation workflows!
+Join the Ava Protocol community on Discord for more updates and to [#brainstorm](https://discord.com/channels/840137038316699648/956658332112941086) automation workflows!
 
 ## About Ava Protocol
 
-Ava Protocol provides automation infrastructure that enables web3 applications to offer recurring payments, stable-cost-averaging, auto-compounding, and more. OAK's layer-one blockchain infrastructure is optimized for storing and triggering future transactions by using event-driven execution and cross-chain messaging.
+Ava Protocol provides automation infrastructure that enables web3 applications to offer recurring payments, stable-cost-averaging, auto-compounding, and more. Ava Protocol's layer-one blockchain infrastructure is optimized for storing and triggering future transactions by using event-driven execution and cross-chain messaging.

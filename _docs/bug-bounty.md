@@ -6,14 +6,14 @@ tags: [develop]
 date: 2021-09-01
 ---
 
-The OAK team is eager to engage developers in building the Ava Protocol ecosystem. In order to enhance the product’s user experience and to improve on-chain security, OAK team launched the first “Bug-Bounty” program with potential payouts of $2,500 per report.
+The Ava Protocol team is eager to engage developers in building the Ava Protocol ecosystem. In order to enhance the product’s user experience and to improve on-chain security, Ava Protocol team launched the first “Bug-Bounty” program with potential payouts of $2,500 per report.
 ## Submission Guideline
 
 1. The bug bounty program is only applicable to the Ava Protocol.
 
 2. Please read the following rules for your submission to be eligible:
 
-   For UI/UX bugs: please submit the exposed bugs in OAK’s Discord group.
+   For UI/UX bugs: please submit the exposed bugs in Ava Protocol’s Discord group.
 
    For Security bugs: please submit a summary of the exposed bug to: <bugs@oak.tech>
 
@@ -66,6 +66,6 @@ We have not set a maximum reward, and the specific amount of the bounty will var
 
 All bounties will be paid in equivalent value of DOT.
 
-The OAK Team will assess each vulnerability report and issue the bounty accordingly.
+The Ava Protocol Team will assess each vulnerability report and issue the bounty accordingly.
 
 For more questions, feel free to [Contact Us](../contact-us).
