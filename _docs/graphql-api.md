@@ -29,7 +29,7 @@ Real-Time Task Notifications: Another powerful use case for the GraphQL Data API
 
 At Ava Protocol, we are committed to providing developers with the tools they need to unlock the full potential of blockchain automation. Join us on this exciting journey with Ava Protocol Insights and experience a new level of development ease and efficiency.
 
-## Working with Oak Insights GraphQL API
+## Working with Ava Protocol Insights GraphQL API
 
 With [GraphQL](https://graphql.org/), you can utilize it to request the precise data you need, thus reducing the number of requests required.
 
@@ -120,7 +120,7 @@ make query as below:
 ```javascript
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
-// create a client point to Oak API
+// create a client point to Ava Protocol API
 const client = new ApolloClient({
   uri: ' https://graphql.turing.api.oak.tech',
   cache: new InMemoryCache(),

@@ -167,7 +167,7 @@ Once you're fully synced, you're ready to on-board as a collator. Proceed to thi
 
 ## Setup a RPC node
 
-Oak provide an RPC which everyone can use at rpc.turing.oak.tech. It handle both of JSON RPC and websocket request.
+Ava Protocol provide an RPC which everyone can use at rpc.turing.oak.tech. It handle both of JSON RPC and websocket request.
 
 If you plan to run a node to serve RPC yourself, or have been running a RPC you can use these below parameter:
 
