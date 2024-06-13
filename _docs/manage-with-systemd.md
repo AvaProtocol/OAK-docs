@@ -1,7 +1,7 @@
 ---
 title: Manage collator with systemd
 subtitle: Setting up systemd service for your collator for automatic startup, monitoring and log management
-author: andrew
+author: chris
 tags: [infra, collator]
 date: 2022-06-01
 ---

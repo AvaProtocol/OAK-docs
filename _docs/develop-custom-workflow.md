@@ -1,7 +1,7 @@
 ---
 title: Develop Custom Workflow
 subtitle: Read about the guide of creating automation workflows with Dynamic Dispatch. Automate future tasks including switching or splitting Turing Network staking delegations!
-author: nikhil
+author: chris
 tags: [develop]
 date: 2023-01-31
 ---

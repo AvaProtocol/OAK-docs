@@ -1,7 +1,7 @@
 ---
 title: Price Automation Explained
 subtitle: Trigger any transaction based on the increase or decrease in value change of any numerical data (e.g. price).
-author: ryan
+author: chris
 tags: [api, price, triggers]
 date: 2022-09-13
 ---

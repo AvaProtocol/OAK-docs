@@ -1,7 +1,7 @@
 ---
 title: RFC - Recurring tasks
 subtitle: Allowing for more than one future task scheduled. 
-author: laura
+author: chris
 tags: [feedback, community]
 ---
 

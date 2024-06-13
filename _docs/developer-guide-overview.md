@@ -1,7 +1,7 @@
 ---
 title: Overview
 subtitle: Read about the basic concepts of the automation data structure
-author: ryan
+author: chris
 tags: [develop]
 date: 2022-02-03
 ---
