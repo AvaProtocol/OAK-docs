@@ -1,6 +1,6 @@
 # OAK-docs
 
-This site was developed by [OAK Foundation](https://oak.tech).
+This site was developed by [Ava Protocol](https://oak.tech).
 ## Installation
 
 Install the dependencies with [Bundler](http://bundler.io/):
