@@ -21,7 +21,7 @@ The Polkadot ecosystem enables multiple types of networks: a testnet, canary and
 
 ### Blockchain
 - Neumann Testnet Launch (Testnet)
-  - Neumann is a parachain version of the forenamed “OAK Testnet” in the PolkadotJS App
+  - Neumann is a parachain version of the forenamed “Ava Protocol Testnet” in the PolkadotJS App
 - Onboarding community collators (closed set) to the Neumann testnet
 - Event Registry (Event VM): development and testing of the core time-based event data structure
 - Missed events implementation: handling missed tasks for a given time slot

@@ -46,7 +46,7 @@ The Ava Protocol team is eager to engage developers in building the Ava Protocol
 
 ## Scope
 Currently, the following Ava Protocol code repositories are in scope for bug bounty program:
-- [OAK's blockchain code](https://github.com/AvaProtocol/OAK-blockchain)
+- [Ava Protocol's blockchain code](https://github.com/AvaProtocol/OAK-blockchain)
 - [Parachain Staking Module](https://github.com/AvaProtocol/moonbeam/tree/oak-staging/pallets/parachain-staking)
 
 ## Vulnerability Classifications

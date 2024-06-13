@@ -26,7 +26,7 @@ We believe that adding N>1 future transactions can enable a slew of use cases fo
 - trigger: conditional logic that has to be true for a task to be triggered
 - action: the function to execute for a given trigger
 - task: a user’s setting of a trigger and action. A user will add a task to execute 10 recurring payments at the 30th of each month.
-- event: the conversion of a task into a transaction with a trigger in OAK’s registry. In other words, transaction + trigger saved in the registry.
+- event: the conversion of a task into a transaction with a trigger in Ava Protocol’s registry. In other words, transaction + trigger saved in the registry.
 - transaction: the conventional definition of a transaction in Polkadot (message, payment, anything that is stored in the “ledger”)
 - signed vs unsigned transaction: a signed transaction required a user to sign one task with their private key (e.g. to pay someone monthly), while an unsigned transaction is low risk transaction like a log or a non-transfer event (this deviates a bit from Polkadot’s definition)
 - signed future transaction: a transaction that requires a user to sign their private key to execute the transaction (e.g. asset transfer from wallet A to B)
