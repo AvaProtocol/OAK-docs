@@ -6,7 +6,7 @@
 
 # Site title and description
 title:              Ava Protocol
-description:        Documentation for Ava Protocol Blockchain
+description:        Documentation for Ava Protocol
 lang:               en
 
 # Site subpath, e.g. /blog
@@ -41,27 +41,6 @@ authors:
       name:         Charles Chen
       title:        Developer    
       avatar:       avatar-xingyou.png
-    irsal:
-      name:         Irsal McGinnis
-      title:        CTO    
-      avatar:       avatar-irsal.jpeg
-    ryan:
-      name:         Ryan Huttman
-      title:        Lead Engineer    
-      avatar:       avatar-ryan.png
-    andrew:
-      name:         Andrew Tomaka
-      title:        Software Engineer
-    laura:
-      name:         Laura Reesby
-      title:        Software Engineer
-      avatar:       avatar-laura.jpeg
-    christian:
-      name:         Christian Dirk
-      title:        Growth Team
-    nikhil:
-      name:         Nikhil Vengal
-      title:        Software Engineer
     vinh:
       name:         Vinh Nguyen
       title:        Software Engineer
@@ -91,7 +70,7 @@ share:
 
 # Default footer image settings
 footer:
-    copyright:      © 2022 Ava Protocol. All rights reserved.
+    copyright:      © 2024 Ava Protocol. All rights reserved.
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
 # disqus:
