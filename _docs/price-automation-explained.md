@@ -26,7 +26,7 @@ Examples of “any action” include swaps (buys and sells), transfers (recurrin
 | ----------------------- | ------------------------------------------------------------------- |
 | Turing Staging (Rococo) | `rpc.turing-staging.oak.tech`                                       |
 | Turing (Kusama)         | In Beta testing. Contact <developers@oak.tech> to get early access. |
-| Ava Protocol (Polkadot)          | [Crowdloan launching soon!](https://oak.tech/oak/crowdloan/)        |
+| Ava Protocol (Polkadot)          | [Crowdloan launching soon!](https://avaprotocol.org/oak/crowdloan/)        |
 
 ## Parachain Requirements
 The following requirements apply for any Kusama parachain that wishes to support cross-chain automation (including recurring payments, auto-compounding liquidity / staking rewards, automatic swaps, and more):

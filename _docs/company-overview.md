@@ -6,7 +6,7 @@ tags: [architecture]
 date: 2022-02-05
 ---
 
-[__OAK Network__](https://oak.tech) is Web3’s hub for cross-chain automation, enabling multi-chain apps to schedule and automate any substrate extrinsic or EVM smart contract function. Ava Protocol is built to deliver trustless automation, dedicating its block space and optimizing gas to store, trigger, and execute transactions to connected blockchains. 
+[__OAK Network__](https://avaprotocol.org) is Web3’s hub for cross-chain automation, enabling multi-chain apps to schedule and automate any substrate extrinsic or EVM smart contract function. Ava Protocol is built to deliver trustless automation, dedicating its block space and optimizing gas to store, trigger, and execute transactions to connected blockchains. 
 
 Ava Protocol’s automation combines off-chain data streams with event-driven execution to automatically execute any transaction or smart contract function. Cross-consensus messaging (XCM) enables Ava Protocol to not only automate transactions on Ava Protocol, but also on any connected blockchains without tokens or private keys ever touching Ava Protocol. Ava Protocol’s trustless automation unlocks rich user experiences including scheduled and recurring payments, stable-cost-averaging, stop loss orders, and automatically-compounding rewards for staking, liquidity pool participants, and money market deposits.
 

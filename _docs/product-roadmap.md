@@ -30,14 +30,14 @@ The Polkadot ecosystem enables multiple types of networks: a testnet, canary and
 
 ## 2Q2022 - Completed & Launched 
 ### Apps
-- Blockchain SDKs for developers (JS) - [DApp Competition](https://oak.tech/community/grants/)
+- Blockchain SDKs for developers (JS) - [DApp Competition](https://avaprotocol.org/community/grants/)
 - Turing Automation DApps: transparency for the end-users' transactions
 - DEX integration with select partner
 - Yield farming integration with select partner (e.g. adjusting composable yield strategies based on personal risk profiles)
 - Wallet integration with select partner
 
 ### Blockchain
-- [Turing Network Launch (Kusama Parachain)](https://oak.tech/turing/phases/)
+- [Turing Network Launch (Kusama Parachain)](https://avaprotocol.org/turing/phases/)
 - Turing Network is fully decentralized
 - Onboarding more collators to the Neumann & Turing Networks
 - Security & technical audits
