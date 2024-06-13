@@ -25,7 +25,7 @@ Examples of “any action” include swaps (buys and sells), transfers (recurrin
 | Environment             | RPC Endpoint                                                        |
 | ----------------------- | ------------------------------------------------------------------- |
 | Turing Staging (Rococo) | `rpc.turing-staging.oak.tech`                                       |
-| Turing (Kusama)         | In Beta testing. Contact <developers@oak.tech> to get early access. |
+| Turing (Kusama)         | In Beta testing. Contact <developers@avaprotocol.org> to get early access. |
 | Ava Protocol (Polkadot)          | [Crowdloan launching soon!](https://avaprotocol.org/oak/crowdloan/)        |
 
 ## Parachain Requirements

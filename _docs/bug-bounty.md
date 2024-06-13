@@ -15,7 +15,7 @@ The Ava Protocol team is eager to engage developers in building the Ava Protocol
 
    For UI/UX bugs: please submit the exposed bugs in Ava Protocol’s Discord group.
 
-   For Security bugs: please submit a summary of the exposed bug to: <bugs@oak.tech>
+   For Security bugs: please submit a summary of the exposed bug to: <bugs@avaprotocol.org>
 
 ### Information to include in your report:
 

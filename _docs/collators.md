@@ -176,7 +176,7 @@ Navigate to the extrinsics tab, and go to `parachainStaking.executeLeaveCandidat
 
 ## FAQ
 
-For any questions or support, please reach out via [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>.
+For any questions or support, please reach out via [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh), or email <collators@avaprotocol.org>.
 
 ### When will my collator start producing blocks?
 

@@ -33,7 +33,7 @@ We will need to ensure that collators are economically incentivized to have the 
 For now, the incentives are purely rewards based since we've vetted a closed set of community collators with a solid reputation in the DotSama ecosystem.
 
 ### Turing Network - Kusama Parachain
-The Turing Network is live on Kusama. If you're interested in collating, please reach out via [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>. You will need to meet the minimum bond found in [the collator on-boarding page](../collators/#turing-network---kusama-parachain).
+The Turing Network is live on Kusama. If you're interested in collating, please reach out via [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh), or email <collators@avaprotocol.org>. You will need to meet the minimum bond found in [the collator on-boarding page](../collators/#turing-network---kusama-parachain).
 
 - [Latest binary](https://github.com/AvaProtocol/OAK-blockchain/releases/latest)
 - [Docker image repository](https://hub.docker.com/repository/docker/oaknetwork/turing)
