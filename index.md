@@ -1,6 +1,7 @@
 ---
 layout: page
 width: expand
+title: Documentations
 hero:
     title: Ava Protocol Developer Portal
     subtitle: Ava Protocol is building an automation blockchain for DeFi and recurring payments across protocols.

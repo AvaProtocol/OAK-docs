@@ -5,8 +5,8 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site title and description
-title:              Documentations
-description:        Ava Protocol
+title:              Ava Protocol
+description:        Documentation for Ava Protocol Blockchain
 lang:               en
 
 # Site subpath, e.g. /blog
