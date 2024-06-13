@@ -26,7 +26,7 @@ Head over to [Price Automation](https://avaprotocol.org/docs/automation-price-ap
 | ----------------------- | ------------------------------------------------------------ |
 | Turing Staging (Rococo) | `rpc.turing-staging.oak.tech`                                |
 | Turing Network (Kusama) | `rpc.turing.oak.tech`                                        |
-| Ava Protocol (Polkadot)  | `Coming Soon!` Don't miss [the Ava Protocol crowdloan!](https://avaprotocol.org/oak/crowdloan/) |
+| Ava Protocol (Polkadot)  | `Coming Soon!` Don't miss |
 
 ## Assumptions
 1. The application interface presents the user with the option to interact with a parachain's extrinsic at some time(s) in the future.
