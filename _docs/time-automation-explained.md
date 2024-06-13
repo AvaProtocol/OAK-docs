@@ -294,7 +294,7 @@ Enable users to create a proxy account that can be used only for future transact
 [Ava Protocol: Allow delegation](https://github.com/AvaProtocol/substrate-parachain-template/pull/14) provides an example delegation via proxy pallet. This example demonstrates the most permissive proxy type and may differ from the proxy implementation on other parachains.
 
 ## 3. Enable liquidity for fees (if applicable)
-Enable users to obtain $TUR or $Ava Protocol to pay for automation fees:
+Enable users to obtain $TUR or $AP to pay for automation fees:
 
 1. The inclusion fee to store the future extrinsic(s).
 2. The execution fee when the future extrinsic(s) are triggered.
