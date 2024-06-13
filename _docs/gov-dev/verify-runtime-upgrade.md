@@ -22,7 +22,7 @@ Once you have identified the proposal click on the arrow next to `parachainSyste
 
 ### Verify Code
 
-The necessary information to verify the code can be found in the corresponding release page on Github.  The release page for v1.8.0 can be found [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/tag/v1.8.0).  To view previous releases you can navigate [here](https://github.com/OAK-Foundation/OAK-blockchain/releases).
+The necessary information to verify the code can be found in the corresponding release page on Github.  The release page for v1.8.0 can be found [here](https://github.com/AvaProtocol/OAK-blockchain/releases/tag/v1.8.0).  To view previous releases you can navigate [here](https://github.com/AvaProtocol/OAK-blockchain/releases).
 
 First, you will want to verify the `BLAKE2_256` hash in the release notes matches the proposal `codeHash` from the previous section.  Next, you can build your own WASM runtime to compare with the proposed upgrade.
 
@@ -31,7 +31,7 @@ First, you will want to verify the `BLAKE2_256` hash in the release notes matche
 #### Build WASM Runtime for the Release
 
 1. Install [srtool](https://github.com/paritytech/srtool#install).
-2. Follow the directions in OAK-blockchain repository to [build from source](https://github.com/OAK-Foundation/OAK-blockchain#building-from-source).
+2. Follow the directions in OAK-blockchain repository to [build from source](https://github.com/AvaProtocol/OAK-blockchain#building-from-source).
 3. Checkout release branch.
 ```
 git clone git@github.com:OAK-Foundation/OAK-blockchain.git

@@ -16,7 +16,7 @@ Rather than enable each of these use cases independently, Ava Protocol is launch
 
 2. Enable indefinitely recurring transactions
 
-Javascript code snippets are now available in the [OAK.js SDK repo](https://github.com/OAK-Foundation/oak.js) to show developers how to build automation workflows using the new Dynamic Dispatch blockchain API.
+Javascript code snippets are now available in the [OAK.js SDK repo](https://github.com/AvaProtocol/oak.js) to show developers how to build automation workflows using the new Dynamic Dispatch blockchain API.
 
 Keep reading to learn how to use Dynamic Dispatch via [Polkadot{.js}](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/explorer) to switch collator delegations and indefinitely auto-compound with pay-as-you-go fees!
 

@@ -31,12 +31,12 @@ Examples of “any action” include swaps (buys and sells), transfers (recurrin
 ## Parachain Requirements
 The following requirements apply for any Kusama parachain that wishes to support cross-chain automation (including recurring payments, auto-compounding liquidity / staking rewards, automatic swaps, and more):
 
-1. **Open bi-directional HRMP channels** - [HRMP Channels and You](https://github.com/OAK-Foundation/OAK-blockchain/wiki/HRMP-Channels-and-You)
+1. **Open bi-directional HRMP channels** - [HRMP Channels and You](https://github.com/AvaProtocol/OAK-blockchain/wiki/HRMP-Channels-and-You)
 2. **Enable users to authorize future transactions powered by OAK** using a proxy pallet and XCM origin converter.
     
-    2a. [Proxy pallet implementation](https://github.com/OAK-Foundation/substrate-parachain-template/pull/12)
+    2a. [Proxy pallet implementation](https://github.com/AvaProtocol/substrate-parachain-template/pull/12)
     
-    2b. [XCM converter implementation](https://github.com/OAK-Foundation/substrate-parachain-template/pull/14)
+    2b. [XCM converter implementation](https://github.com/AvaProtocol/substrate-parachain-template/pull/14)
     
     2c. Get proxy accountId:
 

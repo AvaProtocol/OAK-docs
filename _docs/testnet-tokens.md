@@ -12,7 +12,7 @@ For developers and users who want to play around with features on our networks, 
 - Parachain Name: Turing Staging
 - Connected Relay Chain: Rococo
 - Endpoint: wss://rpc.turing-staging.oak.tech
-- Releases: https://github.com/OAK-Foundation/OAK-blockchain/releases
+- Releases: https://github.com/AvaProtocol/OAK-blockchain/releases
 
 Recommended pallet to test with,
 - automationTime

@@ -46,8 +46,8 @@ The OAK team is eager to engage developers in building the Ava Protocol ecosyste
 
 ## Scope
 Currently, the following Ava Protocol code repositories are in scope for bug bounty program:
-- [OAK's blockchain code](https://github.com/OAK-Foundation/OAK-blockchain)
-- [Parachain Staking Module](https://github.com/OAK-Foundation/moonbeam/tree/oak-staging/pallets/parachain-staking)
+- [OAK's blockchain code](https://github.com/AvaProtocol/OAK-blockchain)
+- [Parachain Staking Module](https://github.com/AvaProtocol/moonbeam/tree/oak-staging/pallets/parachain-staking)
 
 ## Vulnerability Classifications
 **High-risk Vulnerabilities:** stealing and arbitrarily issuing or distributing tokens/disrupting consensus causes the blockchain to stop generating blocks/destroying on-chain governance and software upgrade processes/memory leaks and abnormal resource consumption.

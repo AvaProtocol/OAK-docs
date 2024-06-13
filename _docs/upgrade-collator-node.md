@@ -14,12 +14,12 @@ The steps below should only cause 3-5 minutes of downtime for your node, if done
 SSH to your target node, and make sure it's functioning properly by inspecting [Turing Network Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d), and your monitoring/dashboards.
 ## Step 2: Upgrade the collator application
 ### Option 1: Upgrade with Release binary
-If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK that can be found [here](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest). Below commands will help you download the binary via command line.
+If you are using Ubuntu (20.04+ LTS x64), you can run the binary compiled by OAK that can be found [here](https://github.com/AvaProtocol/OAK-blockchain/releases/latest). Below commands will help you download the binary via command line.
 
 First, get the latest version number and store it in $version variable.
 
 ```
-latest_url=$(curl -Lsf -w %{url_effective} https://github.com/OAK-Foundation/OAK-blockchain/releases/latest/download/)
+latest_url=$(curl -Lsf -w %{url_effective} https://github.com/AvaProtocol/OAK-blockchain/releases/latest/download/)
 version=${latest_url##*/}
 echo $version
 ```
@@ -27,7 +27,7 @@ The `echo` command will print out the version of the collator to be installed. T
 
 ```bash
 # Download the latest .deb file
-curl -L https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/oak-collator.deb -o oak-collator-$version.deb
+curl -L https://github.com/AvaProtocol/OAK-blockchain/releases/download/$version/oak-collator.deb -o oak-collator-$version.deb
 
 # Unpackage and install the .deb file
 sudo dpkg -i oak-collator-$version.deb
@@ -41,7 +41,7 @@ sudo systemctl restart oak-collator
 ```
 
 ### Option 2: Build from source code
-If you machine runs a different architecture, or you are struggling with binaries from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/OAK-Foundation/OAK-blockchain). For example, for the v1.9.0 binary, you can run the following command on your node.
+If you machine runs a different architecture, or you are struggling with binaries from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/AvaProtocol/OAK-blockchain). For example, for the v1.9.0 binary, you can run the following command on your node.
 
 ```bash
 git clone git@github.com:OAK-Foundation/OAK-blockchain.git

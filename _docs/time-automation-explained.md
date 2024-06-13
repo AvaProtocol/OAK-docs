@@ -276,7 +276,7 @@ Replace `EXTRINSIC` with encoded call data of `automationTime.scheduleDynamicDis
 The following requirements apply for any Kusama parachain that wishes to support cross-chain automation (including recurring payments, auto-compounding liquidity / staking rewards, automatic swaps, and more):
 
 ## Enable support for XCM communication from OAK
-Open [bi-directional HRMP Channels](https://github.com/OAK-Foundation/OAK-blockchain/wiki/HRMP-Channels-and-You) with Turing Network (Kusama relay chain) and Turing Staging (Rococo relay chain):
+Open [bi-directional HRMP Channels](https://github.com/AvaProtocol/OAK-blockchain/wiki/HRMP-Channels-and-You) with Turing Network (Kusama relay chain) and Turing Staging (Rococo relay chain):
 
 #### Request (Sample)
 ```hrmp.hrmpInitOpenChannel(recipient: 2114, proposedMaxCapacity: 1000, proposedMaxMessageSize: 102400)```
@@ -289,9 +289,9 @@ Open [bi-directional HRMP Channels](https://github.com/OAK-Foundation/OAK-blockc
 ## 2. Enable proxy account creation and permissioning
 Enable users to create a proxy account that can be used only for future transactions and only by Turing Network via XCM.
 
-[OAK Foundation: Create account](https://github.com/OAK-Foundation/substrate-parachain-template/pull/12) provides an example proxy pallet implementation. 
+[OAK Foundation: Create account](https://github.com/AvaProtocol/substrate-parachain-template/pull/12) provides an example proxy pallet implementation. 
 
-[OAK Foundation: Allow delegation](https://github.com/OAK-Foundation/substrate-parachain-template/pull/14) provides an example delegation via proxy pallet. This example demonstrates the most permissive proxy type and may differ from the proxy implementation on other parachains.
+[OAK Foundation: Allow delegation](https://github.com/AvaProtocol/substrate-parachain-template/pull/14) provides an example delegation via proxy pallet. This example demonstrates the most permissive proxy type and may differ from the proxy implementation on other parachains.
 
 ## 3. Enable liquidity for fees (if applicable)
 Enable users to obtain $TUR or $OAK to pay for automation fees:

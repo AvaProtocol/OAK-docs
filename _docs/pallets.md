@@ -6,7 +6,7 @@ tags: [collators]
 ---
 
 ### Source code
-The source code of OAK's testnet is hosted on [Ava Protocol's Github](https://github.com/OAK-Foundation/OAK-blockchain).  
+The source code of OAK's testnet is hosted on [Ava Protocol's Github](https://github.com/AvaProtocol/OAK-blockchain).  
 
 ### Core modules
 The major pallets are as follows

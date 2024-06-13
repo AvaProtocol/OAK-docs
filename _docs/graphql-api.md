@@ -19,7 +19,7 @@ Welcome to OAK Insights, where we unleash the full potential of dApp developers 
 
 To gain a deeper understanding of the capabilities and data formats of the GraphQL Data API, explore the examples provided below.
 
-The GraphQL Data API harnesses the power of the open-source Subquery project to provide a custom, self-maintained data service. You can find our project's GitHub repository at [https://github.com/OAK-Foundation/oak-subql](https://github.com/OAK-Foundation/oak-subql)
+The GraphQL Data API harnesses the power of the open-source Subquery project to provide a custom, self-maintained data service. You can find our project's GitHub repository at [https://github.com/AvaProtocol/oak-subql](https://github.com/AvaProtocol/oak-subql)
 
 ## Use Cases
 

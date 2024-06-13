@@ -35,9 +35,9 @@ For now, the incentives are purely rewards based since we've vetted a closed set
 ### Turing Network - Kusama Parachain
 The Turing Network is live on Kusama. If you're interested in collating, please reach out via [OAK Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>. You will need to meet the minimum bond found in [the collator on-boarding page](../collators/#turing-network---kusama-parachain).
 
-- [Latest binary](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest)
+- [Latest binary](https://github.com/AvaProtocol/OAK-blockchain/releases/latest)
 - [Docker image repository](https://hub.docker.com/repository/docker/oaknetwork/turing)
-- [Turing Network parachain chain spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/turing.json)
+- [Turing Network parachain chain spec](https://github.com/AvaProtocol/OAK-blockchain/blob/master/node/res/turing.json)
 - [Kusama chain spec](https://github.com/paritytech/polkadot/blob/master/node/service/res/kusama.json)
 - [Turing Network Telemetry](https://telemetry.polkadot.io/#list/0x0f62b701fb12d02237a33b84818c11f621653d2b1614c777973babf4652b535d)
 
@@ -50,10 +50,10 @@ In this step, we'll generate a node key for your collator. The simplest method t
 ### Step 2 - Start up the collator program
 
 #### Option 1: Download a release binary(Recommended)
-If you're running Ubuntu (20.04+ LTS x64), you can utilize the binary compiled by OAK, available on our [Latest Release](https://github.com/OAK-Foundation/OAK-blockchain/releases/latest) page. This binary will enable you to operate your collator on your node. To download it via command line, follow the commands detailed below.
+If you're running Ubuntu (20.04+ LTS x64), you can utilize the binary compiled by OAK, available on our [Latest Release](https://github.com/AvaProtocol/OAK-blockchain/releases/latest) page. This binary will enable you to operate your collator on your node. To download it via command line, follow the commands detailed below.
 
 ```bash
-latest_url=$(curl -Lsf -w %{url_effective} https://github.com/OAK-Foundation/OAK-blockchain/releases/latest/download/)
+latest_url=$(curl -Lsf -w %{url_effective} https://github.com/AvaProtocol/OAK-blockchain/releases/latest/download/)
 version=${latest_url##*/}
 echo $version
 ```
@@ -62,7 +62,7 @@ The `echo` command will print out the version of the collator to be installed. T
 
 ```bash
 # Download the latest .deb file
-curl -L https://github.com/OAK-Foundation/OAK-blockchain/releases/download/$version/oak-collator.deb -o oak-collator-$version.deb
+curl -L https://github.com/AvaProtocol/OAK-blockchain/releases/download/$version/oak-collator.deb -o oak-collator-$version.deb
 
 # Unpackage and install the .deb file
 sudo dpkg -i oak-collator-$version.deb
@@ -94,7 +94,7 @@ oak-collator \
 To ensure maximum uptime, we advise you to consult our guide for automatically restoring the collator program upon server startup or in case of failure. For more detailed instructions, please refer to our [Manage collator with systemd](../manage-with-systemd.md) page next.
 
 #### Option 2: Compile from source code
-If you machine runs a different architecture, or you are struggling with binaries from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/OAK-Foundation/OAK-blockchain). For example, for the v1.9.0 binary, you can run the following command on your node.
+If you machine runs a different architecture, or you are struggling with binaries from the above, you may need to compile the binary within your node. If you're running a different OS, please compile the binary first and follow the instructions in the OAK-blockchain [README](https://github.com/AvaProtocol/OAK-blockchain). For example, for the v1.9.0 binary, you can run the following command on your node.
 
 ```bash
 git clone git@github.com:OAK-Foundation/OAK-blockchain.git

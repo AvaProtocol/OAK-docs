@@ -117,7 +117,7 @@ impl<T: Config> Hooks<BlockNumberFor<T>> for Pallet<T> { ... }
 impl<T:Config> Pallet<T> { ... }
 ```
 
-Taking [pallet-automation-time](https://github.com/OAK-Foundation/OAK-blockchain/tree/master/pallets/automation-time) as an example, the definitions is as follows:
+Taking [pallet-automation-time](https://github.com/AvaProtocol/OAK-blockchain/tree/master/pallets/automation-time) as an example, the definitions is as follows:
 
 #### Storages
  
@@ -203,7 +203,7 @@ When extrinsics occurs some error, the code can throw some error.
 
 For example:
 
-https://github.com/OAK-Foundation/OAK-blockchain/blob/master/pallets/automation-time/src/lib.rs#L622
+https://github.com/AvaProtocol/OAK-blockchain/blob/master/pallets/automation-time/src/lib.rs#L622
 
 We write codes to cancel a round.
 1. Check origin permissions.

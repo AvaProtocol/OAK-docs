@@ -14,8 +14,8 @@ Please contact us through below methods. Our decentralized team can usually resp
 4. Telegram: [Ava Protocol Announcements](https://t.me/OAK_Announcements)
 5. Discord:[Ava Protocol](https://discord.gg/7W9UDvsbwh)
 6. LinkedIn: <https://www.linkedin.com/company/oak-network>
-7. Github: <https://github.com/OAK-Foundation/>
+7. Github: <https://github.com/AvaProtocol/>
 
-For update suggestions of this documentation site, please create an issue in [github.com/OAK-Foundation/OAK-docs](https://github.com/OAK-Foundation/OAK-docs/issues).
+For update suggestions of this documentation site, please create an issue in [github.com/OAK-Foundation/OAK-docs](https://github.com/AvaProtocol/OAK-docs/issues).
 
 Thank you!
