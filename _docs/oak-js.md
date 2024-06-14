@@ -1,7 +1,7 @@
 ---
 title: Javascript SDK oak.js
 subtitle: Use javascript to interact with the Ava Protocol Blockchain
-author: justin
+author: chris
 tags: [api, time, triggers, js, sdk]
 date: 2022-09-13
 ---
