@@ -13,7 +13,7 @@ Before you start producing blocks and earning rewards as a collator, you must fi
 1. [Experienced Node Operators setup for Turing Network](../setup-collator-node)
 2. [Using our partner services](../setup-collator-node-partner)
 
-If you have any questions or run into issues, head over to the [OAK Discord](https://discord.gg/7W9UDvsbwh) for help.
+If you have any questions or run into issues, head over to the [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh) for help.
 
 ## Network Specific Information
 
@@ -176,7 +176,7 @@ Navigate to the extrinsics tab, and go to `parachainStaking.executeLeaveCandidat
 
 ## FAQ
 
-For any questions or support, please reach out via [OAK Discord](https://discord.gg/7W9UDvsbwh), or email <collators@oak.tech>.
+For any questions or support, please reach out via [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh), or email <collators@avaprotocol.org>.
 
 ### When will my collator start producing blocks?
 

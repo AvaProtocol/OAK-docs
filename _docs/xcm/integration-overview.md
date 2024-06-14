@@ -1,6 +1,6 @@
 ---
 title: Cross-chain Product Integration
-subtitle: Explain XCM and cross-chain integration work flow with OAK Network
+subtitle: Explain XCM and cross-chain integration work flow with Ava Protocol
 author: chris
 tags: [xcm]
 date: 2022-12-12
@@ -103,16 +103,16 @@ The first step is for developers to spin up a relay chain and two parachain chai
 
 1. Build and run Turing
 
-    Clone the source code from [OAK-blockchain](https://github.com/OAK-Foundation/OAK-blockchain)
+    Clone the source code from [OAK-blockchain](https://github.com/AvaProtocol/OAK-blockchain)
 
 1. Build and run the target chain
 1. Run zombienet for local chains and HRMP channels
     
     The [zombienet](https://github.com/paritytech/zombienet) built by Parity can help us quickly spin up a relay chain, and two parachain networks and build channels. We recommend it for a quick-start.
     
-    Follow the zombienet demo in [our Github repo](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/README.md#quickstart-run-local-network-with-zombienet).
+    Follow the zombienet demo in [our Github repo](https://github.com/AvaProtocol/OAK-blockchain/blob/master/README.md#quickstart-run-local-network-with-zombienet).
 2. Make sure XCM acknowledge and execution logic are implemented on the target chain.
-3. Run testing functions. For example, we wrote a [Javascript e2e testing](https://github.com/OAK-Foundation/xcm-demo) code for Mangata integration.
+3. Run testing functions. For example, we wrote a [Javascript e2e testing](https://github.com/AvaProtocol/xcm-demo) code for Mangata integration.
 
 
 ### 4.2 Testing on Rococo

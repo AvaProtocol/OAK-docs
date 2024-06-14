@@ -19,13 +19,13 @@ Please sync a few days before your intended collation / block production candida
 ----------------------------------------------------------------------------------------------------------------------------------
 
 ## Turing Staging Network - Testnet
-*Turing Staging is a testnet, thus it will have maximal amount of chaos and will NOT have 100% uptime. This might be reset at a given time due to a number of different reasons. If you are a stakeholder (collator, dev, consumer) of this chain, please expect occassional instability, thus the ability to re-deploy your system as needed. The OAK team will always re-instate the same wallet amounts as before a reset occurs, so users should expect that for any given chain reset. If a chain reset is required, it will be announced via Discord.*
+*Turing Staging is a testnet, thus it will have maximal amount of chaos and will NOT have 100% uptime. This might be reset at a given time due to a number of different reasons. If you are a stakeholder (collator, dev, consumer) of this chain, please expect occassional instability, thus the ability to re-deploy your system as needed. The Ava Protocol team will always re-instate the same wallet amounts as before a reset occurs, so users should expect that for any given chain reset. If a chain reset is required, it will be announced via Discord.*
 
-- [Turing Staging Chain Spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/turing-staging.json)
-- [Rococo Chain Spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/resources/rococo.json)
+- [Turing Staging Chain Spec](https://github.com/AvaProtocol/OAK-blockchain/blob/master/node/res/turing-staging.json)
+- [Rococo Chain Spec](https://github.com/AvaProtocol/OAK-blockchain/blob/master/resources/rococo.json)
 
 ## Turing Network
-- [Turing Chain Spec](https://github.com/OAK-Foundation/OAK-blockchain/blob/master/node/res/turing.json)
+- [Turing Chain Spec](https://github.com/AvaProtocol/OAK-blockchain/blob/master/node/res/turing.json)
 - [Kusama Chain Spec](https://github.com/paritytech/polkadot/blob/master/node/service/res/kusama.json)
 
 ----------------------------------------------------------------------------------------------------------------------------------
@@ -51,9 +51,9 @@ If you'd like to setup Turing, for example, search for "Turing" on the top right
 
 **Step 3.2: Node Configuration**
 
-The public network spec provided by the OAK Team has the recommended specs above, and is up to date. 
+The public network spec provided by the Ava Protocol Team has the recommended specs above, and is up to date. 
 - For naming, please provide a name that you can identify, especially if you have multiple nodes. 
-- Image Version: double check that this is in fact the latest node version to deploy. You can run into issues if you choose an older image for the node. Additionally, do a cross-reference with our [Github release page](https://github.com/OAK-Foundation/OAK-blockchain/releases) as well as Discord.
+- Image Version: double check that this is in fact the latest node version to deploy. You can run into issues if you choose an older image for the node. Additionally, do a cross-reference with our [Github release page](https://github.com/AvaProtocol/OAK-blockchain/releases) as well as Discord.
 - Collator: Make sure you select "Collator" so that your node can produce blocks once on-boarded. If you accidentally choose archive or full node, you'll have to go through the setup process again, as it is not easy to convert from one type of node to the other.
 - Cloud provider & region: We recommend changing up deployment locations and cloud providers. However, certain configurations can allow for a faster node sync time with OnFinality's [Lighting Restore](https://documentation.onfinality.io/support/Lightning-Restore.1651703824.html) feature.
 - Node & storage size: We recommend sticking with the recommended size based on the public network spec.

@@ -24,7 +24,7 @@ For more information about how transaction fees are related to “weights”, pl
 
 This article takes our Open Grant project, quadratic-funding-pallet as an example to explain the process of weight determination.
 
-repo: <https://github.com/OAK-Foundation/quadratic-funding-pallet>
+repo: <https://github.com/AvaProtocol/quadratic-funding-pallet>
 
 1. __Complete pallet dev code__
 
@@ -42,7 +42,7 @@ repo: <https://github.com/OAK-Foundation/quadratic-funding-pallet>
 
 	The benchmarking.rs starts with a benchmarks! macro, and the majority of logic is in the function body. The last block, verifying final state is optional.
 
-	Take the [benchmarking.rs file of quadratic-funding](https://github.com/OAK-Foundation/quadratic-funding-pallet/blob/add_weights/pallets/quadratic-funding/src/benchmarking.rs) as an example:
+	Take the [benchmarking.rs file of quadratic-funding](https://github.com/AvaProtocol/quadratic-funding-pallet/blob/add_weights/pallets/quadratic-funding/src/benchmarking.rs) as an example:
 
 	![schedule_round](../../assets/img/benchmarking/schedule_round.png)
 

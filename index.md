@@ -1,9 +1,10 @@
 ---
 layout: page
 width: expand
+title: Documentations
 hero:
-    title: OAK Developer Portal
-    subtitle: OAK is building an automation blockchain for DeFi and recurring payments across protocols.
+    title: Ava Protocol Developer Portal
+    subtitle: Ava Protocol is building an automation blockchain for DeFi and recurring payments across protocols.
     image: build.png
     search: true
 ---
@@ -18,5 +19,5 @@ hero:
 
 <!-- {% include team.html authors="evan, john, sara, alex, tom, daniel" title="We are here to help" subtitle="Our team is just an email away ready to answer your questions" %} -->
 
-<!-- {% include cta.html title="Stay in the loop" button_text="Subscribe to Updates" button_url="/contact/" subtitle="We’ll only send you OAK development related emails" %} -->
+<!-- {% include cta.html title="Stay in the loop" button_text="Subscribe to Updates" button_url="/contact/" subtitle="We’ll only send you Ava Protocol development related emails" %} -->
 

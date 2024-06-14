@@ -1,6 +1,6 @@
 ---
 title: Insights GraphQL API
-susbtite: "OAK Insights: Empowering Developers with the GraphQL Data API"
+susbtite: "Ava Protocol Insights: Empowering Developers with the GraphQL Data API"
 author: vinh
 tags: [grapqhl, data, api, js, sdk,]
 date: 2023-05-30
@@ -15,21 +15,21 @@ extra-css:
 - url: https://unpkg.com/graphiql/graphiql.min.css
 ---
 
-Welcome to OAK Insights, where we unleash the full potential of dApp developers building on top of OAK's automation infrastructure. We are thrilled to introduce our GraphQL Data API, a cutting-edge data solution designed to address the limitations and challenges faced by developers. This revolutionary product offers a comprehensive GraphQL Data API that streamlines interactions with the OAK blockchain, empowering developers and dramatically reducing the development costs associated with dApp creation.
+Welcome to Ava Protocol Insights, where we unleash the full potential of dApp developers building on top of Ava Protocol's automation infrastructure. We are thrilled to introduce our GraphQL Data API, a cutting-edge data solution designed to address the limitations and challenges faced by developers. This revolutionary product offers a comprehensive GraphQL Data API that streamlines interactions with the Ava Protocol blockchain, empowering developers and dramatically reducing the development costs associated with dApp creation.
 
 To gain a deeper understanding of the capabilities and data formats of the GraphQL Data API, explore the examples provided below.
 
-The GraphQL Data API harnesses the power of the open-source Subquery project to provide a custom, self-maintained data service. You can find our project's GitHub repository at [https://github.com/OAK-Foundation/oak-subql](https://github.com/OAK-Foundation/oak-subql)
+The GraphQL Data API harnesses the power of the open-source Subquery project to provide a custom, self-maintained data service. You can find our project's GitHub repository at [https://github.com/AvaProtocol/oak-subql](https://github.com/AvaProtocol/oak-subql)
 
 ## Use Cases
 
-Simplified Task Tracking: The GraphQL Data API simplifies the tracking and display of user task statuses, eliminating the need for developers to comprehend the intricacies of OAK's block structure. For example, interpreting a Swap smart contract call with multiple hops on Etherscan can be challenging. Our goal is to alleviate this burden, enabling developers to iterate faster and focus on building their dApps instead of reinventing the wheel.
+Simplified Task Tracking: The GraphQL Data API simplifies the tracking and display of user task statuses, eliminating the need for developers to comprehend the intricacies of Ava Protocol's block structure. For example, interpreting a Swap smart contract call with multiple hops on Etherscan can be challenging. Our goal is to alleviate this burden, enabling developers to iterate faster and focus on building their dApps instead of reinventing the wheel.
 
-Real-Time Task Notifications: Another powerful use case for the GraphQL Data API is the seamless integration of pub/sub functionality for task notifications. By allowing users to connect their email or Telegram accounts to our dApp, they will receive real-time notifications when their registered tasks trigger on-chain. This feature enhances user engagement and ensures timely interactions with the OAK ecosystem.
+Real-Time Task Notifications: Another powerful use case for the GraphQL Data API is the seamless integration of pub/sub functionality for task notifications. By allowing users to connect their email or Telegram accounts to our dApp, they will receive real-time notifications when their registered tasks trigger on-chain. This feature enhances user engagement and ensures timely interactions with the Ava Protocol ecosystem.
 
-At OAK, we are committed to providing developers with the tools they need to unlock the full potential of blockchain automation. Join us on this exciting journey with OAK Insights and experience a new level of development ease and efficiency.
+At Ava Protocol, we are committed to providing developers with the tools they need to unlock the full potential of blockchain automation. Join us on this exciting journey with Ava Protocol Insights and experience a new level of development ease and efficiency.
 
-## Working with Oak Insights GraphQL API
+## Working with Ava Protocol Insights GraphQL API
 
 With [GraphQL](https://graphql.org/), you can utilize it to request the precise data you need, thus reducing the number of requests required.
 
@@ -120,7 +120,7 @@ make query as below:
 ```javascript
 import { ApolloClient, InMemoryCache, ApolloProvider, gql } from '@apollo/client';
 
-// create a client point to Oak API
+// create a client point to Ava Protocol API
 const client = new ApolloClient({
   uri: ' https://graphql.turing.api.oak.tech',
   cache: new InMemoryCache(),

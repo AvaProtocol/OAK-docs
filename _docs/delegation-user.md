@@ -6,9 +6,9 @@ tags: [delegator]
 date: 2022-10-03
 ---
 ## How to stake TUR
-This guide provides links and instructions for staking by delegating an existing Turing Network collator. See [Collator Overview](https://docs.oak.tech/docs/collators/) for instructions on setting up your own collator.
+This guide provides links and instructions for staking by delegating an existing Turing Network collator. See [Collator Overview](https://avaprotocol.org/docs/collators/) for instructions on setting up your own collator.
 
-_Please exercise caution when following links to external resources that are not maintained or tested by the OAK Network team!_
+_Please exercise caution when following links to external resources that are not maintained or tested by the Ava Protocol team!_
 
 ## Which wallet are you using?
 
@@ -24,13 +24,13 @@ If you are power user who is familiar with Polkadot.js/apps website, please refe
 
 ### Which collator will you delegate your stake to?
 
-[StakeTur](https://staketur.com) by StakeBaby, staking applications, and wallet interfaces with staking support will provide additional information that can help you choose who to delegate. Join the [OAK Discord Server](https://discord.gg/7W9UDvsbwh) for #collator-open-chat about delegation.
+[StakeTur](https://staketur.com) by StakeBaby, staking applications, and wallet interfaces with staking support will provide additional information that can help you choose who to delegate. Join the [Ava Protocol Discord Server](https://discord.gg/7W9UDvsbwh) for #collator-open-chat about delegation.
 
 **Important disclaimer about risks**
 
-_Holders of TUR tokens should perform careful due diligence on collators before delegating. Being listed as a collator is not an endorsement or recommendation from the Turing Network, or OAK Foundation. Neither the Turing Network, nor has OAK Foundation vetted the list collators and assumes no responsibility with regard to the selection, performance, security, accuracy, or use of any third-party offerings. You alone are responsible for doing your own diligence to understand the applicable fees and all risks present, including actively monitoring the activity of your collators._
+_Holders of TUR tokens should perform careful due diligence on collators before delegating. Being listed as a collator is not an endorsement or recommendation from the Turing Network, or Ava Protocol. Neither the Turing Network, nor has Ava Protocol vetted the list collators and assumes no responsibility with regard to the selection, performance, security, accuracy, or use of any third-party offerings. You alone are responsible for doing your own diligence to understand the applicable fees and all risks present, including actively monitoring the activity of your collators._
 
-_You agree and understand that neither the Turing Network, nor OAK Foundation guarantees that you will receive staking rewards and any applicable percentage provided (i) is an estimate only and not guaranteed, (ii) may change at any time and (iii) may be more or less than the actual staking rewards you receive. The OAK Foundation makes no representations as to the monetary value of any rewards at any time._
+_You agree and understand that neither the Turing Network, nor Ava Protocol guarantees that you will receive staking rewards and any applicable percentage provided (i) is an estimate only and not guaranteed, (ii) may change at any time and (iii) may be more or less than the actual staking rewards you receive. The Ava Protocol makes no representations as to the monetary value of any rewards at any time._
 
 _Staking TUR tokens is not free of risk. Staked TUR tokens are locked up, and retrieving them requires a waiting period. Additionally, if a collator fails to perform required functions or acts in bad faith, a portion of their total stake can be slashed (i.e. destroyed). This includes the stake of their delegators. If a collators behaves suspiciously or is too often offline, delegators can choose to unbond from them or switch to another collator. Delegators can also mitigate risk by electing to distribute their stake across multiple collators._
 

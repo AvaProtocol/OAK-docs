@@ -5,8 +5,8 @@
 # 'bundle exec jekyll serve'. If you change this file, please restart the server process.
 
 # Site title and description
-title:              OAK Docs
-description:        Documentation for OAK Blockchain
+title:              Ava Protocol
+description:        Documentation for Ava Protocol
 lang:               en
 
 # Site subpath, e.g. /blog
@@ -41,35 +41,14 @@ authors:
       name:         Charles Chen
       title:        Developer    
       avatar:       avatar-xingyou.png
-    irsal:
-      name:         Irsal McGinnis
-      title:        CTO    
-      avatar:       avatar-irsal.jpeg
-    ryan:
-      name:         Ryan Huttman
-      title:        Lead Engineer    
-      avatar:       avatar-ryan.png
-    andrew:
-      name:         Andrew Tomaka
-      title:        Software Engineer
-    laura:
-      name:         Laura Reesby
-      title:        Software Engineer
-      avatar:       avatar-laura.jpeg
-    christian:
-      name:         Christian Dirk
-      title:        Growth Team
-    nikhil:
-      name:         Nikhil Vengal
-      title:        Software Engineer
     vinh:
       name:         Vinh Nguyen
       title:        Software Engineer
 
 # Social icons displayed in footer
 social:
-    email:          chris@oak.tech
-    website:        https://oak.tech
+    email:          chris@avaprotocol.org
+    website:        https://avaprotocol.org
     facebook:       
     flickr:
     dribbble:
@@ -78,7 +57,7 @@ social:
     instagram:      
     linkedin:
     pinterest:
-    twitter:        https://twitter.com/oak_network
+    twitter:        https://x.com/ava_protocol
     vimeo:          
     youtube:        https://www.youtube.com/channel/UCpR12msmm43z46PoAJ1TAiQ
 
@@ -91,7 +70,7 @@ share:
 
 # Default footer image settings
 footer:
-    copyright:      © 2022 OAK Foundation. All rights reserved.
+    copyright:      © 2024 Ava Protocol. All rights reserved.
 
 # Disqus comments shortname, requires Disqus account https://disqus.com/
 # disqus:
