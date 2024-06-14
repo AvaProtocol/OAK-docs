@@ -14,7 +14,7 @@ left:
     url: /docs/developer-guide-overview/
 
   - title: Blog
-    url: https://medium.com/oak-blockchain
+    url: https://avaprotocol.org/blog
 
 
 # Navbar right menu navigation links
@@ -22,7 +22,7 @@ left:
 right:
 
   - title: Github
-    url: https://github.com/OAK-Foundation
+    url: https://github.com/AvaProtocol
     button: primary-outline
 
   - title: Contact

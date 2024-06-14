@@ -1,7 +1,7 @@
 ---
 title: Develop Custom Workflow
 subtitle: Read about the guide of creating automation workflows with Dynamic Dispatch. Automate future tasks including switching or splitting Turing Network staking delegations!
-author: nikhil
+author: chris
 tags: [develop]
 date: 2023-01-31
 ---
@@ -10,13 +10,13 @@ Automate future tasks including switching or splitting Turing Network staking de
 
 In case you missed it, [StakeTUR](http://staketur.com/), [Nova Wallet](https://novawallet.io/), and [SubWallet](https://subwallet.app/) users are now automating web3 chores and boosting rewards by automatically staking spare $TUR. But Turing Network users have increasingly asked to automate other tasks as well-automating payments, splitting staking delegations, switching delegation to another collator, and delegating indefinitely.
 
-Rather than enable each of these use cases independently, OAK Network is launching Dynamic Dispatch to:
+Rather than enable each of these use cases independently, Ava Protocol is launching Dynamic Dispatch to:
 
 1. Extend time-based automation to every extrinsic on Turing Network
 
 2. Enable indefinitely recurring transactions
 
-Javascript code snippets are now available in the [OAK.js SDK repo](https://github.com/OAK-Foundation/oak.js) to show developers how to build automation workflows using the new Dynamic Dispatch blockchain API.
+Javascript code snippets are now available in the [OAK.js SDK repo](https://github.com/AvaProtocol/oak.js) to show developers how to build automation workflows using the new Dynamic Dispatch blockchain API.
 
 Keep reading to learn how to use Dynamic Dispatch via [Polkadot{.js}](https://polkadot.js.org/apps/?rpc=wss%3A%2F%2Frpc.turing.oak.tech#/explorer) to switch collator delegations and indefinitely auto-compound with pay-as-you-go fees!
 
@@ -47,8 +47,8 @@ timestamp) and recurs at a set frequency (expressed in seconds).
 
 Note that automation fees for indefinitely recurring tasks are calculated (in $TUR) and debited from the user's account each time the task is triggered. Tasks scheduled for a finite number of occurrences still require up-front payment for automation fees.
 
-Join the OAK community on Discord for more updates and to [#brainstorm](https://discord.com/channels/840137038316699648/956658332112941086) automation workflows!
+Join the Ava Protocol community on Discord for more updates and to [#brainstorm](https://discord.com/channels/840137038316699648/956658332112941086) automation workflows!
 
-## About OAK Network
+## About Ava Protocol
 
-OAK Network provides automation infrastructure that enables web3 applications to offer recurring payments, stable-cost-averaging, auto-compounding, and more. OAK's layer-one blockchain infrastructure is optimized for storing and triggering future transactions by using event-driven execution and cross-chain messaging.
+Ava Protocol provides automation infrastructure that enables web3 applications to offer recurring payments, stable-cost-averaging, auto-compounding, and more. Ava Protocol's layer-one blockchain infrastructure is optimized for storing and triggering future transactions by using event-driven execution and cross-chain messaging.

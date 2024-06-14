@@ -1,6 +1,6 @@
 ---
 title: Updates and Roadmap
-subtitle: This document covers the detail of OAK and Turing network updates and roadmap
+subtitle: This document covers the detail of Ava Protocol and Turing network updates and roadmap
 author: chris
 tags: [develop]
 date: 2022-01-04
@@ -9,19 +9,19 @@ date: 2022-01-04
 The Polkadot ecosystem enables multiple types of networks: a testnet, canary and mainnet. Below are the different networks.
 - *Turing Staging (TUR)*: testnet parachain; expect chaos and occassional downtime for the network; these tokens hold no value
 - *Turing (TUR)*: Kusama parachain (launched April 2022); this is a canary, expect chaos but limited/no downtime; these tokens do hold value
-- *OAK*: Polkadot parachain (expected to launch November 2022); this is the mainnet
+- *Ava Protocol*: Polkadot parachain (expected to launch November 2022); this is the mainnet
 
 ## 4Q2021 - Completed & Launched
 - Event Registry Proof of Concept
 
 ## 1Q2022 - Completed & Launched
 ### Apps
-- OAK Website Design Rebrand
+- Ava Protocol Website Design Rebrand
 - Kusama crowdloan for Turing (TUR) Network parachain
 
 ### Blockchain
 - Neumann Testnet Launch (Testnet)
-  - Neumann is a parachain version of the forenamed “OAK Testnet” in the PolkadotJS App
+  - Neumann is a parachain version of the forenamed “Ava Protocol Testnet” in the PolkadotJS App
 - Onboarding community collators (closed set) to the Neumann testnet
 - Event Registry (Event VM): development and testing of the core time-based event data structure
 - Missed events implementation: handling missed tasks for a given time slot
@@ -30,14 +30,14 @@ The Polkadot ecosystem enables multiple types of networks: a testnet, canary and
 
 ## 2Q2022 - Completed & Launched 
 ### Apps
-- Blockchain SDKs for developers (JS) - [DApp Competition](https://oak.tech/community/grants/)
+- Blockchain SDKs for developers (JS) - [DApp Competition](https://avaprotocol.org/community/grants/)
 - Turing Automation DApps: transparency for the end-users' transactions
 - DEX integration with select partner
 - Yield farming integration with select partner (e.g. adjusting composable yield strategies based on personal risk profiles)
 - Wallet integration with select partner
 
 ### Blockchain
-- [Turing Network Launch (Kusama Parachain)](https://oak.tech/turing/phases/)
+- [Turing Network Launch (Kusama Parachain)](https://avaprotocol.org/turing/phases/)
 - Turing Network is fully decentralized
 - Onboarding more collators to the Neumann & Turing Networks
 - Security & technical audits
@@ -48,7 +48,7 @@ The Polkadot ecosystem enables multiple types of networks: a testnet, canary and
 
 ## 3Q2022 - In Progress
 ### Apps
-- Polkadot crowdloan app for OAK
+- Polkadot crowdloan app for Ava Protocol
 - Auto-compounding with select partners
 - Liquidity pool compounding with select partner
 - Portfolio and other DApp integrations with additional partners for Turing
@@ -66,7 +66,7 @@ The Polkadot ecosystem enables multiple types of networks: a testnet, canary and
 - Trigges and Actions DApp Marketplace: an online marketplace where creators can submit automation DApps and consumers can opt to use them similar to [IFTTT](https://ifttt.com/explore)
 
 ### Blockchain
-- OAK Network Launch
+- Ava Protocol Launch
 - Ethereum bridge expansion
 - Private automated tasks pilot
 - Automation fees optimization

@@ -1,21 +1,21 @@
 ---
 title: Overview
 subtitle: Read about the basic concepts of the automation data structure
-author: ryan
+author: chris
 tags: [develop]
 date: 2022-02-03
 ---
 
-The goal of the OAK blockchain is to allow users to schedule actions to execute based on a condition. This guide will talk you through how to use OAK, and some examples of how it could be used.
+The goal of the Ava Protocol blockchain is to allow users to schedule actions to execute based on a condition. This guide will talk you through how to use Ava Protocol, and some examples of how it could be used.
 
 ## Glossary
 
-**OAK**: The name of our blockchain. While the name changes for each deployment we will refer to it as OAK in this document regardless of the environment you are integrating with.
-- OAK -> Polkadot
+**Ava Protocol**: The name of our blockchain. While the name changes for each deployment we will refer to it as Ava Protocol in this document regardless of the environment you are integrating with.
+- Ava Protocol -> Polkadot
 - TUR -> Kusama
 - TUR -> Rococo (testnet)
 
-**Native**: This will be preceding “token” or “event”. This refers to the token and events of     the OAK chain you are interacting with.
+**Native**: This will be preceding “token” or “event”. This refers to the token and events of     the Ava Protocol chain you are interacting with.
 
 **Trigger**: Conditional logic that has to be true for a task to be execute
 
@@ -30,7 +30,7 @@ The goal of the OAK blockchain is to allow users to schedule actions to execute 
 
 ## What is a Task?
 
-In order to use OAK you need to understand our tasks. OAK allows you to schedule a singular task, schedule a recurring task, and cancel a task. In order to perform these actions you will need to call the appropriate extrinsics in the Automation pallets. When calling these extrinsics you will need to pass in the following data. 
+In order to use Ava Protocol you need to understand our tasks. Ava Protocol allows you to schedule a singular task, schedule a recurring task, and cancel a task. In order to perform these actions you will need to call the appropriate extrinsics in the Automation pallets. When calling these extrinsics you will need to pass in the following data. 
 
 - The `account_id` -> This is provided when you sign the extrinsic
 - The `predefined_id`
@@ -42,7 +42,7 @@ The first two pieces of data are required for all task types and are hashed toge
 Once a task is created we link your action to the provided trigger. Then once the trigger is triggered we execute your action. If the trigger supports it you can configure the task to be recurring. In this case will add a new task with the newly calculated trigger after your action executes. Once your last action executes we remove your task from our storage. All of this of course happens on-chain :). 
 
 ## What is a trigger?
-The OAK data structures supports the following triggers as part of the transaction. This is stored in the OAK registry until the condition is met. The condition check is frequent at varying cadences depending on weight/fee and computational complexity.
+The Ava Protocol data structures supports the following triggers as part of the transaction. This is stored in the Ava Protocol registry until the condition is met. The condition check is frequent at varying cadences depending on weight/fee and computational complexity.
 
 Triggers that are supported but not limited to:
 
@@ -64,7 +64,7 @@ The following features are available for time-based triggers:
 - Support scheduling recurring actions
 
 ### XCMP Event
-Our XCMP event trigger allows you to schedule an action when an XCMP event is received. We are thinking about two different version of this trigger. First, you could register this event and the data with OAK. This would allow other users to create triggers based on the data inside this event. Second, you could simply create a trigger that fires when this event is received by OAK.
+Our XCMP event trigger allows you to schedule an action when an XCMP event is received. We are thinking about two different version of this trigger. First, you could register this event and the data with Ava Protocol. This would allow other users to create triggers based on the data inside this event. Second, you could simply create a trigger that fires when this event is received by Ava Protocol.
 
 ### On-chain Event
 Our on-chain event would work almost the same as the XCMP event trigger.
@@ -91,7 +91,7 @@ Actions that are supported but not limited to:
 These actions are based on inital conversations with potential partners. If you have suggestions for other potential triggers which have a strong value proposition to a project you're involved with, please reach out in our #parternships [Discord](https://discord.gg/7W9UDvsbwh) channel.
 
 ### Native Event
-Our native event action allows a user to schedule an event with custom text to fire on-chain. In order to use this action you will need to provide custom text. While this action was created as an mvp it could be used to trigger other actions in OAK.
+Our native event action allows a user to schedule an event with custom text to fire on-chain. In order to use this action you will need to provide custom text. While this action was created as an mvp it could be used to trigger other actions in Ava Protocol.
 
 ### Native Token Transfer
 Our native token transfer action allows you to transfer your token to another user. In order to use this action you will need to provide the user’s account id and the amount you wish to transfer. 

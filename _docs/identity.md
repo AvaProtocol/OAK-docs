@@ -28,7 +28,7 @@ After the extrinsic is confirmed, there will be a gray minus sign to the left of
 
 ### Step 4: Contact a registrar to acquire the judgement
 
-You can either contact the registrar via their on-chain information or you can ask the registrar to review your request in **#on-chain-registrar** [OAK Discord](https://discord.gg/7W9UDvsbwh).
+You can either contact the registrar via their on-chain information or you can ask the registrar to review your request in **#on-chain-registrar** [Ava Protocol Discord](https://discord.gg/7W9UDvsbwh).
 
 ### Step 5: Registrar makes a judgement
 
@@ -61,6 +61,6 @@ There are a number of reasons to set an on-chain identity or remain anonymous. F
 
 ### Who approves someone's identity?
 
-[Registrars](https://turing.subscan.io/account?role=registrar). At first, registrars are set via Sudo, and are OAK team members or ambassadors. Once governance is enabled, any community member can become registrars via democracy.
+[Registrars](https://turing.subscan.io/account?role=registrar). At first, registrars are set via Sudo, and are Ava Protocol team members or ambassadors. Once governance is enabled, any community member can become registrars via democracy.
 
 There is no KYC/AML process to set an on-chain identity. However, if there is very clearly spam or misuse, it might be difficult for a registrar to understand intent behind setting on-chain identity.

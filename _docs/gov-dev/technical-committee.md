@@ -34,7 +34,7 @@ When a external proposal is vetoed, it is not only removed from democracy but al
 
 The council can no longer submit proposals in the blacklist.
 
-After the cooloff period (5 days in Turing, 10 days in OAK), the proposal will be removed from the blacklist.
+After the cooloff period (5 days in Turing, 10 days in Ava Protocol), the proposal will be removed from the blacklist.
 
 1. Get the proposal hash**
 

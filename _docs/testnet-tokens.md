@@ -12,7 +12,7 @@ For developers and users who want to play around with features on our networks, 
 - Parachain Name: Turing Staging
 - Connected Relay Chain: Rococo
 - Endpoint: wss://rpc.turing-staging.oak.tech
-- Releases: https://github.com/OAK-Foundation/OAK-blockchain/releases
+- Releases: https://github.com/AvaProtocol/OAK-blockchain/releases
 
 Recommended pallet to test with,
 - automationTime
@@ -46,4 +46,4 @@ Please note due to spams we turned off automatic token faucet in Discord. Starti
 
 	![form](../../assets/img/testnet-tokens/form.jpg)
 
-1. OAK team member will review the application and send test tokens to you in 4 hours. Feel free to contact any admin in Discord if you don’t receive them.
+1. Ava Protocol team member will review the application and send test tokens to you in 4 hours. Feel free to contact any admin in Discord if you don’t receive them.

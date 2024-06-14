@@ -1,6 +1,6 @@
-# OAK-docs
+# Ava Protocol Documentation
 
-This site was developed by [OAK Foundation](https://oak.tech).
+This site was developed by [Ava Protocol](https://avaprotocol.org).
 ## Installation
 
 Install the dependencies with [Bundler](http://bundler.io/):

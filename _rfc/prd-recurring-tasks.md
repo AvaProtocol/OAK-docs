@@ -26,7 +26,7 @@ We believe that adding N>1 future transactions can enable a slew of use cases fo
 - trigger: conditional logic that has to be true for a task to be triggered
 - action: the function to execute for a given trigger
 - task: a user’s setting of a trigger and action. A user will add a task to execute 10 recurring payments at the 30th of each month.
-- event: the conversion of a task into a transaction with a trigger in OAK’s registry. In other words, transaction + trigger saved in the registry.
+- event: the conversion of a task into a transaction with a trigger in Ava Protocol’s registry. In other words, transaction + trigger saved in the registry.
 - transaction: the conventional definition of a transaction in Polkadot (message, payment, anything that is stored in the “ledger”)
 - signed vs unsigned transaction: a signed transaction required a user to sign one task with their private key (e.g. to pay someone monthly), while an unsigned transaction is low risk transaction like a log or a non-transfer event (this deviates a bit from Polkadot’s definition)
 - signed future transaction: a transaction that requires a user to sign their private key to execute the transaction (e.g. asset transfer from wallet A to B)
@@ -41,7 +41,7 @@ If for any reason, the time window has passed for the trigger, default to not ex
 - This applies to daily tasks as well. If for example, a whole 2 days has passed and the window for the action was missed, send an event and remove it from the registry.
 
 The rationale for this is that inherent in the user’s time specificity selection is their error tolerance.
-- Additionally, this is the safest assumption of user intent. We don’t want to be culpable of any funds accidentally sent twice (once manually because the user processes the transaction separately when it didn’t execute, then again when OAK triggers it). A loss of funds (unintentionally) would cause more user heartburn than a non-action (especially if we pair the non-action with an off-chain notification to the user down the road).
+- Additionally, this is the safest assumption of user intent. We don’t want to be culpable of any funds accidentally sent twice (once manually because the user processes the transaction separately when it didn’t execute, then again when Ava Protocol triggers it). A loss of funds (unintentionally) would cause more user heartburn than a non-action (especially if we pair the non-action with an off-chain notification to the user down the road).
 - Blockchain transactions are permanent.
 - We cannot assume user sentiment, and we do not at this time want to provide additional slippage inputs for the user (e.g. should we default to execute the action with an additional fee).
 
@@ -71,7 +71,7 @@ Counter-factors:
 - Higher fees if someone wants to fill the block.
 - Alerting and monitoring off-chain would indicate that the N and/or M are high, and we can close the valve.
 
-We are not allowing a top-level “Monthly” or “Weekly” without specifying a day due to a lack of use case to be that vague. It gives OAK too much optionality to execute in that time window and can lead to a bad user experience as to when the trigger will actually be pulled.
+We are not allowing a top-level “Monthly” or “Weekly” without specifying a day due to a lack of use case to be that vague. It gives Ava Protocol too much optionality to execute in that time window and can lead to a bad user experience as to when the trigger will actually be pulled.
 
 Duplicate timestamps in the array should be rejected by the extrinsic filter.
 

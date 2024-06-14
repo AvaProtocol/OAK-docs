@@ -6,16 +6,16 @@ tags: [develop]
 date: 2021-09-01
 ---
 
-The OAK team is eager to engage developers in building the OAK Network ecosystem. In order to enhance the product’s user experience and to improve on-chain security, OAK team launched the first “Bug-Bounty” program with potential payouts of $2,500 per report.
+The Ava Protocol team is eager to engage developers in building the Ava Protocol ecosystem. In order to enhance the product’s user experience and to improve on-chain security, Ava Protocol team launched the first “Bug-Bounty” program with potential payouts of $2,500 per report.
 ## Submission Guideline
 
-1. The bug bounty program is only applicable to the OAK Network.
+1. The bug bounty program is only applicable to the Ava Protocol.
 
 2. Please read the following rules for your submission to be eligible:
 
-   For UI/UX bugs: please submit the exposed bugs in OAK’s Discord group.
+   For UI/UX bugs: please submit the exposed bugs in Ava Protocol’s Discord group.
 
-   For Security bugs: please submit a summary of the exposed bug to: <bugs@oak.tech>
+   For Security bugs: please submit a summary of the exposed bug to: <bugs@avaprotocol.org>
 
 ### Information to include in your report:
 
@@ -45,9 +45,9 @@ The OAK team is eager to engage developers in building the OAK Network ecosystem
 4. Once your submission is accepted, we will contact you to collect your wallet information to issue the rewards.
 
 ## Scope
-Currently, the following OAK Network code repositories are in scope for bug bounty program:
-- [OAK's blockchain code](https://github.com/OAK-Foundation/OAK-blockchain)
-- [Parachain Staking Module](https://github.com/OAK-Foundation/moonbeam/tree/oak-staging/pallets/parachain-staking)
+Currently, the following Ava Protocol code repositories are in scope for bug bounty program:
+- [Ava Protocol's blockchain code](https://github.com/AvaProtocol/OAK-blockchain)
+- [Parachain Staking Module](https://github.com/AvaProtocol/moonbeam/tree/oak-staging/pallets/parachain-staking)
 
 ## Vulnerability Classifications
 **High-risk Vulnerabilities:** stealing and arbitrarily issuing or distributing tokens/disrupting consensus causes the blockchain to stop generating blocks/destroying on-chain governance and software upgrade processes/memory leaks and abnormal resource consumption.
@@ -66,6 +66,6 @@ We have not set a maximum reward, and the specific amount of the bounty will var
 
 All bounties will be paid in equivalent value of DOT.
 
-The OAK Team will assess each vulnerability report and issue the bounty accordingly.
+The Ava Protocol Team will assess each vulnerability report and issue the bounty accordingly.
 
 For more questions, feel free to [Contact Us](../contact-us).

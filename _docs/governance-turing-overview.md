@@ -1,18 +1,18 @@
 ---
 title: Governance Overview
-subtitle: Overview of governance on OAK and Turing Network
-author: christian
+subtitle: Overview of governance on Ava Protocol and Turing Network
+author: chris
 tags: [governance]
 date: 2022-06-30
 ---
 
-*Note: OAK Network governance coming soon after the launch.*
+*Note: Ava Protocol governance coming soon after the launch.*
 
 ![governance-overview](../../assets/img/governance/governance-overview.png)
 
 #### Introduction
 
-The Turing Network is a decentralized network in which all token holders will have the opportunity to help govern and influence the future development of the network. Turing’s governance process will enable the sentiment and desires of our community to be considered when advancing our protocol. Our governance process has been designed to be inclusive of all members of the Polkadot and Kusama ecosystems including developers, collators, users, investors, partners, and other contributors. OAK Network highly values open discussion and will utilize governance forums such as the [Subsquare governance dashboard](https://turing.subsquare.io/) to enable proposals to be generated and shaped based on community input.
+The Turing Network is a decentralized network in which all token holders will have the opportunity to help govern and influence the future development of the network. Turing’s governance process will enable the sentiment and desires of our community to be considered when advancing our protocol. Our governance process has been designed to be inclusive of all members of the Polkadot and Kusama ecosystems including developers, collators, users, investors, partners, and other contributors. Ava Protocol highly values open discussion and will utilize governance forums such as the [Subsquare governance dashboard](https://turing.subsquare.io/) to enable proposals to be generated and shaped based on community input.
 
 #### Governance Definitions
 
@@ -54,7 +54,7 @@ Some important terms to understand when engaging with Turing Network governance.
 
 The Turing Network aims to ensure the following values and principles are considered throughout the governance process:
 
--   A commitment to open and transparent decision-making from the OAK Network team with appropriate communication to our community.
+-   A commitment to open and transparent decision-making from the Ava Protocol team with appropriate communication to our community.
 
 -   Working to maintain the greater good of the network and of the overall Dotsama ecosystem ahead of individual gain.
 
@@ -70,7 +70,7 @@ The core components of the Turing Network governance model include:
 
 -   **Voting –** Referenda are voted on by token holders using a stake-weighted basis.
 
--   **Council –** Elected individuals who are expected to propose referenda and have special voting rights within the system. OAK Network will initially appoint council members whose decisions regarding the network such as runtime upgrades are made transparent on-chain. Once the Turing Network is appropriately bootstrapped and stabilized, a referendum will be started to move governance to an Elected Council system where council members are elected by public voting.
+-   **Council –** Elected individuals who are expected to propose referenda and have special voting rights within the system. Ava Protocol will initially appoint council members whose decisions regarding the network such as runtime upgrades are made transparent on-chain. Once the Turing Network is appropriately bootstrapped and stabilized, a referendum will be started to move governance to an Elected Council system where council members are elected by public voting.
 
 -   **Technical Committee –** Technical committee members possess the ability to fast-track emergency referenda in urgent and critical circumstances. A fast-tracked referendum may be created even during an and active existing referendum.
 

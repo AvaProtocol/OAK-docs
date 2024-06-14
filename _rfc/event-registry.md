@@ -1,7 +1,7 @@
 ---
 title: RFC - Event Registry
 subtitle: The core implementation details of the event registry used for time-based triggers.
-author: ryan
+author: chris
 tags: [feedback, community]
 ---
 
